@@ -32,7 +32,7 @@ try{
                 $mail = htmlspecialchars($_POST["mail"]);
                 $password = htmlspecialchars($_POST["password"]);
                 $confirmation_password = htmlspecialchars($_POST["confirmation_password"]);
-                 echo  "inscription($nom, $prenom, $mail, $password, $confirmation_password)";
+                inscription($nom, $prenom, $mail, $password, $confirmation_password);
             }
         }
 
