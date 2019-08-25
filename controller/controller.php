@@ -117,7 +117,8 @@ function afficher_journal($id){
 
     $publication = $query_bdd->requete_my_publication($id);
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
-    require("view/afficher_journal.php");
+    // On affiche afficher_journal.php    iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+    require("view/edit_page.php");
 }
 
 function erreur_se_connecter($erreur_se_connecter){
