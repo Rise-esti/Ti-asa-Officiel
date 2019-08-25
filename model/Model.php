@@ -8,6 +8,60 @@ class Query_bdd extends Connect_bdd{
         return $all_usernames_mail;
     }
 
+    public function verifier_message_nouveau_et_non_lu($id){
+        $bdd = $this->dbconnect();
+        $verifier_nouveau_message = $bdd->prepare("SELECT COUNT(mes) nbr_mess FROM CHAT WHERE vu='0' and cliques_messages='0' and id_destinataire = ? ");
+        $verifier_nouveau_message->execute(array($id));
+        $verifier_message = $verifier_nouveau_message->fetch();
+        $nbr_nouveau_message = $verifier_message["nbr_mess"];
+        $verifier_message_non_lu = $bdd->prepare("SELECT COUNT(mes) nbr_mess_non_lu FROM CHAT WHERE vu='0' and id_destinataire = ?") ;
+        $verifier_message_non_lu->execute(array($id));
+        $message_non_lu = $verifier_message_non_lu->fetch();
+        $nbr_message_non_lu = $message_non_lu["nbr_mess_non_lu"];
+
+        $verifier_message_nouveau_et_non_lu = array();
+        $verifier_message_nouveau_et_non_lu = [$nbr_nouveau_message, $nbr_message_non_lu];
+        return $verifier_message_nouveau_et_non_lu;
+    }
+
+    public function requete_new_message($id){
+        $bdd = $this->dbconnect();
+        $id_dernier_mesage = $bdd->query("SELECT max(id_message) id_mess_farany FROM CHAT WHERE id_destinataire = '$id' GROUP BY id_expediteur  ORDER BY id_mess_farany DESC");
+        $i = 0;
+        $tab_mess_farany = array();
+        while($id_message = $id_dernier_mesage->fetch()){
+            $id_message_farany = $id_message["id_mess_farany"];
+            $new_message = $bdd->query("SELECT C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_expediteur WHERE C.id_destinataire='$id' and C.id_message='$id_message_farany' GROUP BY C.id_expediteur");
+            $new_message_li = $new_message->fetch();
+            $tab_mess_farany[$i] = $new_message_li;
+            $i++;
+        }
+        
+        return $tab_mess_farany;
+    }
+
+    public function all_messages($id){
+        $bdd = $this->dbconnect();
+        $all_messages = $bdd->query("SELECT C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_expediteur WHERE C.id_destinataire='$id'");
+        return $all_messages;
+    }
+
+    public function requete_discussion($id, $id_exp){
+        $bdd = $this->dbconnect();
+        $requete_discussion = $bdd->prepare("SELECT C.id_message id_message, C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_destinataire WHERE (C.id_destinataire=? and C.id_expediteur=?) or (C.id_expediteur=? and C.id_destinataire=?) ORDER BY C.id_message");
+        $requete_discussion->execute(array($id, $id_exp, $id, $id_exp));
+        $marquer_vu_message = $bdd->prepare("UPDATE CHAT SET vu='1' WHERE id_expediteur=? and id_destinataire=?");
+        $marquer_vu_message->execute(array($id_exp, $id));
+        return $requete_discussion;
+    }
+
+    public function enregistrer_message($id, $id_dest, $nouveau_message){
+        $bdd = $this->dbconnect();
+        $enregistrer_message = $bdd->prepare("INSERT INTO CHAT(id_expediteur, id_destinataire, mes) VALUES(?,?,?)");
+        $enregistrer_message->execute(array($id, $id_dest, $nouveau_message));
+        return $enregistrer_message;
+    }
+
     public function inscrire($username, $nom, $prenom, $mail, $passwd_hash){
         $bdd = $this->dbconnect();
         $insertion_inscrire = $bdd->prepare("INSERT INTO PERSONNE(username, prenom, nom, mail, mot_de_passe) VALUES(?, ?, ?, ?, ?)");
@@ -24,10 +78,17 @@ class Query_bdd extends Connect_bdd{
 
     public function information_profil($id){
         $bdd = $this->dbconnect();
-        $profil = $bdd->prepare("SELECT username, nom, prenom, mail, numero,
+        $profil = $bdd->prepare("SELECT id, username, nom, prenom, mail, numero,
         adresse, ville, DAY(date_de_naissance) jour,YEAR(date_de_naissance) annee, DATE_FORMAT(date_de_naissance, '%b') mois, MONTH(date_de_naissance) mois_chiffre, sexe, biographie, photo_de_profil, photo_de_couverture, poste, entreprise FROM PERSONNE WHERE id = ? ");
         $profil->execute(array($id));
         return $profil;
+    }
+
+    public function verify_existance_discussion($id, $id_exp){
+        $bdd = $this->dbconnect();
+        $verify_existance_discussion = $bdd->prepare("SELECT id_message FROM CHAT WHERE id_destinataire=? and id_expediteur=? or id_expediteur=? and id_destinataire=? ");
+        $verify_existance_discussion->execute(array($id, $id_exp, $id, $id_exp));
+        return $verify_existance_discussion;
     }
 
     public function insertion_information_profil($id, $nom, $prenom, $username, $mail, $telephone, $date_naissance,
@@ -219,7 +280,7 @@ class Query_bdd extends Connect_bdd{
 
     public function select_profil($username){
         $bdd = $this->dbconnect();
-        $select_profil = $bdd->prepare("SELECT username, nom, prenom, mail, numero,
+        $select_profil = $bdd->prepare("SELECT id, username, nom, prenom, mail, numero,
         adresse, ville, DAY(date_de_naissance) jour,YEAR(date_de_naissance) annee, DATE_FORMAT(date_de_naissance, '%b') mois, MONTH(date_de_naissance) mois_chiffre, sexe, biographie, photo_de_profil, photo_de_couverture, poste, entreprise FROM PERSONNE WHERE username= ?");
         $select_profil->execute(array($username));
         return $select_profil;
@@ -260,4 +321,12 @@ class Query_bdd extends Connect_bdd{
         $mettre_jour_mdp->execute(array($passwd_hash, $id));
         return $mettre_jour_mdp;
     }
+
+    public function requete_last_message_discussion($id, $id_exp, $id_last_message){
+        $bdd = $this->dbconnect();
+        $info_recevoir = $bdd->prepare("SELECT id_message, mes FROM CHAT WHERE id_message > ? and id_expediteur = ? and id_destinataire = ?");
+        $info_recevoir->execute(array($id_last_message, $id_exp, $id));
+        return $info_recevoir;
+    }
+
 }

@@ -5,10 +5,46 @@ session_start();
 try{
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
+
+        if(isset($_SESSION["id"])){
+            $id = $_SESSION["id"];
+            $verifier_message_nouveau_et_non_lu = verifier_message_nouveau_et_non_lu($id);
+            $_SESSION["nbr_nouveau_message"] = $verifier_message_nouveau_et_non_lu[0];
+            $_SESSION["nbr_message_non_lu"] = $verifier_message_nouveau_et_non_lu[1];
+
+            $tab_mess_farany = new_message($id);
+            $_SESSION["tab_mess_farany"] = $tab_mess_farany;
+        }
+
+        if($action == "message" and isset($_GET["id"]) and isset($_GET["id_exp"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_exp = htmlspecialchars($_GET["id_exp"]);
+            if(($id == $_SESSION["id"])){
+                
+                if(isset($_GET["discussion"])){
+                    $new_chat = true;
+                }
+                else{
+                    $new_chat = false;
+                }
+                message($id, $id_exp, $new_chat);
+            }
+        }
+
+        if($action == "nouveau_message" and isset($_GET["id"]) and isset($_GET["id_dest"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_dest = htmlspecialchars($_GET["id_dest"]);
+            if(($id == $_SESSION["id"]) and isset($_POST["envoyer_message"])){
+                $nouveau_message = htmlspecialchars($_POST["mes"]);
+                enregistrer_nouveau_message($id, $id_dest, $nouveau_message);
+            }
+        }
+
         if($action == "se_connecter"){
             if(isset($_POST["valider_se_connecter"])){
                 $mail = htmlspecialchars($_POST["mail"]);
                 $password = htmlspecialchars($_POST["password"]);
+
                 se_connecter($mail, $password);
             }
         }

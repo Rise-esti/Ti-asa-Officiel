@@ -15,6 +15,17 @@
     <link rel="stylesheet" href="public/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 </head>
+<script>	
+	function cocher_cliques_message(){
+		$('.nbr_lu').load("model/cocher_cliques_message.php");
+	}
+
+	setInterval('afficher_nbr_nouveau_message()', 1000);
+	function afficher_nbr_nouveau_message(){
+		$('.nbr_lu').load("model/afficher_nbr_nouveau_message.php");
+	}
+
+</script>
 <body>
 <!--<div class="se-pre-con"></div>-->
 <div class="theme-layout">
@@ -293,68 +304,54 @@
 					</div>
 				</li>
 				<li>
-					<a href="#" title="Messages" data-ripple=""><i class="ti-comment"></i><span style="color:#610f91; font-weight:bold;">4</span></a>
+					<a href="#" title="Messages"  onClick="cocher_cliques_message()" data-ripple=""><i class="ti-comment"></i>
+						<span class="nbr_lu" style="color:#610f91; font-weight:bold;">
+							<?php 
+								if($_SESSION["nbr_nouveau_message"] == 0){
+									$_SESSION["nbr_nouveau_message"] = "";
+								}
+								echo $_SESSION["nbr_nouveau_message"]; 
+							?>
+						</span>
+					</a>
 					<div class="dropdowns">
-						<span>4 New Messages</span>
-						<!--
+						<span><?= $_SESSION["nbr_message_non_lu"] ?> messages non lus</span>
+						
 						<ul class="drops-menu">
+							<?php
+								
+								$tab_mess_farany = $_SESSION["tab_mess_farany"];
+								$nbr = count($tab_mess_farany);
+								for($i=0; $i<$nbr; $i++){
+									$pdp = $tab_mess_farany[$i]["pdp"];
+									$id_exp = $tab_mess_farany[$i]["expediteur"];
+									if(isset($pdp)){
+										$chemin_pdp_mes = "public/images/picture/pdp/$pdp";
+									}
+									else{
+										$chemin_pdp_mes = "public/images/av.png";
+									}
+									
+									
+							?>
 							<li>
-								<a href="notifications.html" title="">
-									<img src="public/images/resources/thumb-1.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>sarah Loren</h6>
-										<span>Hi, how r u dear ...?</span>
+								<a href="#" Onclick="window.location='index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_exp ?>'" title="">
+									<img src=<?= $chemin_pdp_mes ?> alt="">
+									<div class="mesg-meta" >
+										<h6><?=$tab_mess_farany[$i]["nom"]. ' '. $tab_mess_farany[$i]["prenom"] ?></h6>
+										<span><?=$tab_mess_farany[$i]["mes"] ?></span>
 										<i>2 min ago</i>
 									</div>
 								</a>
 								<span class="tag green">New</span>
 							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="public/images/resources/thumb-2.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Jhon doe</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag red">Reply</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="public/images/resources/thumb-3.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Andrew</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag blue">Unseen</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="public/images/resources/thumb-4.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Tom cruse</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
-							<li>
-								<a href="notifications.html" title="">
-									<img src="public/images/resources/thumb-5.jpg" alt="">
-									<div class="mesg-meta">
-										<h6>Amy</h6>
-										<span>Hi, how r u dear ...?</span>
-										<i>2 min ago</i>
-									</div>
-								</a>
-								<span class="tag">New</span>
-							</li>
+							
+							<?php
+									
+								}
+							?>
 						</ul>
-						<a href="messages.html" title="" class="more-mesg">view more</a> -->
+						<a href="messages.html" title="" class="more-mesg">view more</a> 
 					</div>
 				</li>
 				<?php

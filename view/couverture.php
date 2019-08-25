@@ -19,11 +19,18 @@
 <section>
 	<div class="feature-photo">
 			<figure><img style="" id="pdc" src="<?= $chemin_pdc ?>"  alt=""></figure>
+			<?php
+				if(isset($select_profil_li["username"])){
+					$id_personne = $select_profil_li["id"];
+			?>
 			<div class="add-btn">
 				<span>0 abonnée</span>
-				<a href="#" title="" data-ripple="">Suivre</a>
+				<a href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
+					Message
+				</a>
 			</div>
 			<?php
+				}
 				if(!isset($select_profil_li["username"])){
 			?>
 			<form class="edit-phto" action="index.php?action=modifier_pdc&id=<?= $id ?>" enctype="multipart/form-data" method="POST">
