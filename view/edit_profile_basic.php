@@ -191,8 +191,8 @@
 														$biographie = "";
 													}
 											   ?>
-											  <textarea rows="4" id="textarea" name="biographie" ><?= $biographie ?></textarea>
-											  <label class="control-label" for="textarea"> Biographie</label><i class="mtrl-select"></i>
+											<textarea rows="4" id="textarea" name="biographie" ><?= $biographie ?></textarea>
+											<label class="control-label" for="textarea"> Biographie</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
 												
