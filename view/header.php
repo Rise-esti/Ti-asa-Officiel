@@ -317,7 +317,7 @@
 					<div class="dropdowns">
 						<span><?= $_SESSION["nbr_message_non_lu"] ?> messages non lus</span>
 						
-						<ul class="drops-menu">
+						<ul id='msg-cont' class="drops-menu">
 							<?php
 								
 								$tab_mess_farany = $_SESSION["tab_mess_farany"];
@@ -333,13 +333,14 @@
 									}
 									
 									
+									
 							?>
-							<li>
+							<li id="<?=$tab_mess_farany[$i]['expediteur']?>" >
 								<a href="#" Onclick="window.location='index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_exp ?>'" title="">
 									<img src=<?= $chemin_pdp_mes ?> alt="">
 									<div class="mesg-meta" >
-										<h6><?=$tab_mess_farany[$i]["nom"]. ' '. $tab_mess_farany[$i]["prenom"] ?></h6>
-										<span><?=$tab_mess_farany[$i]["mes"] ?></span>
+										<h6 class="anarana"><?=$tab_mess_farany[$i]["nom"]. ' '. $tab_mess_farany[$i]["prenom"] ?></h6>
+										<span id='mes_far'><?=$tab_mess_farany[$i]["mes"] ?></span>
 										<i>2 min ago</i>
 									</div>
 								</a>
@@ -393,3 +394,56 @@
 			<!-- <span class="ti-menu main-menu" data-ripple=""></span> -->
 		</div>
 	</div><!-- topbar -->
+
+	<script>
+		setInterval('load_message_farany()', 2000);
+		function load_message_farany(){
+			$.post(
+				'controller/message_farany.php',
+				{
+					id: <?= $id ?>,
+					id_exp: <?= $id_exp ?>,
+				},
+
+				message_recu,  // nom fonction retour
+
+
+			);
+
+			function message_recu(msg){
+				console.log('aty ve ?');
+				message = new Array(JSON.parse(msg));
+				
+			
+				
+				
+				if (message[0].length > 0){
+					
+					ids = new Array()
+					$('#msg-cont > li').each(function(){
+							ids.push($(this).attr('id'));		
+					});
+
+					for (i=0;i<message[0].length;i++){
+						if (ids.indexOf(message[0][i]['id_expediteur']) > -1 ){
+							$('#'   +  message[0][i]['id_expediteur'] + ' #mes_far'  ).html(message[0][i]['mes']);
+							$('#msg-cont').prepend($('#' + message[0][i]['id_expediteur'] ));
+
+						}
+						else{
+								hafatra = "<li id='' > <a href='#' Onclick='window.location='index.php?action=message&amp;id=<?=$id?>&amp;id_exp=" + message[0][i]['id_expediteur']+ " '' title=''> <img src='"+ message[0][i]['pdp']+"' alt=''> <div class='mesg-meta' > <h6 class='anarana'>" + message[0][i]['nom'] + message[0][i]['id_expediteur']+"</h6> <span id='mes_far'>"+message[0][i]['mes']+"</span> <i>2 min ago</i> </div>	</a> <span class='tag green'>New</span>	</li>";
+								$('#msg-cont').prepend(hafatra);
+						}
+
+						
+					}
+
+				}
+				
+
+				
+			}
+		}
+
+
+	</script>

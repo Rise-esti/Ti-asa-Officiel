@@ -26,14 +26,19 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_new_message($id){
         $bdd = $this->dbconnect();
-        $id_dernier_mesage = $bdd->query("SELECT max(id_message) id_mess_farany FROM CHAT WHERE id_destinataire = '$id' GROUP BY id_expediteur  ORDER BY id_mess_farany DESC");
+        $id_dernier_mesage = $bdd->query("SELECT id_expediteur, p.nom nom, p.prenom prenom, p.photo_de_profil pdp, max(id_message) id_mess_farany FROM CHAT INNER JOIN PERSONNE p ON p.id= CHAT.id_expediteur WHERE id_destinataire = '$id' GROUP BY id_expediteur ORDER BY id_mess_farany DESC ");
         $i = 0;
         $tab_mess_farany = array();
-        while($id_message = $id_dernier_mesage->fetch()){
-            $id_message_farany = $id_message["id_mess_farany"];
-            $new_message = $bdd->query("SELECT C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_expediteur WHERE C.id_destinataire='$id' and C.id_message='$id_message_farany' GROUP BY C.id_expediteur");
-            $new_message_li = $new_message->fetch();
-            $tab_mess_farany[$i] = $new_message_li;
+        while($info_message = $id_dernier_mesage->fetch()){
+            $id_exped = $info_message["id_expediteur"];
+            $new_message = $bdd->query("SELECT id_message, mes FROM CHAT WHERE (id_destinataire='$id' and id_expediteur='$id_exped') or (id_destinataire='$id_exped' and id_expediteur='$id') ORDER BY id_message DESC LIMIT 1");
+            $message = $new_message->fetch();
+            $tab_mess_farany[$i]['mes'] = $message['mes'];
+            $tab_mess_farany[$i]['id_message'] = $message['id_message'];
+            $tab_mess_farany[$i]['expediteur'] = $id_exped;
+            $tab_mess_farany[$i]['nom'] = $info_message['nom'];
+            $tab_mess_farany[$i]['prenom'] = $info_message['prenom'];
+            $tab_mess_farany[$i]['pdp'] = $info_message['pdp'];
             $i++;
         }
         
