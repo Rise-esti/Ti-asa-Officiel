@@ -216,6 +216,20 @@
 
 					</ul>
 				</li>
+
+				<li>
+					<a href="#" title="" class=" high">Page</a>
+					<ul>
+						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
+						<?php
+						while($mes_page = $select_mes_page->fetch()){
+						?>
+						<li><a href="index.php?action=afficher_ma_page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<?php
+						}
+						?>
+					</ul>
+				</li>
 				
 				<li>
 					<a href="#" title="" class=" high">Plus</a>
@@ -431,7 +445,7 @@
 
 						}
 						else{
-								hafatra = "<li id='' > <a href='#' Onclick='window.location='index.php?action=message&amp;id=<?=$id?>&amp;id_exp=" + message[0][i]['id_expediteur']+ " '' title=''> <img src='"+ message[0][i]['pdp']+"' alt=''> <div class='mesg-meta' > <h6 class='anarana'>" + message[0][i]['nom'] + message[0][i]['id_expediteur']+"</h6> <span id='mes_far'>"+message[0][i]['mes']+"</span> <i>2 min ago</i> </div>	</a> <span class='tag green'>New</span>	</li>";
+								hafatra = "<li id='" +  message[0][i]['id_expediteur'] + "' > <a href='#' Onclick='window.location=index.php?action=message&amp;id=" + message[0][i]['id_destinataire'] + "&;id_exp=" + message[0][i]['id_expediteur']+ "' title=''> <img src='"+ message[0][i]['pdp']+"' alt=''> <div class='mesg-meta' > <h6 class='anarana'>" + message[0][i]['nom'] + ' ' + message[0][i]['prenom']+"</h6> <span id='mes_far'>"+message[0][i]['mes']+"</span> <i>2 min ago</i> </div>	</a> <span class='tag green'>New</span>	</li>";
 								$('#msg-cont').prepend(hafatra);
 						}
 

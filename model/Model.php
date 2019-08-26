@@ -39,6 +39,7 @@ class Query_bdd extends Connect_bdd{
             $tab_mess_farany[$i]['nom'] = $info_message['nom'];
             $tab_mess_farany[$i]['prenom'] = $info_message['prenom'];
             $tab_mess_farany[$i]['pdp'] = $info_message['pdp'];
+            
             $i++;
         }
         
@@ -332,6 +333,53 @@ class Query_bdd extends Connect_bdd{
         $info_recevoir = $bdd->prepare("SELECT id_message, mes FROM CHAT WHERE id_message > ? and id_expediteur = ? and id_destinataire = ?");
         $info_recevoir->execute(array($id_last_message, $id_exp, $id));
         return $info_recevoir;
+    }
+
+    public function creation_page($nom_page, $mail_page, $telephone_page, $province_page, $adresse_page, $description_page, $id){
+        $bdd = $this->dbconnect();
+        $creation_page = $bdd->prepare("INSERT INTO PAGE_PAGE(nom_page, description_page, telephone, mail_page, adresse, province, id) VALUES(?,?,?,?,?,?,?)");
+        $creation_page->execute(array($nom_page, $description_page, $telephone_page, $mail_page, $adresse_page, $province_page, $id));
+        return $creation_page;
+    }
+
+    public function select_page($id, $nom_page){
+        $bdd = $this->dbconnect();
+        $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE id=? and nom_page=?");
+        $select_page->execute(array($id, $nom_page));
+        return $select_page;
+    }
+
+    public function select_mes_page($id){
+        $bdd = $this->dbconnect();
+        $select_mes_pages = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE id=?");
+        $select_mes_pages->execute(array($id));
+        return $select_mes_pages;
+    }
+
+    public function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page, $province_page, $adresse, $description){
+        $bdd = $this->dbconnect();
+        $mettre_jour_page = $bdd->prepare("UPDATE PAGE_PAGE SET nom_page=?, mail_page=?, telephone=?, description_page=?, adresse=?, province=? WHERE id=? and id_page=?");
+        $mettre_jour_page->execute(array($nom_page, $mail_page, $telephone_page, $description, $adresse, $province_page, $id, $id_page));
+        return $mettre_jour_page;
+    }
+
+    public function select_nom_page_existant(){
+        $bdd = $this->dbconnect();
+        $select_nom_page_existant = $bdd->query("SELECT nom_page, mail_page FROM PAGE_PAGE");
+        return $select_nom_page_existant;
+    }
+
+    public function select_nom_page_existe_apart_mapage($id_page){
+        $bdd = $this->dbconnect();
+        $select_nom_page_existant = $bdd->query("SELECT nom_page, mail_page FROM PAGE_PAGE WHERE id_page<>'$id_page'");
+        return $select_nom_page_existant;
+    }
+
+    public function select_page_id_id_page($id, $id_page){
+        $bdd = $this->dbconnect();
+        $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE id=? and id_page=?");
+        $select_page->execute(array($id, $id_page));
+        return $select_page;
     }
 
 }

@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=tia_asa','sserver','sserver') or die
 $id = htmlspecialchars($_POST["id"]);
 $id_exp = htmlspecialchars($_POST["id_exp"]);
 
-$mess_id = $bdd->query("SELECT p.nom nom, p.prenom prenom , p.photo_de_profil pdp, id_expediteur, id_message, mes FROM CHAT INNER JOIN PERSONNE p ON p.id=CHAT.id_expediteur WHERE vu='0' and cliques_messages='0' and id_destinataire='$id'");
+$mess_id = $bdd->query("SELECT id_destinataire, p.nom nom, p.prenom prenom , p.photo_de_profil pdp, id_expediteur, id_message, mes FROM CHAT INNER JOIN PERSONNE p ON p.id=CHAT.id_expediteur WHERE vu='0' and cliques_messages='0' and id_destinataire='$id'");
 
 
 

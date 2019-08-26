@@ -420,7 +420,58 @@ try{
                 afficher_journal($id);
             }
         }
+
+        elseif($action == 'creer_page' and isset($_GET["id"])){
+            $id = htmlspecialchars($_GET["id"]);
+            if($id == $_SESSION["id"]){
+                creer_page($id);
+            }
+        }
         
+        elseif($action == 'info_creation_page' and isset($_GET["id"])){
+            $id = htmlspecialchars($_GET["id"]);
+            if($id == $_SESSION["id"] and isset($_POST["valider_creer_page"])){
+                $nom_page = htmlspecialchars($_POST["nom_page"]);
+                $mail_page = htmlspecialchars($_POST["mail_page"]);
+                $telephone_page = htmlspecialchars($_POST["telephone_page"]);
+                $province_page = htmlspecialchars($_POST["province_page"]);
+                $adresse_page = htmlspecialchars($_POST["adresse_page"]);
+                $description_page = htmlspecialchars($_POST["description_page"]);
+                info_creation_page($nom_page, $mail_page, $telephone_page, $province_page, $adresse_page, $description_page, $id);
+
+
+            }
+        }
+
+        elseif($action == 'modifier_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $nom_page = htmlspecialchars($_GET["nom_page"]);
+            if($id == $_SESSION["id"] and $nom_page == $_SESSION["nom_page"]){
+                modifier_page($id, $nom_page);
+            }
+        }
+
+        elseif($action == 'afficher_ma_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $nom_page = htmlspecialchars($_GET["nom_page"]);
+            if($id == $_SESSION["id"]){
+                afficher_ma_page($id, $nom_page);
+            }
+        }
+
+        elseif($action == 'mettre_jour_page' and isset($_GET["id"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_page = htmlspecialchars($_GET["id_page"]);
+            if($id == $_SESSION["id"] and $id_page == $_SESSION["id_page"] and isset($_POST["mettre_jour_page"])){
+                $nom_page = htmlspecialchars($_POST["nom_page"]);
+                $mail_page = htmlspecialchars($_POST["mail_page"]);
+                $telephone_page = htmlspecialchars($_POST["telephone"]);
+                $province_page = htmlspecialchars($_POST["province"]);
+                $adresse = htmlspecialchars($_POST["adresse"]);
+                $description = htmlspecialchars($_POST["description"]);
+                mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page, $province_page, $adresse, $description);
+            }
+        }
 
     }
 

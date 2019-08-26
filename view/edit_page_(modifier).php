@@ -22,33 +22,32 @@
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<div class="editing-info">
-										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les informations </h5>
+										<h5 class="f-title"><i class="ti-info-alt"></i> Créer Une Page </h5>
+										<?php
+											if(!empty($erreur_nom_mail)){
+												echo " <br>$erreur_nom_mail";
+											}
+										?>
 
-										<form method="post" class="formcomp" action="index.php?action=information_profile&amp;id="">
+										<form method="post" class="formcomp" action="index.php?action=info_creation_page&amp;id=<?=$id?>">
 											<div class="form-group">	
-												<input type="text" name="nom_utilisateur" required="required" value="">
-												<label class="control-label" for="input">Nom de la page</label><i class="mtrl-select"></i>
+												<input type="text" name="nom_page" required="required" value="">
+												<label class="control-label" for="input" >Nom de la page</label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group">	
-												<input type="text" name="mail" required="required" value="" />
+												<input type="text" name="mail_page" required="required" value="" />
 												<label class="control-label" for="input"><a href="#" class="__cf_email__" data-cfemail="4b0e262a22270b">Email</a></label><i class="mtrl-select"></i>
 											</div>
 											<div class="form-group">
-												<input type="text" name="telephone" required="required" value=""/>
+												<input type="text" name="telephone_page" required="required" value=""/>
 												<label class="control-label" for="input">Téléphone</label><i class="mtrl-select"></i>
 											</div>
+																
 											
-											
-											
-											<div class="form-group">
-														
-											  <input type="text" name="adresse" required="required" placeholder="" value=""/>
-											  <label class="control-label" for="input">Adresse</label><i class="mtrl-select"></i>
-											</div>
 											<div class="form-group">
 													  
-											  <select name="province">
-												<option><?= $province ?></option>
+											  <select name="province_page">
+												<option>Ville</option>
 												<option>Antananarivo</option>
 												<option>Fianarantsoa</option>
 												<option>Toliara</option>
@@ -58,12 +57,17 @@
 											  </select>
 											</div>
 											<div class="form-group">
-											<textarea rows="4" id="textarea" name="description" ></textarea>
-											<label class="control-label" for="textarea"> Description</label><i class="mtrl-select"></i>
+														
+											  <input type="text" name="adresse_page" required="required" placeholder="" value=""/>
+											  <label class="control-label" for="input">Adresse</label><i class="mtrl-select"></i>
+											</div>
+											<div class="form-group">
+											<textarea rows="4" id="textarea" name="description_page" ></textarea>
+											<label class="control-label" for="textarea">Description</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
 												
-												<button type="submit" name="valider_modify_profil" class="mtr-btn"><span>Créer la page</span></button>
+												<button type="submit" name="valider_creer_page" class="mtr-btn"><span>Créer la page</span></button>
 											</div>
 										</form>
 									</div>

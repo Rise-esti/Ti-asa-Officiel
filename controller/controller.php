@@ -54,6 +54,8 @@ function message($id, $id_exp, $new_chat){
     $all_messages = $query_bdd->all_messages($id);
     $_SESSION["id_expediteur_mess"] = $id_exp;
     $_SESSION["ID"] = $id;
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     require("view/messages.php");
 }
@@ -107,6 +109,7 @@ function connecter($id){
     $publication = $query_bdd->requete_publication($id);
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/acceuil.php");
 }
 
@@ -114,11 +117,12 @@ function afficher_journal($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $publication = $query_bdd->requete_my_publication($id);
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
-    // On affiche afficher_journal.php    iciiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
-    require("view/edit_page.php");
+    require("view/afficher_journal.php");
 }
 
 function erreur_se_connecter($erreur_se_connecter){
@@ -213,6 +217,8 @@ function modifier_profil($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     $active_plus_gauche = "active";
     require("view/edit_profile_basic.php");
 }
@@ -294,6 +300,8 @@ function afficher_information_generale($id){
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
     $active_infogen = "active";
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/infogen.php");
 }
 
@@ -301,6 +309,8 @@ function modifier_information($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $verifier_existance_formation = $query_bdd->verify_existance_formation($id);
     $tab = array();
@@ -320,20 +330,15 @@ function modifier_information($id){
         $active_formations = "active";
         require("view/formation-profil.php");
     }
-    
-    /*
-    for($i=0; $i<count($tab); $i++ ){
-        echo $tab[$i]["filiere"];
-        echo "<br>";
-    }
-    */
-    
+
 }
 
 function ajouter_nouvelle_formation($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     $active_plus_gauche = "active";
     require("view/ajouter_formation.php");
 }
@@ -398,6 +403,8 @@ function modifier_formation_profil($id, $id_formation){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $information_a_modifier = $query_bdd->information_modifier($id, $id_formation);
     $information_a_modifier_li = $information_a_modifier->fetch();
@@ -420,6 +427,8 @@ function modifier_competence($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $requete_competence = $query_bdd->requete_competence_existant($id);
     $tab = array();
@@ -464,6 +473,8 @@ function modifier_competence_existant($id, $id_competence){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $select_competence = $query_bdd->select_competence($id, $id_competence);
     $select_competence_li = $select_competence->fetch();
@@ -475,6 +486,8 @@ function mettre_jour_competence($id, $id_competence, $competence, $explication, 
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
  
     $mettre_jour_competence = $query_bdd->mettre_jour_competence_existant($id, $id_competence, $competence, $explication, $niveau);
@@ -491,6 +504,8 @@ function ajouter_nouvelle_competence($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     $active_plus_gauche = "active";
     require("view/ajouter_competence.php");
 }
@@ -510,6 +525,8 @@ function modifier_afficher_experience($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $requete_experience = $query_bdd->experience_existant($id);
     $tab = array();
@@ -534,6 +551,8 @@ function ajouter_experience($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/ajouter_experience.php");
 }
 
@@ -562,6 +581,8 @@ function modifier_experience_existe($id, $id_experience){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $experience_existe = $query_bdd->requete_experience_existe($id, $id_experience);
     $experience_existe_li = $experience_existe->fetch();
@@ -604,6 +625,8 @@ function afficher_centre_interet($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $requete_centre_interet = $query_bdd->centre_interet_existant($id);
     $tab = array();
@@ -644,6 +667,8 @@ function modifier_centre_interet_existe($id, $id_centre_interet){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $centre_interet_existe = $query_bdd->centre_interet_existe($id, $id_centre_interet);
     if($centre_interet_existe === false){
@@ -674,6 +699,8 @@ function ajouter_nouvelle_centre_interet($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $active_plus_gauche = "active";
     require("view/ajouter_centre_interet.php");
@@ -801,6 +828,8 @@ function modifier_mot_de_passe($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/edit-pass.php");
 }
 
@@ -808,6 +837,8 @@ function nouveau_mot_de_passe($id, $ancien_mdp, $nouveau_mdp, $confirmation_mdp)
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $mdp_actuelle = $query_bdd->mdp_actuelle($id);
     $mdp_actuelle_li = $mdp_actuelle->fetch();
@@ -835,4 +866,120 @@ function nouveau_mot_de_passe($id, $ancien_mdp, $nouveau_mdp, $confirmation_mdp)
         $error = "Ancien mot de passe incorrecte";
         require("view/edit-pass.php");
     }
+}
+
+function creer_page($id){
+    $query_bdd = new Query_bdd;
+    $profil = $query_bdd->information_profil($id);
+    $profil_li = $profil->fetch();   
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    require("view/edit_page_(modifier).php");
+}
+
+function info_creation_page($nom_page, $mail_page, $telephone_page, $province_page, $adresse_page, $description_page, $id){
+    $query_bdd = new Query_bdd;
+    $select_nom_page_existant = $query_bdd->select_nom_page_existant();
+
+    while($nom_mail_page = $select_nom_page_existant->fetch()){
+        if($nom_page == $nom_mail_page["nom_page"] or $mail_page == $nom_mail_page["mail_page"]){
+            $nom_mail = false;
+            break;
+        }
+        else{
+            $nom_mail = true;
+        }
+    }
+
+    if($nom_mail == true){
+        $creation_page = $query_bdd->creation_page($nom_page, $mail_page, $telephone_page, $province_page, $adresse_page, $description_page, $id);
+        if($creation_page == false){
+            throw new Exception("Erreur creation_page");
+        }
+        else{
+            $profil = $query_bdd->information_profil($id);
+            $profil_li = $profil->fetch();  
+            $select_page = $query_bdd->select_page($id, $nom_page);
+            $select_page_li = $select_page->fetch();
+            $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+            $select_mes_page = $query_bdd->select_mes_page($id);
+            require("view/edit_page_(modifier).php");
+        }
+    }
+    else{
+        $erreur_nom_mail = "Adresse mail ou nom de la page déjà utilisée";
+        $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+        $select_mes_page = $query_bdd->select_mes_page($id);
+        $profil = $query_bdd->information_profil($id);
+        $select_page = $query_bdd->select_page($id, $nom_page);
+        $select_page_li = $select_page->fetch();
+        require("view/edit_page_(modifier).php");
+
+    }
+}
+
+function afficher_ma_page($id, $nom_page){
+    
+    $query_bdd = new Query_bdd;
+    $profil = $query_bdd->information_profil($id);
+    $profil_li = $profil->fetch();  
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    $select_page = $query_bdd->select_page($id, $nom_page);
+    $select_page_li = $select_page->fetch();
+    require("view/infogen_page.php");
+}
+
+function modifier_page($id, $nom_page){
+    $query_bdd = new Query_bdd;
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    $profil = $query_bdd->information_profil($id);
+    $select_page = $query_bdd->select_page($id, $nom_page);
+    $select_page_li = $select_page->fetch();
+    require("view/edit_page.php");
+
+}
+
+function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page, $province_page, $adresse, $description){
+    $query_bdd = new Query_bdd;
+
+    $select_nom_page_existant = $query_bdd->select_nom_page_existe_apart_mapage($id_page);
+
+    while($nom_mail_page = $select_nom_page_existant->fetch()){
+        if($nom_page == $nom_mail_page["nom_page"] or $mail_page == $nom_mail_page["mail_page"]){
+            $nom_mail = false;
+            break;
+        }
+        else{
+            $nom_mail = true;
+        }
+    }
+
+    if($nom_mail == true){
+        $mettre_jour_page = $query_bdd->mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page, $province_page, $adresse, $description);
+        if($mettre_jour_page === false){
+            throw new Exception("Erreur mettre_jour_page");
+        }
+        else{
+            $profil = $query_bdd->information_profil($id);
+            $profil_li = $profil->fetch(); 
+            $select_page = $query_bdd->select_page($id, $nom_page);
+            $select_page_li = $select_page->fetch();
+            $select_mes_page = $query_bdd->select_mes_page($id);
+            require("view/infogen_page.php");
+            
+        }
+    }
+    else{
+        $erreur_nom_mail = "Adresse mail ou nom de la page déjà utilisée";
+        $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+        $select_mes_page = $query_bdd->select_mes_page($id);
+        $profil = $query_bdd->information_profil($id);
+        $select_page = $query_bdd->select_page_id_id_page($id, $id_page);
+        $select_page_li = $select_page->fetch();
+        require("view/edit_page.php");
+
+    }
+
 }

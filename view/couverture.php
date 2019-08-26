@@ -16,8 +16,8 @@
 	}
 ?>
 
-<section>
-	<div class="feature-photo">
+	<section>
+		<div class="feature-photo">
 			<figure><img style="" id="pdc" src="<?= $chemin_pdc ?>"  alt=""></figure>
 			<?php
 				if(isset($select_profil_li["username"])){

@@ -1,5 +1,5 @@
 <?php
-	require("view/header.php")
+	require("view/header.php");
 ?>
 <!-- topbar -->
 
@@ -21,6 +21,7 @@
 		$tab[$i] = $texte;
 		return $tab;
 	}
+	
 ?>
 <!-- top area -->
 		
@@ -45,6 +46,140 @@
 							</div><!-- sidebar -->
 							<div class="col-lg-6">
 								<div class="loadMore">
+									<div class="central-meta">
+										<div class="new-postbox" id='cnt'>
+											<figure>
+												<?php
+													if(isset($profil_li["photo_de_profil"])){
+														$pdp = $profil_li["photo_de_profil"];
+														$chemin_pdp = "public/images/picture/pdp/$pdp";
+													}
+													else{
+														$chemin_pdp = "public/images/av.png";
+													}
+												?>
+												<img src="<?= $chemin_pdp ?>" alt="">
+											</figure>
+											<div class="newpst-input">
+												<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
+													<textarea id="pub" rows="2" name="texte" placeholder="Publier un Offre d'emploi ou autre"></textarea>
+													
+													<div class="attachments">
+														<ul>
+															
+															<li>
+																<i class="fa fa-image"></i>
+																<label class="fileContainer">
+																	<input type="file" name="image">
+																</label>
+															</li>
+															
+													
+															<li>
+																<button type="submit" name="new_post">Publier</button>
+															</li>
+														</ul>
+													</div>
+
+													<div id="publication" style="display:none;">
+															<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>
+															<div id="f" class="form-group">	
+																<input type="text" name="formation"  />
+																<label class="control-label" for="input">Formation</label><i class="mtrl-select"></i>
+															</div>
+															<div class="form-group">	
+																<input type="text" name="experience"  placeholder=""/>
+																<label class="control-label" for="input">Experience Minimum</label><i class="mtrl-select"></i>
+															</div>
+															<div class="form-group">	
+																<input type="text" name="competence"  />
+																<label class="control-label" for="input">Competence</label><i class="mtrl-select"></i>
+															</div>
+															<div class="form-group">	
+																<input type="text" name="personnalite"   />
+																<label class="control-label" for="input">Personnalité</label><i class="mtrl-select"></i>
+															</div>
+															<div class="form-group">	
+																<input type="text" name="langue"  />
+																<label class="control-label" for="input">Langue</label><i class="mtrl-select"></i>
+															</div>
+															<div class="form-group">
+																<fieldset style="padding-top:0.01em !important;padding-bottom:1em !important;padding-left:0.25em !important;">
+																	<legend style="font-size:15px !important;">  Date limite </legend>
+																	<div class="form-group half" style="margin-left:1px !important;">
+																		<select style="color:#088dcd" name='jour'>
+																			<option value="">Jour</option>
+																			<?php
+																				for($i=1; $i<=31; $i++){
+																					?>
+																						<option><?= $i ?></option>
+																					<?php
+																				}
+																			?>	
+																			
+																		</select>
+																	</div>
+																	<div class="form-group half" style="margin-left:5px !important;">
+																		<select name='mois'>
+																		<option value="">Mois</option>
+																			<option>Janvier</option>
+																			<option>Fevrier</option>
+																			<option>Mars</option>
+																			<option>Avril</option>
+																			<option>Mai</option>
+																			<option>Juin</option>
+																			<option>Juillet</option>
+																			<option>Aout</option>
+																			<option>Septembre</option>
+																			<option >Octobre</option>
+																			<option >Novembre</option>
+																			<option >Decembre</option>
+																		</select>
+																	</div>
+																</fieldset>
+															</div>
+															<div class="form-group">	
+																<input type="text" name="lieu"    />
+																<label class="control-label" for="input">Lieu</label><i class="mtrl-select"></i>
+															</div>
+														</div>
+													</form>
+												<script>
+													var x = document.getElementById('pub');
+													var cont = document.getElementById('cnt');
+													var i = 0;
+													x.addEventListener('focus',  function show_pub(){
+														if (i < 1){
+															dist = document.getElementById('publication');
+															dist.style.display = 'block';
+															}
+														i = i + 1 ;														
+															}
+														
+													)
+										
+													x.addEventListener('blur', function hide_pub(event){
+														dist = document.getElementById('publication');
+														if (event.relatedTarget == null){
+															dist.style.display = 'none';
+															i = 0;
+														}			
+													}
+													)
+												
+													cnt.addEventListener('click', function hides_pub(event){
+														dist = document.getElementById('publication');
+														console.log(event.target.localName);
+														if (event.target.localName == 'div'){
+															dist.style.display = 'none';
+															i = 0;
+														}	
+													}
+													) 
+												</script>
+											</div>
+										</div>
+									</div>
 									<!-- add post new box -->
 									
 									<?php
