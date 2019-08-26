@@ -743,7 +743,7 @@ header.sticky {
     overflow: hidden;
     position: relative;
     width: 100%;
-    max-height:150px;
+    max-height:200px;
 }
 
 .user-avatar > figure > img {
@@ -2288,10 +2288,10 @@ footer .logo {
     background: #fff none repeat scroll 0 0;
     border-radius: 0 0 3px 3px;
     position: absolute;
-    left: -15px;
+    left: -100px;
     text-align: left;
     top: 100%;
-    width: 150px;
+    width: 200px;
     opacity: 0;
     visibility: hidden;
     line-height: initial;

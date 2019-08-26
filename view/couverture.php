@@ -23,11 +23,12 @@
 				if(isset($select_profil_li["username"])){
 					$id_personne = $select_profil_li["id"];
 			?>
-			<div class="add-btn">
-				<span>0 abonnée</span>
-				<a style="position:absolute; top:-200% !important;" href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
-					Message
+			<div class="add-btn" style="top:5% !important;">
+			<span >0 abonnée</span>
+				<a href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
+					Message 
 				</a>
+				
 			</div>
 			<?php
 				}
