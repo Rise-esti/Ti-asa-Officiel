@@ -724,6 +724,7 @@ function afficher_profil_utilisateur($username){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
+    $select_mes_page = $query_bdd->select_mes_page($id);
 
     $select_profil = $query_bdd->select_profil($username);
     $select_profil_li = $select_profil->fetch();
@@ -982,4 +983,58 @@ function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page,
 
     }
 
+}
+
+function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporaire, $code_erreur){
+    
+    if($type == '123'){
+        $destination = "public/images/picture/pdc_page/$photo_name";
+        $column = "pdc_page";
+    }
+    elseif($type == '321'){
+        $destination = "public/images/picture/pdp_page/$photo_name";
+        $column = "pdp_page";
+    }
+    
+    switch($code_erreur)
+        {
+            case UPLOAD_ERR_OK:
+                if(copy($photo_temporaire, $destination)){
+                    $query_bdd = new Query_bdd;
+                    $insertion_photo_page = $query_bdd->insertion_photo_page($id, $id_page, $column, $photo_name);
+                    if($insertion_photo_page === false){
+                        throw new Exception("Erreur insertion_photo_page");
+                    }
+                    else{
+                        $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+                        $select_mes_page = $query_bdd->select_mes_page($id);
+                        $profil = $query_bdd->information_profil($id);
+                        $select_page = $query_bdd->select_page_id_id_page($id, $id_page);
+                        $select_page_li = $select_page->fetch();
+                        require("view/edit_page.php");
+                    }
+                }
+                else{
+                    throw new Exception("Erreur copie fichier");
+                }                           
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                throw new Exception("Aucun fichier séléctionner");
+                break;
+            case UPLOAD_ERR_INI_SIZE:
+                throw new Exception("Taille fichier > upload_max_filesize");
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                throw new Exception("Fichier partiellement transféré");
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                throw new Exception("Aucun répertoire temporaire");
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                throw new Exception("Erreur lors de l’écriture du fichier sur disque");
+                break;
+            default:
+                throw new Exception("Fichier non transféré");
+                break;
+        }
 }

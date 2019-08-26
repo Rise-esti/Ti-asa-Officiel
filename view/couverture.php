@@ -25,7 +25,7 @@
 			?>
 			<div class="add-btn">
 				<span>0 abonnée</span>
-				<a href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
+				<a style="position:absolute; top:-200% !important;" href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
 					Message
 				</a>
 			</div>

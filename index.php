@@ -473,6 +473,21 @@ try{
             }
         }
 
+        elseif($action == 'modifier_photo_page' and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["type"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_page = htmlspecialchars($_GET["id_page"]);
+            if($id == $_SESSION["id"] and $id_page == $_SESSION["id_page"]){
+                $type = htmlspecialchars($_GET["type"]);
+                $oFileInfos = $_FILES["fichier_image"]; 
+                $photo_name= $oFileInfos["name"]; 
+                $photo_name = str_replace(' ', '_', $photo_name);
+                $photo_temporaire = $oFileInfos["tmp_name"]; 
+                $code_erreur = $oFileInfos["error"];
+                modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporaire, $code_erreur);
+                
+            }
+        }
+
     }
 
     elseif(isset($_SESSION["id"])){

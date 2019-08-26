@@ -5,9 +5,12 @@
 
 <?php
 	$active_plus = "active";
-	require("view/couverture_page.php");
 	$_SESSION["id_page"] = $select_page_li["id_page"];
+	require("view/couverture_page.php");
 ?>
+
+
+
 <!-- top area -->
 
 	<section>

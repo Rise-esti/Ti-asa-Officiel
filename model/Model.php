@@ -382,4 +382,11 @@ class Query_bdd extends Connect_bdd{
         return $select_page;
     }
 
+    public function insertion_photo_page($id, $id_page, $column, $photo_name){
+        $bdd = $this->dbconnect();
+        $insertion_photo_page = $bdd->prepare("UPDATE PAGE_PAGE SET $column= ? WHERE id=? and id_page=? ");
+        $insertion_photo_page->execute(array($photo_name, $id, $id_page));
+        return $insertion_photo_page;
+    }
+
 }
