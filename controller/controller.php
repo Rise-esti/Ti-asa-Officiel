@@ -1038,3 +1038,16 @@ function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporair
                 break;
         }
 }
+
+function rechercher($id, $recherche){
+    $query_bdd = new Query_bdd;
+    $rechercher_profil = $query_bdd->rechercher_profil($id, $recherche);
+    $rechercher_publication = $query_bdd->rechercher_publication($id, $recherche);
+    $rechercher_page = $query_bdd->rechercher_page($id, $recherche);
+
+    $profil = $query_bdd->information_profil($id);
+    $profil_li = $profil->fetch();
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    require("view/recherche.php");
+}

@@ -389,4 +389,22 @@ class Query_bdd extends Connect_bdd{
         return $insertion_photo_page;
     }
 
+    public function rechercher_profil($id, $recherche){
+        $bdd = $this->dbconnect();
+        $recherche = $bdd->query("SELECT * FROM PERSONNE WHERE nom LIKE '%$recherche%' or prenom LIKE '%$recherche%' or username LIKE '%$recherche%' or mail LIKE '%$recherche%' or entreprise LIKE '%$recherche%'");
+        return $recherche;
+    }
+
+    public function rechercher_publication($id, $recherche){
+        $bdd = $this->dbconnect();
+        $recherche = $bdd->query("SELECT * FROM PUBLICATION WHERE texte LIKE '%$recherche%' or mission LIKE '%$recherche%' ");
+        return $recherche;
+    }
+
+    public function rechercher_page($id, $recherche){
+        $bdd = $this->dbconnect();
+        $recherche = $bdd->query("SELECT * FROM PAGE_PAGE WHERE nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%' or mail_page LIKE '%$recherche%' ");
+        return $recherche;
+    }
+
 }

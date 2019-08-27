@@ -488,6 +488,14 @@ try{
             }
         }
 
+        elseif($action == 'rechercher'){
+            $recherche = htmlspecialchars($_GET["recherche"]);
+            if(isset($_SESSION["id"])){
+                $id = $_SESSION["id"];
+                rechercher($id, $recherche);
+            }
+        }
+
     }
 
     elseif(isset($_SESSION["id"])){

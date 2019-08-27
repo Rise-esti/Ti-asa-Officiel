@@ -7,7 +7,9 @@
 	$active_infogen = "active";
 	require("view/couverture_page.php");
 	$nom_page = $select_page_li["nom_page"];
+	$id_page = $select_page_li["id_page"];
 	$_SESSION["nom_page"] = $nom_page;
+	$_SESSION["id_page"] = $id_page;
 ?><!-- top area -->
 
 	<section>
@@ -56,9 +58,9 @@
 												<h6 style="display: inline"> <?= $select_page_li["telephone"] ?></h6>
 									
 											</div>
-											<div class="submit-btns">
-											
-												<button  Onclick="window.location='index.php?action=modifier_page&amp;id=<?= $id ?>&amp;nom_page=<?= $nom_page ?>'" style="color:#610f91 !important; border-radius:20px !important;" type="button" class="mtr-btn bouton" ><span>Modifier</span></button>
+											<div class="submit-btns" style="margin-left:45% !important;">
+												<button  onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette page ?');if (x){window.location='index.php?action=supprimer_page&id=<?= $id ?>&id_page=<?= $id_page ?>'};" style="color:#ff4b5a !important; border-radius:20px !important; margin-left:100% !importan" type="button" class="mtr-btn " ><span>Supprimer</span></button>
+												<button  Onclick="window.location='index.php?action=modifier_page&amp;id=<?= $id ?>&amp;nom_page=<?= $nom_page ?>'" style="color:#610f91 !important; border-radius:20px !important;" type="button" class="mtr-btn" ><span>Modifier</span></button>
 											</div>
 										</form>
 									</div>

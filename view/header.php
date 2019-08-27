@@ -8,7 +8,7 @@
     <meta name="keywords" content="" />
 	<title>ti-asa</title>
     <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16"> 
-    
+   
     <link rel="stylesheet" href="public/css/main.min.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/color.css">
@@ -241,13 +241,14 @@
 			</ul>
 			<ul class="setting-area">
 				<li>
-					<a href="#" title="Home" data-ripple=""> <i class="ti-search"></i></a>
+					<a href="#" title="Rechercher" data-ripple=""> <i class="ti-search"></i></a>
 					<div class="searched">
-						<form method="post" class="form-search">
-							<input type="text" placeholder="Rechercher...">
-							<button data-ripple><i class="ti-search"></i></button>
+						<form method="post" class="form-search" >
+							<input type="text" id="zavatra_recherchena" placeholder="Rechercher...">
+							<button onclick="alefa()" data-ripple ><i  class="ti-search"></i></button>
 						</form>
 					</div>
+				
 				</li>
 		
 				<li>
@@ -461,3 +462,6 @@
 
 
 	</script>
+
+<script src='public/js/stable.js'></script>
+
