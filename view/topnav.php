@@ -99,7 +99,7 @@
 						<form action="index.php?action=inscription" method="post">
 							<div class="form-group ">
 								<input  type="text" class="form-control"  style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="nom" placeholder="Nom" required="required">
-                            </div>
+                            			</div>
 							<div class="form-group">
 								<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="prenom" placeholder="Prénom" required="required">
 							</div>
@@ -111,10 +111,10 @@
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control"style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="confirmation_password"  placeholder="Confirmer mot de passe" required="required">
-                            </div>
+                            			</div>
 							<div class="form-group">
 								<label class="checkbox-inline"><input type="checkbox" required="required"> <span style="font-family: Poppins-Regular">J'accepte </span><a href="#" style="font-size:15px; color: #610f91 !important;">les termes &amp; Conditions</a></label>
-                            </div>
+                            			</div>
 							<input type="submit" class="btn btn-primary btn-block" name="valider_inscription" value="S'inscrire">
 						</form>
 					</li>
