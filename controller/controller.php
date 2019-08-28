@@ -1052,7 +1052,6 @@ function rechercher($id, $recherche){
     require("view/recherche.php");
 }
 
-
 function page($id, $nom_page){
     
     $query_bdd = new Query_bdd;
@@ -1062,7 +1061,9 @@ function page($id, $nom_page){
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_page = $query_bdd->select_page($id, $nom_page);
     $select_page_li = $select_page->fetch();
-    $publication = $query_bdd->requete_my_publication($id);
+    $id_page = $select_page_li["id_page"];
+    $publication = $query_bdd->requete_my_publication_page($id, $id_page);
+        
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
 }
