@@ -1184,8 +1184,11 @@ header.sticky {
 
 .sidebar .widget ul.naves li i {
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px !important;
     vertical-align: baseline;
+}
+.gauche{
+    font-size:14px !important;
 }
 
 .activity-meta {
@@ -10063,11 +10066,11 @@ aside.sidebar.full-style {
 }
 
 .inf{
-    font-size:25px;
+    font-size:15px;
 }
 
 .high{
-    font-size: 16px !important;
+    font-size: 15px !important;
 }
 
 .por{

@@ -43,27 +43,27 @@
 
 										<form method="post" class="formcomp">
 											<div class="form-group">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;" > <i class="fa fa-smile-o inf"></i> Biographie:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important" > <i class="fa fa-smile-o inf"></i> Biographie:</h6> 
 												<p class="para" style="display: inline"><?= $profil_li["biographie"] ?> </p>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-user inf"></i> Nom d'utilisateur:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important;"> <i class="fa fa-user inf"></i> Nom d'utilisateur:</h6> 
 												<h6 style="display: inline"><?= $profil_li["username"] ?></h6>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-adn inf"></i> Nom:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-adn inf"></i> Nom:</h6> 
 												<h6 style="display: inline"><?= $profil_li["nom"] ?></h6>
 									
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-adn inf"></i> Prénoms:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-adn inf"></i> Prénoms:</h6> 
 												<h6 style="display: inline"><?= $profil_li["prenom"] ?></h6>
 										
 											</div>
-											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-calendar inf"></i> Date de naissance:</h6> 
+											<div class="form-group"  style="margin-top: 2% !important; font-size:15px !important">	
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-calendar inf"></i> Date de naissance:</h6> 
 												<h6 style="display: inline">
 												<?php
 													$jour = $profil_li["jour"];
@@ -74,32 +74,32 @@
 										
 											</div>
 											<div class="form-group" style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-globe inf"></i> Adresse:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-globe inf"></i> Adresse:</h6> 
 												<h6 style="display: inline"><?= $profil_li["adresse"] ?></h6>
 										
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-map-marker inf"></i> Ville:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-map-marker inf"></i> Ville:</h6> 
 												<h6 style="display: inline"><?= $profil_li["ville"] ?></h6>
 										
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important;"> <i class="fa fa-envelope-o inf"></i> Email:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-envelope-o inf"></i> Email:</h6> 
 												<h6 style="display: inline"><?= $profil_li["mail"] ?></h6>
 								
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-phone inf"></i> Téléphone:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-phone inf"></i> Téléphone:</h6> 
 												<h6 style="display: inline"><?= $profil_li["numero"] ?></h6>
 									
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-briefcase inf"></i> Poste:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-briefcase inf"></i> Poste:</h6> 
 												<h6 style="display: inline"><?= $profil_li["poste"] ?></h6>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#610f91 !important;"> <i class="fa fa-building inf"></i> Entreprise/Ecole:</h6> 
+												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-building inf"></i> Entreprise/Ecole:</h6> 
 												<h6 style="display: inline"><?= $profil_li["entreprise"] ?></h6>
 										
 											</div>

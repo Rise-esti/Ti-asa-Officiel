@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bienvenu sur ti-asa</title>
+<title>Bienvenue sur ti-asa</title>
 <link rel="stylesheet" href="public/material-icon.css">
 <link rel="stylesheet" href="public/font-awesome.min.css">
 <link rel="stylesheet" href="public/bootstrap.min.css">
@@ -135,7 +135,7 @@
 	  <div class="container">
 	    <div class="row ">
 	      <div class="col-12 mb-5 position-relative">
-	        <p class="section-title text-center mb-5" style="font-size: 45px; font-weight:bold; color:#610f91">Bienvenu sur  <i class="fa fa-rss"></i>Ti-asa</p>
+	        <p class="section-title text-center mb-5" style="font-size: 45px; font-weight:bold; color:#610f91">Bienvenue sur ti-asa</p>
 	      </div>
 
 
@@ -145,10 +145,10 @@
 		  <div class="col-md-12 mt-lg-5 text-left align-self-center text-intro">
 		    <div class="row">
 		      <div class="col-lg-10">
-		        <p class="text-secondary" style="margin-left: 32% !important; color: #610f91!important; font-size: 15px;">Recruter<span class="mx-3">|</span> Trouver  de l'emploi</p>
-		        <p style="font-size: 17px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus voluptate dolore, nostrum inventore quisquam totam dignissimos culpa! Eveniet.</p>
-		        <p style="display: inline; "><a href="#myModal" class="btn smoothscroll btn-primary" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; margin-left: 28.2%; margin-top: 3%;" > <i class="fa fa-sign-in"></i> Se connecter</a></p>
-		        <p style="display: inline"><a href="#myModal2" class="btn smoothscroll btn-primary-outline" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; border-color: #610f91; color: #610f91; margin-left: 3%; margin-top: 3%"> <i class="fa fa-pencil"></i> S'inscrire</a></p>
+		        <p class="text-secondary" style="margin-left: 32% !important; color: #610f91!important; font-size: 15px;">Recruter<span class="mx-3">|</span> Trouver un emploi</p>
+		        <p style="font-size: 17px;"></p>
+		        <p style="display: inline; "><a href="#myModal" class="btn smoothscroll btn-primary" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; margin-left: 28%; margin-top: 3%;" > <i class="fa fa-sign-in"></i> Se connecter</a></p>
+		        <p style="display: inline"><a href="#myModal2" class="btn smoothscroll btn-primary" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; border-color: #610f91; color: #fff; margin-left: 3%; margin-top: 3%";> <i class="fa fa-pencil"></i> S'inscrire</a></p>
 
 		        
 		      </div>
@@ -186,9 +186,9 @@
 	
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
-		<div class="service-number mr-4"><i class="fa fa-sliders" style="color: #610f91 !important; font-size: 50px;"></i></div>
+		<div class="service-number mr-4"><i class="fa fa-tasks" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
-		  <p style="font-size: 18px;" >Trouver de l'emploi </p>
+		  <p style="font-size: 18px;" >Trouver un emploi </p>
 		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
 		</div>
 	        </div>
@@ -196,7 +196,7 @@
 	
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
-		<div class="service-number mr-4"><i class="fa fa-file" style="color: #610f91 !important; font-size: 50px;"></i></div>
+		<div class="service-number mr-4"><i class="fa fa-video-camera" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px">Interview en ligne</p>
 		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
@@ -206,7 +206,7 @@
 	
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
-		<div class="service-number mr-4"><i class="fa fa-car" style="color: #610f91 !important; font-size: 50px;"></i></div>
+		<div class="service-number mr-4"><i class="fa fa-comments" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px">Discussion professionnelle</p>
 		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
@@ -231,11 +231,11 @@
       
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
-		<a href="single.html"><img src="public/images/img_4.jpg" alt="Image" class="img-fluid"></a>
+		<a href="single.html"><img src="public/images/1.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
-		  <p><a href="single.html" >Pour les entreprises</a></p>
+		  <p><a href="#.html" >Pour les entreprises</a></p>
 		  <span class="date">April 25, 2019</span>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reprehenderit adipisci sed perferendis quia iure, aperiam ab?.</p>
+		  <p>Les entreprises auront l'occasion de trouver directement les professionnels qu'ils recherchent filtrés par leurs propres qualifications rechérchées.</p>
 		  <p class="more"><a href="single.html">Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
@@ -243,11 +243,11 @@
       
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
-		<a href="single.html"><img src="public/images/img_4.jpg" alt="Image" class="img-fluid"></a>
+		<a href="single.html"><img src="public/images/2.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
-		  <p><a href="single.html">Pour ceux qui cherchent des opportunités</a></p>
+		  <p><a href="#.html">Pour ceux qui cherchent des opportunités</a></p>
 		  <span class="date">April 25, 2019</span>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reprehenderit adipisci sed perferendis quia iure, aperiam ab?.</p>
+		  <p>Pour les étudiants et les professionnels toujours à la recherche de nouvelles opportunitées et de nouveaux défis dans le monde du travail.</p>
 		  <p class="more"><a href="single.html"> Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
@@ -255,11 +255,11 @@
       
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
-		<a href="single.html"><img src="public/images/img_4.jpg" alt="Image" class="img-fluid"></a>
+		<a href="#.html"><img src="public/images/3.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
-		  <p><a href="single.html">Pour les professionnels de travail</a></p>
+		  <p><a href="#">Pour les inactifs</a></p>
 		  <span class="date">April 25, 2019</span>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit reprehenderit adipisci sed perferendis quia iure, aperiam ab?.</p>
+		  <p>Toute personne sans-travail trouvera sur ti-asa un moyen simple et rapide de trouver des offres d'emploi disponibles chez les entreprises utilisateurs ainsi que chez les particuliers recherchant du personnel.</p>
 		  <p class="more"><a href="single.html">Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
@@ -279,7 +279,7 @@
 				<div class="col-lg-6">
 					<!--  Social -->
 					<ul class="social-media list-inline text-lg-right text-center margin-0px text-white">
-						<li class="list-inline-item"><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/Ti-asa-114419079928260"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 						<li class="list-inline-item"><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
 						<li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

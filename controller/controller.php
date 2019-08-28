@@ -1051,3 +1051,111 @@ function rechercher($id, $recherche){
     $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/recherche.php");
 }
+
+
+function page($id, $nom_page){
+    
+    $query_bdd = new Query_bdd;
+    $profil = $query_bdd->information_profil($id);
+    $profil_li = $profil->fetch();  
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    $select_page = $query_bdd->select_page($id, $nom_page);
+    $select_page_li = $select_page->fetch();
+    $publication = $query_bdd->requete_my_publication($id);
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    require("view/page.php");
+}
+
+function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
+    $query_bdd = new Query_bdd;
+    if(!isset($texte)){
+        $texte = NULL;
+
+    }
+    if(!isset($experience)){
+        $experience = NULL;
+
+    }
+    if(!isset($competence)){
+        $competence = NULL;
+
+    }
+    if(!isset($formation)){
+        $formation = NULL;
+
+    }
+    if(!isset($date_limite)){
+        $date_limite = NULL;
+
+    }
+    if(!isset($personnalite)){
+        $personnalite = NULL;
+
+    }
+    if(!isset($langue)){
+        $langue = NULL;
+
+    }
+    if(!isset($lieu)){
+        $lieu = NULL;
+
+    }
+    if(!isset($mission)){
+        $mission = NULL;
+    }
+    $image_name = $oFileInfos["name"]; 
+    if(isset($image_name) and $image_name != ""){
+        
+        $image_name = str_replace(' ', '_', $image_name);
+        $image_temporaire = $oFileInfos["tmp_name"]; 
+        $code_erreur = $oFileInfos["error"];
+        $destination = "public/images/picture/post_page/$image_name";
+
+        switch($code_erreur)
+        {
+            case UPLOAD_ERR_OK:
+                if(copy($image_temporaire, $destination)){
+                    $mess = "ok";
+                }
+                else{
+                    throw new Exception("Erreur copie fichier");
+                }                           
+                break;
+            case UPLOAD_ERR_NO_FILE:
+                throw new Exception("Aucun fichier séléctionner");
+                break;
+            case UPLOAD_ERR_INI_SIZE:
+                throw new Exception("Taille fichier > upload_max_filesize");
+                break;
+            case UPLOAD_ERR_PARTIAL:
+                throw new Exception("Fichier partiellement transféré");
+                break;
+            case UPLOAD_ERR_NO_TMP_DIR:
+                throw new Exception("Aucun répertoire temporaire");
+                break;
+            case UPLOAD_ERR_CANT_WRITE:
+                throw new Exception("Erreur lors de l’écriture du fichier sur disque");
+                break;
+            default:
+                throw new Exception("Fichier non transféré");
+                break;
+        }
+    }
+    
+    if(!isset($image_name)){
+        $image_name = NULL;
+    }
+    
+    $verify_insertion_post = $query_bdd->insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation, 
+    $date_limite, $personnalite, $langue, $lieu, $image_name, $mission );
+
+
+    if($verify_insertion_post === false){
+        throw new Exception("Erreur insertion new post_page");
+    }
+    else{
+        header("location:index.php?action=page&id=$id&nom_page=$nom_page");
+    }
+
+}

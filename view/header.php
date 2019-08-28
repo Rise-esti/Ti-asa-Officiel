@@ -2,7 +2,8 @@
 <html lang="fr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -60,8 +61,8 @@
 				</li>
 				<li><span>Profil</span>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher le profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier le profil</a></li>			
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher votre profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier votre profil</a></li>			
 					</ul>
 				</li>
 				<li><span>Account Setting</span>
@@ -114,7 +115,7 @@
 						<li><a href="career-detail.html" title="">Career Detail</a></li>
 						<li><a href="404.html" title="">404 error page</a></li>
 						<li><a href="404-2.html" title="">404 Style2</a></li>
-						<li><a href="faq.html" title="">faq's page</a></li>
+						<li><a href="faq.html" title="">faq page</a></li>
 						<li><a href="insights.html" title="">insights</a></li>
 						<li><a href="knowledge-base.html" title="">knowledge base</a></li>
 					</ul>
@@ -211,8 +212,8 @@
 				<li>
 					<a href="#" title="" class=" high" >Profil</a>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher le profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier le profil</a></li>
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher votre profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier votre profil</a></li>
 
 					</ul>
 				</li>
@@ -222,11 +223,16 @@
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
 						<?php
+                        $tab_list_page = array();
+						$i = 0;
 						while($mes_page = $select_mes_page->fetch()){
 						?>
-						<li><a href="index.php?action=afficher_ma_page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
 						<?php
+                            $tab_list_page[$i] = $mes_page;
+                            $i++;
 						}
+                        $nbr_page = count($tab_list_page);
 						?>
 					</ul>
 				</li>

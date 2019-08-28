@@ -210,6 +210,8 @@ body{
 .navbar .navbar-right .dropdown-toggle::after {
     display: none;
 }
+
+
 @media (min-width: 1200px){
     .form-inline .input-group {
         width: 300px;

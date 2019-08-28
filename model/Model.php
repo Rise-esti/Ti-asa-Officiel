@@ -406,5 +406,14 @@ class Query_bdd extends Connect_bdd{
         $recherche = $bdd->query("SELECT * FROM PAGE_PAGE WHERE nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%' or mail_page LIKE '%$recherche%' ");
         return $recherche;
     }
+    
+        public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation, 
+    $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
+        $bdd = $this->dbconnect();
+        $page = 1;
+        $verify_insertion_post = $bdd->prepare("INSERT INTO PUBLICATION(id, date_publication, texte, experience, formation,competence, personnalite, langue, lieu, date_limite, nom_image, mission, page, id_page) VALUES(?,NOW(), ?,?,?,?,?,?,?,?,?,?,?,?)");
+        $verify_insertion_post->execute(array($id,$texte, $experience, $formation, $competence, $personnalite, $langue, $lieu, $date_limite, $image_name, $mission, $page, $id_page));
+        return $verify_insertion_post;
+    }
 
 }

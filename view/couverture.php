@@ -27,16 +27,15 @@
 			<span >0 abonnée</span>
 				<a href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
 					Message 
-				</a>
-				
+				</a>	
 			</div>
 			<?php
 				}
 				if(!isset($select_profil_li["username"])){
 			?>
-			<form class="edit-phto" action="index.php?action=modifier_pdc&id=<?= $id ?>" enctype="multipart/form-data" method="POST">
+			<form class="edit-phto" action="index.php?action=modifier_pdc&id=<?= $id ?>" enctype="multipart/form-data" method="POST" style="top:2% !important; height:8% !important; left:80% !important;">
 				<i class="fa fa-camera-retro"></i>
-				<label class="fileContainer">
+				<label class="fileContainer" >
 					Modifier le photo  de couverture
 				<input type="file" Onchange="form.submit()" accept="image/*" name="fichier_image" id="fic"/>
 				</label>
