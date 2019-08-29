@@ -87,7 +87,15 @@
                                    </h5>
 								  <span><?= $select_page_li["mail_page"] ?></span>
 								</li>
-								
+								<?php
+								if($select_page_li["id"] == $id ){
+								?>
+								<li>
+									<a  href="index.php?action=afficher_ma_page&amp;id=<?=$id?>&amp;nom_page=<?=$tab_list_page[$i]["nom_page"]?>" title="" data-ripple="">Modifier la page</a>
+								</li>
+								<?php
+								}
+								?>
 							</ul>
 						</div>
 					</div>

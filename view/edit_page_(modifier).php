@@ -3,10 +3,7 @@
 ?>
 <!-- topbar -->
 
-<?php
-	$active_plus = "active";
-	require("view/couverture_page.php");
-?>
+
 <!-- top area -->
 
 	<section>

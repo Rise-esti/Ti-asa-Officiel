@@ -182,13 +182,6 @@
 					</ul>
 				</li>
 				
-				<li>
-					<a href="#" title="" class=" high">Plus</a>
-					<ul>
-						<li><a href="create-fav-page.html" title="" class="drop">créer une page</a></li>
-						<li><a href="messages.html" title="" class="drop"> Messages </a></li>
-					</ul>
-				</li>
 			</ul>
 			<ul class="setting-area">
 				<li>

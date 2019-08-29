@@ -75,22 +75,22 @@
 							<ul>
 								<li class="admin-name">
                                   <h5><?php
-                                   $nom = $profil_li['nom'];
-                                   $prenom = $profil_li['prenom'];
-                                   echo "$nom $prenom";
+                                   $nom = $select_page_li["nom_page"];
+                                   echo "$nom";
                                    ?>
                                    </h5>
-								  <span><?= $profil_li["poste"] ?></span>
+								  <span><?= $select_page_li["mail_page"] ?></span>
 								</li>
+								<?php
+								if($select_page_li["id"] == $id){
+								?>
 								<li>
-									<a class="<?= $active_journal ?>" href="index.php?action=journal&amp;id=<?= $id ?>" title="" data-ripple="">Journal</a>
-									<a class="<?= $active_infogen ?>" href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" data-ripple="">Informations générales</a>
-									<a class="<?= $active_formations ?>" href="index.php?action=afficher_formation&amp;id=<?= $id ?>" title="" data-ripple="">Formations</a>
-									<a class="<?= $active_competences ?>" href="index.php?action=afficher_competence&amp;id= <?= $id ?>" title="" data-ripple="">Compétences</a>
-									<a class="<?= $active_experiences ?>" href="index.php?action=afficher_experience&amp;id= <?= $id ?>" title="" data-ripple="">Expériences</a>
-									<a class="<?= $active_centre_interet ?>" href="index.php?action=afficher_centre_interet&amp;id= <?= $id ?>" title="" data-ripple=""> Centre d'intérêt</a>
-									<a class="<?= $active_plus_gauche ?>" href="#" title="" data-ripple="">Plus</a>
+									<a class="active" href="index.php?action=journal&amp;id=<?= $id ?>" title="" data-ripple="">Modifier la page</a>
+									
 								</li>
+								<?php
+								}
+								?>
 							</ul>
 						</div>
 					</div>

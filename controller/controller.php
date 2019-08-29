@@ -918,7 +918,7 @@ function info_creation_page($nom_page, $mail_page, $telephone_page, $province_pa
             $select_page_li = $select_page->fetch();
             $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
             $select_mes_page = $query_bdd->select_mes_page($id);
-            require("view/edit_page_(modifier).php");
+            page($id, $nom_page);
         }
     }
     else{
@@ -1064,6 +1064,11 @@ function rechercher($id, $recherche){
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/recherche.php");
+}
+
+function suivre_page($id, $id_page, $nom_page){
+    $query_bdd = new Query_bdd;
+
 }
 
 function page($id, $nom_page){

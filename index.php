@@ -539,10 +539,10 @@ try{
             $id_page = htmlspecialchars($_GET["id_page"]);
             $nom_page = htmlspecialchars($_GET["nom_page"]);
             if($id == $_SESSION["id"]){
-                echo "suivre_page($id, $id_page, $nom_page)";
+                suivre_page($id, $id_page, $nom_page);
             }
         }
-        
+
     require('view/footer.php');
     }
 
