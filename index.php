@@ -533,7 +533,7 @@ try{
                 new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
             }
         }
-
+    require('view/footer.php');
     }
 
     elseif(isset($_SESSION["id"])){

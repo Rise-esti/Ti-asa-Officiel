@@ -455,12 +455,7 @@ function french_it($mois){
 	</section>
 
 
-	<!-- footer -->
-	<!--footer-->
-	<?php
-	require('view/footer.php');
-	?>
-	<!-- // footer-->
+	
 	<!-- side panel -->		
 	
 	
