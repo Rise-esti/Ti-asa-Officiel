@@ -78,7 +78,14 @@ function french_it($mois){
                                         </li>
                                     </ul>
                                 </div>
+
+
                                 
+                                <!--Modal résultat de recherche personne-->
+                                
+                                
+                                
+
                                 <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
                                 <ul id="people-list" class="friendz-list">
                                     <?php

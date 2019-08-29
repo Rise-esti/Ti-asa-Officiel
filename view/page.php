@@ -319,7 +319,7 @@
 															<?php
 																}
 															}
-															if(!empty($publication_li["date_limite"]) or $publication_li["date_limite"] != " " or !isset($publication_li["date_limite"])){
+															if(!empty($publication_li["date_limite"]) and $publication_li["date_limite"] != " " and !isset($publication_li["date_limite"])){
 															?>	
 														
 														<i class="mtrl-select"></i>
@@ -361,7 +361,7 @@
 													<?php														
 														if(!empty($publication_li["nom_image"])){
 															$image_publie = $publication_li["nom_image"];
-															$chemin_image_publie = "public/images/picture/post/$image_publie";
+															$chemin_image_publie = "public/images/picture/post_page/$image_publie";
 														
 													?>
 															<img src="<?= $chemin_image_publie ?>" alt="">

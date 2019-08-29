@@ -397,6 +397,9 @@ function french_it($mois){
 															if(!empty($publication_li["nom_image"])){
 																$image_publie = $publication_li["nom_image"];
 																$chemin_image_publie = "public/images/picture/post/$image_publie";
+                                                                if(!empty($publication_li["id_page"])){
+                                                                    $chemin_image_publie = "public/images/picture/post_page/$image_publie";
+                                                                }
 															
 														?>
 																<img src="<?= $chemin_image_publie ?>" alt="">
