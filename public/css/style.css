@@ -10017,10 +10017,14 @@ aside.sidebar.full-style {
     border-radius: 2%;
 }
 
-.bouh{
-    margin-left: 71% !important;
+.mtr-btn{
+    margin-left: 70% !important;
     margin-bottom: 0% !important;
-    border-radius: 2%;
+    border-radius:20px !important;
+    padding-left:20px;
+    padding-right:20px;
+    padding-top:7px;
+    padding-bottom:7px;
 }
 
 .addeo{

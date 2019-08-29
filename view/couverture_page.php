@@ -27,7 +27,7 @@
 				}
 				if($select_page_li["id"] == $id){
 			?>
-			<form class="edit-phto" action="index.php?action=modifier_photo_page&id=<?= $id ?>&amp;id_page=<?= $select_page_li["id_page"]?>&amp;type=123" enctype="multipart/form-data" method="POST">
+			<form class="edit-phto" action="index.php?action=modifier_photo_page&id=<?= $id ?>&amp;id_page=<?= $select_page_li["id_page"]?>&amp;type=123" enctype="multipart/form-data" method="POST" style="top:2% !important; height:8% !important; left:80% !important;">
 				<i class="fa fa-camera-retro"></i>
 				<label class="fileContainer">
 					Modifier le photo  de couverture

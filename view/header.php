@@ -65,8 +65,8 @@
 				</li>
 				<li><span>Profil</span>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher votre profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier votre profil</a></li>			
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher mon profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier mon profil</a></li>			
 					</ul>
 				</li>
 				
@@ -157,8 +157,8 @@
 				<li>
 					<a href="#" title="" class=" high" >Profil</a>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher votre profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier votre profil</a></li>
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher mon profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier mon profil</a></li>
 
 					</ul>
 				</li>
