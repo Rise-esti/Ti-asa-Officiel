@@ -61,98 +61,94 @@ function french_it($mois){
                             </div><!-- sidebar -->
                             <div class="col-lg-6">
                                 
-                                <div class="central-meta timeline-info">
-                                    <ul>
-                                        <li>
-                                            <a class="active" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Personnes</a>
-                                            <a class="" href="#" title="" data-ripple=""></a>
-                                            
-                                            <a class="" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Pages</a>
-                                            <a class="" href="#" title="" data-ripple=""></a>
+                            
+                            <div class="central-meta timeline-info">
+                                <ul>
+                                    <li>
+                                        <a class="active" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Personnes</a>
+                                        <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                            <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Publications</a>
-                                            <a class="" href="#" title="" data-ripple=""></a>
-                                            
-                                            <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Avancées</a>
+                                        <a class="" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Pages</a>
+                                        <a class="" href="#" title="" data-ripple=""></a>
+                                    
+                                        <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Publications</a>
+                                        <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                        </li>
-                                    </ul>
-                                </div>
+                                        <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Avancées</a>
+                                    
+                                    </li>
+                                </ul>
+                            </div>
 
                                 
                                 
-                                <!--Résultats personnes ici-->
-                                <div class="central-meta timeline-info" style="display:block">
-                                            <ul id="people-list" class="friendz-list">
-                                                    <li>
-                                                            <figure >
-                                                                <img style="height:50px !important; width:50px !important;" src="" alt="">
-                                                            </figure>
-                                                            <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
-                                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username='" ></a>
-                                                                <i><a href="#" class="__cf_email__" ></a></i>
-                                                            </span>
-                                                    </li>
-                                            </ul>
-                                </div>
+                            <!--Résultats personnes ici-->
+                            <div class="central-meta timeline-info" style="display:block">
+                                        <ul id="people-list" class="friendz-list">
+                                                <li>
+                                                        <figure >
+                                                            <img style="height:50px !important; width:50px !important;" src="" alt="">
+                                                        </figure>
+                                                        <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
+                                                            <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username='" ></a>
+                                                            <i><a href="#" class="__cf_email__" ></a></i>
+                                                        </span>
+                                                </li>
+                                        </ul>
+                            </div>
 
-                                <!--Résultats pages ici-->
-                                <div class="central-meta timeline-info" style="display:none">
-                                </div>
+                            <!--Résultats pages ici-->
+                            <div class="central-meta timeline-info" style="display:none">
+                            </div>
 
-                                <!--Résultats publications  ici-->
-                                <div class="central-meta timeline-info" style="display:none">
-                                </div>
+                            <!--Résultats publications  ici-->
+                            <div class="central-meta timeline-info" style="display:none">
+                            </div>
 
-                                <!--Résultats avancées ici-->
-                                <div class="central-meta timeline-info" style="display:none">
-                                </div>
+                            <!--Résultats avancées ici-->
+                            <div class="central-meta timeline-info" style="display:none">
+                            </div>
                                  
                                 
-                                
-                                
-
-                                <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
-                                <ul id="people-list" class="friendz-list">
-                                    <?php
-                                        /*while($resultat_profil = $rechercher_profil->fetch()){
-                                            if(!empty($resultat_profil["id"])){
-                                                if(isset($resultat_profil["photo_de_profil"])){
-                                                    $pdp = $resultat_profil["photo_de_profil"];
-                                                    $src_pdp = "public/images/picture/pdp/$pdp";
-                                                }
-                                                else{
-                                                    $src_pdp = "public/images/av.png";
-                                                }*/
-                                    ?>
-                                        <li>
-                                            <figure >
-                                                <img style="height:50px !important; width:50px !important;" src="<?= $src_pdp ?>" alt="">
-                                            </figure>
-                                            <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
-                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $username ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
-                                                <i><a href="#" class="__cf_email__" ><?= $resultat_profil["poste"] ?></a></i>
-                                            </span>
-                                            
-                                        </li>
-                                    <?php
-                                            /*}
-                                        }*/
-                                    ?>
-                                </ul>
-                                            
-                            
-                            
                             <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
+                            <ul id="people-list" class="friendz-list">
+                                <?php
+                                    while($resultat_profil = $rechercher_profil->fetch()){
+                                        if(!empty($resultat_profil["id"])){
+                                            if(isset($resultat_profil["photo_de_profil"])){
+                                                $pdp = $resultat_profil["photo_de_profil"];
+                                                $src_pdp = "public/images/picture/pdp/$pdp";
+                                            }
+                                            else{
+                                                $src_pdp = "public/images/av.png";
+                                            }
+                                ?>
+                                    <li>
+                                        <figure >
+                                            <img style="height:50px !important; width:50px !important;" src="<?= $src_pdp ?>" alt="">
+                                        </figure>
+                                        <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
+                                            <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $username ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
+                                            <i><a href="#" class="__cf_email__" ><?= $resultat_profil["poste"] ?></a></i>
+                                        </span>
+                                        
+                                    </li>
+                                <?php
+                                        }
+                                    }
+                                ?>
+                            </ul>
+                        <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 
-                        
-                            <!-- Your page et freinds à droite acceuil-->
-                            <?php
-                                require("view/your_page_acceuil_droite.php");
-                            ?>
+                        </div><!-- centerl meta -->
+                    
+                    
+                        <!-- Your page et freinds à droite acceuil-->
+                        <?php
+                            require("view/your_page_acceuil_droite.php");
+                        ?>
                                 
-                            
-                            <!-- sidebar -->
+                                <!-- sidebar -->
                         </div>	
                     </div>
                 </div>
