@@ -36,10 +36,7 @@
 									
 									<?php
 										require("view/recent_activity.php");
-									?>
-									<!-- recent activites -->
-									<?php
-                                        require("view/affiche_page_droite.php");
+									    require("view/affiche_page_droite.php");
                                     ?>   
 									
 									<!-- who's following -->

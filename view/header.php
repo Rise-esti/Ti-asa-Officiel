@@ -168,9 +168,9 @@
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
 						<?php
-                        $tab_list_page = array();
-						$i = 0;
-						while($mes_page = $select_mes_page->fetch()){
+							$tab_list_page = array();
+							$i = 0;
+							while($mes_page = $select_mes_page->fetch()){
 						?>
 						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
 						<?php
