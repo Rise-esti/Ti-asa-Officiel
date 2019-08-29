@@ -35,7 +35,7 @@
 												<label class="control-label" for="textarea"> Déscription</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="mettre_jours_centre_interet" class="mtr-btn bouh"><span>Mettre à jour</span></button>
+												<button type="submit" style="margin-left:0% !important;" name="mettre_jours_centre_interet" class="mtr-btn "><span>Mettre à jour</span></button>
 											</div>
 										</form>
 										
