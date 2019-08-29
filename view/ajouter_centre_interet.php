@@ -37,7 +37,7 @@
                                             </div>
                                             
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_centre_interet" class="mtr-btn bouh"><span>Ajouter</span></button>
+												<button type="submit" name="ajouter_centre_interet" class="mtr-btn  ajouter"><span>Ajouter</span></button>
                                             </div>
                                             
 										</form>
