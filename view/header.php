@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="public/css/color.css">
     <link rel="stylesheet" href="public/css/responsive.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+
+
+    <!--resp font & color footer--> <link rel="stylesheet" href="public/assets/css/style.css">
+
+
 </head>
 <script>	
 	function cocher_cliques_message(){
@@ -416,6 +421,13 @@
 		</div>
 	</div><!-- topbar -->
 
+
+
+	
+
+
+	
+	
 	<script>
 		setInterval('load_message_farany()', 2000);
 		function load_message_farany(){
@@ -468,6 +480,5 @@
 
 
 	</script>
-
-<script src='public/js/stable.js'></script>
+	<script src='public/js/stable.js'></script>
 

@@ -2021,20 +2021,12 @@ span.status.f-off {
 footer {
     background: #fff;
     float: left;
-    padding: 75px 0;
+    padding: 0px 0;
     width: 100%;
     position: relative;
 }
 
-footer::before {
-    background: rgba(0, 0, 0, 0) linear-gradient(to right, #ffffff 0%, #2fa7cd 50%, #ffffff 100%) repeat scroll 0 0;
-    content: "";
-    height: 5px;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    left: 0;
-}
+
 
 .widget {
     float: left;
@@ -2092,26 +2084,7 @@ footer::before {
     width: 100%;
 }
 
-footer .widget-title h4 {
-    color: #424242;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform: uppercase;
-    position: relative;
-}
 
-footer .widget-title h4::before {
-    bottom: -6px;
-    content: "";
-    height: 2px;
-    left: 0;
-    position: absolute;
-    width: 20%;
-}
-
-footer .widget-title {
-    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-}
 
 .widget .list-style {
     list-style: outside none none;
@@ -2169,10 +2142,7 @@ a.underline:hover:before,
     width: 100%;
 }
 
-footer .logo {
-    margin-bottom: 15px;
-    width: 100%;
-}
+
 
 .logo > a {
     display: inline-block;
