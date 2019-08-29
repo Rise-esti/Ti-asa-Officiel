@@ -495,6 +495,53 @@ try{
                 rechercher($id, $recherche);
             }
         }
+        
+        elseif($action == 'page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $nom_page = htmlspecialchars($_GET["nom_page"]);
+            if($id == $_SESSION["id"]){
+                page($id, $nom_page);
+            }
+        }
+        
+        elseif($action == 'visite_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            if($id == $_SESSION["id"]){
+                $nom_page = htmlspecialchars($_GET["nom_page"]);
+                visite_page($id, $nom_page);
+            }
+        }
+        
+        elseif($action == "post_page" and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["nom_page"]) and isset($_POST["new_post_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_page = htmlspecialchars($_GET["id_page"]);
+            $nom_page = htmlspecialchars($_GET["nom_page"]);
+            if($id == $_SESSION["id"]){
+                $texte = htmlspecialchars($_POST["texte"]);
+                $experience = htmlspecialchars($_POST["experience"]);
+                $competence = htmlspecialchars($_POST["competence"]);
+                $formation = htmlspecialchars($_POST["formation"]);
+                $jour = htmlspecialchars($_POST["jour"]);
+                $mois = htmlspecialchars($_POST["mois"]);
+                $date_limite = "$jour $mois";
+                $personnalite = htmlspecialchars($_POST["personnalite"]);
+                $langue = htmlspecialchars($_POST["langue"]);
+                $lieu = htmlspecialchars($_POST["lieu"]);                
+                $oFileInfos = $_FILES["image"]; 
+                $mission = htmlspecialchars($_POST["mission"]);
+
+                new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
+            }
+        }
+
+        elseif($action == "suivre_page" and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["nom_page"]) ){
+            $id = htmlspecialchars($_GET["id"]);
+            $id_page = htmlspecialchars($_GET["id_page"]);
+            $nom_page = htmlspecialchars($_GET["nom_page"]);
+            if($id == $_SESSION["id"]){
+                echo "suivre_page($id, $id_page, $nom_page)";
+            }
+        }
 
     }
 
