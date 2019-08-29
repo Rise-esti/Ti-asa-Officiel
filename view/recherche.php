@@ -79,8 +79,33 @@ function french_it($mois){
                                     </ul>
                                 </div>
 
+                                
+                                
+                                <!--Résultats personnes ici-->
+                                <div class="central-meta timeline-info" style="display:block">
+                                            <ul id="people-list" class="friendz-list">
+                                                    <li>
+                                                            <figure >
+                                                                <img style="height:50px !important; width:50px !important;" src="" alt="">
+                                                            </figure>
+                                                            <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
+                                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username='" ></a>
+                                                                <i><a href="#" class="__cf_email__" ></a></i>
+                                                            </span>
+                                                    </li>
+                                            </ul>
+                                </div>
 
-                                <div class="central-meta timeline-info">
+                                <!--Résultats pages ici-->
+                                <div class="central-meta timeline-info" style="display:block">
+                                </div>
+
+                                <!--Résultats publications  ici-->
+                                <div class="central-meta timeline-info" style="display:block">
+                                </div>
+
+                                <!--Résultats avancées ici-->
+                                <div class="central-meta timeline-info" style="display:block">
                                 </div>
                                  
                                 
