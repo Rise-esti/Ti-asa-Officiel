@@ -97,15 +97,15 @@ function french_it($mois){
                                 </div>
 
                                 <!--Résultats pages ici-->
-                                <div class="central-meta timeline-info" style="display:block">
+                                <div class="central-meta timeline-info" style="display:none">
                                 </div>
 
                                 <!--Résultats publications  ici-->
-                                <div class="central-meta timeline-info" style="display:block">
+                                <div class="central-meta timeline-info" style="display:none">
                                 </div>
 
                                 <!--Résultats avancées ici-->
-                                <div class="central-meta timeline-info" style="display:block">
+                                <div class="central-meta timeline-info" style="display:none">
                                 </div>
                                  
                                 
