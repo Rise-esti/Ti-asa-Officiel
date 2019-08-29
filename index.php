@@ -504,6 +504,14 @@ try{
             }
         }
         
+        elseif($action == 'visite_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
+            $id = htmlspecialchars($_GET["id"]);
+            if($id == $_SESSION["id"]){
+                $nom_page = htmlspecialchars($_GET["nom_page"]);
+                visite_page($id, $nom_page);
+            }
+        }
+        
         elseif($action == "post_page" and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["nom_page"]) and isset($_POST["new_post_page"])){
             $id = htmlspecialchars($_GET["id"]);
             $id_page = htmlspecialchars($_GET["id_page"]);

@@ -36,18 +36,24 @@
 									
 									<?php
 										require("view/recent_activity.php");
-										require("view/who_s_following.php");
 									?>
 									<!-- recent activites -->
-									
+									<?php
+                                        require("view/affiche_page_droite.php");
+                                    ?>   
 									
 									<!-- who's following -->
 								</aside>
 							</div><!-- sidebar -->
 							<div class="col-lg-6">
 								<div class="loadMore">
+                                     <?php
+                                        if($id == $select_page_li["id"]){
+                                     ?>
 									<div class="central-meta">
+                                       
 										<div class="new-postbox" id='cnt'>
+                                            
 											<figure>
 												<?php
 													if(isset($select_page_li["pdp_page"])){
@@ -80,6 +86,7 @@
 															</li>
 														</ul>
 													</div>
+                                                    
 
 													<div id="publication" style="display:none;">
 															<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>
@@ -180,6 +187,9 @@
 											</div>
 										</div>
 									</div>
+                                    <?php 
+                                         }
+                                     ?>
 									<!-- add post new box -->
 									
 									<?php
