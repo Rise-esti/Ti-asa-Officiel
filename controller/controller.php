@@ -1082,6 +1082,22 @@ function page($id, $nom_page){
     require("view/page.php");
 }
 
+function visite_page($id, $nom_page){
+    $query_bdd = new Query_bdd;
+    $profil = $query_bdd->information_profil($id);
+    $profil_li = $profil->fetch(); 
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $select_mes_page = $query_bdd->select_mes_page($id);
+    $select_page = $query_bdd->select_page_visite($nom_page);
+    $select_page_li = $select_page->fetch();
+    $id_page = $select_page_li["id_page"];
+    $publication = $query_bdd->requete_publication_dans_page($id_page);
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
+    $all_page = array();
+    $i = 0;
+    require("view/page.php");
+}
+
 function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
     $query_bdd = new Query_bdd;
     if(!isset($texte)){

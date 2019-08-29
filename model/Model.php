@@ -348,6 +348,13 @@ class Query_bdd extends Connect_bdd{
         $select_page->execute(array($id, $nom_page));
         return $select_page;
     }
+    
+    public function select_page_visite($nom_page){
+        $bdd = $this->dbconnect();
+        $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE nom_page=?");
+        $select_page->execute(array($nom_page));
+        return $select_page;
+    }
 
     public function select_mes_page($id){
         $bdd = $this->dbconnect();
@@ -427,6 +434,13 @@ class Query_bdd extends Connect_bdd{
         $bdd = $this->dbconnect();
         $select_all_page = $bdd->query("SELECT * FROM PAGE_PAGE");
         return $select_all_page;
+    }
+    
+    public function requete_publication_dans_page($id_page){
+        $bdd = $this->dbconnect();        
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PAGE_PAGE per where p.valable = '1' and p.id_page = ? ORDER BY id_publication DESC ");
+        $publication->execute(array($id_page));
+        return $publication;
     }
 
 }

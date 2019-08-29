@@ -201,9 +201,26 @@ function french_it($mois){
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
 											while($publication_li = $publication->fetch()){
-												$nom = $publication_li["nom"];
-												$prenom = $publication_li["prenom"];
-												$username = $publication_li["username"];
+                                                if(!empty($publication_li["id_page"]) ){
+                                                    for($i=0; $i<$nbr_all_page; $i++){
+                                                        if($publication_li["id_page"] == $all_page[$i]["id_page"]){
+                                                            $nom = $all_page[$i]["nom_page"];
+                                                            $prenom = "";
+                                                            if(!empty($all_page[$i]["pdp_page"])){
+                                                                $pdp = $all_page[$i]["pdp_page"];
+																$chemin_pdp = "public/images/picture/pdp_page/$pdp";
+                                                            }
+                                                            else{
+                                                                $chemin_pdp = "public/images/av.png";
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                else{
+                                                    $nom = $publication_li["nom"];
+                                                    $prenom = $publication_li["prenom"];
+                                                    $username = $publication_li["username"];
+                                                }
 										?>
 
 										<div class="central-meta item">
@@ -211,14 +228,15 @@ function french_it($mois){
 												<div class="friend-info">
 													<figure>
 														<?php
-																							
-															if(isset($publication_li["pdp"])){
-																$pdp = $publication_li["pdp"];
-																$chemin_pdp = "public/images/picture/pdp/$pdp";
-															}
-															else{
-																$chemin_pdp = "public/images/av.png";
-															}
+															if(empty($publication_li["id_page"]) ){							
+                                                                if(isset($publication_li["pdp"])){
+                                                                    $pdp = $publication_li["pdp"];
+                                                                    $chemin_pdp = "public/images/picture/pdp/$pdp";
+                                                                }
+                                                                else{
+                                                                    $chemin_pdp = "public/images/av.png";
+                                                                }
+                                                              }
 
 															$jour_lim = $publication_li['jour'];
 															$mois_lim = french_it($publication_li['mois']);
