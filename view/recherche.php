@@ -65,16 +65,16 @@ function french_it($mois){
                             <div class="central-meta timeline-info">
                                 <ul>
                                     <li>
-                                        <a class="active" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Personnes</a>
+                                        <a class="active" href="#" title="" data-ripple="" Onclick=affichepers() > <i class="mtrl-select"></i> Personnes</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                        <a class="" href="#" title="" data-ripple=""> <i class="mtrl-select"></i> Pages</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepg() > <i class="mtrl-select"></i> Pages</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                     
-                                        <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Publications</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepub() ><i class="mtrl-select" ></i>Publications</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                        <a class="" href="#" title="" data-ripple=""><i class="mtrl-select"></i>Avancées</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=afficheav() ><i class="mtrl-select"></i>Avancées</a>
                                     
                                     </li>
                                 </ul>
@@ -83,7 +83,7 @@ function french_it($mois){
                                 
                                 
                             <!--Résultats personnes ici-->
-                            <div class="central-meta timeline-info" style="display:block">
+                            <div class="central-meta timeline-info" style="display:block" id="personne">
                                 <ul id="people-list" class="friendz-list">
                                     <?php
                                     while($resultat_profil = $rechercher_profil->fetch()){
@@ -113,16 +113,22 @@ function french_it($mois){
                                 </ul>
                             </div>
 
+                            
+                            
                             <!--Résultats pages ici-->
-                            <div class="central-meta timeline-info" style="display:none">
+                            <div class="central-meta timeline-info" style="display:none" id="page">
                             </div>
 
+                            
+                            
                             <!--Résultats publications  ici-->
-                            <div class="central-meta timeline-info" style="display:none">
+                            <div class="central-meta timeline-info" style="display:none" id="publication">
                             </div>
 
+                            
+                            
                             <!--Résultats avancées ici-->
-                            <div class="central-meta timeline-info" style="display:none">
+                            <div class="central-meta timeline-info" style="display:none" id="avance">
                             </div>
                                  
                                 
@@ -157,10 +163,96 @@ function french_it($mois){
 ?>
 
 	
+<script>
+    function affichepers(){
+                    var pers=document.getElementById('personne');
+                    var pg=document.getElementById('page');
+                    var pub=document.getElementById('publication');
+                    var av=document.getElementById('avance');
+                    pers.style.display='block'
+                    if (pers.style.display='block') {
+                        pg.style.display='none'
+                        pub.style.display='none'
+                        av.style.display='none'
+                        pers.style.display='block'
+
+                    }
+                    else{
+                        pg.style.display='none'
+                        pub.style.display='none'
+                        av.style.display='none'
+                        pers.style.display='block'
+                    }
+    }
+
+    function affichepg(){
+                    var pers=document.getElementById('personne');
+                    var pg=document.getElementById('page');
+                    var pub=document.getElementById('publication');
+                    var av=document.getElementById('avance');
+                    pg.style.display='block'
+                    if (pg.style.display='block') {
+                        pers.style.display='none'
+                        pub.style.display='none'
+                        av.style.display='none'
+                        pg.style.display='block'
+  
+                    }
+                    else{
+                        pers.style.display='none'
+                        pub.style.display='none'
+                        av.style.display='none'
+                        pg.style.display='block'
+                        
+                    }
+    }
+
+    function affichepub(){
+                    var pers=document.getElementById('personne');
+                    var pg=document.getElementById('page');
+                    var pub=document.getElementById('publication');
+                    var av=document.getElementById('avance');
+                    pub.style.display='block'
+                    if (pub.style.display='block') {
+                        pers.style.display='none'
+                        pg.style.display='none'
+                        av.style.display='none'
+                        pub.style.display='block'
+                 
+                    }
+                    else{
+                        pers.style.display='none'
+                        pg.style.display='none'
+                        av.style.display='none'
+                        pub.style.display='block'
+                        alert('hahahaha');
+                    }
+    }
+
+    function afficheav(){
+                    var pers=document.getElementById('personne');
+                    var pg=document.getElementById('page');
+                    var pub=document.getElementById('publication');
+                    var av=document.getElementById('avance');
+                    av.style.display='block'
+                    if (av.style.display='block') {
+                        pers.style.display='none'
+                        pub.style.display='none'
+                        pg.style.display='none'
+                        av.style.display='block'
+                    }
+                    else{
+                        pers.style.display='none'
+                        pub.style.display='none'
+                        pg.style.display='none'
+                        av.style.display='block'
+                    }
+    }
+    
+
+</script>
 
 </body>	
-
-
 </html>
 
 <?php
