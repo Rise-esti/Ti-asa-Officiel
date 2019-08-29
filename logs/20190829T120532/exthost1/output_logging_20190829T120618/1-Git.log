@@ -74,3 +74,28 @@ Open repository: /var/www/html/tia_asa-php-officiel
 > git for-each-ref --format %(refname) %(objectname) --sort -committerdate
 > git remote --verbose
 > git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show :view/topnav.php
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse server
+> git rev-parse --symbolic-full-name server@{u}
+> git rev-list --left-right server...refs/remotes/origin/server
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse server
+> git rev-parse --symbolic-full-name server@{u}
+> git rev-list --left-right server...refs/remotes/origin/server
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
+> git show :view/untitled
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git rev-parse server
+> git rev-parse --symbolic-full-name server@{u}
+> git rev-list --left-right server...refs/remotes/origin/server
+> git for-each-ref --format %(refname) %(objectname) --sort -committerdate
+> git remote --verbose
