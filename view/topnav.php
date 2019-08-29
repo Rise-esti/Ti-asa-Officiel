@@ -179,7 +179,7 @@
 		<div class="service-number mr-4"><i class="fa fa-rss" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px" >Recruter</p>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
+		  <p>Trouver facilement des profils que vous recherchez par les suggestions du site . Ou Publier des Offres et attendre des candidatures.</p>
 		</div>
 	        </div>
 	      </div>
@@ -189,7 +189,7 @@
 		<div class="service-number mr-4"><i class="fa fa-tasks" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px;" >Trouver un emploi </p>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
+		  <p>Fini les recherhces des offres dans des tonnes de publication que ce soit dans des journaux ou site web, Nous vous apportons les offres qui vous intêressent.</p>
 		</div>
 	        </div>
 	      </div>
@@ -199,7 +199,7 @@
 		<div class="service-number mr-4"><i class="fa fa-video-camera" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px">Interview en ligne</p>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
+		  <p>Un Entretien directement via le Site Web pour ne pas perdre du temps ou pour accelerer l'embauche.</p>
 		</div>
 	        </div>
 	      </div>
@@ -209,7 +209,7 @@
 		<div class="service-number mr-4"><i class="fa fa-comments" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px">Discussion professionnelle</p>
-		  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius aperiam repudiandae quis ipsa quod, reprehenderit iusto laudantium.</p>
+		  <p>Realiser une discussion professionnel  pour negocier des contrats, partager des experiences ou encore pour prendre rendez-vous  </p>
 		</div>
 	        </div>
 	      </div>
