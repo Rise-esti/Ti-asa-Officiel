@@ -110,6 +110,14 @@ function connecter($id){
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
+    $select_all_pages = $query_bdd->select_all_page();
+    $all_page = array();
+    $i = 0;
+    while($select_all_page = $select_all_pages->fetch()){
+        $all_page[$i] = $select_all_page;
+        $i++;
+    }
+    $nbr_all_page = count($all_page);
     require("view/acceuil.php");
 }
 
@@ -847,19 +855,25 @@ function nouveau_mot_de_passe($id, $ancien_mdp, $nouveau_mdp, $confirmation_mdp)
 
     $verify_mdp = password_verify($ancien_mdp, $mon_mdp_actuelle_);
     if($verify_mdp){
-        if($nouveau_mdp == $confirmation_mdp){
-            $passwd_hash = password_hash($nouveau_mdp, PASSWORD_DEFAULT);
-            $mettre_jour_mdp = $query_bdd->mettre_jour_mdp($passwd_hash, $id);
-            if($mettre_jour_mdp === false){
-                throw new Exception("Erreur mettre_jour_mdp");
+        if(strlen($nouveau_mdp) >= 8){
+            if($nouveau_mdp == $confirmation_mdp){
+                $passwd_hash = password_hash($nouveau_mdp, PASSWORD_DEFAULT);
+                $mettre_jour_mdp = $query_bdd->mettre_jour_mdp($passwd_hash, $id);
+                if($mettre_jour_mdp === false){
+                    throw new Exception("Erreur mettre_jour_mdp");
+                }
+                else{
+                    $ok = "Mot de passe mis à jours";
+                    require("view/edit-pass.php");
+                }
             }
             else{
-                $ok = "Mot de passe mis à jours";
+                $error = "Confirmation mot de passe incorrecte";
                 require("view/edit-pass.php");
             }
         }
         else{
-            $error = "Confirmation mot de passe incorrecte";
+            $error = "Mot de passe faible";
             require("view/edit-pass.php");
         }
     }

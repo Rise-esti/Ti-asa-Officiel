@@ -50,9 +50,9 @@
 										<div class="new-postbox" id='cnt'>
 											<figure>
 												<?php
-													if(isset($profil_li["photo_de_profil"])){
-														$pdp = $profil_li["photo_de_profil"];
-														$chemin_pdp = "public/images/picture/pdp/$pdp";
+													if(isset($select_page_li["pdp_page"])){
+														$pdp = $select_page_li["pdp_page"];
+														$chemin_pdp = "public/images/picture/pdp_page/$pdp";
 													}
 													else{
 														$chemin_pdp = "public/images/av.png";
@@ -197,7 +197,7 @@
 																						
 														if(isset($publication_li["pdp"])){
 															$pdp = $publication_li["pdp"];
-															$chemin_pdp = "public/images/picture/pdp/$pdp";
+															$chemin_pdp = "public/images/picture/pdp_page/$pdp";
 														}
 														else{
 															$chemin_pdp = "public/images/av.png";

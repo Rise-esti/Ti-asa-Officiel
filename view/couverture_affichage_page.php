@@ -80,7 +80,7 @@
                                    echo "$nom";
                                    ?>
                                    </h5>
-								  <span><?= $profil_li["poste"] ?></span>
+								  <span><?= $select_page_li["mail_page"] ?></span>
 								</li>
 								
 							</ul>

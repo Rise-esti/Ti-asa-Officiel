@@ -80,8 +80,9 @@ function french_it($mois){
                                 </div>
 
 
-                                
-                                <!--Modal résultat de recherche personne-->
+                                <div class="central-meta timeline-info">
+                                </div>
+                                 
                                 
                                 
                                 

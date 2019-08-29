@@ -418,9 +418,15 @@ class Query_bdd extends Connect_bdd{
     
     public function requete_my_publication_page($id, $id_page){
         $bdd = $this->dbconnect();        
-        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' and per.id = ? and p.id_page = ? ORDER BY id_publication DESC ");
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PAGE_PAGE per where p.valable = '1' and per.id = ? and p.id_page = ? ORDER BY id_publication DESC ");
         $publication->execute(array($id, $id_page));
         return $publication;
+    }
+    
+    public function select_all_page(){
+        $bdd = $this->dbconnect();
+        $select_all_page = $bdd->query("SELECT * FROM PAGE_PAGE");
+        return $select_all_page;
     }
 
 }

@@ -69,7 +69,10 @@
 													$jour = $profil_li["jour"];
 													$mois = $profil_li["mois"];
 													$annee = $profil_li["annee"];
-												 	echo "$jour-$mois-$annee"; ?>
+                                                    if(!empty($jour) and !empty($mois) and !empty($annee) ){
+												 	echo "$jour-$mois-$annee"; 
+                                                    }
+                                                ?>
 												 </h6>
 										
 											</div>
