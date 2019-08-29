@@ -6,7 +6,7 @@ import smtplib
 import mysql.connector 
 
 def send_mail(mail, sub):
-    if sub == 'verification':
+    if sub == 'verifier_compte':
         key = random.randint(100000, 999999)
         message = MIMEText(f"""
         
@@ -33,11 +33,12 @@ def send_mail(mail, sub):
         server.send_message(message)
         server.quit()
         cursor.execute(f"""
-            UPDATE PERSONNE SET code_key={key} WHERE mail={mail};
+            UPDATE PERSONNE SET code={key} WHERE mail={mail};
             """)
         cursor.commit()
 
-connect = mysql.connector.connect(host='localhost', user='rise', pasword='__@ti-asa__!', database='tia_asa')
+# connect = mysql.connector.connect(host='localhost', user='rise', pasword='__@ti-asa__!', database='tia_asa')
+connect = mysql.connector.connect(host='localhost', user='sserver', pasword='sserver', database='ti_asa')
 cursor = connect.cursor()
 
 send_mail(sys.argv[1], sys.argv[2])

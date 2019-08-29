@@ -172,7 +172,9 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
                             throw new Exception("Probléme d'insertion dans la bdd");
                         }
                         else{
-                            se_connecter($mail, $password);
+                            exec("python3 mail.py $mail verifier_compte ");
+                            require("view/confirmation_mail.php");
+                            //se_connecter($mail, $password);
                         }
                     }
                     else{
