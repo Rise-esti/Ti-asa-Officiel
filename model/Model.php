@@ -309,7 +309,7 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_my_publication($id){
         $bdd = $this->dbconnect();        
-        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' and per.id = ? ORDER BY id_publication DESC ");
+        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' and per.id = ? and id_page = NULL ORDER BY id_publication DESC ");
         $publication->execute(array($id));
         return $publication;
     }

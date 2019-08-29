@@ -12,19 +12,24 @@
 	<section>
 		<div class="feature-photo">
 			<figure><img style="" id="pdc" src="<?= $chemin_pdc ?>"  alt=""></figure>
-			<?php
+			
+			<div class="add-btn">
+				<span>0 abonnée</span>
+				<?php
 				if($select_page_li["id"] != $id ){
 					$id_personne = $select_profil_li["id"];
 				?>
-			<div class="add-btn">
-				<span>0 abonnée</span>
+				<a href="index.php?action=suivre_page&amp;id=<?=$id?>&amp;id_page=<?= $select_page_li["id_page"] ?>&amp;nom_page=<?= $select_page_li["nom_page"] ?>" title="" data-ripple="">
 				
-				<a href="index.php?action=suivre_page&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
 					Suivre
+				
 				</a>
+				<?php
+				}
+				?>
 			</div>
 			<?php
-				}
+				
 				if($select_page_li["id"] == $id){
 			?>
 			<form class="edit-phto" action="index.php?action=modifier_photo_page&id=<?= $id ?>&amp;id_page=<?= $select_page_li["id_page"]?>&amp;type=123" enctype="multipart/form-data" method="POST">
