@@ -115,7 +115,7 @@ function french_it($mois){
                                 <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
                                 <ul id="people-list" class="friendz-list">
                                     <?php
-                                        while($resultat_profil = $rechercher_profil->fetch()){
+                                        /*while($resultat_profil = $rechercher_profil->fetch()){
                                             if(!empty($resultat_profil["id"])){
                                                 if(isset($resultat_profil["photo_de_profil"])){
                                                     $pdp = $resultat_profil["photo_de_profil"];
@@ -123,7 +123,7 @@ function french_it($mois){
                                                 }
                                                 else{
                                                     $src_pdp = "public/images/av.png";
-                                                }
+                                                }*/
                                     ?>
                                         <li>
                                             <figure >
@@ -136,21 +136,23 @@ function french_it($mois){
                                             
                                         </li>
                                     <?php
-                                            }
-                                        }
+                                            /*}
+                                        }*/
                                     ?>
                                 </ul>
-                                            <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
+                                            
+                            
+                            
+                            <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 
-                            </div><!-- centerl meta -->
-                        
                         
                             <!-- Your page et freinds à droite acceuil-->
                             <?php
                                 require("view/your_page_acceuil_droite.php");
                             ?>
                                 
-                                <!-- sidebar -->
+                            
+                            <!-- sidebar -->
                         </div>	
                     </div>
                 </div>
