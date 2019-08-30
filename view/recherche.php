@@ -96,11 +96,8 @@ function french_it($mois){
                                                 $src_pdp = "public/images/av.png";
                                                 }
                                     ?>
-<<<<<<< HEAD
+
                                     <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
-=======
-                                    <li style="display:block !important; margin-left:12% !important; margin-bottom:2% !important;">
->>>>>>> 484c7f12dbef16f7b7586cb549c0217aa7afd1b7
                                         <figure style="display:inline !important;">
                                                 <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
                                         </figure>
