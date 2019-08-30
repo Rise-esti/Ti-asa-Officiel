@@ -25,7 +25,7 @@
 								<div class="central-meta">
 									<div class="editing-info">
 										<h5 class="f-title"><i class="ti-info-alt"></i> Compétences</h5>
-										<i OnClick="window.location='index.php?action=ajouter_nouvelle_competence&amp;id=<?= $id ?>'"  style="color: #088dcd !important; font-size: 50px !important; display: inline !important;margin-left:50%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>	
+										<i OnClick="window.location='index.php?action=ajouter_nouvelle_competence&amp;id=<?= $id ?>'"  style="font-size: 50px !important; display: inline !important;margin-left:50%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>	
 										
 										<?php
 											for($i=0; $i<$nbr_competence; $i++){
@@ -33,7 +33,7 @@
 										?>
 										<form method="post" class="formcomp">
 											<div class="form-group">	
-												<i class="fa fa-sliders forc" style="display: inline"> <h6 class="comp" style="display: inline"><?= $tab[$i]["competence"] ?></h6> </i>
+												<i class="fa fa-building forc" style="display: inline"> <h6 style="display: inline"><?= $tab[$i]["competence"] ?></h6> </i>
 												<div class="form-radio"><br>
 													<div class="radio" >
 													        <label >
@@ -51,9 +51,9 @@
 													<h6 style="display: inline"><?= $tab[$i]["niveau_competence"] ?></h6>
 													<i class="mtrl-select"></i>
 												</div>
-												<div class="submit-btns bouton" style="margin-left:50% !important; dispaly:inline">
-													<button type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													<button  Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+												<div class="submit-btns">
+													<button class="supp" type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+													<button  class="mod" Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
 												</div>
 											</div>
 											

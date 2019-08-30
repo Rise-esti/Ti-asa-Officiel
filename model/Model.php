@@ -39,10 +39,10 @@ class Query_bdd extends Connect_bdd{
             $tab_mess_farany[$i]['nom'] = $info_message['nom'];
             $tab_mess_farany[$i]['prenom'] = $info_message['prenom'];
             $tab_mess_farany[$i]['pdp'] = $info_message['pdp'];
-            
+
             $i++;
         }
-        
+
         return $tab_mess_farany;
     }
 
@@ -54,7 +54,11 @@ class Query_bdd extends Connect_bdd{
 
     public function changer_confirmation_mail($mail, $id){
         $bdd = $this->dbconnect();
+<<<<<<< HEAD
         $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '0', code= NULL WHERE id=? and mail=? ");
+=======
+        $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '1', code= NULL WHERE id=? and mail=? ");
+>>>>>>> 072290998ccc8d8d02b7c88d2a0b79cb9a54cefa
         $changer_confirmation_mail->execute(array($id, $mail));
         return $changer_confirmation_mail;
     }
@@ -121,7 +125,7 @@ class Query_bdd extends Connect_bdd{
         else{
             $insertion_fichier_pdp = $bdd->prepare("UPDATE PERSONNE SET photo_de_couverture = ? WHERE id = ?");
         }
-        
+
         $insertion_fichier_pdp->execute(array($pdp_name, $id));
         return $insertion_fichier_pdp;
     }
@@ -133,7 +137,7 @@ class Query_bdd extends Connect_bdd{
         return $verifier_existance_formation;
     }
 
-    public function insertion_formation($id, $ecole, $debut_mois_formation, $debut_annee_formation, 
+    public function insertion_formation($id, $ecole, $debut_mois_formation, $debut_annee_formation,
     $fin_mois_formation, $fin_annee_formation, $filiere, $niveau, $obtention){
         $bdd = $this->dbconnect();
         $insertion_formations = $bdd->prepare("INSERT INTO FORMATION(debut_mois_formation, debut_annee_formation,
@@ -143,11 +147,11 @@ class Query_bdd extends Connect_bdd{
         return $insertion_formations;
     }
 
-    public function mis_a_jours_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation, 
+    public function mis_a_jours_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation,
     $fin_mois_formation, $fin_annee_formation, $filiere, $niveau, $obtention){
         $bdd = $this->dbconnect();
-        $mettre_jour_formation = $bdd->prepare("UPDATE FORMATION SET debut_mois_formation=?, debut_annee_formation=?, 
-                                filiere=?, obtention=?, ecole=?, fin_mois_formation=?, fin_annee_formation=?, niveau=? 
+        $mettre_jour_formation = $bdd->prepare("UPDATE FORMATION SET debut_mois_formation=?, debut_annee_formation=?,
+                                filiere=?, obtention=?, ecole=?, fin_mois_formation=?, fin_annee_formation=?, niveau=?
                                 WHERE id_formation=? and id=? ");
         $mettre_jour_formation->execute(array($debut_mois_formation, $debut_annee_formation, $filiere,
                                 $obtention, $ecole, $fin_mois_formation, $fin_annee_formation, $niveau, $id_formation, $id));
@@ -198,7 +202,7 @@ class Query_bdd extends Connect_bdd{
         if(!isset($niveau)){
             $niveau = NULL;
         }
-        $mettre_jour_competence = $bdd->prepare("UPDATE COMPETENCE SET competence=?, explication=?, 
+        $mettre_jour_competence = $bdd->prepare("UPDATE COMPETENCE SET competence=?, explication=?,
         niveau_competence=? WHERE id_competence=? and id=?");
         $mettre_jour_competence->execute(array($competence, $explication, $niveau, $id_competence, $id));
         return $mettre_jour_competence;
@@ -220,9 +224,9 @@ class Query_bdd extends Connect_bdd{
 
     public function insert_nouvelle_experience($id, $entreprise_lieu, $activite_experience,  $annee, $poste){
         $bdd = $this->dbconnect();
-        $insertion_nouvelle_experience = $bdd->prepare("INSERT INTO EXPERIENCE(date_experience,  activite, 
+        $insertion_nouvelle_experience = $bdd->prepare("INSERT INTO EXPERIENCE(date_experience,  activite,
         entreprise_lieu, poste_experience, id) VALUES(?,?,?,?,?)");
-        $insertion_nouvelle_experience->execute(array($annee,  $activite_experience, 
+        $insertion_nouvelle_experience->execute(array($annee,  $activite_experience,
         $entreprise_lieu, $poste, $id));
         return $insertion_nouvelle_experience;
     }
@@ -236,7 +240,7 @@ class Query_bdd extends Connect_bdd{
 
     public function mettre_jour_experience($id, $id_experience, $entreprise_lieu, $date_experience, $poste_experience, $activite){
         $bdd = $this->dbconnect();
-        $mettre_jour_experience = $bdd->prepare("UPDATE EXPERIENCE SET entreprise_lieu=?, date_experience=?, poste_experience=?, activite=? 
+        $mettre_jour_experience = $bdd->prepare("UPDATE EXPERIENCE SET entreprise_lieu=?, date_experience=?, poste_experience=?, activite=?
         WHERE id_experience=? and id=?");
         $mettre_jour_experience->execute(array($entreprise_lieu, $date_experience, $poste_experience, $activite, $id_experience, $id));
         return $mettre_jour_experience;
@@ -299,7 +303,7 @@ class Query_bdd extends Connect_bdd{
         return $select_profil;
     }
 
-    public function insertion_fichier_post($id, $texte, $experience, $competence, $formation, 
+    public function insertion_fichier_post($id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
         $bdd = $this->dbconnect();
         $verify_insertion_post = $bdd->prepare("INSERT INTO PUBLICATION(id, date_publication, texte, experience, formation,competence, personnalite, langue, lieu, date_limite, nom_image, mission) VALUES(?,NOW(), ?,?,?,?,?,?,?,?,?,?)");
@@ -308,14 +312,21 @@ class Query_bdd extends Connect_bdd{
     }
 
     public function requete_publication($id){
-        $bdd = $this->dbconnect();        
+        $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' ORDER BY id_publication DESC ");
         $publication->execute(array($id));
         return $publication;
     }
 
+    public function requete_last_publication($id_publication){
+        $bdd = $this->dbconnect();
+        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' AND id_publication > ? ORDER BY id_publication DESC ");
+        $publication->execute(array($id_publication));
+        return $publication;
+    }
+
     public function requete_my_publication($id){
-        $bdd = $this->dbconnect();        
+        $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' and per.id = ? and id_page = NULL ORDER BY id_publication DESC ");
         $publication->execute(array($id));
         return $publication;
@@ -355,7 +366,7 @@ class Query_bdd extends Connect_bdd{
         $select_page->execute(array($id, $nom_page));
         return $select_page;
     }
-    
+
     public function select_page_visite($nom_page){
         $bdd = $this->dbconnect();
         $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE nom_page=?");
@@ -420,8 +431,8 @@ class Query_bdd extends Connect_bdd{
         $recherche = $bdd->query("SELECT * FROM PAGE_PAGE WHERE nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%' or mail_page LIKE '%$recherche%' ");
         return $recherche;
     }
-    
-        public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation, 
+
+        public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
         $bdd = $this->dbconnect();
         $page = 1;
@@ -429,22 +440,22 @@ class Query_bdd extends Connect_bdd{
         $verify_insertion_post->execute(array($id,$texte, $experience, $formation, $competence, $personnalite, $langue, $lieu, $date_limite, $image_name, $mission, $page, $id_page));
         return $verify_insertion_post;
     }
-    
+
     public function requete_my_publication_page($id, $id_page){
-        $bdd = $this->dbconnect();        
+        $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PAGE_PAGE per where p.valable = '1' and per.id = ? and p.id_page = ? ORDER BY id_publication DESC ");
         $publication->execute(array($id, $id_page));
         return $publication;
     }
-    
+
     public function select_all_page(){
         $bdd = $this->dbconnect();
         $select_all_page = $bdd->query("SELECT * FROM PAGE_PAGE");
         return $select_all_page;
     }
-    
+
     public function requete_publication_dans_page($id_page){
-        $bdd = $this->dbconnect();        
+        $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PAGE_PAGE per where p.valable = '1' and p.id_page = ? ORDER BY id_publication DESC ");
         $publication->execute(array($id_page));
         return $publication;

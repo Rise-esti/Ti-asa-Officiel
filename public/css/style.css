@@ -558,7 +558,20 @@ header.sticky {
     display: inline-block;
     margin-top: 20px;
     width: 100%;
+    margin-left:63%;
 }
+.supp{
+    border-radius:20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+.mod{
+    border-radius:20px;
+    margin-left:1%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
 
 .form-radio > .radio {
     display: inline-block;
@@ -4493,7 +4506,7 @@ canvas {
 }
 
 .mh-head {
-    background: #4bb5ef;
+    background: #610f91 !important;
     color: #fff;
     height: auto;
 }
@@ -10018,7 +10031,7 @@ aside.sidebar.full-style {
 }
 
 .mtr-btn{
-    margin-left: 70% !important;
+    margin-left: 14% !important;
     margin-bottom: 0% !important;
     border-radius:20px !important;
     padding-left:20px;
@@ -10027,7 +10040,7 @@ aside.sidebar.full-style {
     padding-bottom:7px;
 }
 
-.addeo{
+.fa-plus{
     color: #610f91 !important;
     font-size: 50px !important;
     display: inline !important;

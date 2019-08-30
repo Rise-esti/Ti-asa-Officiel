@@ -23,7 +23,7 @@
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<div class="editing-info">
-										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les centres d'intérêts</h5> <i OnClick="window.location='index.php?action=ajouter_nouvelle_centre_interet&amp;id=<?= $id ?>'"  style="color: #088dcd !important; font-size: 50px !important; display: inline !important;margin-left:25%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>
+										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les centres d'intérêts</h5> <i OnClick="window.location='index.php?action=ajouter_nouvelle_centre_interet&amp;id=<?= $id ?>'"  style="color: #610f91 !important; font-size: 50px !important; display: inline !important;margin-left:25%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>
 										<form method="post" class="formcomp" action="index.php?action=mettre_jours_centre_interet&amp;id=<?= $id ?>&amp;id_centre_interet=<?= $id_centre_interet ?>">
 																				
 											<div class="form-group">	
@@ -35,7 +35,7 @@
 												<label class="control-label" for="textarea"> Déscription</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="mettre_jours_centre_interet" class="mtr-btn bouh"><span>Mettre à jour</span></button>
+												<button type="submit" style="margin-left:0% !important;" name="mettre_jours_centre_interet" class="mtr-btn "><span>Mettre à jour</span></button>
 											</div>
 										</form>
 										

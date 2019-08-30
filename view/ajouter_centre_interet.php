@@ -34,11 +34,11 @@
 											<div class="form-group">	
 												<textarea rows="4" id="textarea" name="description" required="required"></textarea>
 												<label class="control-label" for="textarea"> Déscription :</label><i class="mtrl-select"></i>
-                                            </div>
+                                            				</div>
                                             
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_centre_interet" class="mtr-btn  ajouter"><span>Ajouter</span></button>
-                                            </div>
+												<button type="submit" name="ajouter_centre_interet" class="mtr-btn"><span>Ajouter</span></button>
+                                            				</div>
                                             
 										</form>
 										

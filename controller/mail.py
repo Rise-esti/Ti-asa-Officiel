@@ -32,13 +32,16 @@ def send_mail(mail, sub):
         server.login("gaetan.jonathan.bakary@esti.mg", "__@ti-asa__!")
         server.send_message(message)
         server.quit()
-        cursor.execute(f"""
-            UPDATE PERSONNE SET code={key} WHERE mail={mail};
-            """)
-        cursor.commit()
+        cursor.execute("""
+            UPDATE PERSONNE SET code=%s where mail=%s; """
+            , (key, mail, ) )
+        
+        connect.commit()
+        connect.close()
+        
+        
 
-# connect = mysql.connector.connect(host='localhost', user='rise', pasword='__@ti-asa__!', database='tia_asa')
-connect = mysql.connector.connect(host='localhost', user='sserver', pasword='sserver', database='ti_asa')
-cursor = connect.cursor()
+connect = mysql.connector.connect(host='localhost', user='rise', password='__@ti-asa__!', database='tia_asa')
+cursor = connect.cursor(buffered=True)
 
 send_mail(sys.argv[1], sys.argv[2])
