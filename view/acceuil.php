@@ -448,7 +448,23 @@ function french_it($mois){
 $(function() {
 	setInterval('nouveau_actu()', 1500);
 	function nouveau_actu(){
+			id_dernier_pub = $('.description')[0];
+			$.post(
+				'controller/load_actu.php',
+				{
+					id_pub: id_dernier_pub
+				},
 
+				actu_recu,  // nom fonction retour
+
+
+			);
+			function actu_recu(text){
+				tab = new Array(JSON.parse(text));
+				console.log(tab);
+
+
+			}
 	}
 });
  //$('.newpst-input').after('')
