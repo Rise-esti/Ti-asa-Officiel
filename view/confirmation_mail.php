@@ -102,11 +102,13 @@
 					</button>
 				</div>
 			</form>
+		<span class="label-input100" style="color:red;">
             <?php
             if(!empty($notification)){
                 echo "$notification<br>";
             }
             ?>
+		</span>
 
 			<span class="contact100-more">
 				Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
@@ -118,27 +120,7 @@
 
 	<div id="dropDownSelect1"></div>
 
-	<footer class="layout-dark">
-		<div class="copy-right">
-			<div class="container padding-tb-50px">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="copy-right-text text-lg-left text-center sm-mb-15px"><a target="_blank" href="#"><b>Ti-asa service pro</b></a> </div>
-					</div>
-					<div class="col-lg-6">
-						<!--  Social -->
-						<ul class="social-media list-inline text-lg-right text-center margin-0px text-white">
-							<li class="list-inline-item"><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-							<li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-							<li class="list-inline-item"><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-							<li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-						</ul>
-						<!-- // Social -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	
 
 <!--===============================================================================================-->
 	<script src="public/vendor/jquery/jquery-3.2.1.min.js"></script>
