@@ -51,9 +51,9 @@
 													<h6 style="display: inline"><?= $tab[$i]["niveau_competence"] ?></h6>
 													<i class="mtrl-select"></i>
 												</div>
-												<div class="submit-btns bouton" style="margin-left:50% !important; dispaly:inline">
-													<button type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													<button  Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+												<div class="submit-btns">
+													<button class="supp" type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+													<button  class="mod" Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
 												</div>
 											</div>
 											

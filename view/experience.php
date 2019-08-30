@@ -51,9 +51,9 @@
 												<i class="mtrl-select"></i>
 											</div>
 											
-											<div class="submit-btns bouton" style="margin-left:45% !important; dispaly:inline">
-												<button type="button" style="color:#ff4b5a; " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_experience&id=<?= $id ?>&id_experience=<?= $id_experience ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-												<button  Onclick="window.location='index.php?action=modifier_experience_existe&amp;id=<?= $id ?>&amp;id_experience=<?= $id_experience?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+											<div class="submit-btns">
+												<button class="supp" type="button" style="color:#ff4b5a; " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_experience&id=<?= $id ?>&id_experience=<?= $id_experience ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+												<button  class="mod" Onclick="window.location='index.php?action=modifier_experience_existe&amp;id=<?= $id ?>&amp;id_experience=<?= $id_experience?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
 											</div>
 										</form>	
 										<?php

@@ -89,10 +89,9 @@ require("view/couverture.php");
 													}
 													$id_formation = $tab[$i]["id_formation"];
 												?>
-												<div class="submit-btns bouton" style="margin-left:50% !important;">
-													<button type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette formation ?');if (x){window.location='index.php?action=supprimer_formation&id=<?= $id ?>&id_formation=<?= $id_formation ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													
-													<button type="button" class="mtr-btn" Onclick="window.location='index.php?action=modifier_formation_profil&amp;id=<?= $id ?>&amp;id_formation=<?= $id_formation ?>'"><span>Modifier</span></button>
+												<div class="submit-btns">
+													<button class="supp" type="button" style="color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette formation ?');if (x){window.location='index.php?action=supprimer_formation&id=<?= $id ?>&id_formation=<?= $id_formation ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+													<button class="mod" type="button" class="mtr-btn" Onclick="window.location='index.php?action=modifier_formation_profil&amp;id=<?= $id ?>&amp;id_formation=<?= $id_formation ?>'"><span>Modifier</span></button>
 												</div>
 											</form>
 										<?php

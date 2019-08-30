@@ -110,7 +110,7 @@
 											<?php
 												if(!isset($select_profil_li["username"])){
 											?>
-												<button  Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'" style="color:#fff !important; border-radius:20px !important;" type="button" class="mtr-btn bouton" ><span>Modifier</span></button>
+												<button  Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"  type="button" class="mtr-btn" ><span>Modifier</span></button>
 											<?php
 												}
 											?>

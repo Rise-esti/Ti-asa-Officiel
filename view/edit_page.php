@@ -68,7 +68,6 @@
 											<label class="control-label" for="textarea"> Description</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												
 												<button type="submit" name="mettre_jour_page" class="mtr-btn"><span>Mettre à jour</span></button>
 											</div>
 										</form>
