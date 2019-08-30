@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>ti-asa</title>
+	<title>Ti-asa</title>
     <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
 
     <link rel="stylesheet" href="public/css/main.min.css">
