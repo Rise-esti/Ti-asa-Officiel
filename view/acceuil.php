@@ -230,14 +230,14 @@ function french_it($mois){
 													<figure>
 														<?php
 															if(empty($publication_li["id_page"]) ){
-                                                                if(isset($publication_li["pdp"])){
-                                                                    $pdp = $publication_li["pdp"];
-                                                                    $chemin_pdp = "public/images/picture/pdp/$pdp";
-                                                                }
-                                                                else{
-                                                                    $chemin_pdp = "public/images/av.png";
-                                                                }
-                                                              }
+                                  if(isset($publication_li["pdp"])){
+                                      $pdp = $publication_li["pdp"];
+                                      $chemin_pdp = "public/images/picture/pdp/$pdp";
+                                  }
+                                  else{
+                                      $chemin_pdp = "public/images/av.png";
+                                  }
+                                }
 
 															$jour_lim = $publication_li['jour'];
 															$mois_lim = french_it($publication_li['mois']);
@@ -479,15 +479,20 @@ function french_it($mois){
 ?>
 
 <script>
+/*
+function french_it(mois){
+	mois_tab = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
+	return mois_tab[mois-1];
+}
 
 
-	setInterval('nouveau_actu()', 2000);
-	function nouveau_actu(){
+setInterval('nouveau_actu()', 2000);
+
+function nouveau_actu(){
 		id_dernier_pub = $('.description').attr('id');
 
-
-			$.post(
-				'controller/load_actu.php',
+		$.post(
+					'controller/load_actu.php',
 				{
 					id_pub: id_dernier_pub
 				},
@@ -497,10 +502,29 @@ function french_it($mois){
 			);
 			function actu_recu(text){
 				tab = new Array(JSON.parse(text));
+				// console.log(tab[0][0]);
+				}
+}
+				/*
 				if (tab[0].length > 0){
 					for (i=0;i<tab[0].length;i++){
 						// new_pub = $('.post-meta').clone();
-						new_pub = "<div class='central-meta item'>" + "<div class='user-post'>;" + "<div class='friend-info'>" + "<figure>
+						new_pub = "<div class='central-meta item'>" + "<div class='user-post'>;" + "<div class='friend-info'>" + "<figure>"
+
+						if (tab[0][i]['id_page'] === ''){
+							if (tab[0][i]['pdp']){
+
+									chemin_pdp = "public/images/picture/pdp/" + tab[0][i]['id_page'];
+							}
+							else{
+									chemin_pdp = "public/images/av.png";
+							}
+						}
+						else{
+
+						}
+
+						new_pub = new_pub + "<img src=" + chemin_pdp  + "alt=''>" + "</figure>" + "<div class='friend-name'>"
 
 
 					tab[0][i]['prenom']
@@ -512,11 +536,9 @@ function french_it($mois){
 
 				// new_pub.attr('id', '')
 				 //$('.newpst-input').after('')
+				 */
 
 
-			}
-
-	}
 
 </script>
 
