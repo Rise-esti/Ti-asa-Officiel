@@ -34087,4 +34087,32 @@ form.dark-form ::-ms-input-placeholder {
   }
 }
 
+@media (max-width: 640px) {
+    .recruter{
+        width:100% !important;
+        position:relative;
+      left: -32% !important;
+      top:-25% !important;
+  }
+
+  .top-btn1{
+      position:relative;
+      left:-37%;
+  }
+  .top-btn2{
+    position:absolute;
+    left:45%;
+    margin-top:-10%;
+}
+}
+
+
+
+
+
+
+
+
+
+
 /*# sourceMappingURL=style.css.map */

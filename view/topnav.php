@@ -99,7 +99,7 @@
 						<form action="index.php?action=inscription" method="post">
 							<div class="form-group ">
 								<input  type="text" class="form-control"  style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="nom" placeholder="Nom" required="required">
-                            </div>
+                            			</div>
 							<div class="form-group">
 								<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="prenom" placeholder="Prénom" required="required">
 							</div>
@@ -111,10 +111,10 @@
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control"style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="confirmation_password"  placeholder="Confirmer mot de passe" required="required">
-                            </div>
+                            			</div>
 							<div class="form-group">
 								<label class="checkbox-inline"><input type="checkbox" required="required"> <span style="font-family: Poppins-Regular">J'accepte </span><a href="terms.html" style="font-size:15px; color: #610f91 !important;">les termes &amp; Conditions</a></label>
-                            </div>
+                            			</div>
 							<input type="submit" class="btn btn-primary btn-block" name="valider_inscription" value="S'inscrire">
 						</form>
 					</li>
@@ -145,13 +145,11 @@
 		  <div class="col-md-12 mt-lg-5 text-left align-self-center text-intro">
 		    <div class="row">
 		      <div class="col-lg-10">
-		        <p class="text-secondary" style="margin-left: 32% !important; color: #610f91!important; font-size: 15px;">Recruter<span class="mx-3">|</span> Trouver un emploi</p>
-		        <p style="font-size: 17px;"></p>
-		        <p style="display: inline; "><a href="#myModal" class="btn smoothscroll btn-primary" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; margin-left: 28%; margin-top: 3%;" > <i class="fa fa-sign-in"></i> Se connecter</a></p>
-		        <p style="display: inline"><a href="#myModal2" class="btn smoothscroll btn-primary" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; border-color: #610f91; color: #fff; margin-left: 3%; margin-top: 3%";> <i class="fa fa-pencil"></i> S'inscrire</a></p>
-
-		        
-		      </div>
+				<p class="recruter" style="margin-left: 32% !important; color: #610f91!important; font-size: 15px;">Recruter<span class="mx-3">|</span> Trouver un emploi</p>
+				<p style="font-size: 17px;"></p>
+				<p style="display: inline; "><a href="#myModal" class="btn smoothscroll btn-primary top-btn1" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; margin-left: 28%; margin-top: 3%;" > <i class="fa fa-sign-in"></i> Se connecter</a></p>
+				<p style="display: inline"><a href="#myModal2" class="btn smoothscroll btn-primary top-btn2" data-toggle="modal" style="font-size: 16px; padding: 11px; border-radius: 30px; border-color: #610f91; color: #fff; margin-left: 3%; margin-top: 3%";> <i class="fa fa-pencil"></i> S'inscrire</a></p>
+			</div>
 		    </div>
 		  </div>
 		    
