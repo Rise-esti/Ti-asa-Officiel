@@ -500,6 +500,8 @@ function french_it($mois){
 				if (tab[0].length > 0){
 					for (i=0;i<tab[0].length;i++){
 						// new_pub = $('.post-meta').clone();
+						new_pub = "<div class='central-meta item'>" + "<div class='user-post'>;" + "<div class='friend-info'>" + "<figure>
+
 
 					tab[0][i]['prenom']
 					}

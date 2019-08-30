@@ -54,11 +54,9 @@ class Query_bdd extends Connect_bdd{
 
     public function changer_confirmation_mail($mail, $id){
         $bdd = $this->dbconnect();
-<<<<<<< HEAD
-        $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '0', code= NULL WHERE id=? and mail=? ");
-=======
+
         $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '1', code= NULL WHERE id=? and mail=? ");
->>>>>>> 072290998ccc8d8d02b7c88d2a0b79cb9a54cefa
+
         $changer_confirmation_mail->execute(array($id, $mail));
         return $changer_confirmation_mail;
     }
