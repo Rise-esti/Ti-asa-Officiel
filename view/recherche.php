@@ -84,37 +84,37 @@ function french_it($mois){
                                 
                             <!--Résultats personnes ici-->
                             <div class="central-meta timeline-info" style="display:block" id="personne">
-                                <ul id="people-list" class="friendz-list">
-                                    <?php
-                                    while($resultat_profil = $rechercher_profil->fetch()){
-                                        if(!empty($resultat_profil["id"])){
-                                                if(isset($resultat_profil["photo_de_profil"])){
-                                                $pdp = $resultat_profil["photo_de_profil"];
-                                                $src_pdp = "public/images/picture/pdp/$pdp";
+                                            <ul id="people-list" class="friendz-list">
+                                                <?php
+                                                while($resultat_profil = $rechercher_profil->fetch()){
+                                                    if(!empty($resultat_profil["id"])){
+                                                            if(isset($resultat_profil["photo_de_profil"])){
+                                                            $pdp = $resultat_profil["photo_de_profil"];
+                                                            $src_pdp = "public/images/picture/pdp/$pdp";
+                                                            }
+                                                            else{
+                                                            $src_pdp = "public/images/av.png";
+                                                            }
+                                                ?>
+
+                                                <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
+                                                    <figure style="display:inline !important;">
+                                                            <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
+                                                    </figure>
+                                                    <span class="friendz-meta" style="margin-left:0%;" >
+
+                                                            <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
+
+                                                            <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
+                                                    </span>
+                                                    
+                                                </li>
+                                            
+                                                <?php
+                                                    }
                                                 }
-                                                else{
-                                                $src_pdp = "public/images/av.png";
-                                                }
-                                    ?>
-
-                                    <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
-                                        <figure style="display:inline !important;">
-                                                <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
-                                        </figure>
-                                        <span class="friendz-meta" style="margin-left:0%;" >
-
-                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
-
-                                                <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
-                                        </span>
-                                        
-                                    </li>
-                                   
-                                    <?php
-                                        }
-                                    }
-                                    ?>
-                                </ul>
+                                                ?>
+                                            </ul>
                             </div>
 
                             
