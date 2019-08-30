@@ -19,7 +19,7 @@
 							<div class="col-lg-3">
 								<aside class="sidebar static">
 									<div class="advertisment-box">
-										<h4 class="">advertisment</h4>
+								
 										<figure>
 											<a href="#" title="Advertisment"><img src="images/resources/ad-widget.jpg" alt=""></a>
 										</figure>
@@ -34,7 +34,7 @@
 							<div class="col-lg-6" >
 								<div class="central-meta">
 									<div class="messages">
-										<h5 class="f-title"><i class="ti-bell"></i>All Messages <span class="more-options"><i class="fa fa-ellipsis-h"></i></span></h5>
+										<h5 class="f-title"><i class="ti-bell"></i>Messages </h5>
 										<div class="message-box">
 											<ul class="peoples">
 												<?php
@@ -103,7 +103,7 @@
 											<div class="peoples-mesg-box">
 												<div class="conversation-head">
 													<figure><img src="<?= $chemin_pdp_dest ?>" alt=""></figure>
-													<span><?= $nom_dest.' '.$prenom_dest ?><i>online
+													<span><?= $nom_dest.' '.$prenom_dest ?><i>En ligne
 													<?php
 													$id_exp = $_SESSION["id_expediteur_mess"];
 													$id = $_SESSION["ID"];
@@ -121,7 +121,7 @@
 															$id_exp = $id_exp_temps;
 													?>
 														<li class="you">
-															<figure><img src=<?= $chemin_pdp_dest?> alt=""></figure>
+															<figure><img style="width:50px; height:33px;"src=<?= $chemin_pdp_dest?> alt=""></figure>
 															<p><?= $tab[$i]["mes"] ?></p>
 													
 														</li>
@@ -129,11 +129,16 @@
 														}
 														else{
 														?>
+														
 														<li class="me">
-															<figure><img src="<?= $chemin ?>" alt=""></figure>
-															<p><?= $tab[$i]["mes"] ?></p>
+															<figure >
+																<img style="width:50px; height:33px;" src="<?= $chemin ?>" alt="">
+															</figure>
+															<p >
+																<?= $tab[$i]["mes"] ?>
+															</p>
 														</li>
-													
+														
 														
 														<?php
 														}
@@ -166,13 +171,13 @@
 											<h4 class="widget-title">Socials </h4>
 											<ul class="socials">
 												<li class="facebook">
-													<a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins>45 likes</ins></a>
+													<a title="" href="#"><i class="fa fa-facebook"></i> <span>facebook</span> <ins></ins></a>
 												</li>
 												<li class="twitter">
-													<a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins>25 likes</ins></a>
+													<a title="" href="#"><i class="fa fa-twitter"></i> <span>twitter</span><ins></ins></a>
 												</li>
 												<li class="google">
-													<a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins>35 likes</ins></a>
+													<a title="" href="#"><i class="fa fa-google"></i> <span>google</span><ins></ins></a>
 												</li>
 											</ul>
 										</div>
