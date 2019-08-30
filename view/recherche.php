@@ -102,11 +102,9 @@ function french_it($mois){
                                                 <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
                                         </figure>
                                         <span class="friendz-meta" style="margin-left:0%;" >
-<<<<<<< HEAD
+
                                                 <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
-=======
-                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $username ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
->>>>>>> 072290998ccc8d8d02b7c88d2a0b79cb9a54cefa
+
                                                 <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
                                         </span>
                                         

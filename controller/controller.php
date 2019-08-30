@@ -207,11 +207,10 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
                             throw new Exception("Probléme d'insertion dans la bdd");
                         }
                         else{
-<<<<<<< HEAD
-                            exec("python3 mail.py $mail verifier_compte ");
-=======
+
+
                             exec("python3 controller/mail.py $mail verifier_compte ");
->>>>>>> 072290998ccc8d8d02b7c88d2a0b79cb9a54cefa
+
                             header("location:index.php?action=demande_confirmation_mail&notification&mail=$mail");
                         }
                     }
