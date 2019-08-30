@@ -34,14 +34,14 @@
 											<div class="form-group">	
 												<textarea rows="4" id="textarea"  name="explication" ><?= $select_competence_li["explication"] ?></textarea>
 												<label class="control-label" for="textarea"> Explications</label><i class="mtrl-select"></i>
-                                            </div>
-                                            <div class="form-group">	
+                                            				</div>
+                                            				<div class="form-group">	
 											  <input type="text" name="niveau" value="<?= $select_competence_li["niveau_competence"] ?>"/>
 											  <label class="control-label" for="input">Niveau</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" class="mtr-btn bouh" name="mettre_jours_competence"><span>Mettre à jour</span></button>
-                                            </div>
+												<button type="submit" class="mtr-btn" name="mettre_jours_competence"><span>Mettre à jour</span></button>
+                                            				</div>
 										</form>
 										
 									</div>

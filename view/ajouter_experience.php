@@ -44,7 +44,7 @@
 											  <label class="control-label" for="input">Année</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_nouvelle_experience" class="mtr-btn bouh"><span>Ajouter</span></button>
+												<button type="submit" name="ajouter_nouvelle_experience" class="mtr-btn "><span>Ajouter</span></button>
                                             </div>
                                             
 										</form>

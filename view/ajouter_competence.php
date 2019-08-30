@@ -33,14 +33,14 @@
 											<div class="form-group">	
 												<textarea rows="4" id="textarea" name="explication"></textarea>
 												<label class="control-label" for="textarea"> Explications</label><i class="mtrl-select"></i>
-                                            </div>
-                                            <div class="form-group">	
+                                            				</div>
+                                            				<div class="form-group">	
 											  <input type="text" name="niveau"/>
 											  <label class="control-label" for="input">Niveau</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_competence" class="mtr-btn bouh"><span>Ajouter</span></button>
-                                            </div>
+												<button type="submit" name="ajouter_competence" class="mtr-btn"><span>Ajouter</span></button>
+                                            				</div>
                                             
 										</form>
 										
