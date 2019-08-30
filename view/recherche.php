@@ -199,104 +199,104 @@ function french_it($mois){
 	
 <script>
     function affichepers(){
-                    $('#pe').addClass('active');
-                    $('#pa').removeClass('active');
-                    $('#pu').removeClass('active');
-                    $('#ava').removeClass('active');
-                    var pers=document.getElementById('personne');
-                    var pg=document.getElementById('page');
-                    var pub=document.getElementById('publication');
-                    var av=document.getElementById('avance');
-                    pers.style.display='block'
-                    if (pers.style.display='block') {
-                        pg.style.display='none'
-                        pub.style.display='none'
-                        av.style.display='none'
-                        pers.style.display='block'
+        $('#pe').addClass('active');
+        $('#pa').removeClass('active');
+        $('#pu').removeClass('active');
+        $('#ava').removeClass('active');
+        var pers=document.getElementById('personne');
+        var pg=document.getElementById('page');
+        var pub=document.getElementById('publication');
+        var av=document.getElementById('avance');
+        pers.style.display='block'
+        if (pers.style.display='block') {
+            pg.style.display='none'
+            pub.style.display='none'
+            av.style.display='none'
+            pers.style.display='block'
 
-                    }
-                    else{
-                        pg.style.display='none'
-                        pub.style.display='none'
-                        av.style.display='none'
-                        pers.style.display='block'
-                    }
+        }
+        else{
+            pg.style.display='none'
+            pub.style.display='none'
+            av.style.display='none'
+            pers.style.display='block'
+        }
     }
 
     function affichepg(){
-                    $('#pe').removeClass('active');
-                    $('#pa').addClass('active');
-                    $('#pu').removeClass('active');
-                    $('#ava').removeClass('active');
-                    var pers=document.getElementById('personne');
-                    var pg=document.getElementById('page');
-                    var pub=document.getElementById('publication');
-                    var av=document.getElementById('avance');
-                    pg.style.display='block'
-                    if (pg.style.display='block') {
-                        pers.style.display='none'
-                        pub.style.display='none'
-                        av.style.display='none'
-                        pg.style.display='block'
-  
-                    }
-                    else{
-                        pers.style.display='none'
-                        pub.style.display='none'
-                        av.style.display='none'
-                        pg.style.display='block'
-                        
-                    }
+            $('#pe').removeClass('active');
+            $('#pa').addClass('active');
+            $('#pu').removeClass('active');
+            $('#ava').removeClass('active');
+            var pers=document.getElementById('personne');
+            var pg=document.getElementById('page');
+            var pub=document.getElementById('publication');
+            var av=document.getElementById('avance');
+            pg.style.display='block'
+            if (pg.style.display='block') {
+                pers.style.display='none'
+                pub.style.display='none'
+                av.style.display='none'
+                pg.style.display='block'
+
+            }
+            else{
+                pers.style.display='none'
+                pub.style.display='none'
+                av.style.display='none'
+                pg.style.display='block'
+                
+            }
     }
 
     function affichepub(){
-                    $('#pe').removeClass('active');
-                    $('#pa').removeClass('active');
-                    $('#pu').addClass('active');
-                    $('#ava').removeClass('active');
-                    var pers=document.getElementById('personne');
-                    var pg=document.getElementById('page');
-                    var pub=document.getElementById('publication');
-                    var av=document.getElementById('avance');
-                    pub.style.display='block'
-                    if (pub.style.display='block') {
-                        pers.style.display='none'
-                        pg.style.display='none'
-                        av.style.display='none'
-                        pub.style.display='block'
-                 
-                    }
-                    else{
-                        pers.style.display='none'
-                        pg.style.display='none'
-                        av.style.display='none'
-                        pub.style.display='block'
-                        alert('hahahaha');
-                    }
-    }
+        $('#pe').removeClass('active');
+        $('#pa').removeClass('active');
+        $('#pu').addClass('active');
+        $('#ava').removeClass('active');
+        var pers=document.getElementById('personne');
+        var pg=document.getElementById('page');
+        var pub=document.getElementById('publication');
+        var av=document.getElementById('avance');
+        pub.style.display='block'
+        if (pub.style.display='block') {
+            pers.style.display='none'
+            pg.style.display='none'
+            av.style.display='none'
+            pub.style.display='block'
+        
+        }
+        else{
+            pers.style.display='none'
+            pg.style.display='none'
+            av.style.display='none'
+            pub.style.display='block'
+            alert('hahahaha');
+        }
+}
 
     function afficheav(){
-                    $('#pe').removeClass('active');
-                    $('#pa').removeClass('active');
-                    $('#pu').removeClass('active');
-                    $('#ava').addClass('active');
-                    var pers=document.getElementById('personne');
-                    var pg=document.getElementById('page');
-                    var pub=document.getElementById('publication');
-                    var av=document.getElementById('avance');
-                    av.style.display='block'
-                    if (av.style.display='block') {
-                        pers.style.display='none'
-                        pub.style.display='none'
-                        pg.style.display='none'
-                        av.style.display='block'
-                    }
-                    else{
-                        pers.style.display='none'
-                        pub.style.display='none'
-                        pg.style.display='none'
-                        av.style.display='block'
-                    }
+        $('#pe').removeClass('active');
+        $('#pa').removeClass('active');
+        $('#pu').removeClass('active');
+        $('#ava').addClass('active');
+        var pers=document.getElementById('personne');
+        var pg=document.getElementById('page');
+        var pub=document.getElementById('publication');
+        var av=document.getElementById('avance');
+        av.style.display='block'
+        if (av.style.display='block') {
+            pers.style.display='none'
+            pub.style.display='none'
+            pg.style.display='none'
+            av.style.display='block'
+        }
+        else{
+            pers.style.display='none'
+            pub.style.display='none'
+            pg.style.display='none'
+            av.style.display='block'
+        }
     }
     
 
