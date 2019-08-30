@@ -478,9 +478,10 @@ function french_it($mois){
 
 <script>
 $(function() {
-	setInterval('nouveau_actu()', 1500);
+	alert("akato o");
+	setInterval('nouveau_actu()', 1000);
 	function nouveau_actu(){
-			id_dernier_pub = $('.description')[0];
+			id_dernier_pub = $('.description')[0].attr('id');
 			$.post(
 				'controller/load_actu.php',
 				{
@@ -501,6 +502,7 @@ $(function() {
  //$('.newpst-input').after('')
 
 </script>
+*/
 
 
 </body>

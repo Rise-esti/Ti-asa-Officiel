@@ -373,14 +373,10 @@
 
 				message_recu,  // nom fonction retour
 
-
 			);
 
 			function message_recu(msg){
 				message = new Array(JSON.parse(msg));
-
-
-
 
 				if (message[0].length > 0){
 
