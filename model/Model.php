@@ -52,6 +52,13 @@ class Query_bdd extends Connect_bdd{
         return $all_messages;
     }
 
+    public function changer_confirmation_mail($mail, $id){
+        $bdd = $this->dbconnect();
+        $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '1', code= NULL WHERE id=? and mail=? ");
+        $changer_confirmation_mail->execute(array($id, $mail));
+        return $changer_confirmation_mail;
+    }
+
     public function requete_discussion($id, $id_exp){
         $bdd = $this->dbconnect();
         $requete_discussion = $bdd->prepare("SELECT C.id_message id_message, C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_destinataire WHERE (C.id_destinataire=? and C.id_expediteur=?) or (C.id_expediteur=? and C.id_destinataire=?) ORDER BY C.id_message");

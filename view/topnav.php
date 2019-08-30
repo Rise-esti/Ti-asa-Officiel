@@ -60,7 +60,7 @@
 <body>
 <nav class="navbar navbar-default navbar-expand-lg navbar-light">
 	<div class="navbar-header d-flex col">
-		<a class="navbar-brand " href="topnav.html"><i class="fa fa-rss"></i><b class="ti">ti-</b><b>asa</b></a>  		
+		<a class="navbar-brand " href="ti-asa.esti.mg"><i class="fa fa-rss"></i><b class="ti">ti-</b><b>asa</b></a>  		
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -113,7 +113,7 @@
 								<input type="password" class="form-control"style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="confirmation_password"  placeholder="Confirmer mot de passe" required="required">
                             </div>
 							<div class="form-group">
-								<label class="checkbox-inline"><input type="checkbox" required="required"> <span style="font-family: Poppins-Regular">J'accepte </span><a href="#" style="font-size:15px; color: #610f91 !important;">les termes &amp; Conditions</a></label>
+								<label class="checkbox-inline"><input type="checkbox" required="required"> <span style="font-family: Poppins-Regular">J'accepte </span><a href="terms.html" style="font-size:15px; color: #610f91 !important;">les termes &amp; Conditions</a></label>
                             </div>
 							<input type="submit" class="btn btn-primary btn-block" name="valider_inscription" value="S'inscrire">
 						</form>
@@ -209,7 +209,7 @@
 		<div class="service-number mr-4"><i class="fa fa-comments" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
 		  <p style="font-size: 18px">Discussion professionnelle</p>
-		  <p>Realiser une discussion professionnel  pour negocier des contrats, partager des experiences ou encore pour prendre rendez-vous  </p>
+		  <p>Realiser une discussion professionnelle  pour negocier des contrats, partager des experiences ou encore pour prendre rendez-vous  </p>
 		</div>
 	        </div>
 	      </div>
@@ -231,24 +231,22 @@
       
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
-		<a href="single.html"><img src="public/images/1.jpg" alt="Image" class="img-fluid"></a>
+		<a href="#"><img src="public/images/1.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
-		  <p><a href="#.html" >Pour les entreprises</a></p>
-		  <span class="date">April 25, 2019</span>
+		  <p><a href="#" >Pour les entreprises</a></p>
 		  <p>Les entreprises auront l'occasion de trouver directement les professionnels qu'ils recherchent filtrés par leurs propres qualifications rechérchées.</p>
-		  <p class="more"><a href="single.html">Plus <i class="fa fa-arrow-right"></i></a></p>
+		  <p class="more"><a href="#">Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
 	      </div>
       
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
-		<a href="single.html"><img src="public/images/2.jpg" alt="Image" class="img-fluid"></a>
+		<a href="#"><img src="public/images/2.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
-		  <p><a href="#.html">Pour ceux qui cherchent des opportunités</a></p>
-		  <span class="date">April 25, 2019</span>
+		  <p><a href="#">Pour ceux qui cherchent des opportunités</a></p>
 		  <p>Pour les étudiants et les professionnels toujours à la recherche de nouvelles opportunitées et de nouveaux défis dans le monde du travail.</p>
-		  <p class="more"><a href="single.html"> Plus <i class="fa fa-arrow-right"></i></a></p>
+		  <p class="more"><a href="#"> Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
 	      </div>
@@ -258,9 +256,8 @@
 		<a href="#.html"><img src="public/images/3.jpg" alt="Image" class="img-fluid"></a>
 		<div class="p-4 bg-white">
 		  <p><a href="#">Pour les inactifs</a></p>
-		  <span class="date">April 25, 2019</span>
 		  <p>Toute personne sans-travail trouvera sur ti-asa un moyen simple et rapide de trouver des offres d'emploi disponibles chez les entreprises utilisateurs ainsi que chez les particuliers recherchant du personnel.</p>
-		  <p class="more"><a href="single.html">Plus <i class="fa fa-arrow-right"></i></a></p>
+		  <p class="more"><a href="#">Plus <i class="fa fa-arrow-right"></i></a></p>
 		</div>
 	        </div>
 	      </div>
@@ -281,7 +278,7 @@
 					<ul class="social-media list-inline text-lg-right text-center margin-0px text-white">
 						<li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/Ti-asa-114419079928260"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 						<li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-						<li class="list-inline-item"><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+						<li class="list-inline-item"><a class="google" href="#"><i class="fa fa-github" aria-hidden="true"></i></a></li>
 						<li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
 					</ul>
 					<!-- // Social -->
@@ -301,7 +298,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
 			<div class="modal-body">
-				<form action="index.php?action=se_connecter" method="post">
+				<form id="connecter" action="index.php?action=se_connecter" method="post">
 					<div class="form-group">
 						<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
 					</div>

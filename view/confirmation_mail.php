@@ -72,21 +72,21 @@
 		<div class="wrap-contact100" style="display: block">
 			
 
-			<form class="contact100-form validate-form" >
+			<form class="contact100-form validate-form" action="index.php?action=confirmation_mail&amp;mail=<?= $mail?>" method="POST">
 				<span class="contact100-form-title">
 					Code de confirmation
 				</span>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez entrer le code">
 					<span class="label-input100">Nous avons envoyés un code à 6 chiffres à votre adresse email. Veuillez le saisir ici pour confirmer votre compte.</span>
-					<input style="font-size:15px;" class="input100" type="text" name="name" placeholder="">
+					<input style="font-size:15px;" class="input100" type="text" name="mot_confirmation" placeholder="">
 					<span class="focus-input100"></span>
 				</div>
 
 				
 
 				<div class="container-contact100-form-btn" >
-					<button class="contact100-form-btn" type="submit" Onclick="window.location='resetpass.html'">
+					<button class="contact100-form-btn" type="submit" name="confirm_mail">
 						<span >
 							Confirmer
 							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
@@ -94,6 +94,11 @@
 					</button>
 				</div>
 			</form>
+            <?php
+            if(!empty($notification)){
+                echo "$notification<br>";
+            }
+            ?>
 
 			<span class="contact100-more">
 				Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
