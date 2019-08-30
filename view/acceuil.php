@@ -31,9 +31,9 @@ function french_it($mois){
 <!--<div class="se-pre-con"></div>-->
 <?php
 	require("view/header.php")
-?>	
+?>
 <!-- topbar -->
-		
+
 	<section>
 		<div class="gap gray-bg">
 			<div class="container-fluid">
@@ -42,17 +42,17 @@ function french_it($mois){
 						<div class="row" id="page-contents">
 							<div class="col-lg-3">
 								<aside class="sidebar static">
-								
+
 								<?php
 									require("view/shortcuts_gauche_acceuil.php");
 								?>
-								
+
 								<!-- Shortcuts -->
 								<?php
 									require("view/recent_activity.php");
-								?>	
+								?>
 								<!-- recent activites -->
-									
+
 								<?php
 									require("view/who_s_following.php");
 								?>
@@ -77,43 +77,43 @@ function french_it($mois){
 												<div class="newpst-input">
 													<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
 														<textarea id="pub" rows="2" name="texte" placeholder="Publier un Offre d'emploi ou autres"></textarea>
-														
+
 														<div class="attachments">
 															<ul>
-																
+
 																<li>
 																	<i class="fa fa-image" style="color:#610f91;"></i>
 																	<label class="fileContainer">
 																		<input type="file" name="image">
 																	</label>
 																</li>
-																
-														
+
+
 																<li>
 																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px;">Publier</button>
 																</li>
 															</ul>
 														</div>
-														
+
 														<div id="publication" style="display:none;">
 															<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>
-															<div id="f" class="form-group">	
+															<div id="f" class="form-group">
 																<input type="text" name="formation"  />
 																<label class="control-label" for="input">Formation</label><i class="mtrl-select"></i>
 															</div>
-															<div class="form-group">	
+															<div class="form-group">
 																<input type="text" name="experience"  placeholder=""/>
 																<label class="control-label" for="input">Experience Minimum</label><i class="mtrl-select"></i>
 															</div>
-															<div class="form-group">	
+															<div class="form-group">
 																<input type="text" name="competence"  />
 																<label class="control-label" for="input">Competence</label><i class="mtrl-select"></i>
 															</div>
-															<div class="form-group">	
+															<div class="form-group">
 																<input type="text" name="personnalite"   />
 																<label class="control-label" for="input">Personnalité</label><i class="mtrl-select"></i>
 															</div>
-															<div class="form-group">	
+															<div class="form-group">
 																<input type="text" name="langue"  />
 																<label class="control-label" for="input">Langue</label><i class="mtrl-select"></i>
 															</div>
@@ -129,8 +129,8 @@ function french_it($mois){
 																						<option><?= $i ?></option>
 																					<?php
 																				}
-																			?>	
-																			
+																			?>
+
 																		</select>
 																	</div>
 																	<div class="form-group half" style="margin-left:5px !important;">
@@ -152,7 +152,7 @@ function french_it($mois){
 																	</div>
 																</fieldset>
 															</div>
-															<div class="form-group">	
+															<div class="form-group">
 																<input type="text" name="lieu"    />
 																<label class="control-label" for="input">Lieu</label><i class="mtrl-select"></i>
 															</div>
@@ -167,37 +167,37 @@ function french_it($mois){
 																	dist = document.getElementById('publication');
 																	dist.style.display = 'block';
 																	}
-																i = i + 1 ;														
+																i = i + 1 ;
 																	}
-																
+
 															)
-												
+
 															x.addEventListener('blur', function hide_pub(event){
 																dist = document.getElementById('publication');
 																if (event.relatedTarget == null){
 																	dist.style.display = 'none';
 																	i = 0;
-																}			
+																}
 															}
 															)
-														
+
 															cnt.addEventListener('click', function hides_pub(event){
 																dist = document.getElementById('publication');
 																console.log(event.target.localName);
 																if (event.target.localName == 'div'){
 																	dist.style.display = 'none';
 																	i = 0;
-																}	
+																}
 															}
-															) 
+															)
 													</script>
 
 												</div>
 											</div>
-										
+
 										</div><!-- add post new box -->
-										
-										
+
+
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
 											while($publication_li = $publication->fetch()){
@@ -211,7 +211,7 @@ function french_it($mois){
 												<div class="friend-info">
 													<figure>
 														<?php
-																							
+
 															if(isset($publication_li["pdp"])){
 																$pdp = $publication_li["pdp"];
 																$chemin_pdp = "public/images/picture/pdp/$pdp";
@@ -223,8 +223,9 @@ function french_it($mois){
 															$jour_lim = $publication_li['jour'];
 															$mois_lim = french_it($publication_li['mois']);
 															$reste_lim = $publication_li['date_publication'];
+															$id_publication = $publication_li['$id_publication'];
 														?>
-													
+
 														<img src="<?= $chemin_pdp ?>" alt="">
 													</figure>
 													<div class="friend-name">
@@ -232,7 +233,7 @@ function french_it($mois){
 														<span>Publié le <?php echo "$jour_lim $mois_lim $reste_lim" ?></span>
 													</div>
 													<div class="post-meta">
-														<div class="description">	
+														<div id="<?= $id_publication ?>" class="description">
 															<?php
 																if(!empty($publication_li["texte"])){
 																	$vir = "\n";
@@ -247,9 +248,9 @@ function french_it($mois){
 																	}
 																}
 																if(!empty($publication_li["mission"])){
-															?>	
-															
-															<h6 style="display: inline; color: #610f91">Missions:</h6> 
+															?>
+
+															<h6 style="display: inline; color: #610f91">Missions:</h6>
 															<p class="para" style="display: inline">
 																<?php
 																	$vir = ';';
@@ -266,30 +267,30 @@ function french_it($mois){
 															</p>
 															<?php
 																if(!empty($publication_li["formation"])){
-															?>	
+															?>
 															<i class="mtrl-select"></i>
-															
-															<h6 style="display: inline; color: #610f91;">Formations:</h6> 
+
+															<h6 style="display: inline; color: #610f91;">Formations:</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
-																	
+
 																	$text_tab = enleve_le_point_virgule($publication_li["formation"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
 																?>
 																	<li style="margin-left:50px;"><?= $texte ?></li>
-															
+
 																<?php
 																	}
 																}
 																if(!empty($publication_li["experience"])){
-																?>	
+																?>
 															</p>
-															
+
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Expériences:</h6> 
+															<h6 style="display: inline; color: #610f91">Expériences:</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
@@ -299,7 +300,7 @@ function french_it($mois){
 																		$texte = $text_tab[$i];
 																?>
 																	<li style="margin-left:50px;"><?= $texte ?></li>
-															
+
 																<?php
 																	}
 																}
@@ -308,7 +309,7 @@ function french_it($mois){
 															</p>
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Competences:</h6> 
+															<h6 style="display: inline; color: #610f91">Competences:</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir=";";
@@ -318,17 +319,17 @@ function french_it($mois){
 																		$texte = $text_tab[$i];
 																?>
 																	<li style="margin-left:50px;"><?= $texte ?></li>
-														
+
 																<?php
 																	}
 																}
 																if(!empty($publication_li["langue"])){
 																?>
-															</p>	
-															
+															</p>
+
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Langues:</h6> 
+															<h6 style="display: inline; color: #610f91">Langues:</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
@@ -338,17 +339,17 @@ function french_it($mois){
 																		$texte = $text_tab[$i];
 																?>
 																	<li style="margin-left:50px;"><?= $texte ?></li>
-																		
+
 																<?php
 																	}
 																}
-																
+
 																	if(!empty($publication_li["personnalite"])){
 																?>
 															</p>
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Personnalités :</h6> 
+															<h6 style="display: inline; color: #610f91">Personnalités :</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
@@ -361,7 +362,7 @@ function french_it($mois){
 																<?php
 																	}
 																}
-																?>	
+																?>
 															</p>
 															<i class="mtrl-select"></i>
 
@@ -369,15 +370,15 @@ function french_it($mois){
 
 																<?php
 																if(!empty($publication_li["date_limite"]) and $publication_li["date_limite"] != " "){
-																?>	
+																?>
 															</p>
 
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Date limite :</h6> 
+															<h6 style="display: inline; color: #610f91">Date limite :</h6>
 															<p class="para" style="display: inline; color: #333">
 																<li style="margin-left:50px;"><?= $publication_li["date_limite"] ?> </li>
-															
+
 															<?php
 																}
 																if(!empty($publication_li["lieu"])){
@@ -385,29 +386,29 @@ function french_it($mois){
 															</p>
 															<i class="mtrl-select"></i>
 
-															<h6 style="display: inline; color: #610f91">Lieu :</h6> 
+															<h6 style="display: inline; color: #610f91">Lieu :</h6>
 															<p class="para" style="display: inline; color: #333">
 																<li style="margin-left:50px;"><?= $publication_li["lieu"] ?> </li>
-															
+
 																<?php
 																	}
 																?>
 														</div>
-														<?php														
+														<?php
 															if(!empty($publication_li["nom_image"])){
 																$image_publie = $publication_li["nom_image"];
 																$chemin_image_publie = "public/images/picture/post/$image_publie";
-															
+
 														?>
 																<img src="<?= $chemin_image_publie ?>" alt="">
 														<?php
 															}
 														?>
-														
-														
+
+
 													</div>
 												</div>
-												
+
 												<!--Ici commentaire -->
 											</div>
 										</div>
@@ -418,34 +419,43 @@ function french_it($mois){
 												<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 
 									</div><!-- centerl meta -->
-									
-									
+
+
 									<!-- Your page et freinds à droite acceuil-->
 									<?php
 										require("view/your_page_acceuil_droite.php");
 									?>
-									
+
 									<!-- sidebar -->
-								</div>	
+								</div>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</section>
 
 
 	<!-- footer -->
-<!-- side panel -->		
-	
-	
+<!-- side panel -->
+
+
 <script src="public/js/main.min.js"></script>
 <?php
 	require("view/js.php");
 ?>
 
-	
+<script>
+$(function() {
+	setInterval('nouveau_actu()', 1500);
+	function nouveau_actu(){
 
-</body>	
+	}
+});
+ //$('.newpst-input').after('')
+
+</script>
+
+</body>
 
 </html>
 
