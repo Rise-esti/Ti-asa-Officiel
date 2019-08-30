@@ -12,7 +12,7 @@
 	<section>
 		<div class="feature-photo">
 			<figure><img style="" id="pdc" src="<?= $chemin_pdc ?>"  alt=""></figure>
-			
+			<!--
 			<div class="add-btn">
 				<span>0 abonnée</span>
 				<?php
@@ -27,7 +27,7 @@
 				<?php
 				}
 				?>
-			</div>
+			</div>-->
 			<?php
 				
 				if($select_page_li["id"] == $id){

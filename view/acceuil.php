@@ -246,7 +246,19 @@ function french_it($mois){
 														<img src="<?= $chemin_pdp ?>" alt="">
 													</figure>
 													<div class="friend-name">
+
+														<?php
+															if(empty($publication_li["id_page"]) ){
+														?>
 														<ins><a href="index.php?action=affichage_profil&amp;username=<?= $username ?>" title=""><?php echo "$nom $prenom"; ?></a></ins>
+														<?php
+															}
+															else{
+														?>
+														<ins><a href="index.php?action=visite_page&amp;id=<?=$id?>&amp;nom_page=<?=$nom?>" title=""><?php echo "$nom"; ?></a></ins>
+														<?php
+															}
+														?>
 														<span>Publié le <?php echo "$jour_lim $mois_lim $reste_lim" ?></span>
 													</div>
 													<div class="post-meta">
