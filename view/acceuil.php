@@ -198,6 +198,7 @@ function french_it($mois){
 										</div><!-- add post new box -->
 
 
+
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
 											while($publication_li = $publication->fetch()){
@@ -241,6 +242,7 @@ function french_it($mois){
 															$jour_lim = $publication_li['jour'];
 															$mois_lim = french_it($publication_li['mois']);
 															$reste_lim = $publication_li['date_publication'];
+															$id_pub = $publication_li['id_publication'];
 														?>
 
 														<img src="<?= $chemin_pdp ?>" alt="">
@@ -262,7 +264,7 @@ function french_it($mois){
 														<span>Publié le <?php echo "$jour_lim $mois_lim $reste_lim" ?></span>
 													</div>
 													<div class="post-meta">
-														<div class="description">
+														<div id="<?= $id_pub ?>" class="description">
 															<?php
 																if(!empty($publication_li["texte"])){
 																	$vir = "\n";
@@ -477,11 +479,13 @@ function french_it($mois){
 ?>
 
 <script>
-$(function() {
-	alert("akato o");
-	setInterval('nouveau_actu()', 1000);
+
+
+	setInterval('nouveau_actu()', 2000);
 	function nouveau_actu(){
-			id_dernier_pub = $('.description')[0].attr('id');
+		id_dernier_pub = $('.description').attr('id');
+
+
 			$.post(
 				'controller/load_actu.php',
 				{
@@ -493,16 +497,26 @@ $(function() {
 			);
 			function actu_recu(text){
 				tab = new Array(JSON.parse(text));
-				console.log(tab);
+				if (tab[0].length > 0){
+					for (i=0;i<tab[0].length;i++){
+						// new_pub = $('.post-meta').clone();
+
+					tab[0][i]['prenom']
+					}
+				}
+
+				console.log(tab[0].length);
+				// new_pub = $('.description').clone();
+
+				// new_pub.attr('id', '')
+				 //$('.newpst-input').after('')
 
 
 			}
+
 	}
-});
- //$('.newpst-input').after('')
 
 </script>
-*/
 
 
 </body>
