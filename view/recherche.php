@@ -31,9 +31,9 @@ function french_it($mois){
 <!--<div class="se-pre-con"></div>-->
 <?php
 	require("view/header.php")
-?>	
+?>
 <!-- topbar -->
-		
+
 	<section>
 		<div class="gap gray-bg">
 			<div class="container-fluid">
@@ -42,17 +42,17 @@ function french_it($mois){
 						<div class="row" id="page-contents">
 							<div class="col-lg-3">
 								<aside class="sidebar static">
-								
+
                                     <?php
                                         require("view/shortcuts_gauche_acceuil.php");
                                     ?>
-                                    
+
                                     <!-- Shortcuts -->
                                     <?php
                                         require("view/recent_activity.php");
-                                    ?>	
+                                    ?>
                                     <!-- recent activites -->
-                                        
+
                                     <?php
                                         require("view/who_s_following.php");
                                     ?>
@@ -60,65 +60,65 @@ function french_it($mois){
 								</aside>
                             </div><!-- sidebar -->
                             <div class="col-lg-6">
-                                
-                            
+
+
                             <div class="central-meta timeline-info">
                                 <ul>
                                     <li>
                                         <a class="active" href="#" title="" data-ripple="" Onclick=affichepers() id="pe"> <i class="mtrl-select"></i> Personnes</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
-                                        
+
                                         <a class="" href="#" title="" data-ripple="" Onclick=affichepg()  id="pa"> <i class="mtrl-select"></i> Pages</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
-                                    
+
                                         <a class="" href="#" title="" data-ripple="" Onclick=affichepub() id="pu"><i class="mtrl-select" ></i>Publications</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
-                                        
+
                                         <a class="" href="#" title="" data-ripple="" Onclick=afficheav() id="ava"><i class="mtrl-select"></i>Avancées</a>
-                                    
+
                                     </li>
                                 </ul>
                             </div>
 
-                                
-                                
+
+
                             <!--Résultats personnes ici-->
                             <div class="central-meta timeline-info" style="display:block" id="personne">
-                                            <ul id="people-list" class="friendz-list">
-                                                <?php
-                                                while($resultat_profil = $rechercher_profil->fetch()){
-                                                    if(!empty($resultat_profil["id"])){
-                                                            if(isset($resultat_profil["photo_de_profil"])){
-                                                            $pdp = $resultat_profil["photo_de_profil"];
-                                                            $src_pdp = "public/images/picture/pdp/$pdp";
-                                                            }
-                                                            else{
-                                                            $src_pdp = "public/images/av.png";
-                                                            }
-                                                ?>
-
-                                                <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
-                                                    <figure style="display:inline !important;">
-                                                            <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
-                                                    </figure>
-                                                    <span class="friendz-meta" style="margin-left:0%;" >
-
-                                                            <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
-
-                                                            <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
-                                                    </span>
-                                                    
-                                                </li>
-                                            
-                                                <?php
-                                                    }
+                                <ul id="people-list" class="friendz-list">
+                                    <?php
+                                    while($resultat_profil = $rechercher_profil->fetch()){
+                                        if(!empty($resultat_profil["id"])){
+                                                if(isset($resultat_profil["photo_de_profil"])){
+                                                $pdp = $resultat_profil["photo_de_profil"];
+                                                $src_pdp = "public/images/picture/pdp/$pdp";
                                                 }
-                                                ?>
-                                            </ul>
+                                                else{
+                                                $src_pdp = "public/images/av.png";
+                                                }
+                                    ?>
+
+                                    <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
+                                        <figure style="display:inline !important;">
+                                                <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
+                                        </figure>
+                                        <span class="friendz-meta" style="margin-left:0%;" >
+
+                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
+
+                                                <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
+                                        </span>
+
+                                    </li>
+
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
                             </div>
 
-                            
-                            
+
+
                             <!--Résultats pages ici-->
                             <div class="central-meta timeline-info" style="display:none" id="page">
                                 <ul id="people-list" class="friendz-list">
@@ -142,9 +142,9 @@ function french_it($mois){
                                                 <a href="#" Onclick = "window.location='index.php?action=visite_page&amp;id=<?=$id?>&amp;nom_page=<?= $resultat_page["nom_page"] ?>'" ><?= $resultat_page["nom_page"]?></a>
                                                 <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_page["mail_page"] ?></div>
                                         </span>
-                                        
+
                                     </li>
-                                   
+
                                     <?php
                                         }
                                     }
@@ -152,51 +152,87 @@ function french_it($mois){
                                 </ul>
                             </div>
 
-                            
-                            
+
                             <!--Résultats publications  ici-->
                             <div class="central-meta timeline-info" style="display:none" id="publication">
-                                
+															<ul id="people-list" class="friendz-list">
+																	<?php
+
+																	while($rechercher_publication = $rechercher_publications->fetch()){
+																			if(!empty($rechercher_publication["id"])){
+																				$jour_lim = $rechercher_publication['jour'];
+																				$mois_lim = french_it($rechercher_publication['mois']);
+																				$reste_lim = $rechercher_publication['date_publication'];
+																				if(isset($rechercher_publication["pdp"])){
+																					$pdp = $rechercher_publication["pdp"];
+																					$src_pdp = "public/images/picture/pdp/$pdp";
+																				}
+																				else{
+																					$src_pdp = "public/images/av.png";
+																				}
+
+																	?>
+
+																	<li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
+																			<figure style="display:inline !important;">
+																							<img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
+																			</figure>
+																			<span class="friendz-meta" style="margin-left:0%;" >
+																							<a href="#" Onclick = "" ><?= $rechercher_publication["nom"].' '.$rechercher_publication["prenom"]?></a>
+																							<div href="#"  style="color:#888;"class="__cf_email__" >Publié le <?php echo "$jour_lim $mois_lim $reste_lim"; ?></div>
+
+																			</span>
+																						<div style="margin-left:50px;"><?= $rechercher_publication["texte"] ?>
+																			</div>
+
+																	</li>
+
+																	<?php
+
+																			}
+																	}
+																	?>
+															</ul>
                             </div>
 
-                            
-                            
+
+
                             <!--Résultats avancées ici-->
                             <div class="central-meta timeline-info" style="display:none" id="avance">
                             </div>
-                                 
-                                
+
+
                             <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
-                            
+
                             <!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 
                         </div><!-- centerl meta -->
-                    
-                    
+
+
                         <!-- Your page et freinds à droite acceuil-->
                         <?php
                             require("view/your_page_acceuil_droite.php");
                         ?>
-                                
+
                                 <!-- sidebar -->
-                        </div>	
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>	
+        </div>
 	</section>
 
 
 	<!-- footer -->
-<!-- side panel -->		
-	
-	
+<!-- side panel -->
+
+
 <script src="public/js/main.min.js"></script>
 <?php
 	require("view/js.php");
 ?>
 
-	
+
 <script>
     function affichepers(){
         $('#pe').addClass('active');
@@ -245,7 +281,7 @@ function french_it($mois){
                 pub.style.display='none'
                 av.style.display='none'
                 pg.style.display='block'
-                
+
             }
     }
 
@@ -264,14 +300,13 @@ function french_it($mois){
             pg.style.display='none'
             av.style.display='none'
             pub.style.display='block'
-        
+
         }
         else{
             pers.style.display='none'
             pg.style.display='none'
             av.style.display='none'
             pub.style.display='block'
-            alert('hahahaha');
         }
 }
 
@@ -298,11 +333,11 @@ function french_it($mois){
             av.style.display='block'
         }
     }
-    
+
 
 </script>
 
-</body>	
+</body>
 </html>
 
 <?php

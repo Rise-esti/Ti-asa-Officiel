@@ -35,7 +35,7 @@ function mot_confirmation_mail($mot_confirmation, $mail){
 
 function verifier_message_nouveau_et_non_lu($id){
     $query_bdd = new Query_bdd;
-    $verifier_message_nouveau_et_non_lu = $query_bdd->verifier_message_nouveau_et_non_lu($id);    
+    $verifier_message_nouveau_et_non_lu = $query_bdd->verifier_message_nouveau_et_non_lu($id);
     return $verifier_message_nouveau_et_non_lu;
 }
 
@@ -46,7 +46,7 @@ function new_message($id){
 }
 
 function message($id, $id_exp, $new_chat){
-    
+
     $query_bdd = new Query_bdd;
     $verify_existance_discussion = $query_bdd->verify_existance_discussion($id, $id_exp);
     $verify_existance_discussion_li = $verify_existance_discussion->fetch();
@@ -67,7 +67,7 @@ function message($id, $id_exp, $new_chat){
             $i++;
         }
         $nbr_discussion = count($tab);
-        
+
     }
 
     $profil = $query_bdd->information_profil($id);
@@ -105,7 +105,7 @@ function se_connecter($mail, $password){
     $info_user_li = $info_user->fetch();
     $mail_user = $info_user_li["mail"];
     $passwd_hash = $info_user_li["mot_de_passe"];
-    
+
     if($info_user === false or $mail_user == ""){
         $erreur_login = "Mail incorrecte";
         header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
@@ -140,7 +140,7 @@ function connecter($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
-    
+
     $publication = $query_bdd->requete_publication($id);
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
@@ -292,7 +292,7 @@ $annee, $sexe, $adresse, $province, $biographie, $poste, $entreprise){
     if(!isset($entreprise) or $entreprise == ""){
         $entreprise = NULL;
     }
-    
+
     $insertion_info_profil = $query_bdd->insertion_information_profil($id, $nom, $prenom, $username, $mail, $telephone, $date_naissance,
     $sexe, $adresse, $province, $biographie, $poste, $entreprise);
     if($insertion_info_profil === false){
@@ -313,7 +313,7 @@ function modifier_photo($id, $pdp_name, $pdp_temporaire, $code_erreur, $destinat
             }
             else{
                 throw new Exception("Erreur copie fichier");
-            }                           
+            }
             break;
         case UPLOAD_ERR_NO_FILE:
             throw new Exception("Aucun fichier séléctionner");
@@ -337,9 +337,9 @@ function modifier_photo($id, $pdp_name, $pdp_temporaire, $code_erreur, $destinat
     if($verify_insertion === false){
         throw new Exception("Erreur insertion fichier");
     }
-    else{    
+    else{
         header("location:index.php?action=modifier_profil&id=$id");
-    }   
+    }
 }
 
 function afficher_information_generale($id){
@@ -366,7 +366,7 @@ function modifier_information($id){
         $tab[$i] = $donne;
         $i++;
     }
-    
+
     $nbr_formation = count($tab);
 
     if($nbr_formation == 0){
@@ -418,7 +418,7 @@ function ajouter_formation($id, $ecole, $debut_mois_formation, $debut_annee_form
 
 }
 
-function mettre_jour_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation, 
+function mettre_jour_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation,
 $fin_mois_formation, $fin_annee_formation, $filiere, $niveau, $obtention){
     if(!isset($fin_mois_formation)){
         $fin_mois_formation = NULL;
@@ -436,7 +436,7 @@ $fin_mois_formation, $fin_annee_formation, $filiere, $niveau, $obtention){
         $obtention= NULL;
     }
     $query_bdd = new Query_bdd;
-    $mettre_jour_formation = $query_bdd->mis_a_jours_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation, 
+    $mettre_jour_formation = $query_bdd->mis_a_jours_formation($id, $id_formation, $ecole, $debut_mois_formation, $debut_annee_formation,
                             $fin_mois_formation, $fin_annee_formation, $filiere, $niveau, $obtention);
     if($mettre_jour_formation === false){
         throw new Exception("Erreur mettre_jour_formation");
@@ -484,7 +484,7 @@ function modifier_competence($id){
         $tab[$i] = $donne;
         $i++;
     }
-    
+
     $nbr_competence = count($tab);
 
     if($nbr_competence == 0){
@@ -536,7 +536,7 @@ function mettre_jour_competence($id, $id_competence, $competence, $explication, 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
 
- 
+
     $mettre_jour_competence = $query_bdd->mettre_jour_competence_existant($id, $id_competence, $competence, $explication, $niveau);
     if($mettre_jour_competence === false){
         throw new Exception("Erreur mettre_jour_competence");
@@ -582,7 +582,7 @@ function modifier_afficher_experience($id){
         $tab[$i] = $donne;
         $i++;
     }
-    
+
     $nbr_experience = count($tab);
 
     if($nbr_experience  == 0){
@@ -682,7 +682,7 @@ function afficher_centre_interet($id){
         $tab[$i] = $donne;
         $i++;
     }
-    
+
     $nbr_centre_interet = count($tab);
 
     if($nbr_centre_interet  == 0){
@@ -737,7 +737,7 @@ function mettre_jours_centre_interet($id, $id_centre_interet, $centre_interet, $
         throw new Exception("Erreur mettre_jours_centre_interet");
     }
     else{
-        
+
         header("location:index.php?action=afficher_centre_interet&id=$id");
     }
 }
@@ -760,7 +760,7 @@ function supprimer_centre_interet($id, $id_centre_interet){
         throw new Exception("erreur supprimer_centre_interet");
     }
     else{
-        
+
         header("location:index.php?action=afficher_centre_interet&id=$id");
     }
 }
@@ -778,7 +778,7 @@ function afficher_profil_utilisateur($username){
     require("view/infogen.php");
 }
 
-function new_post($id, $texte, $experience, $competence, $formation, 
+function new_post($id, $texte, $experience, $competence, $formation,
 $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
     $query_bdd = new Query_bdd;
     if(!isset($texte)){
@@ -816,11 +816,11 @@ $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
     if(!isset($mission)){
         $mission = NULL;
     }
-    $image_name = $oFileInfos["name"]; 
+    $image_name = $oFileInfos["name"];
     if(isset($image_name) and $image_name != ""){
-        
+
         $image_name = str_replace(' ', '_', $image_name);
-        $image_temporaire = $oFileInfos["tmp_name"]; 
+        $image_temporaire = $oFileInfos["tmp_name"];
         $code_erreur = $oFileInfos["error"];
         $destination = "public/images/picture/post/$image_name";
 
@@ -832,7 +832,7 @@ $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
                 }
                 else{
                     throw new Exception("Erreur copie fichier");
-                }                           
+                }
                 break;
             case UPLOAD_ERR_NO_FILE:
                 throw new Exception("Aucun fichier séléctionner");
@@ -854,12 +854,12 @@ $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
                 break;
         }
     }
-    
+
     if(!isset($image_name)){
         $image_name = NULL;
     }
-    
-    $verify_insertion_post = $query_bdd->insertion_fichier_post($id, $texte, $experience, $competence, $formation, 
+
+    $verify_insertion_post = $query_bdd->insertion_fichier_post($id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission );
 
 
@@ -925,7 +925,7 @@ function nouveau_mot_de_passe($id, $ancien_mdp, $nouveau_mdp, $confirmation_mdp)
 function creer_page($id){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
-    $profil_li = $profil->fetch();   
+    $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     require("view/edit_page_(modifier).php");
@@ -952,7 +952,7 @@ function info_creation_page($nom_page, $mail_page, $telephone_page, $province_pa
         }
         else{
             $profil = $query_bdd->information_profil($id);
-            $profil_li = $profil->fetch();  
+            $profil_li = $profil->fetch();
             $select_page = $query_bdd->select_page($id, $nom_page);
             $select_page_li = $select_page->fetch();
             $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
@@ -973,10 +973,10 @@ function info_creation_page($nom_page, $mail_page, $telephone_page, $province_pa
 }
 
 function afficher_ma_page($id, $nom_page){
-    
+
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
-    $profil_li = $profil->fetch();  
+    $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_page = $query_bdd->select_page($id, $nom_page);
@@ -1017,12 +1017,12 @@ function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page,
         }
         else{
             $profil = $query_bdd->information_profil($id);
-            $profil_li = $profil->fetch(); 
+            $profil_li = $profil->fetch();
             $select_page = $query_bdd->select_page($id, $nom_page);
             $select_page_li = $select_page->fetch();
             $select_mes_page = $query_bdd->select_mes_page($id);
             require("view/infogen_page.php");
-            
+
         }
     }
     else{
@@ -1039,7 +1039,7 @@ function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page,
 }
 
 function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporaire, $code_erreur){
-    
+
     if($type == '123'){
         $destination = "public/images/picture/pdc_page/$photo_name";
         $column = "pdc_page";
@@ -1048,7 +1048,7 @@ function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporair
         $destination = "public/images/picture/pdp_page/$photo_name";
         $column = "pdp_page";
     }
-    
+
     switch($code_erreur)
         {
             case UPLOAD_ERR_OK:
@@ -1069,7 +1069,7 @@ function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporair
                 }
                 else{
                     throw new Exception("Erreur copie fichier");
-                }                           
+                }
                 break;
             case UPLOAD_ERR_NO_FILE:
                 throw new Exception("Aucun fichier séléctionner");
@@ -1092,10 +1092,12 @@ function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporair
         }
 }
 
-function rechercher($id, $recherche){   
+function rechercher($id, $recherche){
     $query_bdd = new Query_bdd;
-    $rechercher_profil = $query_bdd->rechercher_profil($id, $recherche);   
+    $rechercher_profil = $query_bdd->rechercher_profil($id, $recherche);
     $rechercher_page = $query_bdd->rechercher_page($id, $recherche);
+    $rechercher_publications = $query_bdd->rechercher_publication($id, $recherche);
+    //$recherche_publication_page = $query_bdd->recherche_publication_page($recherche);
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
@@ -1110,17 +1112,17 @@ function suivre_page($id, $id_page, $nom_page){
 }
 
 function page($id, $nom_page){
-    
+
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
-    $profil_li = $profil->fetch();  
+    $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_page = $query_bdd->select_page($id, $nom_page);
     $select_page_li = $select_page->fetch();
     $id_page = $select_page_li["id_page"];
     $publication = $query_bdd->requete_my_publication_page($id, $id_page);
-        
+
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
 }
@@ -1128,7 +1130,7 @@ function page($id, $nom_page){
 function visite_page($id, $nom_page){
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);
-    $profil_li = $profil->fetch(); 
+    $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_page = $query_bdd->select_page_visite($nom_page);
@@ -1178,11 +1180,11 @@ function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competenc
     if(!isset($mission)){
         $mission = NULL;
     }
-    $image_name = $oFileInfos["name"]; 
+    $image_name = $oFileInfos["name"];
     if(isset($image_name) and $image_name != ""){
-        
+
         $image_name = str_replace(' ', '_', $image_name);
-        $image_temporaire = $oFileInfos["tmp_name"]; 
+        $image_temporaire = $oFileInfos["tmp_name"];
         $code_erreur = $oFileInfos["error"];
         $destination = "public/images/picture/post_page/$image_name";
 
@@ -1194,7 +1196,7 @@ function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competenc
                 }
                 else{
                     throw new Exception("Erreur copie fichier");
-                }                           
+                }
                 break;
             case UPLOAD_ERR_NO_FILE:
                 throw new Exception("Aucun fichier séléctionner");
@@ -1216,12 +1218,12 @@ function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competenc
                 break;
         }
     }
-    
+
     if(!isset($image_name)){
         $image_name = NULL;
     }
-    
-    $verify_insertion_post = $query_bdd->insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation, 
+
+    $verify_insertion_post = $query_bdd->insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission );
 
 

@@ -420,7 +420,7 @@ class Query_bdd extends Connect_bdd{
 
     public function rechercher_publication($id, $recherche){
         $bdd = $this->dbconnect();
-        $recherche = $bdd->query("SELECT * FROM PUBLICATION WHERE texte LIKE '%$recherche%' or mission LIKE '%$recherche%' ");
+        $recherche = $bdd->query("SELECT pu.*, per.nom, per.prenom, per.username, per.photo_de_profil as pdp, DAY(pu.date_publication) as jour, MONTH(pu.date_publication) as mois , DATE_FORMAT(pu.date_publication, '%Y à %Hh%imin') as date_publication FROM PUBLICATION pu INNER JOIN PERSONNE per ON pu.id = per.id WHERE texte LIKE '%$recherche%' and page = '0' ");
         return $recherche;
     }
 
@@ -429,7 +429,12 @@ class Query_bdd extends Connect_bdd{
         $recherche = $bdd->query("SELECT * FROM PAGE_PAGE WHERE nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%' or mail_page LIKE '%$recherche%' ");
         return $recherche;
     }
-
+/*
+    public function recherche_publication_page($recherche){
+      $bdd = $this->dbconnect();
+      $rech_pub_page = $bdd->query("SELECT pu.*, pa.nom_page, pa.id_page, pa.description_page, pa.mail_page, pa.pdp_page FROM PUBLICATION pu INNER JOIN PAGE_PAGE pa WHERE (nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%') and page = '1' ");
+    }
+*/
         public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
         $bdd = $this->dbconnect();
