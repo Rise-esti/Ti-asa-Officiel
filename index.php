@@ -16,6 +16,18 @@ try{
             $_SESSION["tab_mess_farany"] = $tab_mess_farany;
         }
 
+        if($action == "demande_confirmation_mail" and isset($_GET["notification"]) and isset($_GET["mail"])){
+            $notification = htmlspecialchars($_GET["notification"]);
+            $mail = htmlspecialchars($_GET["mail"]);
+            demande_confirmation_mail($notification, $mail);
+        }
+
+        if($action == "confirmation_mail" and isset($_POST["confirm_mail"]) and isset($_GET["mail"])){
+            $mot_confirmation = htmlspecialchars($_POST["mot_confirmation"]);
+            $mail = htmlspecialchars($_GET["mail"]);
+            mot_confirmation_mail($mot_confirmation, $mail);
+        }
+
         if($action == "message" and isset($_GET["id"]) and isset($_GET["id_exp"])){
             $id = htmlspecialchars($_GET["id"]);
             $id_exp = htmlspecialchars($_GET["id_exp"]);

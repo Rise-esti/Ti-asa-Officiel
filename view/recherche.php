@@ -65,16 +65,16 @@ function french_it($mois){
                             <div class="central-meta timeline-info">
                                 <ul>
                                     <li>
-                                        <a class="active" href="#" title="" data-ripple="" Onclick=affichepers() > <i class="mtrl-select"></i> Personnes</a>
+                                        <a class="active" href="#" title="" data-ripple="" Onclick=affichepers() id="pe"> <i class="mtrl-select"></i> Personnes</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepg() > <i class="mtrl-select"></i> Pages</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepg()  id="pa"> <i class="mtrl-select"></i> Pages</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                     
-                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepub() ><i class="mtrl-select" ></i>Publications</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=affichepub() id="pu"><i class="mtrl-select" ></i>Publications</a>
                                         <a class="" href="#" title="" data-ripple=""></a>
                                         
-                                        <a class="" href="#" title="" data-ripple="" Onclick=afficheav() ><i class="mtrl-select"></i>Avancées</a>
+                                        <a class="" href="#" title="" data-ripple="" Onclick=afficheav() id="ava"><i class="mtrl-select"></i>Avancées</a>
                                     
                                     </li>
                                 </ul>
@@ -96,16 +96,18 @@ function french_it($mois){
                                                 $src_pdp = "public/images/av.png";
                                                 }
                                     ?>
-                                    <li>
-                                        <figure >
-                                                <img style="height:50px !important; width:50px !important;" src="<?= $src_pdp ?>" alt="">
+
+                                    <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
+                                        <figure style="display:inline !important;">
+                                                <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
                                         </figure>
-                                        <span class="friendz-meta" style="margin-left:9%; margin-top:-12%;" >
-                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $username ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
-                                                <i><a href="#" class="__cf_email__" ><?= $resultat_profil["poste"] ?></a></i>
+                                        <span class="friendz-meta" style="margin-left:0%;" >
+                                                <a href="#" Onclick = "window.location='index.php?action=affichage_profil&amp;username=<?= $resultat_profil["username"] ?>'" ><?= $resultat_profil["nom"].' '.$resultat_profil["prenom"] ?></a>
+                                                <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_profil["poste"] ?></div>
                                         </span>
                                         
                                     </li>
+                                   
                                     <?php
                                         }
                                     }
@@ -117,12 +119,42 @@ function french_it($mois){
                             
                             <!--Résultats pages ici-->
                             <div class="central-meta timeline-info" style="display:none" id="page">
+                                <ul id="people-list" class="friendz-list">
+                                    <?php
+                                    while($resultat_page = $rechercher_page->fetch()){
+                                        if(!empty($resultat_page["id"])){
+                                                if(isset($resultat_page["pdp_page"])){
+                                                $pdp = $resultat_page["pdp_page"];
+                                                $src_pdp = "public/images/picture/pdp_page/$pdp";
+                                                }
+                                                else{
+                                                $src_pdp = "public/images/av.png";
+                                                }
+                                    ?>
+
+                                    <li style="display:block !important; margin-left:15% !important; margin-bottom:2% !important;">
+                                        <figure style="display:inline !important;">
+                                                <img style="height:50px !important; width:50px !important; " src="<?= $src_pdp ?>" alt="">
+                                        </figure>
+                                        <span class="friendz-meta" style="margin-left:0%;" >
+                                                <a href="#" Onclick = "window.location='index.php?action=visite_page&amp;id=<?=$id?>&amp;nom_page=<?= $resultat_page["nom_page"] ?>'" ><?= $resultat_page["nom_page"]?></a>
+                                                <div href="#"  style="color:#888;"class="__cf_email__" ><?= $resultat_page["mail_page"] ?></div>
+                                        </span>
+                                        
+                                    </li>
+                                   
+                                    <?php
+                                        }
+                                    }
+                                    ?>
+                                </ul>
                             </div>
 
                             
                             
                             <!--Résultats publications  ici-->
                             <div class="central-meta timeline-info" style="display:none" id="publication">
+                                
                             </div>
 
                             
@@ -165,6 +197,10 @@ function french_it($mois){
 	
 <script>
     function affichepers(){
+                    $('#pe').addClass('active');
+                    $('#pa').removeClass('active');
+                    $('#pu').removeClass('active');
+                    $('#ava').removeClass('active');
                     var pers=document.getElementById('personne');
                     var pg=document.getElementById('page');
                     var pub=document.getElementById('publication');
@@ -186,6 +222,10 @@ function french_it($mois){
     }
 
     function affichepg(){
+                    $('#pe').removeClass('active');
+                    $('#pa').addClass('active');
+                    $('#pu').removeClass('active');
+                    $('#ava').removeClass('active');
                     var pers=document.getElementById('personne');
                     var pg=document.getElementById('page');
                     var pub=document.getElementById('publication');
@@ -208,6 +248,10 @@ function french_it($mois){
     }
 
     function affichepub(){
+                    $('#pe').removeClass('active');
+                    $('#pa').removeClass('active');
+                    $('#pu').addClass('active');
+                    $('#ava').removeClass('active');
                     var pers=document.getElementById('personne');
                     var pg=document.getElementById('page');
                     var pub=document.getElementById('publication');
@@ -230,6 +274,10 @@ function french_it($mois){
     }
 
     function afficheav(){
+                    $('#pe').removeClass('active');
+                    $('#pa').removeClass('active');
+                    $('#pu').removeClass('active');
+                    $('#ava').addClass('active');
                     var pers=document.getElementById('personne');
                     var pg=document.getElementById('page');
                     var pub=document.getElementById('publication');
