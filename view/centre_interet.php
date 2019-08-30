@@ -42,9 +42,9 @@
 												<?php
 													}
 												?>
-												<div class="submit-btns " style="margin-left:-50% ">
-													<button type="button" style="background-color:#ff4b5a;  " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_centre_interet&id=<?= $id ?>&id_centre_interet=<?= $id_centre_interet ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													<button  style="" Onclick="window.location='index.php?action=modifier_centre_interet_existe&amp;id=<?= $id ?>&amp;id_centre_interet=<?= $id_centre_interet ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+												<div class="submit-btns">
+													<button class="supp" type="button" style="background-color:#ff4b5a;  " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_centre_interet&id=<?= $id ?>&id_centre_interet=<?= $id_centre_interet ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+													<button  class="mod" Onclick="window.location='index.php?action=modifier_centre_interet_existe&amp;id=<?= $id ?>&amp;id_centre_interet=<?= $id_centre_interet ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
 												</div>
 											</div>
 										</form>
