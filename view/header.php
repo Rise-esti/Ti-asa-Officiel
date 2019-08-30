@@ -36,33 +36,33 @@
 <!--<div class="se-pre-con"></div>-->
 <div class="theme-layout">
 
-<div class="responsive-header">
+	<!--responsive header----------------------------------------------------------------------------------------------------------->
+	<div class="responsive-header">
 		<div class="mh-head first Sticky">
 			<span class="mh-btns-left">
 				<a class="" href="#menu"><i class="fa fa-align-justify"></i></a>
 			</span>
 			<span class="mh-text">
-				<i class="fa fa-rss" style="display:inline"></i><p class="por" style="display:inline">ti-asa</p>
+				<p class="por" style="display:inline; color:#fff !important;">ti-asa</p>
 			</span>
 
 
 		</div>
 		<div class="mh-head second">
 			<form class="mh-form">
-				<input placeholder="search" />
+				<input placeholder="Rechercher " />
 				<a href="#/" class="fa fa-search"></a>
 			</form>
 		</div>
 		<nav id="menu" class="res-menu">
 			<ul>
-				<li><span>Actualité</span>
+				
+				<li><span>Accueil</span>
 					<ul>
-						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="">Accueil</a></li>
-						<li><a href="index2.html" title="">A</a></li>
-						<li><a href="index-company.html" title="">B</a></li>
-
+						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="">Actualités</a></li>
 					</ul>
 				</li>
+				
 				<li><span>Profil</span>
 					<ul>
 						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher mon profil</a></li>
@@ -70,75 +70,28 @@
 					</ul>
 				</li>
 
+				<li>
+					<a href="#" title="" class=" high">Page</a>
+					<ul>
+						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
+						<?php
+							$tab_list_page = array();
+							$i = 0;
+							while($mes_page = $select_mes_page->fetch()){
+						?>
+						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<?php
+                            $tab_list_page[$i] = $mes_page;
+                            $i++;
+						}
+                        $nbr_page = count($tab_list_page);
+						?>
+					</ul>
+				</li>
+
 			</ul>
 		</nav>
-		<nav id="shoppingbag">
-			<div>
-				<div class="">
-					<form method="post">
-						<div class="setting-row">
-							<span>use night mode</span>
-							<input type="checkbox" id="nightmode"/>
-							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Notifications</span>
-							<input type="checkbox" id="switch2"/>
-							<label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Notification sound</span>
-							<input type="checkbox" id="switch3"/>
-							<label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>My profile</span>
-							<input type="checkbox" id="switch4"/>
-							<label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Show profile</span>
-							<input type="checkbox" id="switch5"/>
-							<label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-					</form>
-					<h4 class="panel-title">Account Setting</h4>
-					<form method="post">
-						<div class="setting-row">
-							<span>Sub users</span>
-							<input type="checkbox" id="switch6" />
-							<label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>personal account</span>
-							<input type="checkbox" id="switch7" />
-							<label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Business account</span>
-							<input type="checkbox" id="switch8" />
-							<label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Show me online</span>
-							<input type="checkbox" id="switch9" />
-							<label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Delete history</span>
-							<input type="checkbox" id="switch10" />
-							<label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-						<div class="setting-row">
-							<span>Expose author name</span>
-							<input type="checkbox" id="switch11" />
-							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
-						</div>
-					</form>
-				</div>
-			</div>
-		</nav>
-	</div><!-- responsive header -->
+	</div><!-- responsive header--------------------------------------------------------------------------------------------- -->
 
 	<div class="topbar stick">
 		<div class="logo">
@@ -200,7 +153,7 @@
 						<i class="ti-bell"></i><span style="color:#610f91; font-weight:bold;">4</span>
 					</a>
 					<div class="dropdowns">
-						<span>4 New Notifications</span>
+						<span>4 nouvelles notifications</span>
 						<ul class="drops-menu">
 						<!--
 							<li>
@@ -300,10 +253,10 @@
 									<div class="mesg-meta" >
 										<h6 class="anarana"><?=$tab_mess_farany[$i]["nom"]. ' '. $tab_mess_farany[$i]["prenom"] ?></h6>
 										<span id='mes_far'><?=$tab_mess_farany[$i]["mes"] ?></span>
-										<i>2 min ago</i>
+										<i>2 min</i>
 									</div>
 								</a>
-								<span class="tag green">New</span>
+								<span class="tag green">Nouveau</span>
 							</li>
 
 							<?php
@@ -311,20 +264,15 @@
 								}
 							?>
 						</ul>
-						<a href="messages.html" title="" class="more-mesg">view more</a>
+						<a href="messages.html" title="" class="more-mesg">Plus</a>
 					</div>
 				</li>
 				<?php
 					$nom = $profil_li["nom"];
 					$prenom = $profil_li["prenom"];
 				?>
-				<li><a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #610f91; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
-					<div class="dropdowns languages">
-						<a href="#" title=""><i class="ti-check"></i>English</a>
-						<a href="#" title="">Arabic</a>
-						<a href="#" title="">Dutch</a>
-						<a href="#" title="">French</a>
-					</div>
+				<li>
+					<a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #610f91; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
 				</li>
 			</ul>
 			<div class="user-img">
