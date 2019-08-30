@@ -34091,13 +34091,13 @@ form.dark-form ::-ms-input-placeholder {
     .recruter{
         width:100% !important;
         position:relative;
-      left: -32% !important;
+      left: -40% !important;
       top:-25% !important;
   }
 
   .top-btn1{
       position:relative;
-      left:-37%;
+      left:-46%;
   }
   .top-btn2{
     position:absolute;
