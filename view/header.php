@@ -8,8 +8,8 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>ti-asa</title>
-    <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16"> 
-   
+    <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
+
     <link rel="stylesheet" href="public/css/main.min.css">
     <link rel="stylesheet" href="public/css/style.css">
     <link rel="stylesheet" href="public/css/color.css">
@@ -21,7 +21,7 @@
 
 
 </head>
-<script>	
+<script>
 	function cocher_cliques_message(){
 		$('.nbr_lu').load("model/cocher_cliques_message.php");
 	}
@@ -44,8 +44,8 @@
 			<span class="mh-text">
 				<i class="fa fa-rss" style="display:inline"></i><p class="por" style="display:inline">ti-asa</p>
 			</span>
-    
-			
+
+
 		</div>
 		<div class="mh-head second">
 			<form class="mh-form">
@@ -66,10 +66,10 @@
 				<li><span>Profil</span>
 					<ul>
 						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher mon profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier mon profil</a></li>			
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="">Modifier mon profil</a></li>
 					</ul>
 				</li>
-				
+
 			</ul>
 		</nav>
 		<nav id="shoppingbag">
@@ -78,27 +78,27 @@
 					<form method="post">
 						<div class="setting-row">
 							<span>use night mode</span>
-							<input type="checkbox" id="nightmode"/> 
+							<input type="checkbox" id="nightmode"/>
 							<label for="nightmode" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Notifications</span>
-							<input type="checkbox" id="switch2"/> 
+							<input type="checkbox" id="switch2"/>
 							<label for="switch2" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Notification sound</span>
-							<input type="checkbox" id="switch3"/> 
+							<input type="checkbox" id="switch3"/>
 							<label for="switch3" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>My profile</span>
-							<input type="checkbox" id="switch4"/> 
+							<input type="checkbox" id="switch4"/>
 							<label for="switch4" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Show profile</span>
-							<input type="checkbox" id="switch5"/> 
+							<input type="checkbox" id="switch5"/>
 							<label for="switch5" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 					</form>
@@ -106,32 +106,32 @@
 					<form method="post">
 						<div class="setting-row">
 							<span>Sub users</span>
-							<input type="checkbox" id="switch6" /> 
+							<input type="checkbox" id="switch6" />
 							<label for="switch6" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>personal account</span>
-							<input type="checkbox" id="switch7" /> 
+							<input type="checkbox" id="switch7" />
 							<label for="switch7" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Business account</span>
-							<input type="checkbox" id="switch8" /> 
+							<input type="checkbox" id="switch8" />
 							<label for="switch8" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Show me online</span>
-							<input type="checkbox" id="switch9" /> 
+							<input type="checkbox" id="switch9" />
 							<label for="switch9" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Delete history</span>
-							<input type="checkbox" id="switch10" /> 
+							<input type="checkbox" id="switch10" />
 							<label for="switch10" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 						<div class="setting-row">
 							<span>Expose author name</span>
-							<input type="checkbox" id="switch11" /> 
+							<input type="checkbox" id="switch11" />
 							<label for="switch11" data-on-label="ON" data-off-label="OFF"></label>
 						</div>
 					</form>
@@ -139,19 +139,19 @@
 			</div>
 		</nav>
 	</div><!-- responsive header -->
-	
+
 	<div class="topbar stick">
 		<div class="logo">
 			<i class="fa fa-rss" style="display:inline"></i><p class="por" style="display:inline">ti-asa</p>
 		</div>
-		
+
 		<div class="top-area">
 			<ul class="main-menu">
 				<li>
 					<a href="#" title="" class=" high">Accueil</a>
 					<ul>
 						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop">Actualités</a></li>
-						
+
 					</ul>
 				</li>
 				<li>
@@ -181,7 +181,7 @@
 						?>
 					</ul>
 				</li>
-				
+
 			</ul>
 			<ul class="setting-area">
 				<li>
@@ -192,9 +192,9 @@
 							<button onclick="alefa()" data-ripple ><i  class="ti-search"></i></button>
 						</form>
 					</div>
-				
+
 				</li>
-		
+
 				<li>
 					<a href="#" title="Notification" data-ripple="">
 						<i class="ti-bell"></i><span style="color:#610f91; font-weight:bold;">4</span>
@@ -258,27 +258,27 @@
 								</a>
 								<span class="tag">New</span>
 							</li>
-						</ul> 
+						</ul>
 						<a href="notifications.html" title="" class="more-mesg">view more</a> -->
 					</div>
 				</li>
 				<li>
 					<a href="#" title="Messages"  onClick="cocher_cliques_message()" data-ripple=""><i class="ti-comment"></i>
 						<span class="nbr_lu" style="color:#610f91; font-weight:bold;">
-							<?php 
+							<?php
 								if($_SESSION["nbr_nouveau_message"] == 0){
 									$_SESSION["nbr_nouveau_message"] = "";
 								}
-								echo $_SESSION["nbr_nouveau_message"]; 
+								echo $_SESSION["nbr_nouveau_message"];
 							?>
 						</span>
 					</a>
 					<div class="dropdowns">
 						<span><?= $_SESSION["nbr_message_non_lu"] ?> messages non lus</span>
-						
+
 						<ul id='msg-cont' class="drops-menu">
 							<?php
-								
+
 								$tab_mess_farany = $_SESSION["tab_mess_farany"];
 								$nbr = count($tab_mess_farany);
 								for($i=0; $i<$nbr; $i++){
@@ -290,9 +290,9 @@
 									else{
 										$chemin_pdp_mes = "public/images/av.png";
 									}
-									
-									
-									
+
+
+
 							?>
 							<li id="<?=$tab_mess_farany[$i]['expediteur']?>" >
 								<a href="#" Onclick="window.location='index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_exp ?>'" title="">
@@ -305,13 +305,13 @@
 								</a>
 								<span class="tag green">New</span>
 							</li>
-							
+
 							<?php
-									
+
 								}
 							?>
 						</ul>
-						<a href="messages.html" title="" class="more-mesg">view more</a> 
+						<a href="messages.html" title="" class="more-mesg">view more</a>
 					</div>
 				</li>
 				<?php
@@ -328,7 +328,7 @@
 				</li>
 			</ul>
 			<div class="user-img">
-			<?php								
+			<?php
 				if(isset($profil_li["photo_de_profil"])){
 					$pdp = $profil_li["photo_de_profil"];
 					$chemin_pdp = "public/images/picture/pdp/$pdp";
@@ -337,30 +337,30 @@
 					$chemin_pdp = "public/images/av.png";
 				}
 			?>
-			
+
 				<img style="border-radius: 50%;width: 36px;height: 36px; " src="<?= $chemin_pdp ?>" alt="">
-				<span class="status f-online"></span>	
+				<span class="status f-online"></span>
 				<div class="user-setting">
 					<a href="#" title="" style="font-weight:bold;"><span class="status f-online"></span><?= $profil_li["prenom"] ?></a>
 					<a href="#" Onclick="window.location='index.php?action=information_generale&amp;id=<?= $id ?>'"><i class="ti-user prof" ></i> <span class="propa">Voir le profil</span></a>
 					<a href="#" Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"><i class="ti-pencil-alt prof"></i><span class="propa">Modifier le profil </span></a>
-					
+
 					<a href="#" ><i class="ti-settings prof"></i><span class="propa"> Paramètres de compte </span></a>
 					<a href="#" Onclick="window.location='index.php?action=deconnecter&amp;id=<?= $id ?>'"><i  class="ti-power-off prof"></i><span class="propa"> Déconnexion</span></a>
 				</div>
 			</div>
-			
+
 			<!-- <span class="ti-menu main-menu" data-ripple=""></span> -->
 		</div>
 	</div><!-- topbar -->
 
 
 
-	
 
 
-	
-	
+
+
+
 	<script>
 		setInterval('load_message_farany()', 2000);
 		function load_message_farany(){
@@ -377,17 +377,16 @@
 			);
 
 			function message_recu(msg){
-				console.log('aty ve ?');
 				message = new Array(JSON.parse(msg));
-				
-			
-				
-				
+
+
+
+
 				if (message[0].length > 0){
-					
+
 					ids = new Array()
 					$('#msg-cont > li').each(function(){
-							ids.push($(this).attr('id'));		
+							ids.push($(this).attr('id'));
 					});
 
 					for (i=0;i<message[0].length;i++){
@@ -401,17 +400,16 @@
 								$('#msg-cont').prepend(hafatra);
 						}
 
-						
+
 					}
 
 				}
-				
 
-				
+
+
 			}
 		}
 
 
 	</script>
 	<script src='public/js/stable.js'></script>
-
