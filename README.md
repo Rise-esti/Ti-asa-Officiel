@@ -4,7 +4,7 @@
 
 Please don't forget to star this product if you find it helpful
 
-Just download the unzip and click on the index.html
+Just download the unzip and click on the index.php
 Happy coding!!
 
 Thank you.
