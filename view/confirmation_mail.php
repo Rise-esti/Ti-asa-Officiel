@@ -72,36 +72,31 @@
 		<div class="wrap-contact100" style="display: block">
 			
 
-<<<<<<< HEAD
+
 			<form class="contact100-form validate-form" action="index.php?action=confirmation_mail&amp;mail=<?= $mail?>" method="POST">
-=======
-			<form class="contact100-form validate-form" action="index.php?action=confirmation_mail">
->>>>>>> 484c7f12dbef16f7b7586cb549c0217aa7afd1b7
+
+			
 				<span class="contact100-form-title">
 					Code de confirmation
 				</span>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez entrer le code">
-<<<<<<< HEAD
+
 					<span class="label-input100">Nous avons envoyés un code à 6 chiffres à votre adresse email. Veuillez le saisir ici pour confirmer votre compte.</span>
 					<input style="font-size:15px;" class="input100" type="text" name="mot_confirmation" placeholder="">
-=======
-					<span class="label-input100">aaaaaaaaaaaaaaaaaaaaaaNous avons envoyés un code à 6 chiffres à votre adresse email. Veuillez le saisir ici pour confirmer votre compte.</span>
-					<input style="font-size:15px;" class="input100" type="text" name="name" placeholder="">
->>>>>>> 484c7f12dbef16f7b7586cb549c0217aa7afd1b7
+
+
 					<span class="focus-input100"></span>
 				</div>
 
 				
 
 				<div class="container-contact100-form-btn" >
-<<<<<<< HEAD
+
 					<button class="contact100-form-btn" type="submit" name="confirm_mail">
-						<span >
-=======
-					<button class="contact100-form-btn" type="submit" value="Submit">
 						
->>>>>>> 484c7f12dbef16f7b7586cb549c0217aa7afd1b7
+
+
 							Confirmer
 							
 					</button>

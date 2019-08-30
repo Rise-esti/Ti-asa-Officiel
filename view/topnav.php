@@ -198,7 +198,7 @@
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-video-camera" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
-		  <p style="font-size: 18px">Interview en ligne</p>
+		  <p style="font-size: 18px">Passez vos Interview en ligne</p>
 		  <p>Un Entretien directement via le Site Web pour ne pas perdre du temps ou pour accelerer l'embauche.</p>
 		</div>
 	        </div>
@@ -208,7 +208,7 @@
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-comments" style="color: #610f91 !important; font-size: 50px;"></i></div>
 		<div class="service-about">
-		  <p style="font-size: 18px">Discussion professionnelle</p>
+		  <p style="font-size: 18px">Discuter avec des professionnels</p>
 		  <p>Realiser une discussion professionnelle  pour negocier des contrats, partager des experiences ou encore pour prendre rendez-vous  </p>
 		</div>
 	        </div>
