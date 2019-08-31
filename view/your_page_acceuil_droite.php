@@ -51,7 +51,8 @@
 				</li>
 			<?php
 				}
-			?>	
+			?>
+            <!--
 			<div class="chat-box">
 				<div class="chat-head">
 					<span class="status f-online"></span>
@@ -113,7 +114,7 @@
 						<button type="submit"></button>
 					</form>
 				</div>
-			</div>
+			</div>-->
 		</div><!-- friends list sidebar -->
 	</aside>
 </div>

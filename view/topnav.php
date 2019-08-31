@@ -48,7 +48,11 @@
 
 <link rel="stylesheet" href="public/bootstrap.min.css">
 <style type="text/css">
-	
+	@media (max-width: 640px) {
+    .mb-5{
+        margin-top:15%;
+    }
+}
 </style>
 <script type="text/javascript">
 	// Prevent dropdown menu from closing when click inside the form
@@ -135,7 +139,7 @@
 	  <div class="container">
 	    <div class="row ">
 	      <div class="col-12 mb-5 position-relative">
-	        <p class="section-title text-center mb-5" style="font-size: 45px; font-weight:bold; color:#610f91">Bienvenue sur ti-asa</p>
+	        <p class="section-title text-center mb-5" style="font-size: 45px; font-weight:bold;margin-top:10%; color:#610f91">Bienvenue sur ti-asa</p>
 	      </div>
 
 

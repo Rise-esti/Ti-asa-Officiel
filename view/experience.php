@@ -23,7 +23,7 @@
 								<div class="central-meta">
 									<div class="editing-info">
 										<h5 class="f-title"><i class="ti-info-alt"></i> Expériences</h5>
-										<i OnClick="window.location='index.php?action=ajouter_experience&amp;id=<?=$id?>'"  style="color: #088dcd !important; font-size: 50px !important; display: inline !important;margin-left:60%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>	
+										<i OnClick="window.location='index.php?action=ajouter_experience&amp;id=<?=$id?>'"  style="color: #610f91 !important; font-size: 50px !important; display: inline !important;margin-left:60%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>	
 
 										<?php
 											for($i=0; $i<$nbr_experience; $i++){
@@ -51,8 +51,8 @@
 												<i class="mtrl-select"></i>
 											</div>
 											
-											<div class="submit-btns">
-												<button class="supp" type="button" style="color:#ff4b5a; " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_experience&id=<?= $id ?>&id_experience=<?= $id_experience ?>'};"class="mtr-btn"><span>Supprimer</span></button>
+											<div class="submit-btns" style="margin-bottom:5%;" >
+												<button class="supp" type="button" style="background-color:#ff4b5a; " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_experience&id=<?= $id ?>&id_experience=<?= $id_experience ?>'};"class="mtr-btn"><span>Supprimer</span></button>
 												<button  class="mod" Onclick="window.location='index.php?action=modifier_experience_existe&amp;id=<?= $id ?>&amp;id_experience=<?= $id_experience?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
 											</div>
 										</form>	

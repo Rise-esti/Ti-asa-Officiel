@@ -79,7 +79,7 @@
 							$i = 0;
 							while($mes_page = $select_mes_page->fetch()){
 						?>
-						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page['nom_page']?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
 						<?php
                             $tab_list_page[$i] = $mes_page;
                             $i++;

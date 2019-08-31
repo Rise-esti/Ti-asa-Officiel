@@ -34104,6 +34104,9 @@ form.dark-form ::-ms-input-placeholder {
     left:45%;
     margin-top:-10%;
 }
+    .mb-5{
+        margin-top:-50%;
+    }
 }
 
 

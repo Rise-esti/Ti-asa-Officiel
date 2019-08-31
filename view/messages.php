@@ -21,7 +21,7 @@
 									<div class="advertisment-box">
 								
 										<figure>
-											<a href="#" title="Advertisment"><img src="images/resources/ad-widget.jpg" alt=""></a>
+											<a href="#" title="Advertisment"><img src="" alt=""></a>
 										</figure>
 									</div>
 									
