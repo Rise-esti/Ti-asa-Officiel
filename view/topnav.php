@@ -58,7 +58,7 @@
 </script>
 </head> 
 <body>
-<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+<nav class="navbar navbar-default navbar-expand-lg navbar-light" style="position:fixed; width:100% !important; z-index:1 !important;" >
 	<div class="navbar-header d-flex col">
 		<a class="navbar-brand " href="ti-asa.esti.mg"><i class="fa fa-rss"></i><b class="ti">ti-</b><b>asa</b></a>  		
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
