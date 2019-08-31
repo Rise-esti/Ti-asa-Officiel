@@ -41,7 +41,7 @@
 			?>
 				<li>
 					<figure>
-						<img src="<?= $src_pdp ?>" alt="">
+						<img style="width:50px; height:43px;" src="<?= $src_pdp ?>" alt="">
 						<span class="status f-online"></span>
 					</figure>
 					<div class="friendz-meta">

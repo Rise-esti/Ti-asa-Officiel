@@ -72,7 +72,7 @@ function french_it($mois){
 															$chemin_pdp = "public/images/av.png";
 														}
 													?>
-													<img src="<?= $chemin_pdp ?>" alt="">
+													<img style="width:50px; height:50px; " src="<?= $chemin_pdp ?>" alt="">
 												</figure>
 												<div class="newpst-input">
 													<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
@@ -245,7 +245,7 @@ function french_it($mois){
 															$id_pub = $publication_li['id_publication'];
 														?>
 
-														<img src="<?= $chemin_pdp ?>" alt="">
+														<img style="width:50px; height:47px;" src="<?= $chemin_pdp ?>" alt="">
 													</figure>
 													<div class="friend-name">
 
