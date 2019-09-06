@@ -60,11 +60,11 @@
 		e.stopPropagation();
 	});
 </script>
-</head> 
+</head>
 <body>
 <nav class="navbar navbar-default navbar-expand-lg navbar-light" style="position:fixed; width:100% !important; z-index:1 !important;" >
 	<div class="navbar-header d-flex col">
-		<a class="navbar-brand " href="ti-asa.esti.mg"><i class="fa fa-rss"></i><b class="ti">ti-</b><b>asa</b></a>  		
+		<a class="navbar-brand " href="ti-asa.esti.mg"><i class="fa fa-rss"></i><b class="ti">ti-</b><b>asa</b></a>
 		<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
@@ -73,18 +73,18 @@
 	</div>
 	<!-- Collection of nav links, forms, and other content for toggling -->
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-		<ul class="nav navbar-nav">			
+		<ul class="nav navbar-nav">
 		</ul>
-		<ul class="nav navbar-nav navbar-right ml-auto">	
-			<li class="nav-item"><a href="index.php?action=nous_contacter" class="nav-link"> <i class="fa fa-telegram"></i> Nous contacter</a></li>					
+		<ul class="nav navbar-nav navbar-right ml-auto">
+			<li class="nav-item"><a href="index.php?action=nous_contacter" class="nav-link"> <i class="fa fa-telegram"></i> Nous contacter</a></li>
 			<li class="nav-item">
 				<a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#"> <i class="fa fa-sign-in"></i> Se connecter</a>
-				<ul class="dropdown-menu form-wrapper">					
+				<ul class="dropdown-menu form-wrapper">
 					<li>
 						<form action="index.php?action=se_connecter" method="post">
 							<div class="form-group" >
-								<input type="mail" class="form-control" name="mail" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" placeholder="Email"  required="required">
-							</div> 
+								<input type="email" class="form-control" name="mail" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" placeholder="Email"  required="required">
+							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" name="password" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" placeholder="Mot de passe" required="required">
 							</div>
@@ -98,7 +98,7 @@
 			</li>
 			<li class="nav-item">
 				<a href="#" data-toggle="dropdown" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
-				<ul class="dropdown-menu form-wrapper">					
+				<ul class="dropdown-menu form-wrapper">
 					<li>
 						<form action="index.php?action=inscription" method="post">
 							<div class="form-group ">
@@ -108,7 +108,7 @@
 								<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="prenom" placeholder="Prénom" required="required">
 							</div>
 							<div class="form-group">
-								<input type="mail" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
+								<input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
 							</div>
 							<div class="form-group">
 								<input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="password" placeholder="Mot de passe" required="required">
@@ -130,11 +130,11 @@
 
 <div class="site-wrap">
 
-	
-         
-	
-      
-      
+
+
+
+
+
 	<div class="site-section bg-light" id="services-section">
 	  <div class="container">
 	    <div class="row ">
@@ -145,7 +145,7 @@
 
 	      <div class="container" style="margin-bottom: 12% !important; margin-top: -5% !important; margin-left:17% !important; ">
 		<div class="row justify-content-center">
-	  
+
 		  <div class="col-md-12 mt-lg-5 text-left align-self-center text-intro">
 		    <div class="row">
 		      <div class="col-lg-10">
@@ -156,7 +156,7 @@
 			</div>
 		    </div>
 		  </div>
-		    
+
 		</div>
 		<?php
 			if(isset($erreur_se_connecter)){
@@ -170,12 +170,12 @@
 				<p style="margin-left:30%;color:#812"> <?= $erreur_inscription ?>
 		<?php
 			}
-		?>  
+		?>
 	        </div>
-	        
-	
-	      
-	 
+
+
+
+
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-rss" style="color: #610f91 !important; font-size: 50px;"></i></div>
@@ -185,7 +185,7 @@
 		</div>
 	        </div>
 	      </div>
-	
+
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-tasks" style="color: #610f91 !important; font-size: 50px;"></i></div>
@@ -195,7 +195,7 @@
 		</div>
 	        </div>
 	      </div>
-	
+
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-video-camera" style="color: #610f91 !important; font-size: 50px;"></i></div>
@@ -205,7 +205,7 @@
 		</div>
 	        </div>
 	      </div>
-	
+
 	      <div class="col-md-6 mb-4">
 	        <div class="service d-flex h-100">
 		<div class="service-number mr-4"><i class="fa fa-comments" style="color: #610f91 !important; font-size: 50px;"></i></div>
@@ -215,22 +215,22 @@
 		</div>
 	        </div>
 	      </div>
-	
+
 	    </div>
 	  </div>
 	</div>
-      
-      
-      
-	
+
+
+
+
 	<section class="site-section bg-light" id="blog-section" style="margin-top: -5%;">
 	  <div class="container">
 	    <div class="row">
-	      
+
 	      <div class="col-12 mb-5 position-relative">
 	        <p class="section-title text-center mb-5" style="color: #610f91; font-size: 50px;"> Ti-asa, pour qui?</p>
 	      </div>
-      
+
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
 		<a href="#"><img src="public/images/1.jpg" alt="Image" class="img-fluid"></a>
@@ -241,7 +241,7 @@
 		</div>
 	        </div>
 	      </div>
-      
+
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
 		<a href="#"><img src="public/images/2.jpg" alt="Image" class="img-fluid"></a>
@@ -252,7 +252,7 @@
 		</div>
 	        </div>
 	      </div>
-      
+
 	      <div class="col-md-6 mb-5 mb-lg-0 col-lg-4">
 	        <div class="blog_entry">
 		<a href="#.html"><img src="public/images/3.jpg" alt="Image" class="img-fluid"></a>
@@ -295,14 +295,14 @@
 <div id="myModal" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
-			<div class="modal-header">				
+			<div class="modal-header">
 				<h4 class="modal-title" style="font-weight: bold;">Se connecter</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
 			<div class="modal-body">
 				<form id="connecter" action="index.php?action=se_connecter" method="post">
 					<div class="form-group">
-						<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
+						<input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="password" placeholder="Mot de passe" required="required">
@@ -310,17 +310,17 @@
 					<div class="form-group">
 						<input type="submit" name="valider_se_connecter"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="Se connecter">
 					</div>
-				</form>				
+				</form>
 				<p class="hint-text small"><a href="#" OnClick="window.location='index.php?action=mot_de_passe_oubliee'">Mot de passe oublié?</a></p>
 			</div>
 		</div>
 	</div>
-</div>   
+</div>
 
 <div id="myModal2" class="modal fade">
 	<div class="modal-dialog modal-login">
 		<div class="modal-content">
-			<div class="modal-header">				
+			<div class="modal-header">
 				<h4 class="modal-title" style="font-weight: bold;">S'inscrire</h4>
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 			</div>
@@ -333,7 +333,7 @@
 						<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="prenom" placeholder="Prénom" required="required">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
+						<input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="mail" placeholder="Email" required="required">
 					</div>
 					<div class="form-group">
 						<input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins-Regular !important; font-size: 14px !important;" name="password" placeholder="Mot de passe" required="required">
@@ -344,11 +344,13 @@
 					<div class="form-group">
 						<input type="submit" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
 					</div>
-				</form>				
-				
+					<script type="text/javascript" src="public/js/verification_form1.js">
+					</script>
+				</form>
+
 			</div>
 		</div>
 	</div>
-</div>     
+</div>
 </body>
-</html>                                                        
+</html>
