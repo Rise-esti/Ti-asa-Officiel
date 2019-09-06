@@ -34,7 +34,7 @@
 
 		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
 				<div class="navbar-header d-flex col">
-					<a class="navbar-brand "  style="margin-top:4.1% !important" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">ti-</b><b>asa</b></a>  		
+					<a class="navbar-brand "  style="margin-top:4.1% !important" href="index.php"><i class="fa fa-rss" ></i><b class="ti">ti-</b><b>asa</b></a>  		
 					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 						
 						<span class="icon-bar"></span>

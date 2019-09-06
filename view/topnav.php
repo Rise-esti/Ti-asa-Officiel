@@ -5,6 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bienvenue sur ti-asa</title>
+
 <link rel="stylesheet" href="public/material-icon.css">
 <link rel="stylesheet" href="public/font-awesome.min.css">
 <link rel="stylesheet" href="public/bootstrap.min.css">
@@ -17,28 +18,17 @@
 <script src="public/jquery.min.js"></script>
 <script src="public/bootstrap.min.js"></script>
 
-<!--===============================================================================================-->
 <link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/animate/animate.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="public/css/util.css">
-	<link rel="stylesheet" type="text/css" href="public/css/main2.css">
-<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="public/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="public/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="public/vendor/animate/animate.css">
+<link rel="stylesheet" type="text/css" href="public/vendor/css-hamburgers/hamburgers.min.css">
+<link rel="stylesheet" type="text/css" href="public/vendor/animsition/css/animsition.min.css">
+<link rel="stylesheet" type="text/css" href="public/vendor/select2/select2.min.css">
+<link rel="stylesheet" type="text/css" href="public/vendor/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="public/css/util.css">
+<link rel="stylesheet" type="text/css" href="public/css/main2.css">
 
 <link rel="stylesheet" type="text/css" href="public/modal.css">
 
@@ -47,6 +37,7 @@
 <link rel="stylesheet" href="public/assets/fonts/font-awesome/css/font-awesome.min.css">
 
 <link rel="stylesheet" href="public/bootstrap.min.css">
+
 <style type="text/css">
 	@media (max-width: 640px) {
     .mb-5{
