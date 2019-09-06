@@ -3,6 +3,7 @@ require("model/Model.php");
 
 $salt1 = "@$!@$*";
 $salt2 = "%%@=@!";
+
 function page_1(){
     require("view/topnav.php");
 }

@@ -2,6 +2,8 @@
 require_once("Connect_bdd.php");
 
 class Query_bdd extends Connect_bdd{
+    static $salt1 = "@$!@$*";
+    static $salt2 = "%%@=@!";
     public function usernames_mail(){
         $bdd = $this->dbconnect();
         $all_usernames_mail = $bdd->query("SELECT username, mail FROM PERSONNE");
@@ -81,6 +83,11 @@ class Query_bdd extends Connect_bdd{
         $bdd = $this->dbconnect();
         $insertion_inscrire = $bdd->prepare("INSERT INTO PERSONNE(username, prenom, nom, mail, mot_de_passe) VALUES(?, ?, ?, ?, ?)");
         $insertion_inscrire->execute(array($username, $prenom, $nom, $mail, $passwd_hash));
+        $select_id = $bdd->query("SELECT id FROM PERSONNE WHERE username = '$username'");
+        $select_id_li = $select_id->fetch();
+        $id = $select_id_li["id"];
+        $hash_id = hash(sha512, Query_bdd::$salt1 . $id . Query_bdd::$salt2);
+        $insertion_token = $bdd->query("UPDATE PERSONNE SET token_id = '$hash_id' WHERE id = '$id'");
         return $insertion_inscrire;
     }
 
