@@ -1,6 +1,8 @@
 <?php
 require("model/Model.php");
 
+$salt1 = "@$!@$*";
+$salt2 = "%%@=@!";
 function page_1(){
     require("view/topnav.php");
 }
@@ -112,8 +114,8 @@ function se_connecter($mail, $password){
     }
     else{
         if($info_user_li["confirmation_mail"] == 1){
-            $verification_password = password_verify($password, $passwd_hash);
-            if($verification_password){
+            $passwd = hash("sha512",$salt1.$password.$salt2);
+            if($passwd === $passwd_hash){
                 session_start();
                 $_SESSION["id"] = $info_user_li["id"];
                 $_SESSION["nom"] = $info_user_li["nom"];
@@ -201,7 +203,7 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
             if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$mail)){
                 if(strlen($password)>=8){
                     if($password == $confirmation_password){
-                        $passwd_hash = password_hash($password, PASSWORD_DEFAULT);
+                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);
                         $insertion_inscrire = $query_bdd->inscrire($username, $nom, $prenom, $mail, $passwd_hash);
                         if($insertion_inscrire === false){
                             throw new Exception("Probléme d'insertion dans la bdd");
