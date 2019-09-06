@@ -72,7 +72,7 @@ function french_it($mois){
 															$chemin_pdp = "public/images/av.png";
 														}
 													?>
-													<img style="width:50px; height:50px; " src="<?= $chemin_pdp ?>" alt="">
+													<img src="<?= $chemin_pdp ?>" alt="">
 												</figure>
 												<div class="newpst-input">
 													<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
@@ -103,11 +103,11 @@ function french_it($mois){
 															</div>
 															<div class="form-group">
 																<input type="text" name="experience"  placeholder=""/>
-																<label class="control-label" for="input">Expérience Minimum</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input">Experience Minimum</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="competence"  />
-																<label class="control-label" for="input">Compétence</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input">Competence</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="personnalite"   />
@@ -198,7 +198,6 @@ function french_it($mois){
 										</div><!-- add post new box -->
 
 
-
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
 											while($publication_li = $publication->fetch()){
@@ -230,41 +229,28 @@ function french_it($mois){
 													<figure>
 														<?php
 															if(empty($publication_li["id_page"]) ){
-                                  if(isset($publication_li["pdp"])){
-                                      $pdp = $publication_li["pdp"];
-                                      $chemin_pdp = "public/images/picture/pdp/$pdp";
-                                  }
-                                  else{
-                                      $chemin_pdp = "public/images/av.png";
-                                  }
-                                }
+                                                                if(isset($publication_li["pdp"])){
+                                                                    $pdp = $publication_li["pdp"];
+                                                                    $chemin_pdp = "public/images/picture/pdp/$pdp";
+                                                                }
+                                                                else{
+                                                                    $chemin_pdp = "public/images/av.png";
+                                                                }
+                                                              }
 
 															$jour_lim = $publication_li['jour'];
 															$mois_lim = french_it($publication_li['mois']);
 															$reste_lim = $publication_li['date_publication'];
-															$id_pub = $publication_li['id_publication'];
 														?>
 
-														<img style="width:50px; height:47px;" src="<?= $chemin_pdp ?>" alt="">
+														<img src="<?= $chemin_pdp ?>" alt="">
 													</figure>
 													<div class="friend-name">
-
-														<?php
-															if(empty($publication_li["id_page"]) ){
-														?>
 														<ins><a href="index.php?action=affichage_profil&amp;username=<?= $username ?>" title=""><?php echo "$nom $prenom"; ?></a></ins>
-														<?php
-															}
-															else{
-														?>
-														<ins><a href="index.php?action=visite_page&amp;id=<?=$id?>&amp;nom_page=<?=$nom?>" title=""><?php echo "$nom"; ?></a></ins>
-														<?php
-															}
-														?>
 														<span>Publié le <?php echo "$jour_lim $mois_lim $reste_lim" ?></span>
 													</div>
 													<div class="post-meta">
-														<div id="<?= $id_pub ?>" class="description">
+														<div class="description">
 															<?php
 																if(!empty($publication_li["texte"])){
 																	$vir = "\n";
@@ -478,69 +464,6 @@ function french_it($mois){
 	require("view/js.php");
 ?>
 
-<script>
-/*
-function french_it(mois){
-	mois_tab = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-	return mois_tab[mois-1];
-}
-
-
-setInterval('nouveau_actu()', 2000);
-
-function nouveau_actu(){
-		id_dernier_pub = $('.description').attr('id');
-
-		$.post(
-					'controller/load_actu.php',
-				{
-					id_pub: id_dernier_pub
-				},
-
-				actu_recu,  // nom fonction retour
-
-			);
-			function actu_recu(text){
-				tab = new Array(JSON.parse(text));
-				// console.log(tab[0][0]);
-				}
-}
-				/*
-				if (tab[0].length > 0){
-					for (i=0;i<tab[0].length;i++){
-						// new_pub = $('.post-meta').clone();
-						new_pub = "<div class='central-meta item'>" + "<div class='user-post'>;" + "<div class='friend-info'>" + "<figure>"
-
-						if (tab[0][i]['id_page'] === ''){
-							if (tab[0][i]['pdp']){
-
-									chemin_pdp = "public/images/picture/pdp/" + tab[0][i]['id_page'];
-							}
-							else{
-									chemin_pdp = "public/images/av.png";
-							}
-						}
-						else{
-
-						}
-
-						new_pub = new_pub + "<img src=" + chemin_pdp  + "alt=''>" + "</figure>" + "<div class='friend-name'>"
-
-
-					tab[0][i]['prenom']
-					}
-				}
-
-				console.log(tab[0].length);
-				// new_pub = $('.description').clone();
-
-				// new_pub.attr('id', '')
-				 //$('.newpst-input').after('')
-				 */
-
-
-
-</script>
 
 
 </body>

@@ -52,15 +52,6 @@ class Query_bdd extends Connect_bdd{
         return $all_messages;
     }
 
-    public function changer_confirmation_mail($mail, $id){
-        $bdd = $this->dbconnect();
-
-        $changer_confirmation_mail = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail = '1', code= NULL WHERE id=? and mail=? ");
-
-        $changer_confirmation_mail->execute(array($id, $mail));
-        return $changer_confirmation_mail;
-    }
-
     public function requete_discussion($id, $id_exp){
         $bdd = $this->dbconnect();
         $requete_discussion = $bdd->prepare("SELECT C.id_message id_message, C.id_expediteur expediteur, C.mes mes, P.nom nom, P.prenom prenom, P.photo_de_profil pdp FROM CHAT C INNER JOIN PERSONNE P ON P.id=C.id_destinataire WHERE (C.id_destinataire=? and C.id_expediteur=?) or (C.id_expediteur=? and C.id_destinataire=?) ORDER BY C.id_message");
@@ -316,13 +307,6 @@ class Query_bdd extends Connect_bdd{
         return $publication;
     }
 
-    public function requete_last_publication($id_publication){
-        $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' AND id_publication > ? ORDER BY id_publication DESC ");
-        $publication->execute(array($id_publication));
-        return $publication;
-    }
-
     public function requete_my_publication($id){
         $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PERSONNE per where p.valable = '1' and per.id = ? and id_page = NULL ORDER BY id_publication DESC ");
@@ -420,7 +404,7 @@ class Query_bdd extends Connect_bdd{
 
     public function rechercher_publication($id, $recherche){
         $bdd = $this->dbconnect();
-        $recherche = $bdd->query("SELECT pu.*, per.nom, per.prenom, per.username, per.photo_de_profil as pdp, DAY(pu.date_publication) as jour, MONTH(pu.date_publication) as mois , DATE_FORMAT(pu.date_publication, '%Y à %Hh%imin') as date_publication FROM PUBLICATION pu INNER JOIN PERSONNE per ON pu.id = per.id WHERE texte LIKE '%$recherche%' and page = '0' ");
+        $recherche = $bdd->query("SELECT * FROM PUBLICATION WHERE texte LIKE '%$recherche%' or mission LIKE '%$recherche%' ");
         return $recherche;
     }
 
@@ -429,12 +413,7 @@ class Query_bdd extends Connect_bdd{
         $recherche = $bdd->query("SELECT * FROM PAGE_PAGE WHERE nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%' or mail_page LIKE '%$recherche%' ");
         return $recherche;
     }
-/*
-    public function recherche_publication_page($recherche){
-      $bdd = $this->dbconnect();
-      $rech_pub_page = $bdd->query("SELECT pu.*, pa.nom_page, pa.id_page, pa.description_page, pa.mail_page, pa.pdp_page FROM PUBLICATION pu INNER JOIN PAGE_PAGE pa WHERE (nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%') and page = '1' ");
-    }
-*/
+
         public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
         $bdd = $this->dbconnect();

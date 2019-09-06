@@ -1,38 +1,8 @@
 <?php
 require("model/Model.php");
 
-$salt1 = "@$!@$*";
-$salt2 = "%%@=@!";
 function page_1(){
     require("view/topnav.php");
-}
-
-function demande_confirmation_mail($notification, $mail){
-    require("view/confirmation_mail.php");
-}
-
-function mot_confirmation_mail($mot_confirmation, $mail){
-    $query_bdd = new Query_bdd;
-    $info_user = $query_bdd->se_conneter_user($mail);
-    $info_user_li = $info_user->fetch();
-    $code = $info_user_li["code"];
-    if($mot_confirmation == $code ){
-        session_start();
-        $id = $info_user_li["id"];
-        $changer_confirmation_mail = $query_bdd->changer_confirmation_mail($mail, $id);
-        if($changer_confirmation_mail == false){
-            throw new Exception("erreur changer_confirmation_mail");
-        }
-        else{
-            $_SESSION["id"] = $info_user_li["id"];
-            $_SESSION["nom"] = $info_user_li["nom"];
-            $_SESSION["prenom"] = $info_user_li["prenom"];
-            $_SESSION["mail"] = $mail;
-            $id = $_SESSION["id"];
-
-            header("location:index.php?action=connecter&id=$id");
-        }
-    }
 }
 
 function verifier_message_nouveau_et_non_lu($id){
@@ -107,32 +77,25 @@ function se_connecter($mail, $password){
     $info_user_li = $info_user->fetch();
     $mail_user = $info_user_li["mail"];
     $passwd_hash = $info_user_li["mot_de_passe"];
-
     if($info_user === false or $mail_user == ""){
         $erreur_login = "Mail incorrecte";
         header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
     }
     else{
-        if($info_user_li["confirmation_mail"] == 1){
-            $passwd = hash("sha512",$salt1.$password.$salt2);
-            if($passwd === $passwd_hash){
-                session_start();
-                $_SESSION["id"] = $info_user_li["id"];
-                $_SESSION["nom"] = $info_user_li["nom"];
-                $_SESSION["prenom"] = $info_user_li["prenom"];
-                $_SESSION["mail"] = $mail_user;
-                $id = $_SESSION["id"];
+        $verification_password = password_verify($password, $passwd_hash);
+        if($verification_password){
+            session_start();
+            $_SESSION["id"] = $info_user_li["id"];
+            $_SESSION["nom"] = $info_user_li["nom"];
+            $_SESSION["prenom"] = $info_user_li["prenom"];
+            $_SESSION["mail"] = $mail_user;
+            $id = $_SESSION["id"];
 
-                header("location:index.php?action=connecter&id=$id");
-            }
-            else{
-                $erreur_login = "Mot de passe incorrecte";
-                header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
-            }
+            header("location:index.php?action=connecter&id=$id");
         }
         else{
-            $notification = "Veuillez confirmer votre adresse mail";
-            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
+            $erreur_login = "Mot de passe incorrecte";
+            header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
         }
     }
 }
@@ -203,17 +166,13 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
             if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$mail)){
                 if(strlen($password)>=8){
                     if($password == $confirmation_password){
-                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);
+                        $passwd_hash = password_hash($password, PASSWORD_DEFAULT);
                         $insertion_inscrire = $query_bdd->inscrire($username, $nom, $prenom, $mail, $passwd_hash);
                         if($insertion_inscrire === false){
                             throw new Exception("Probléme d'insertion dans la bdd");
                         }
                         else{
-
-
-                            exec("python3 controller/mail.py $mail verifier_compte ");
-
-                            header("location:index.php?action=demande_confirmation_mail&notification&mail=$mail");
+                            se_connecter($mail, $password);
                         }
                     }
                     else{
@@ -959,7 +918,7 @@ function info_creation_page($nom_page, $mail_page, $telephone_page, $province_pa
             $select_page_li = $select_page->fetch();
             $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
             $select_mes_page = $query_bdd->select_mes_page($id);
-            page($id, $nom_page);
+            require("view/edit_page_(modifier).php");
         }
     }
     else{
@@ -1097,20 +1056,14 @@ function modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporair
 function rechercher($id, $recherche){
     $query_bdd = new Query_bdd;
     $rechercher_profil = $query_bdd->rechercher_profil($id, $recherche);
+    $rechercher_publication = $query_bdd->rechercher_publication($id, $recherche);
     $rechercher_page = $query_bdd->rechercher_page($id, $recherche);
-    $rechercher_publications = $query_bdd->rechercher_publication($id, $recherche);
-    //$recherche_publication_page = $query_bdd->recherche_publication_page($recherche);
+
     $profil = $query_bdd->information_profil($id);
     $profil_li = $profil->fetch();
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
-
     require("view/recherche.php");
-}
-
-function suivre_page($id, $id_page, $nom_page){
-    $query_bdd = new Query_bdd;
-
 }
 
 function page($id, $nom_page){
