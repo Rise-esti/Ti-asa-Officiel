@@ -302,7 +302,7 @@ $annee, $sexe, $adresse, $province, $biographie, $poste, $entreprise){
         throw new Exception("Erreur insertion info_profil");
     }
     else{
-        header("location:index.php?action=modifier_profil&id=$id");
+        header("location:index.php?action=information_generale&id=$id");
     }
 }
 
