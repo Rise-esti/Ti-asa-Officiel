@@ -118,7 +118,7 @@ function se_connecter($mail, $password){
             $passwd = hash("sha512",$salt1.$password.$salt2);
             if($passwd === $passwd_hash){
                 session_start();
-                $_SESSION["id"] = $info_user_li["token_id"];
+                $_SESSION["id"] = $info_user_li["id"];
                 $_SESSION["nom"] = $info_user_li["nom"];
                 $_SESSION["prenom"] = $info_user_li["prenom"];
                 $_SESSION["mail"] = $mail_user;
