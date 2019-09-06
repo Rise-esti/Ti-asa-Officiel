@@ -16,11 +16,23 @@ try{
             $_SESSION["tab_mess_farany"] = $tab_mess_farany;
         }
 
+        if($action == "demande_confirmation_mail" and isset($_GET["notification"]) and isset($_GET["mail"])){
+            $notification = htmlspecialchars($_GET["notification"]);
+            $mail = htmlspecialchars($_GET["mail"]);
+            demande_confirmation_mail($notification, $mail);
+        }
+
+        if($action == "confirmation_mail" and isset($_POST["confirm_mail"]) and isset($_GET["mail"])){
+            $mot_confirmation = htmlspecialchars($_POST["mot_confirmation"]);
+            $mail = htmlspecialchars($_GET["mail"]);
+            mot_confirmation_mail($mot_confirmation, $mail);
+        }
+
         if($action == "message" and isset($_GET["id"]) and isset($_GET["id_exp"])){
             $id = htmlspecialchars($_GET["id"]);
             $id_exp = htmlspecialchars($_GET["id_exp"]);
             if(($id == $_SESSION["id"])){
-
+                
                 if(isset($_GET["discussion"])){
                     $new_chat = true;
                 }
@@ -124,10 +136,10 @@ try{
         elseif(($action == "modifier_pdp" or $action == "modifier_pdc") and isset($_GET["id"])){
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
-                $oFileInfos = $_FILES["fichier_image"];
-                $pdp_name= $oFileInfos["name"];
+                $oFileInfos = $_FILES["fichier_image"]; 
+                $pdp_name= $oFileInfos["name"]; 
                 $pdp_name = str_replace(' ', '_', $pdp_name);
-                $pdp_temporaire = $oFileInfos["tmp_name"];
+                $pdp_temporaire = $oFileInfos["tmp_name"]; 
                 $code_erreur = $oFileInfos["error"];
                 if($action == "modifier_pdp"){
                     $destination = "public/images/picture/pdp/$pdp_name";
@@ -159,11 +171,11 @@ try{
                 ajouter_nouvelle_formation($id);
             }
         }
-
+        
 
         elseif($action == "ajouter_formation" and isset($_GET["id"])){
             $id = htmlspecialchars($_GET["id"]);
-
+            
             if($id == $_SESSION["id"] and isset($_POST["ajouter_information"])){
                 $ecole = htmlspecialchars($_POST["ecole"]);
                 $debut_mois_formation = htmlspecialchars($_POST["debut_mois_formation"]);
@@ -181,7 +193,7 @@ try{
             $id = htmlspecialchars($_GET["id"]);
 
             if($id == $_SESSION["id"]){
-                $id_formation = htmlspecialchars($_GET["id_formation"]);
+                $id_formation = htmlspecialchars($_GET["id_formation"]);               
                 modifier_formation_profil($id, $id_formation);
             }
         }
@@ -190,7 +202,7 @@ try{
             $id = htmlspecialchars($_GET["id"]);
 
             if($id == $_SESSION["id"]){
-                $id_formation = htmlspecialchars($_GET["id_formation"]);
+                $id_formation = htmlspecialchars($_GET["id_formation"]);               
                 $ecole = htmlspecialchars($_POST["ecole"]);
                 $debut_mois_formation = htmlspecialchars($_POST["debut_mois_formation"]);
                 $debut_annee_formation = htmlspecialchars($_POST["debut_annee_formation"]);
@@ -207,7 +219,7 @@ try{
             $id = htmlspecialchars($_GET["id"]);
 
             if($id == $_SESSION["id"]){
-                $id_formation = htmlspecialchars($_GET["id_formation"]);
+                $id_formation = htmlspecialchars($_GET["id_formation"]);               
                 supprimer_formation_profil($id, $id_formation);
             }
         }
@@ -259,7 +271,7 @@ try{
             $id = htmlspecialchars($_GET["id"]);
 
             if($id == $_SESSION["id"] and isset($_GET["id_competence"])){
-                $id_competence = htmlspecialchars($_GET["id_competence"]);
+                $id_competence = htmlspecialchars($_GET["id_competence"]);               
                 supprimer_competence_profil($id, $id_competence);
             }
         }
@@ -314,7 +326,7 @@ try{
             $id = htmlspecialchars($_GET["id"]);
 
             if($id == $_SESSION["id"] and isset($_GET["id_experience"])){
-                $id_experience = htmlspecialchars($_GET["id_experience"]);
+                $id_experience = htmlspecialchars($_GET["id_experience"]);               
                 supprimer_experience($id, $id_experience);
             }
         }
@@ -370,7 +382,7 @@ try{
             }
         }
 
-        elseif($action == "affichage_profil" and isset($_GET["username"])){
+        elseif($action == "affichage_profil" and isset($_GET["username"])){           
                 $username = htmlspecialchars($_GET["username"]);
                 afficher_profil_utilisateur($username);
 
@@ -389,8 +401,8 @@ try{
                 $date_limite = "$jour $mois";
                 $personnalite = htmlspecialchars($_POST["personnalite"]);
                 $langue = htmlspecialchars($_POST["langue"]);
-                $lieu = htmlspecialchars($_POST["lieu"]);
-                $oFileInfos = $_FILES["image"];
+                $lieu = htmlspecialchars($_POST["lieu"]);                
+                $oFileInfos = $_FILES["image"]; 
                 $mission = htmlspecialchars($_POST["mission"]);
 
                 new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
@@ -427,7 +439,7 @@ try{
                 creer_page($id);
             }
         }
-
+        
         elseif($action == 'info_creation_page' and isset($_GET["id"])){
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"] and isset($_POST["valider_creer_page"])){
@@ -478,13 +490,13 @@ try{
             $id_page = htmlspecialchars($_GET["id_page"]);
             if($id == $_SESSION["id"] and $id_page == $_SESSION["id_page"]){
                 $type = htmlspecialchars($_GET["type"]);
-                $oFileInfos = $_FILES["fichier_image"];
-                $photo_name= $oFileInfos["name"];
+                $oFileInfos = $_FILES["fichier_image"]; 
+                $photo_name= $oFileInfos["name"]; 
                 $photo_name = str_replace(' ', '_', $photo_name);
-                $photo_temporaire = $oFileInfos["tmp_name"];
+                $photo_temporaire = $oFileInfos["tmp_name"]; 
                 $code_erreur = $oFileInfos["error"];
                 modifier_photo_page($id, $id_page, $type, $photo_name, $photo_temporaire, $code_erreur);
-
+                
             }
         }
 
@@ -495,7 +507,7 @@ try{
                 rechercher($id, $recherche);
             }
         }
-
+        
         elseif($action == 'page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
             $id = htmlspecialchars($_GET["id"]);
             $nom_page = htmlspecialchars($_GET["nom_page"]);
@@ -503,7 +515,7 @@ try{
                 page($id, $nom_page);
             }
         }
-
+        
         elseif($action == 'visite_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
@@ -511,7 +523,7 @@ try{
                 visite_page($id, $nom_page);
             }
         }
-
+        
         elseif($action == "post_page" and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["nom_page"]) and isset($_POST["new_post_page"])){
             $id = htmlspecialchars($_GET["id"]);
             $id_page = htmlspecialchars($_GET["id_page"]);
@@ -526,8 +538,8 @@ try{
                 $date_limite = "$jour $mois";
                 $personnalite = htmlspecialchars($_POST["personnalite"]);
                 $langue = htmlspecialchars($_POST["langue"]);
-                $lieu = htmlspecialchars($_POST["lieu"]);
-                $oFileInfos = $_FILES["image"];
+                $lieu = htmlspecialchars($_POST["lieu"]);                
+                $oFileInfos = $_FILES["image"]; 
                 $mission = htmlspecialchars($_POST["mission"]);
 
                 new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
@@ -539,7 +551,7 @@ try{
             $id_page = htmlspecialchars($_GET["id_page"]);
             $nom_page = htmlspecialchars($_GET["nom_page"]);
             if($id == $_SESSION["id"]){
-                echo "suivre_page($id, $id_page, $nom_page)";
+                suivre_page($id, $id_page, $nom_page);
             }
         }
 
@@ -552,7 +564,7 @@ try{
     }
 
     else{
-
+        
         page_1();
     }
 
