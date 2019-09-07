@@ -45,8 +45,8 @@ def send_mail(mail, sub):
         server.sendmail('gaetan.jonathan.bakary@esti.mg', mail, msg.as_string())
         server.quit()
 
-        cursor.execute(""
-            UPDATE PERSONNE SET code=%s where mail=%s; ""
+        cursor.execute("""
+            UPDATE PERSONNE SET code=%s where mail=%s; """
             , (key_crypt, mail, ) )
 
         connect.commit()
