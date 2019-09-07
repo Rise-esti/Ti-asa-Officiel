@@ -785,7 +785,6 @@ function supprimer_centre_interet($id, $id_centre_interet){
 }
 
 function afficher_profil_utilisateur($username){
-    session_start();
     $id = $_SESSION["id"];
     $query_bdd = new Query_bdd;
     $profil = $query_bdd->information_profil($id);

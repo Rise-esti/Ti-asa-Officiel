@@ -3,6 +3,7 @@ require("controller/controller.php");
 
 session_start();
 try{
+    
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
 
@@ -62,11 +63,19 @@ try{
         }
 
         
-
+        elseif($action == "connecter" and !isset($_SESSION["id"])){
+            header("location:index.php");
+        }
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
-            if($id == $_SESSION["id"]){
-                connecter($id);
+            if (isset($_SESSION["id"])){
+                if($id == $_SESSION["id"]){
+                    connecter($id);
+                } else {
+                    connecter($_SESSION["id"]);
+                }
+            } else {
+                header("location:index.php");
             }
         }
 
@@ -406,9 +415,9 @@ try{
                 $lieu = htmlspecialchars($_POST["lieu"]);
                 $oFileInfos = $_FILES["image"];
                 $mission = htmlspecialchars($_POST["mission"]);
-                echo "$id, $texte, $experience, $competence, $formation,
-                $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission";
-              //  new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
+                //echo "$id, $texte, $experience, $competence, $formation,
+                //$date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission";
+                new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
             }
         }
 
@@ -558,7 +567,7 @@ try{
             }
         }
 
-        else require("view/topnav.php");
+        else header("location:index.php");
 
     //require('view/footer.php');
     }
