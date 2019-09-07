@@ -148,21 +148,21 @@
 		    </div>
 		  </div>
 
-		</div>
+		
 		<?php
 			if(isset($erreur_se_connecter)){
 		?>
-				<p style="margin-left:30%;color:#812"> <?= $erreur_se_connecter ?>
+				 <?= $erreur_se_connecter ?>
 		<?php
 			}
 
 			if(isset($erreur_inscription)){
 		?>
-				<p style="margin-left:30%;color:#812"> <?= $erreur_inscription ?>
+				 <?= $erreur_inscription ?>
 		<?php
 			}
 		?>
-	        </div>
+
 
 
 
