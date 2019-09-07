@@ -19,7 +19,7 @@ try{
         if($action == "demande_confirmation_mail" and isset($_GET["notification"]) and isset($_GET["mail"])){
             $notification = htmlspecialchars($_GET["notification"]);
             $mail = htmlspecialchars($_GET["mail"]);
-            demande_confirmation_mail($notification, $mail);
+            verification_user($notification, $mail);
         }
 
         if($action == "confirmation_mail" and isset($_POST["confirm_mail"]) and isset($_GET["mail"])){
@@ -60,6 +60,8 @@ try{
                 se_connecter($mail, $password);
             }
         }
+
+        
 
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
@@ -556,7 +558,9 @@ try{
             }
         }
 
-    require('view/footer.php');
+        else require("view/topnav.php");
+
+    //require('view/footer.php');
     }
 
     elseif(isset($_SESSION["id"])){
@@ -565,8 +569,7 @@ try{
     }
 
     else{
-
-        page_1();
+        require("view/topnav.php");
     }
 
 }
