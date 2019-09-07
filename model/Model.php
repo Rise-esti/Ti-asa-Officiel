@@ -179,7 +179,7 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_competence_existant($id){
         $bdd = $this->dbconnect();
-        $requete_competence = $bdd->prepare("SELECT * FROM COMPETENCE WHERE token_id = ?");
+        $requete_competence = $bdd->prepare("SELECT * FROM COMPETENCE WHERE id = ?");
         $requete_competence->execute(array($id));
         return $requete_competence;
     }
@@ -222,7 +222,7 @@ class Query_bdd extends Connect_bdd{
 
     public function experience_existant($id){
         $bdd = $this->dbconnect();
-        $requete_experience = $bdd->prepare("SELECT * FROM EXPERIENCE WHERE token_id = ? ");
+        $requete_experience = $bdd->prepare("SELECT * FROM EXPERIENCE WHERE id = ? ");
         $requete_experience->execute(array($id));
         return $requete_experience;
     }
@@ -260,7 +260,7 @@ class Query_bdd extends Connect_bdd{
 
     public function centre_interet_existant($id){
         $bdd = $this->dbconnect();
-        $requete_centre_interet = $bdd->prepare("SELECT * FROM CENTRE_D_INTERET WHERE token_id=?");
+        $requete_centre_interet = $bdd->prepare("SELECT * FROM CENTRE_D_INTERET WHERE id=?");
         $requete_centre_interet->execute(array($id));
         return $requete_centre_interet;
     }
@@ -274,7 +274,7 @@ class Query_bdd extends Connect_bdd{
 
     public function centre_interet_existe($id, $id_centre_interet){
         $bdd = $this->dbconnect();
-        $centre_interet_existe = $bdd->prepare("SELECT * FROM CENTRE_D_INTERET WHERE token_id=? and id_centre_interet=?");
+        $centre_interet_existe = $bdd->prepare("SELECT * FROM CENTRE_D_INTERET WHERE id=? and id_centre_interet=?");
         $centre_interet_existe->execute(array($id, $id_centre_interet ));
         return $centre_interet_existe;
     }
@@ -381,7 +381,7 @@ class Query_bdd extends Connect_bdd{
 
     public function select_mes_page($id){
         $bdd = $this->dbconnect();
-        $select_mes_pages = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE token_id=?");
+        $select_mes_pages = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE id=?");
         $select_mes_pages->execute(array($id));
         return $select_mes_pages;
     }

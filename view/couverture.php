@@ -6,7 +6,7 @@
 		$profil_li["photo_de_profil"] = $select_profil_li["photo_de_profil"];
 		$profil_li["photo_de_couverture"] = $select_profil_li["photo_de_couverture"];
 	}
-	
+
 	if(isset($profil_li["photo_de_couverture"])){
 		$pdc = $profil_li["photo_de_couverture"];
 		$chemin_pdc = "public/images/picture/pdc/$pdc";
@@ -26,8 +26,8 @@
 			<div class="add-btn" style="top:5% !important;">
 			<span >0 abonnée</span>
 				<a href="index.php?action=message&amp;id=<?=$id?>&amp;id_exp=<?= $id_personne ?>&amp;discussion" title="" data-ripple="">
-					Message 
-				</a>	
+					Message
+				</a>
 			</div>
 			<?php
 				}
@@ -49,7 +49,7 @@
 						<div class="user-avatar">
 							<figure>
 								<?php
-																	
+
 									if(isset($profil_li["photo_de_profil"])){
 										$pdp = $profil_li["photo_de_profil"];
 										$chemin_pdp = "public/images/picture/pdp/$pdp";
@@ -68,7 +68,7 @@
 										Modifier la photo de profil
 										<input type="file" Onchange="form.submit()" accept="image/*" name="fichier_image" id="fic"/>
 									</label>
-																		
+
 								</form>
 								<?php
 									}
@@ -92,9 +92,9 @@
 									<a class="<?= $active_journal ?>" href="index.php?action=journal&amp;id=<?= $id ?>" title="" data-ripple="">Journal</a>
 									<a class="<?= $active_infogen ?>" href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" data-ripple="">Informations générales</a>
 									<a class="<?= $active_formations ?>" href="index.php?action=afficher_formation&amp;id=<?= $id ?>" title="" data-ripple="">Formations</a>
-									<a class="<?= $active_competences ?>" href="index.php?action=afficher_competence&amp;id= <?= $id ?>" title="" data-ripple="">Compétences</a>
-									<a class="<?= $active_experiences ?>" href="index.php?action=afficher_experience&amp;id= <?= $id ?>" title="" data-ripple="">Expériences</a>
-									<a class="<?= $active_centre_interet ?>" href="index.php?action=afficher_centre_interet&amp;id= <?= $id ?>" title="" data-ripple=""> Centre d'intérêt</a>
+									<a class="<?= $active_competences ?>" href="index.php?action=afficher_competence&amp;id=<?= $id ?>" title="" data-ripple="">Compétences</a>
+									<a class="<?= $active_experiences ?>" href="index.php?action=afficher_experience&amp;id=<?= $id ?>" title="" data-ripple="">Expériences</a>
+									<a class="<?= $active_centre_interet ?>" href="index.php?action=afficher_centre_interet&amp;id=<?= $id ?>" title="" data-ripple=""> Centre d'intérêt</a>
 									<a class="<?= $active_plus_gauche ?>" href="#" title="" data-ripple="">Plus</a>
 								</li>
 							</ul>
