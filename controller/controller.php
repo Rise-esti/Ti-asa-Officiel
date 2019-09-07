@@ -7,6 +7,23 @@ function page_1(){
     require("view/topnav.php");
 }
 
+function verification_user($notification, $mail){
+    $query_bdd = new Query_bdd;
+    $infos = $query_bdd->se_conneter_user($mail);
+    $infos_user = $infos->fetch();
+    if($infos_user["confirmation_mail"]== 1){
+        $_SESSION["id"] = $infos_user["token_id"];
+        $_SESSION["nom"] = $infos_user["nom"];
+        $_SESSION["prenom"] = $infos_user["prenom"];
+        $_SESSION["mail"] = $mail;
+        $id=$infos_user["token_id"];
+        header("location:index.php?action=connecter&id=$id");
+    }
+    else {
+        require("view/confirmation_mail.php");
+    }
+}
+
 function demande_confirmation_mail($notification, $mail){
     require("view/confirmation_mail.php");
 }
@@ -84,8 +101,8 @@ function message($id, $id_exp, $new_chat){
     $all_messages = $query_bdd->all_messages($id);
     $_SESSION["id_expediteur_mess"] = $id_exp;
     $_SESSION["ID"] = $id;
-    $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
-    $select_mes_page = $query_bdd->select_mes_page($id);
+    $afficher_autre_profil = $query_bdd->afficher_autre_profil($_SESSION["id"]);
+    $select_mes_page = $query_bdd->select_mes_page($_SESSION["id"]);
 
     require("view/messages.php");
 }
