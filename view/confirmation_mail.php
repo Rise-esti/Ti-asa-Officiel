@@ -35,7 +35,7 @@
 
 		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
 			<div class="navbar-header d-flex col">
-			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
+			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.php"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
 		</nav>
 
 
