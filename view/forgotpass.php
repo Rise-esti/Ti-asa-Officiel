@@ -59,7 +59,7 @@
 
 			<form class="contact100-form validate-form" >
 				<span class="contact100-form-title">
-					Mo de passe oublié ?
+					Mot de passe oublié ?
 				</span>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez entrer le code">
