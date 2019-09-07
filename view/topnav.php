@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Ti-asa | Home</title>
-    
+    <title>Ti-asa | HAcceuil </title>
+
     <link rel="stylesheet" href="public/CSS/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/FONTS/font-awesome.min.css">
@@ -24,8 +24,8 @@
 
 
 <body id="page-top">
-    
-    
+
+
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
         <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size: 32px !important"><i class="fa fa-rss"></i>Ti-asa</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -41,8 +41,8 @@
             </div>
         </div>
     </nav>
-    
-    
+
+
     <header class="masthead text-center text-white d-flex" style="background-image:url('public/IMG/header.jpg');" id="connecter">
         <div class="container my-auto">
             <div class="row">
@@ -59,8 +59,8 @@
                 <p class="text-faded mb-5"> <?= $erreur_inscription ?></p>
         </div>
     </header>
-    
-    
+
+
     <section id="about" class="bg-primary" style=" background-image: linear-gradient(to bottom, #f05f40, #ee5f3f ) !important;">
         <div class="container">
             <div class="row">
@@ -78,11 +78,11 @@
     <section class="site-section bg-light" id="blog-section" style="margin-top: -5%;">
         <div class="container">
             <div class="row">
-  
+
                 <div class="col-12 mb-5 position-relative">
                     <p class="section-title text-center mb-5" style="color: #f05f40; font-size: 50px;"> Ti-asa, pour qui?</p>
                 </div>
-  
+
                 <div class="col-md-6 mb-5 mb-lg-0 col-lg-4" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);">
                     <div class="blog_entry">
                         <a href="#"><img src="public/IMG/1.jpg" alt="Image" class="img-fluid"></a>
@@ -93,7 +93,7 @@
                         </div>
                     </div>
                 </div>
-  
+
                 <div class="col-md-6 mb-5 mb-lg-0 col-lg-4" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);">
                     <div class="blog_entry">
                     <a href="#"><img src="public/IMG/2.jpg" alt="Image" class="img-fluid"></a>
@@ -104,7 +104,7 @@
                         </div>
                     </div>
                 </div>
-  
+
                 <div class="col-md-6 mb-5 mb-lg-0 col-lg-4" style="box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);">
                     <div class="blog_entry">
                     <a href="#"><img src="public/IMG/3.jpg" alt="Image" class="img-fluid"></a>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-        
+
             </div>
         </div>
     </section>
@@ -159,8 +159,8 @@
             </div>
         </div>
     </section>
-    
-    
+
+
     <section id="portfolio" class="p-0">
         <div class="container-fluid p-0">
             <div class="row no-gutters popup-gallery">
@@ -173,8 +173,8 @@
             </div>
         </div>
     </section>
-    
-    
+
+
     <section class="bg-dark text-white" id="download">
         <div class="container text-center">
         <h2 class="mb-4" style="font-size:18px !important;">Vous pourrez télécharger l'application ti-asa pour android pour pouvoir se connecter à partir de votre smartphone et recevoir des notifications</h2>
@@ -191,7 +191,7 @@
 				</div>
 			</div>
            		<div class="row">
-              
+
 				<div class="col-lg-3 col-md-6 " id="team">
 					<div class="team layout-2">
 						<div class="img-team">
@@ -266,7 +266,7 @@
 						</div>
 					</div>
 				</div>
-                
+
 				<div class="col-lg-6 col-md-6 gae" style="left: 25%">
 					<div class="team layout-2">
 						<div class="img-team">
@@ -284,12 +284,12 @@
 						</div>
 					</div>
 				</div>
-            		
+
 			</div>
 		</div>
     	</section>
-    
-    
+
+
     <section  style="margin-top: -10%; margin-bottom: -8%" id="contact">
         <div class="container" >
             <div class="row">
@@ -313,7 +313,7 @@
 
 
 
-    
+
     <a href="#connecter" class="nav-link js-scroll-trigger"> <i class="fa fa-sign-in" style="background-color: #f05f40; font-size:25px ;color: #fff; padding:18px; border-radius: 50px; padding-left: 24px; padding-top: 19px;  top: 15%; margin-left: 94%; text-align: center !important; box-shadow: 0px 2px 25px 0 #f05f40; transition-duration: 0.5s;"></i> </a>
 
 
@@ -400,7 +400,7 @@
         </div>
     </div>
 
-    
+
     <script src="public/JS/jquery.min.js"></script>
     <script src="public/JS/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

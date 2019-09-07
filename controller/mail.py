@@ -12,8 +12,6 @@ def send_mail(mail, sub):
         key = random.randint(100000, 999999)
         key_crypt = hashlib.sha1(str(key).encode()).hexdigest()
 
-        print(key_crypt)
-
         msg = MIMEMultipart('alternative')
         msg['Subject'] = 'Confirmation Compte @ti-asa'
 
@@ -55,9 +53,7 @@ def send_mail(mail, sub):
         connect.close()
 
 
-
 connect = mysql.connector.connect(host='localhost', user='rise', password='__@ti-asa__!', database='tia_asa')
 cursor = connect.cursor(buffered=True)
-
 
 send_mail(sys.argv[1], sys.argv[2])
