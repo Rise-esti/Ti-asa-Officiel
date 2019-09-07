@@ -1,0 +1,47 @@
+@media (max-width:700px){
+.fa-sign-in{
+        margin-left: 81% !important;
+}
+}
+
+@media (max-width:550px){
+        #blog-section{
+                margin-bottom: -50% !important;
+        }
+        .equipe{
+                margin-bottom: 300% !important;
+        }
+}
+
+@media (max-width:450px){
+        #blog-section{
+                margin-bottom: -50% !important;
+        }
+        .equipe{
+                margin-bottom: -50% !important;
+        }
+}
+
+@media (max-width:767px){
+        .gae{
+                margin-left: -25%;
+                text-align: left !important;
+        }
+}
+
+@media (max-width:991px){
+        #mainNav .navbar-nav>li.nav-item>a.nav-link,#mainNav .navbar-nav>li.nav-item>a.nav-link:focus{
+                font-size:.9rem;font-weight:700;color: #444 !important;
+        }
+       
+       
+}
+
+.fa-sign-in:hover{
+        color: #f05f40 !important ;
+        background-color: #fff !important;
+        border: #f05f40 !important; 
+        transition-duration: 0.5s;
+}
+
+
