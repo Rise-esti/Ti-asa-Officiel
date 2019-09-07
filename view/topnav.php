@@ -1,3 +1,6 @@
+<?php
+if($conf != true){
+ ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -345,3 +348,4 @@
 </div>
 </body>
 </html>
+<?php } ?>

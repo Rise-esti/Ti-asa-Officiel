@@ -556,7 +556,7 @@ try{
             }
         }
 
-        else require("view/topnav.php");
+        //else require("view/topnav.php");
 
     //require('view/footer.php');
     }
@@ -567,7 +567,7 @@ try{
     }
 
     else{
-        require("view/topnav.php");
+        page_1();
     }
 
 }

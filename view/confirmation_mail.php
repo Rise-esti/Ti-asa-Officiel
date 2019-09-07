@@ -37,13 +37,13 @@
 	<link rel="stylesheet" href="public/assets/css/style.css">
 	<link rel="stylesheet" href="public/assets/fonts/font-awesome/css/font-awesome.min.css">
 
-	
+
 </head>
 <body>
 
 		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
 				<div class="navbar-header d-flex col">
-					<a class="navbar-brand " style="margin-top:4.1% !important" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">ti-</b><b>asa</b></a>  		
+					<a class="navbar-brand " style="margin-top:4.1% !important" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">ti-</b><b>asa</b></a>
 					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
 					public/
 						<span class="icon-bar"></span>
@@ -53,10 +53,10 @@
 				</div>
 				<!-- Collection of nav links, forms, and other content for toggling -->
 				<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-					<ul class="nav navbar-nav">			
+					<ul class="nav navbar-nav">
 					</ul>
-					<ul class="nav navbar-nav navbar-right ml-auto">	
-						<li class="nav-item"><a href="contact.html" class="nav-link"> <i class="fa fa-telegram"></i> Nous contacter</a></li>					
+					<ul class="nav navbar-nav navbar-right ml-auto">
+						<li class="nav-item"><a href="contact.html" class="nav-link"> <i class="fa fa-telegram"></i> Nous contacter</a></li>
 					</ul>
 				</div>
 		</nav>
@@ -67,15 +67,15 @@
 	<div class="container-contact100">
 		<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 
-		
+
 
 		<div class="wrap-contact100" style="display: block">
-			
+
 
 
 			<form class="contact100-form validate-form" action="index.php?action=confirmation_mail&amp;mail=<?= $mail?>" method="POST">
 
-			
+
 				<span class="contact100-form-title">
 					Code de confirmation
 				</span>
@@ -89,20 +89,21 @@
 					<span class="focus-input100"></span>
 				</div>
 
-				
+
 
 				<div class="container-contact100-form-btn" >
 
 					<button class="contact100-form-btn" type="submit" name="confirm_mail">
-						
+
 
 
 							Confirmer
-							
+
 					</button>
 				</div>
 			</form>
             <?php
+						$conf = true;
             if(!empty($notification)){
                 echo "$notification<br>";
             }
