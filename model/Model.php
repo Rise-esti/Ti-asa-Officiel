@@ -362,12 +362,18 @@ class Query_bdd extends Connect_bdd{
         $bdd = $this->dbconnect();
         $creation_page = $bdd->prepare("INSERT INTO PAGE_PAGE(nom_page, description_page, telephone, mail_page, adresse, province, id) VALUES(?,?,?,?,?,?,?)");
         $creation_page->execute(array($nom_page, $description_page, $telephone_page, $mail_page, $adresse_page, $province_page, $id));
+        $select_id_page = $bdd->query("SELECT id_page FROM PAGE_PAGE WHERE nom_page='$nom_page' and mail_page='$mail_page' and id='$id'");
+        $select_id_page_li = $select_id_page->fetch();
+        $id_page = $select_id_page_li["id_page"];
+        $hash_id_page = hash(sha512, Query_bdd::$salt1 . $id_page . Query_bdd::$salt2);
+        $insertion_token_page = $bdd->prepare("UPDATE PAGE_PAGE SET token_id_page = ? WHERE nom=? and mail_page=? and id=? ");
+        $insertion_token_page->execute(array($hash_id_page, $nom_page, $mail_page, $id));
         return $creation_page;
     }
 
     public function select_page($id, $nom_page){
         $bdd = $this->dbconnect();
-        $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE token_id=? and nom_page=?");
+        $select_page = $bdd->prepare("SELECT * FROM PAGE_PAGE WHERE id=? and nom_page=?");
         $select_page->execute(array($id, $nom_page));
         return $select_page;
     }
