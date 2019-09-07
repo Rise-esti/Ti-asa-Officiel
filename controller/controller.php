@@ -966,6 +966,7 @@ function info_creation_page($nom_page, $mail_page, $telephone_page, $province_pa
 
     if($nom_mail == true){
         $creation_page = $query_bdd->creation_page($nom_page, $mail_page, $telephone_page, $province_page, $adresse_page, $description_page, $id);
+        echo $creation_page;
         if($creation_page == false){
             throw new Exception("Erreur creation_page");
         }
@@ -1162,7 +1163,7 @@ function visite_page($id, $nom_page){
     require("view/page.php");
 }
 
-function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
+function new_post_page($nom_page, $id_t, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission ){
     $query_bdd = new Query_bdd;
     if(!isset($texte)){
         $texte = NULL;
@@ -1242,9 +1243,8 @@ function new_post_page($nom_page, $id_page, $id, $texte, $experience, $competenc
         $image_name = NULL;
     }
 
-    $verify_insertion_post = $query_bdd->insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
+    $verify_insertion_post = $query_bdd->insertion_fichier_post_page($id_t, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission );
-
 
     if($verify_insertion_post === false){
         throw new Exception("Erreur insertion new post_page");

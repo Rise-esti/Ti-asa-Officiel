@@ -366,9 +366,10 @@ class Query_bdd extends Connect_bdd{
         $select_id_page_li = $select_id_page->fetch();
         $id_page = $select_id_page_li["id_page"];
         $hash_id_page = hash(sha512, Query_bdd::$salt1 . $id_page . Query_bdd::$salt2);
-        $insertion_token_page = $bdd->prepare("UPDATE PAGE_PAGE SET token_id_page = ? WHERE nom=? and mail_page=? and id=? ");
+        $insertion_token_page = $bdd->prepare("UPDATE PAGE_PAGE SET token_id_page = ? WHERE nom_page=? and mail_page=? and id=? ");
         $insertion_token_page->execute(array($hash_id_page, $nom_page, $mail_page, $id));
-        return $creation_page;
+        //return $creation_page;
+        return $hash_id_page;
     }
 
     public function select_page($id, $nom_page){
@@ -448,12 +449,13 @@ class Query_bdd extends Connect_bdd{
       $rech_pub_page = $bdd->query("SELECT pu.*, pa.nom_page, pa.id_page, pa.description_page, pa.mail_page, pa.pdp_page FROM PUBLICATION pu INNER JOIN PAGE_PAGE pa WHERE (nom_page LIKE '%$recherche%' or description_page LIKE '%$recherche%') and page = '1' ");
     }
 */
-        public function insertion_fichier_post_page($id_page, $id, $texte, $experience, $competence, $formation,
+        public function insertion_fichier_post_page($id_t, $id, $texte, $experience, $competence, $formation,
     $date_limite, $personnalite, $langue, $lieu, $image_name, $mission ){
         $bdd = $this->dbconnect();
-        $page = 1;
-        $verify_insertion_post = $bdd->prepare("INSERT INTO PUBLICATION(id, date_publication, texte, experience, formation,competence, personnalite, langue, lieu, date_limite, nom_image, mission, page, id_page) VALUES(?,NOW(), ?,?,?,?,?,?,?,?,?,?,?,?)");
-        $verify_insertion_post->execute(array($id,$texte, $experience, $formation, $competence, $personnalite, $langue, $lieu, $date_limite, $image_name, $mission, $page, $id_page));
+        $valable = 1;
+        $verify_insertion_post = $bdd->prepare("INSERT INTO PAGE_PUBLICATION(id_token_page, experience, formation, competence, personnalite, langue, lieu, date_limite, nom_image, mission, texte, valable, date_publication)
+        VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?, NOW()) ");
+        $verify_insertion_post->execute(array($id_t, $experience, $formation, $competence, $personnalite, $langue, $lieu, $date_limite, $image_name, $mission, $texte, $valable));
         return $verify_insertion_post;
     }
 

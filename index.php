@@ -61,7 +61,7 @@ try{
             }
         }
 
-        
+
 
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
@@ -527,9 +527,9 @@ try{
             }
         }
 
-        elseif($action == "post_page" and isset($_GET["id"]) and isset($_GET["id_page"]) and isset($_GET["nom_page"]) and isset($_POST["new_post_page"])){
+        elseif($action == "post_page" and isset($_GET["id"]) and isset($_GET["id_t"]) and isset($_GET["nom_page"]) and isset($_POST["new_post_page"])){
             $id = htmlspecialchars($_GET["id"]);
-            $id_page = htmlspecialchars($_GET["id_page"]);
+            $id_t = htmlspecialchars($_GET["id_t"]);
             $nom_page = htmlspecialchars($_GET["nom_page"]);
             if($id == $_SESSION["id"]){
                 $texte = htmlspecialchars($_POST["texte"]);
@@ -545,7 +545,7 @@ try{
                 $oFileInfos = $_FILES["image"];
                 $mission = htmlspecialchars($_POST["mission"]);
 
-                new_post_page($nom_page, $id_page, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
+                new_post_page($nom_page, $id_t, $id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
             }
         }
 
