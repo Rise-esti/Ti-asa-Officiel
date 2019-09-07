@@ -12,7 +12,7 @@
 	<section>
 		<div class="feature-photo">
 			<figure><img style="" id="pdc" src="<?= $chemin_pdc ?>"  alt=""></figure>
-			
+
 			<div class="add-btn">
 				<span>0 abonnée</span>
 				<?php
@@ -20,16 +20,16 @@
 					$id_personne = $select_profil_li["id"];
 				?>
 				<a href="index.php?action=suivre_page&amp;id=<?=$id?>&amp;id_page=<?= $select_page_li["id_page"] ?>&amp;nom_page=<?= $select_page_li["nom_page"] ?>" title="" data-ripple="">
-				
+
 					Suivre
-				
+
 				</a>
 				<?php
 				}
 				?>
 			</div>
 			<?php
-				
+
 				if($select_page_li["id"] == $id){
 			?>
 			<form class="edit-phto" action="index.php?action=modifier_photo_page&id=<?= $id ?>&amp;id_page=<?= $select_page_li["id_page"]?>&amp;type=123" enctype="multipart/form-data" method="POST">
@@ -48,7 +48,7 @@
 						<div class="user-avatar">
 							<figure>
 								<?php
-																	
+
 									if(isset($select_page_li["pdp_page"])){
 										$pdp = $select_page_li["pdp_page"];
 										$chemin_pdp = "public/images/picture/pdp_page/$pdp";
@@ -67,7 +67,7 @@
 										Modifier la photo de profil
 										<input type="file" Onchange="form.submit()" accept="image/*" name="fichier_image" id="fic"/>
 									</label>
-																		
+
 								</form>
 								<?php
 									}
@@ -81,7 +81,7 @@
 								<li class="admin-name">
                                   <h5><?php
                                    $nom = $select_page_li["nom_page"];
-                                   
+
                                    echo "$nom";
                                    ?>
                                    </h5>
@@ -91,7 +91,7 @@
 								if($select_page_li["id"] == $id ){
 								?>
 								<li>
-									<a  href="index.php?action=afficher_ma_page&amp;id=<?=$id?>&amp;nom_page=<?=$tab_list_page[$i]["nom_page"]?>" title="" data-ripple="">Modifier la page</a>
+									<a  href="index.php?action=afficher_ma_page&amp;id=<?=$id?>&amp;nom_page=<?=$select_page_li["nom_page"]?>" title="" data-ripple="">Modifier la page</a>
 								</li>
 								<?php
 								}
