@@ -2,6 +2,7 @@
 require("controller/controller.php");
 
 session_start();
+
 try{
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);

@@ -137,7 +137,7 @@ class Query_bdd extends Connect_bdd{
 
     public function verify_existance_formation($id){
         $bdd = $this->dbconnect();
-        $verifier_existance_formation = $bdd->prepare("SELECT * FROM FORMATION WHERE token_id = ?");
+        $verifier_existance_formation = $bdd->prepare("SELECT * FROM FORMATION WHERE id = ?");
         $verifier_existance_formation->execute(array($id));
         return $verifier_existance_formation;
     }
