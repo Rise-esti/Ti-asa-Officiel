@@ -103,7 +103,7 @@ function french_it($mois){
 															</div>
 															<div class="form-group">
 																<input type="text" name="experience"  placeholder=""/>
-																<label class="control-label" for="input">Expérience Minimum</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input">Expérience</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="competence"  />
