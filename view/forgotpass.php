@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Code de confirmation</title>
+	<title>Mot de passe oublié ?</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -26,12 +26,12 @@
 	<link rel="stylesheet" type="text/css" href="public/css/util.css">
 	<link rel="stylesheet" type="text/css" href="public/css/main2.css">
 <!--===============================================================================================-->
-<link rel="stylesheet" href="public/material-icon.css">
-<link rel="stylesheet" href="public/font-awesome.min.css">
-<link rel="stylesheet" href="public/bootstrap.min.css">
-<link rel="stylesheet" href="public/topnav.css">
-<script src="public/jquery.min.js"></script>
-<script src="public/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="public/material-icon.css">
+	<link rel="stylesheet" href="public/font-awesome.min.css">
+	<link rel="stylesheet" href="public/bootstrap.min.css">
+	<link rel="stylesheet" href="public/topnav.css">
+	<script src="public/jquery.min.js"></script>
+	<script src="public/bootstrap.min.js"></script>
 
 	<link rel="stylesheet" href="public/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="public/assets/css/style.css">
@@ -41,25 +41,10 @@
 </head>
 <body>
 
-		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
-				<div class="navbar-header d-flex col">
-					<a class="navbar-brand " style="margin-top:4.1% !important" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">ti-</b><b>asa</b></a>  		
-					<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
-					public/
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-				</div>
-				<!-- Collection of nav links, forms, and other content for toggling -->
-				<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
-					<ul class="nav navbar-nav">			
-					</ul>
-					<ul class="nav navbar-nav navbar-right ml-auto">	
-						<li class="nav-item"><a href="contact.html" class="nav-link"> <i class="fa fa-telegram"></i> Nous contacter</a></li>					
-					</ul>
-				</div>
-		</nav>
+	<nav class="navbar navbar-default navbar-expand-lg navbar-light">
+		<div class="navbar-header d-flex col">
+		<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
+	</nav>
 
 
 
@@ -74,7 +59,7 @@
 
 			<form class="contact100-form validate-form" >
 				<span class="contact100-form-title">
-					Code de confirmation
+					Mo de passe oublié ?
 				</span>
 
 				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez entrer le code">
