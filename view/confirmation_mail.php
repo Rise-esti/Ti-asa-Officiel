@@ -36,8 +36,6 @@
 		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
 			<div class="navbar-header d-flex col">
 			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.html"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
-			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
-			<span class="icon-bar">
 		</nav>
 
 
