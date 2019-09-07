@@ -415,9 +415,9 @@ try{
                 $lieu = htmlspecialchars($_POST["lieu"]);
                 $oFileInfos = $_FILES["image"];
                 $mission = htmlspecialchars($_POST["mission"]);
-                //echo "$id, $texte, $experience, $competence, $formation,
-                //$date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission";
-                new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
+                echo "$id, $texte, $experience, $competence, $formation,
+                $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission";
+                //new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
             }
         }
 
