@@ -116,6 +116,13 @@
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
             <?php
+            $i = 0;
+            $tab_list_page = array();
+            while($mes_page = $select_mes_page->fetch()){
+              $tab_list_page[$i] = $mes_page;
+              $i++;
+            }
+            $nbr_page = count($tab_list_page);
 							for($i=0; $i<$nbr_page; $i++){
 						?>
 						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$tab_list_page[$i]["nom_page"]?>" title="" class="drop"><?= $tab_list_page[$i]['nom_page'] ?></a></li>
