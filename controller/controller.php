@@ -162,6 +162,8 @@ function connecter($id){
     $publication = $query_bdd->requete_publication($id);
     $publication_page = $query_bdd->requete_publication_page($id);
 
+    
+
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_all_pages = $query_bdd->select_all_page();

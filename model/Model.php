@@ -326,7 +326,7 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_publication_page($id){
       $bdd = $this->dbconnect();
-      $publication_page = $bdd->prepare("SELECT pub.*, pag.* FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
+      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
       $publication_page->execute(array());
       return $publication_page;
     }
