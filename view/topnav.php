@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -348,15 +348,17 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="connecter" action="index.php?action=se_connecter" method="post">
+                    <form id="connecter" action="index.php?action=se_connecter"  method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Email" required="required">
+                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="email" placeholder="Email" required="required">
+
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="password" placeholder="Mot de passe" required="required">
+                            <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="password" placeholder="Mot de passe" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="valider_se_connecter"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="Se connecter">
+                            <input type="button" onclick="verifie_password()" name="valider_se_connecter"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="Se connecter">
+                            <label style="color:red;font-size:11;text-align: center"></label>
                         </div>
                     </form>
                     <p class="hint-text small"><a href="#" OnClick="window.location='index.php?action=mot_de_passe_oubliee'">Mot de passe oublié?</a></p>
@@ -364,6 +366,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div id="myModal2" class="modal fade">
@@ -402,6 +405,7 @@
 
 
     <script src="public/JS/jquery.min.js"></script>
+    <script src="public/js/unrechargeable_page.js"></script> <!-- sans actualiser la page -->
     <script src="public/JS/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
