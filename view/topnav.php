@@ -30,15 +30,15 @@
 
 
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size: 32px !important"><i class="fa fa-rss"></i>Ti-asa</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#" style="font-size: 31px !important; margin-top:-0.5%;"><i class="fa fa-rss"></i>Ti-asa</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#about" style="font-size: 16px !important">A propos</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#services" style="font-size: 16px !important"> Services</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#portfolio" style="font-size: 16px !important">Gallérie</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 16px !important">Télécharger</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 16px !important">Team</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 16px !important">  Contact</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#about" style="font-size: 15.2px !important">A propos</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#services" style="font-size: 15.2px !important"> Services</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#portfolio" style="font-size: 15.2px !important">Gallérie</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 15.2px !important">Télécharger</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 15.2px !important">Team</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 15.2px !important">  Contact</a></li>
                     <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
                 </ul>
             </div>
