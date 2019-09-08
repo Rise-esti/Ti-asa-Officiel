@@ -19,22 +19,25 @@ def send_mail(mail, sub):
 
         html = MIMEText(f"""\
         <html>
-          <head>
-          </head>
-          <body style="background-color: red;">
+        <head>
+          <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+          <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        </head>
 
-
-            <h1 style="color:#610f91;">  Rise @ti-asa </h1>
-            <h2> Bonjour, </h2>
-            <p style='font-size:14px;'>Je suis un des administrateurs de @ti-asa <p>
-            <p style='font-size:18px;'> Nous sommes ravi que vous utilisez notre service <p>
-            <p> Voici votre code de confirmation <span style="font-weight:bold;color:fff;">{key}<span></p>
-            <div>
-            <h2> La flemme d'ecrire? </h2>
-            <p> cliquer directement sur ce lien: <a href="ti-asa.esti.mg/index.php?{key_crypt}">ti-asa.esti.mg/index.php?{key_crypt}</a><p>
-            </div>
-          </body>
-        </html>
+        <body style="font-family: Poppins;">
+          <section style=" margin-left: 3%; width:60%;   box-shadow: 0 6px 8px 0 #888; padding-bottom: 1.5%;">
+          <h1 style="color: #fff; margin-top: 0%; background-color: #e74926; padding:3%;"> <i class="fa fa-rss"></i> RISE | Ti-asa </h1>
+          <h3 style=" margin-left: 13%;  color: #e74926; "> Bonjour <span> Landris Daniel, </span> </h3>
+          <p style="margin-left: 4%; margin-right:4%; color: #222">Je suis un des administrateurs de <i>@ti-asa.</i><br>Ti-asa est un plateforme web qui vous permettra facilement de trouver de l'emploi et recruter des personnels.
+          Nous sommes ravis que vous utilisiez notre service comme nous sommes ravis de le développer pour vous. <p>
+          <p style="margin-left: 8%; color: #222"> Votre  code de confirmation : <span style="color:#e74926; font-size:25px;">688858<span></p>
+          <h3 style=" margin-left: 13%;  color: #e74926; "> La flemme d'ecrire? </h3>
+          <p style="margin-left: 4%; color: #222"> Veuillez cliquez directement sur ce lien: <a style="color: #e74926" href="ti-asa.esti.mg/index.php?{key_crypt}">ti-asa.esti.mg/index.php?{key_crypt}</a></p>
+          <p style="margin-left: 4%; color: #222"> L'équipe @ti-asa : +261325398496</p>
+          <br>
+          </section>
+        </body>
+    </html>
         """, 'html')
         # image = MIMEImage(img_data)
         msg.attach(message)
