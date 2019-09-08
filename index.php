@@ -62,15 +62,8 @@ try{
             }
         }
 
-<<<<<<< HEAD
-        
-        elseif($action == "connecter" and !isset($_SESSION["id"])){
-            header("location:index.php");
-        }
-=======
 
 
->>>>>>> e4e9d42cf83f598d53e5e81dfd04445407f27fbf
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
             if (isset($_SESSION["id"])){
@@ -420,8 +413,6 @@ try{
                 $lieu = htmlspecialchars($_POST["lieu"]);
                 $oFileInfos = $_FILES["image"];
                 $mission = htmlspecialchars($_POST["mission"]);
-                //echo "$id, $texte, $experience, $competence, $formation,
-                //$date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission";
                 new_post($id, $texte, $experience, $competence, $formation, $date_limite, $personnalite, $langue, $lieu, $oFileInfos, $mission );
             }
         }
@@ -447,6 +438,8 @@ try{
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
                 afficher_journal($id);
+            } else {
+                connecter($_SESSION["id"]);
             }
         }
 
@@ -530,7 +523,7 @@ try{
             $nom_page = htmlspecialchars($_GET["nom_page"]);
             if($id == $_SESSION["id"]){
                 page($id, $nom_page);
-            }
+            } 
         }
 
         elseif($action == 'visite_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
