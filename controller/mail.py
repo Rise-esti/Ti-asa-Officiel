@@ -7,8 +7,7 @@ from email.mime.image import MIMEImage
 
 def send_mail(mail, sub):
     if sub == 'verifier_compte':
-        #img_data = open('/public/images/logo.PNG', 'rb').read()
-        img_data = open('/public/images/logo.PNG', 'rb').read()
+        # img_data = open('/public/images/logo.PNG', 'rb').read()
         key = random.randint(100000, 999999)
         key_crypt = hashlib.sha1(str(key).encode()).hexdigest()
 
@@ -20,8 +19,11 @@ def send_mail(mail, sub):
 
         html = MIMEText(f"""\
         <html>
-          <head></head>
-          <body>
+          <head>
+          </head>
+          <body style="background-color: red;">
+
+
             <h1 style="color:#610f91;">  Rise @ti-asa </h1>
             <h2> Bonjour, </h2>
             <p style='font-size:14px;'>Je suis un des administrateurs de @ti-asa <p>
@@ -34,10 +36,10 @@ def send_mail(mail, sub):
           </body>
         </html>
         """, 'html')
-        image = MIMEImage(img_data)
+        # image = MIMEImage(img_data)
         msg.attach(message)
         msg.attach(html)
-        msg.attach(image)
+        # msg.attach(image)
 
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
@@ -45,8 +47,8 @@ def send_mail(mail, sub):
         server.sendmail('gaetan.jonathan.bakary@esti.mg', mail, msg.as_string())
         server.quit()
 
-        cursor.execute(""
-            UPDATE PERSONNE SET code=%s where mail=%s; ""
+        cursor.execute("""
+            UPDATE PERSONNE SET code=%s where mail=%s; """
             , (key_crypt, mail, ) )
 
         connect.commit()
