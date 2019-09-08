@@ -3,6 +3,7 @@ require("controller/controller.php");
 
 session_start();
 try{
+
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
 
@@ -56,8 +57,10 @@ try{
             if(isset($_POST["valider_se_connecter"])){
                 $mail = htmlspecialchars($_POST["mail"]);
                 $password = htmlspecialchars($_POST["password"]);
+                $resp = se_connecter($mail, $password);
+                echo $resp;
 
-                se_connecter($mail, $password);
+
             }
         }
 
@@ -65,8 +68,14 @@ try{
 
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
-            if($id == $_SESSION["id"]){
-                connecter($id);
+            if (isset($_SESSION["id"])){
+                if($id == $_SESSION["id"]){
+                    connecter($id);
+                } else {
+                    connecter($_SESSION["id"]);
+                }
+            } else {
+                header("location:index.php");
             }
         }
 
@@ -103,6 +112,8 @@ try{
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
                 deconnection();
+            } else {
+                connecter($_SESSION["id"]);
             }
         }
 
@@ -431,6 +442,8 @@ try{
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
                 afficher_journal($id);
+            } else {
+                connecter($_SESSION["id"]);
             }
         }
 
@@ -556,7 +569,9 @@ try{
             }
         }
 
-        //else require("view/topnav.php");
+        else{
+          header("location:index.php");
+        }
 
     //require('view/footer.php');
     }
