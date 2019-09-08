@@ -163,6 +163,13 @@ function connecter($id){
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
+    $i = 0;
+    $tab_list_page = array();
+    while($mes_page = $select_mes_page->fetch()){
+      $tab_list_page[$i] = $mes_page;
+      $i++;
+    }
+    $nbr_page = count($tab_list_page);
     $select_all_pages = $query_bdd->select_all_page();
     $all_page = array();
     $i = 0;
