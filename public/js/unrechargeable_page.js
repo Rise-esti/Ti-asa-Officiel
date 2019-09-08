@@ -3,6 +3,9 @@ function verifie_password(){
   let email = $("#myModal #connecter #email");
   let password = $("#myModal #connecter #password");
 
+  email.css('border-color', '#fff');
+  password.css('border-color', '#fff');
+
   notif = $("#myModal #connecter label");
   notif.html('')
 
