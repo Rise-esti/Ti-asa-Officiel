@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Mot de passe oublié ?</title>
+	<title>Réinitialiser le mot de passe</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -59,16 +59,21 @@
 
 			<form class="contact100-form validate-form" >
 				<span class="contact100-form-title">
-					Mot de passe oublié ?
+					Réinitialisation de mot de passe!
 				</span>
 
-				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez entrer le code">
-					<span class="label-input100">Nous avons envoyés un code à 6 chiffres à votre adresse email. Veuillez le saisir ici pour réinitialiser votre mot de passe.</span>
-					<input style="font-size:15px;" class="input100" type="text" name="name" placeholder="">
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate="Veuillez saisir votre nom">
+					<input style="font-size:14px;" class="input100"   type="password" name="name" placeholder="Entrer votre nouveau mot de passe">
+					<span class="focus-input100"></span>
+				</div>
+
+				<div class="wrap-input100 rs1-wrap-input100 validate-input" data-validate = "Veuillez saisir un email correct: ex@abc.xyz">
+					<input style="font-size:14px;" class="input100" type="password" name="email" placeholder="Retapez votre nouveau mot de passe">
 					<span class="focus-input100"></span>
 				</div>
 
 				
+
 				<div class="container-contact100-form-btn" >
 					<button class="contact100-form-btn" type="submit" Onclick="window.location='resetpass.html'">
 						<span >
@@ -79,9 +84,6 @@
 				</div>
 			</form>
 
-			<span class="contact100-more">
-				Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
-			</span>
 		</div>
 	</div>
 

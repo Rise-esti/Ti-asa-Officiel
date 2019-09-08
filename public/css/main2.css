@@ -180,6 +180,9 @@ iframe {
   background: transparent;
   position: relative;
   z-index: 1;
+  margin-top: 9%;
+  margin-bottom: 4%;
+
 }
 
 .contact100-map {
@@ -198,6 +201,7 @@ iframe {
   padding: 82px 180px 33px 180px;
   position: relative;
   display: none;
+  box-shadow:0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .show-wrap-contact100 {
@@ -226,7 +230,7 @@ iframe {
   width: 100%;
   font-family: Poppins-Bold;
   font-size: 39px;
-  color: #333333;
+  color: #555;
   line-height: 1.2;
   text-align: left;
   padding-bottom: 44px;
@@ -252,7 +256,7 @@ iframe {
 .label-input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #999999;
+  color: #555555;
   line-height: 1.5;
   padding-left: 5px;
 }
@@ -292,7 +296,7 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #610f91;
+  background: #f05f40;
 }
 
 
@@ -342,7 +346,7 @@ textarea.input100 {
   padding: 0 20px;
   min-width: 160px;
   height: 50px;
-  background-color: #610f91; /*ff4b5a*/
+  background-color: #f05f40; /*ff4b5a*/
   border-radius: 25px;
 
   font-family: Poppins-Medium;
@@ -355,11 +359,11 @@ textarea.input100 {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  box-shadow: 0 10px 30px 0px #610f91;
-  -moz-box-shadow: 0 10px 30px 0px #610f91;
-  -webkit-box-shadow: 0 10px 30px 0px #610f91;
-  -o-box-shadow: 0 10px 30px 0px #610f91;
-  -ms-box-shadow: 0 10px 30px 0px #610f91;
+  box-shadow: 0 10px 30px 0px #f05f40;
+  -moz-box-shadow: 0 10px 30px 0px #f05f40;
+  -webkit-box-shadow: 0 10px 30px 0px #f05f40;
+  -o-box-shadow: 0 10px 30px 0px #f05f40;
+  -ms-box-shadow: 0 10px 30px 0px #f05f40;
 }
 
 .contact100-form-btn i {
@@ -488,7 +492,7 @@ textarea.input100 {
 }
 
 .contact100-more-highlight {
-  color:  #610f91;;
+  color:  #f05f40;
 }
 
 /*==================================================================

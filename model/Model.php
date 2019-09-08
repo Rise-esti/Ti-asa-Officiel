@@ -459,10 +459,10 @@ class Query_bdd extends Connect_bdd{
         return $verify_insertion_post;
     }
 
-    public function requete_my_publication_page($id, $id_page){
+    public function requete_my_publication_page($id, $nom_page){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id = p.id where p.valable = '1' and per.token_id = ? and p.id_page = ? ORDER BY id_publication DESC ");
-        $publication->execute(array($id, $id_page));
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_publication DESC ");
+        $publication->execute(array($id, $nom_page));
         return $publication;
     }
 
@@ -472,10 +472,10 @@ class Query_bdd extends Connect_bdd{
         return $select_all_page;
     }
 
-    public function requete_publication_dans_page($id_page){
+    public function requete_publication_dans_page($id_t){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p NATURAL JOIN PAGE_PAGE per where p.valable = '1' and p.id_page = ? ORDER BY id_publication DESC ");
-        $publication->execute(array($id_page));
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON p.id_token_page = per.token_id_page  where p.valable = '1' and p.id_token_page = ? ORDER BY id_page_publication DESC ");
+        $publication->execute(array($id_t));
         return $publication;
     }
 

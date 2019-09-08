@@ -110,6 +110,8 @@ try{
             $id = htmlspecialchars($_GET["id"]);
             if($id == $_SESSION["id"]){
                 deconnection();
+            } else {
+                connecter($_SESSION["id"]);
             }
         }
 
@@ -565,7 +567,7 @@ try{
             }
         }
 
-        else header("location:index.php");
+        //else require("view/topnav.php");
 
     //require('view/footer.php');
     }
@@ -576,7 +578,7 @@ try{
     }
 
     else{
-        require("view/topnav.php");
+        page_1();
     }
 
 }

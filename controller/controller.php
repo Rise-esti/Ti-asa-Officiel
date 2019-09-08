@@ -1140,7 +1140,12 @@ function page($id, $nom_page){
     $select_page = $query_bdd->select_page($id, $nom_page);
     $select_page_li = $select_page->fetch();
     $id_page = $select_page_li["id_page"];
-    $publication = $query_bdd->requete_my_publication_page($id, $id_page);
+    $publication = $query_bdd->requete_my_publication_page($id, $nom_page);
+
+    while($publication_li = $publication->fetch()){
+      echo $publication_li["nom"];
+      echo "<br>";
+    }
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
@@ -1154,8 +1159,8 @@ function visite_page($id, $nom_page){
     $select_mes_page = $query_bdd->select_mes_page($id);
     $select_page = $query_bdd->select_page_visite($nom_page);
     $select_page_li = $select_page->fetch();
-    $id_page = $select_page_li["id_page"];
-    $publication = $query_bdd->requete_publication_dans_page($id_page);
+    $id_t = $select_page_li["token_id_page"];
+    $publication = $query_bdd->requete_publication_dans_page($id_t);
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $all_page = array();
     $i = 0;
