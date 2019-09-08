@@ -95,6 +95,7 @@ class Query_bdd extends Connect_bdd{
         $bdd = $this->dbconnect();
         $info_user = $bdd->prepare("SELECT * FROM PERSONNE WHERE mail = ?");
         $info_user->execute(array($mail));
+
         return $info_user;
     }
 

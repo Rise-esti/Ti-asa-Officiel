@@ -124,10 +124,9 @@ function se_connecter($mail, $password){
     $info_user_li = $info_user->fetch();
     $mail_user = $info_user_li["mail"];
     $passwd_hash = $info_user_li["mot_de_passe"];
-
     if($info_user === false or $mail_user == ""){
-        $erreur_login = "Mail incorrecte";
-        header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
+        return 587; // CODE MAIL INCORRECTE ; NORM @ti-asa
+
     }
     else{
         if($info_user_li["confirmation_mail"] == 1){
@@ -139,17 +138,17 @@ function se_connecter($mail, $password){
                 $_SESSION["prenom"] = $info_user_li["prenom"];
                 $_SESSION["mail"] = $mail_user;
                 $id = $_SESSION["id"];
+                return true;
 
-                header("location:index.php?action=connecter&id=$id");
+
             }
             else{
-                $erreur_login = "Mot de passe incorrecte";
-                header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
+                return 8; // Mot de passe incorrecte
             }
         }
         else{
             $notification = "Veuillez confirmer votre adresse mail";
-            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
+            return "http://localhost/index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail";
         }
     }
 }
