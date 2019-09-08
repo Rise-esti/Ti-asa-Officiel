@@ -277,7 +277,7 @@
 						</div>
 						<div class="padding-20px">
 							<h3>BAKARY Gaetan Jonathan</h3>
-							<div class="jop">Server Admin | Mobile Application Developer | Data Analyst</div>
+							<div class="jop" style="color: #01121d !important">Server Admin | Mobile Application Developer | Data Analyst</div>
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
