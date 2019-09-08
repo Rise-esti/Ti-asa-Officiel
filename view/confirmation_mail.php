@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	
+
 	<title>Code de confirmation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="public/images/icons/favicon.ico"/>
-	
+
 	<link rel="stylesheet" type="text/css" href="public/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="public/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="public/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
@@ -21,7 +21,7 @@
 	<link rel="stylesheet" href="public/font-awesome.min.css">
 	<link rel="stylesheet" href="public/bootstrap.min.css">
 	<link rel="stylesheet" href="public/topnav.css">
-	
+
 	<script src="public/jquery.min.js"></script>
 	<script src="public/bootstrap.min.js"></script>
 
@@ -37,10 +37,6 @@
 			<div class="navbar-header d-flex col">
 			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.php"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
 		</nav>
-
-
-
-
 		<div class="container-contact100">
 			<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 				<div class="wrap-contact100" style="display: block">
@@ -60,7 +56,7 @@
 						</div>
 					</form>
 					<?php
-										$conf = true;
+					$conf = true;
 					if(!empty($notification)){
 						echo "$notification<br>";
 					}
@@ -73,7 +69,7 @@
 			</div>
 		<div id="dropDownSelect1"></div>
 
-	
+
 		<footer class="layout-dark">
 			<div class="copy-right">
 				<div class="container padding-tb-50px">
