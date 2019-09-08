@@ -1140,12 +1140,6 @@ function page($id, $nom_page){
     $select_page_li = $select_page->fetch();
     $id_page = $select_page_li["id_page"];
     $publication = $query_bdd->requete_my_publication_page($id, $nom_page);
-
-    while($publication_li = $publication->fetch()){
-      echo $publication_li["nom"];
-      echo "<br>";
-    }
-
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
 }

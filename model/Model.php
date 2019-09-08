@@ -462,8 +462,10 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_my_publication_page($id, $nom_page){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_publication DESC ");
-        $publication->execute(array($id, $nom_page));
+        //$publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_page_publication DESC ");
+        //$publication->execute(array($id, $nom_page));
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = 'b52e5d67f5ed9b4244a2fc081d33474fd0bda1d19709e7b9c7c87833d8aeac9d6afa7422a39bf01e34b0db3981b7d2eed4228dbc387186ff08f6f57c243e3c76' and per.nom_page = 'aaa' ORDER BY p.id_page_publication DESC ");
+        $publication->execute(array());
         return $publication;
     }
 
