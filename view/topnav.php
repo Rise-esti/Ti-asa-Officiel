@@ -332,7 +332,7 @@
                         <ul class="social-media list-inline text-lg-right text-center margin-0px text-white" >
                             <li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/Ti-asa-114419079928260" style="color:#fff"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true" style="color:#fff"></i></a></li>
-                            <li class="list-inline-item"><a class="google" href="#"><i class="fa fa-github" aria-hidden="true" style="color:#fff"></i></a></li>
+                            <li class="list-inline-item"><a class="google" href="https://github.com/rise-esti"><i class="fa fa-github" aria-hidden="true" style="color:#fff"></i></a></li>
                             <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true" style="color:#fff"></i></a></li>
                         </ul>
                         <!-- // Social -->
