@@ -198,7 +198,7 @@
 				<div class="col-lg-3 col-md-6 " id="team">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg" alt="">
+							<img src="public/IMG/team/nn.jpeg" alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>MIHAINGOHERILANTO Manambintsoa</h3>
@@ -206,8 +206,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/Ntsoa2112"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/jul.jpg"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3> RAHAJAHARIMANGA Josoa Juliano</h3>
@@ -225,8 +225,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/julianojosoa13"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -236,7 +236,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/ld.JPG"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>RASENDRANIRINA Manankoraisina Landry</h3>
@@ -244,8 +244,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/Landris18"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -255,16 +255,16 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/gae.jpeg"  alt="">
 						</div>
 						<div class="padding-20px">
-							<h3>STELANONY Karin</h3>
-							<div class="jop">React native developer | Marketing </div>
+							<h3>SOANARINDRA Stelanony Karin</h3>
+							<div class="jop">Developer | Marketing </div>
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/gaetan1903"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -273,7 +273,7 @@
 				<div class="col-lg-6 col-md-6 gae" style="left: 25%">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/gae.jpeg"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>BAKARY Gaetan Jonathan</h3>
@@ -281,8 +281,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/gaetan1903"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -333,7 +333,7 @@
                             <li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/Ti-asa-114419079928260" style="color:#fff"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true" style="color:#fff"></i></a></li>
                             <li class="list-inline-item"><a class="google" href="#"><i class="fa fa-github" aria-hidden="true" style="color:#fff"></i></a></li>
-                            <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true" style="color:#fff"></i></a></li>
+                            <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true" style="color:#fff"></i></a></li>
                         </ul>
                         <!-- // Social -->
                     </div>
