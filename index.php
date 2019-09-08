@@ -338,7 +338,7 @@ try{
 
             if($id == $_SESSION["id"] and isset($_GET["id_experience"])){
                 $id_experience = htmlspecialchars($_GET["id_experience"]);
-                supprimer_experience($id, $id_experience);
+                supprimer_experience($id, $id_demande_conexperience);
             }
         }
 
@@ -565,6 +565,10 @@ try{
             if($id == $_SESSION["id"]){
                 suivre_page($id, $id_page, $nom_page);
             }
+        }
+
+        elseif ($action == "activer" and isset($_GET['lien'])) {
+            activer_compte($_GET["lien"]);
         }
 
         else require("view/topnav.php");

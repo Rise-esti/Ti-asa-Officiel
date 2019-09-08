@@ -17,11 +17,22 @@ function verification_user($notification, $mail){
         $_SESSION["prenom"] = $infos_user["prenom"];
         $_SESSION["mail"] = $mail;
         $id=$infos_user["token_id"];
+        
         header("location:index.php?action=connecter&id=$id");
     }
     else {
+    /***************** simplement pour le test ********************/
+        $lien = envoyer_mail($mail);
+        session_start();
+        $_SESSION["lien"] = $lien;
         require("view/confirmation_mail.php");
     }
+}
+
+function envoyer_mail($mail){
+    $bdd = new Query_bdd;
+    $lien=$bdd->recuperer_lien($mail);
+    return $lien;
 }
 
 function demande_confirmation_mail($notification, $mail){
@@ -220,15 +231,16 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
             if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$mail)){
                 if(strlen($password)>=8){
                     if($password == $confirmation_password){
-                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);
+                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);                        //echo $link . "<br>" . $expiration_date . "<br>";
                         $insertion_inscrire = $query_bdd->inscrire($username, $nom, $prenom, $mail, $passwd_hash);
                         if($insertion_inscrire === false){
                             throw new Exception("Probléme d'insertion dans la bdd");
                         }
                         else{
 
-
+                            
                             exec("python3 controller/mail.py $mail verifier_compte ");
+
 
                             header("location:index.php?action=demande_confirmation_mail&notification&mail=$mail");
                         }
@@ -1257,4 +1269,24 @@ function new_post_page($nom_page, $id_t, $id, $texte, $experience, $competence, 
         header("location:index.php?action=page&id=$id&nom_page=$nom_page");
     }
 
+}
+
+function activer_compte($lien) {
+    $bdd = new Query_bdd;
+    $infos = $bdd->recuperer_id_date($lien);
+    $date_exp = $info["date_expiration"];
+    $id_user = $info["id_user"];
+    echo $date_exp;
+
+
+    if ((date("Y-m-d", time()) >= $date_exp) or ($info["actif"] == 1 )){
+        header("location:index.php");
+    } else {
+
+        $mail = $bdd->activer_compte($id_user, $lien);
+
+        
+        $notification = "Veuillez confirmer votre adresse mail";
+        verification_user($notification , $mail);
+    }
 }
