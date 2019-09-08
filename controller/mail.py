@@ -7,7 +7,7 @@ from email.mime.image import MIMEImage
 
 def send_mail(mail, sub):
     if sub == 'verifier_compte':
-        # img_data = open('/public/images/logo.PNG', 'rb').read()
+        img_data = open('/public/images/logo.PNG', 'rb').read()
         key = random.randint(100000, 999999)
         key_crypt = hashlib.sha1(str(key).encode()).hexdigest()
 
@@ -41,10 +41,10 @@ def send_mail(mail, sub):
         </body>
     </html>
         """, 'html')
-        # image = MIMEImage(img_data)
+        image = MIMEImage(img_data)
         msg.attach(message)
         msg.attach(html)
-        # msg.attach(image)
+        msg.attach(image)
 
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
