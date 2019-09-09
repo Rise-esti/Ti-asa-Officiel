@@ -339,7 +339,7 @@ try{
 
             if($id == $_SESSION["id"] and isset($_GET["id_experience"])){
                 $id_experience = htmlspecialchars($_GET["id_experience"]);
-                supprimer_experience($id, $id_experience);
+                supprimer_experience($id, $id_demande_conexperience);
             }
         }
 
@@ -567,10 +567,14 @@ try{
                 suivre_page($id, $id_page, $nom_page);
             }
         }
+        elseif ($action == "activer" and isset($_GET["lien"])){
+            activer_compte($_GET["lien"]);
+        }
 
         else{
           header("location:index.php");
         }
+        
 
     //require('view/footer.php');
     }
