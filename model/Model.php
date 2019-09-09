@@ -86,8 +86,16 @@ class Query_bdd extends Connect_bdd{
         $select_id = $bdd->query("SELECT id FROM PERSONNE WHERE username = '$username'");
         $select_id_li = $select_id->fetch();
         $id = $select_id_li["id"];
-        $hash_id = hash(sha512, Query_bdd::$salt1 . $id . Query_bdd::$salt2);
+        $hash_id = hash("sha512", Query_bdd::$salt1 . $id . Query_bdd::$salt2);
         $insertion_token = $bdd->query("UPDATE PERSONNE SET token_id = '$hash_id' WHERE id = '$id'");
+
+
+        $link = hash("md5", Query_bdd::$salt1 . $username . Query_bdd::$salt2 . date("d-m-Y_H:i:s", time()));
+        $expiration_date = date("Y-m-d", time() + 72 * 3600);
+        $actif = 0; 
+        $insert_link = $bdd->prepare("INSERT INTO ACTIVATION_COMPTE (id_user, actif, lien, date_expiration) VALUES (?, ?, ?, ?)");        
+        $insert_link->execute(array($hash_id, $actif, $link, $expiration_date));
+        
         return $insertion_inscrire;
     }
 
@@ -489,4 +497,34 @@ class Query_bdd extends Connect_bdd{
         return $publication;
     }
 
+    public function recuperer_lien($mail){
+        $bdd = $this->dbconnect();
+        $recup = $bdd->query("SELECT token_id FROM PERSONNE WHERE mail LIKE '$mail'");
+        $info = $recup->fetch();
+        $temp_id = $info["token_id"];
+        $recup = $bdd->query("SELECT lien FROM ACTIVATION_COMPTE WHERE id_user LIKE '$temp_id'");
+        $info = $recup->fetch();
+        $lien = $info["lien"];
+        return $lien;
+    }
+
+    public function recuperer_id_date($lien){
+        $bdd = $this->dbconnect();
+
+        $query2 = $bdd->query("SELECT id_user, date_expiration, actif FROM ACTIVATION_COMPTE WHERE lien LIKE '$lien'");
+        $info = $query2->fetch();
+        return $info;
+    }
+
+    public function activer_compte($id, $lien){
+        $bdd = $this->dbconnect();
+        $query = $bdd->prepare("UPDATE ACTIVATION_COMPTE SET actif=1 WHERE lien LIKE ?");
+        $exec = $query->execute(array($lien));
+        $query = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail= 1 WHERE token_id LIKE ?");
+        $query->execute(array($id));
+        $query = $bdd->query("SELECT mail FROM PERSONNE WHERE token_id LIKE '$id'");
+        $info = $query->fetch();
+        $mail = $info["mail"];
+        return $mail;
+    }
 }

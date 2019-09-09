@@ -35,7 +35,7 @@
 
 		<nav class="navbar navbar-default navbar-expand-lg navbar-light">
 			<div class="navbar-header d-flex col">
-			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="topnav.php"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
+			<a class="navbar-brand " style="margin-top:0.9% !important; margin-left: 3%;" href="index.php"><i class="fa fa-rss" ></i><b class="ti">Ti-asa</b></a>
 		</nav>
 		<div class="container-contact100">
 			<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
@@ -64,6 +64,12 @@
 
 					<span class="contact100-more">
 						Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
+						<?php
+						$lien_activation = $_SESSION["lien"];
+						echo '<br>Voici le lien pour activer votre compte: <br><a href="http://localhost/tia_asa-php-officiel/index.php?action=activer&lien=' . $lien_activation . '" target="_blank">http://localhost/tia_asa-php-officiel/index.php?action=activer?lien=' . $lien_activation . '</a>';
+						$_SESSION = array();
+						session_destroy();
+						?>
 					</span>
 				</div>
 			</div>
