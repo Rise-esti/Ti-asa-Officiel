@@ -135,10 +135,9 @@ function se_connecter($mail, $password){
     $info_user_li = $info_user->fetch();
     $mail_user = $info_user_li["mail"];
     $passwd_hash = $info_user_li["mot_de_passe"];
-
     if($info_user === false or $mail_user == ""){
-        $erreur_login = "Mail incorrecte";
-        header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
+        return 587; // CODE MAIL INCORRECTE ; NORM @ti-asa
+
     }
     else{
         if($info_user_li["confirmation_mail"] == 1){
@@ -150,17 +149,17 @@ function se_connecter($mail, $password){
                 $_SESSION["prenom"] = $info_user_li["prenom"];
                 $_SESSION["mail"] = $mail_user;
                 $id = $_SESSION["id"];
+                return true;
 
-                header("location:index.php?action=connecter&id=$id");
+
             }
             else{
-                $erreur_login = "Mot de passe incorrecte";
-                header("location:index.php?action=erreur_login&erreur_login=$erreur_login");
+                return 8; // Mot de passe incorrecte
             }
         }
         else{
             $notification = "Veuillez confirmer votre adresse mail";
-            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
+            return "http://localhost/index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail";
         }
     }
 }
@@ -172,6 +171,9 @@ function connecter($id){
     $profil_li = $profil->fetch();
 
     $publication = $query_bdd->requete_publication($id);
+    $publication_page = $query_bdd->requete_publication_page($id);
+
+    
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
@@ -1153,12 +1155,6 @@ function page($id, $nom_page){
     $select_page_li = $select_page->fetch();
     $id_page = $select_page_li["id_page"];
     $publication = $query_bdd->requete_my_publication_page($id, $nom_page);
-
-    while($publication_li = $publication->fetch()){
-      echo $publication_li["nom"];
-      echo "<br>";
-    }
-
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
 }

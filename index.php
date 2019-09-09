@@ -57,8 +57,10 @@ try{
             if(isset($_POST["valider_se_connecter"])){
                 $mail = htmlspecialchars($_POST["mail"]);
                 $password = htmlspecialchars($_POST["password"]);
+                $resp = se_connecter($mail, $password);
+                echo $resp;
 
-                se_connecter($mail, $password);
+
             }
         }
 

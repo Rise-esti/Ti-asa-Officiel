@@ -103,6 +103,7 @@ class Query_bdd extends Connect_bdd{
         $bdd = $this->dbconnect();
         $info_user = $bdd->prepare("SELECT * FROM PERSONNE WHERE mail = ?");
         $info_user->execute(array($mail));
+
         return $info_user;
     }
 
@@ -327,8 +328,15 @@ class Query_bdd extends Connect_bdd{
     public function requete_publication($id){
         $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
-        $publication->execute(array($id));
+        $publication->execute(array());
         return $publication;
+    }
+
+    public function requete_publication_page($id){
+      $bdd = $this->dbconnect();
+      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
+      $publication_page->execute(array());
+      return $publication_page;
     }
 
     public function requete_last_publication($id_publication){
@@ -469,8 +477,10 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_my_publication_page($id, $nom_page){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_publication DESC ");
-        $publication->execute(array($id, $nom_page));
+        //$publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_page_publication DESC ");
+        //$publication->execute(array($id, $nom_page));
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = 'b52e5d67f5ed9b4244a2fc081d33474fd0bda1d19709e7b9c7c87833d8aeac9d6afa7422a39bf01e34b0db3981b7d2eed4228dbc387186ff08f6f57c243e3c76' and per.nom_page = 'aaa' ORDER BY p.id_page_publication DESC ");
+        $publication->execute(array());
         return $publication;
     }
 

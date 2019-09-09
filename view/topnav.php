@@ -2,7 +2,7 @@
   if($conf != true){
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
     <meta charset="utf-8">
@@ -30,15 +30,15 @@
 
 
     <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top" style="font-size: 32px !important"><i class="fa fa-rss"></i>Ti-asa</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#" style="font-size: 31px !important; margin-top:-0.5%;"><i class="fa fa-rss"></i>Ti-asa</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-align-justify"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#about" style="font-size: 16px !important">A propos</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#services" style="font-size: 16px !important"> Services</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#portfolio" style="font-size: 16px !important">Gallérie</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 16px !important">Télécharger</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 16px !important">Team</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 16px !important">  Contact</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#about" style="font-size: 15.2px !important">A propos</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#services" style="font-size: 15.2px !important"> Services</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#portfolio" style="font-size: 15.2px !important">Gallérie</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 15.2px !important">Télécharger</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 15.2px !important">Team</a></li>
+                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 15.2px !important">  Contact</a></li>
                     <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
                 </ul>
             </div>
@@ -198,7 +198,7 @@
 				<div class="col-lg-3 col-md-6 " id="team">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg" alt="">
+							<img src="public/IMG/team/nn.jpeg" alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>MIHAINGOHERILANTO Manambintsoa</h3>
@@ -206,8 +206,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/Ntsoa2112"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -217,7 +217,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/jul.jpg"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3> RAHAJAHARIMANGA Josoa Juliano</h3>
@@ -225,8 +225,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/julianojosoa13"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -236,7 +236,7 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/ld.JPG"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>RASENDRANIRINA Manankoraisina Landry</h3>
@@ -244,8 +244,8 @@
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/Landris18"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -255,16 +255,16 @@
 				<div class="col-lg-3 col-md-6">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/gae.jpeg"  alt="">
 						</div>
 						<div class="padding-20px">
-							<h3>STELANONY Karin</h3>
-							<div class="jop">React native developer | Marketing </div>
+							<h3>SOANARINDRA Stelanony Karin</h3>
+							<div class="jop">Developer | Marketing </div>
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/gaetan1903"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -273,16 +273,16 @@
 				<div class="col-lg-6 col-md-6 gae" style="left: 25%">
 					<div class="team layout-2">
 						<div class="img-team">
-							<img src="public/IMG/gallery/Isalo.jpg"  alt="">
+							<img src="public/IMG/team/gae.jpeg"  alt="">
 						</div>
 						<div class="padding-20px">
 							<h3>BAKARY Gaetan Jonathan</h3>
-							<div class="jop">Server Admin | Mobile Application Developer | Data Analyst</div>
+							<div class="jop" style="color: #01121d !important">Server Admin | Mobile Application Developer | Data Analyst</div>
 							<ul class="social-list">
 								<li><a class="facebook" href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
 								<li><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-								<li><a class="google" href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-								<li><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a class="google" href="https://github.com/gaetan1903"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+								<li><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -332,8 +332,8 @@
                         <ul class="social-media list-inline text-lg-right text-center margin-0px text-white" >
                             <li class="list-inline-item"><a class="facebook" href="https://www.facebook.com/Ti-asa-114419079928260" style="color:#fff"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                             <li class="list-inline-item"><a class="linkedin" href="#"><i class="fa fa-linkedin" aria-hidden="true" style="color:#fff"></i></a></li>
-                            <li class="list-inline-item"><a class="google" href="#"><i class="fa fa-github" aria-hidden="true" style="color:#fff"></i></a></li>
-                            <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-twitter" aria-hidden="true" style="color:#fff"></i></a></li>
+                            <li class="list-inline-item"><a class="google" href="https://github.com/rise-esti"><i class="fa fa-github" aria-hidden="true" style="color:#fff"></i></a></li>
+                            <li class="list-inline-item"><a class="twitter" href="#"><i class="fa fa-rss" aria-hidden="true" style="color:#fff"></i></a></li>
                         </ul>
                         <!-- // Social -->
                     </div>
@@ -351,15 +351,17 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="connecter" action="index.php?action=se_connecter" method="post">
+                    <form id="connecter" action="index.php?action=se_connecter"  method="post">
                         <div class="form-group">
-                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Email" required="required">
+                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="email" placeholder="Email" required="required">
+
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="password" placeholder="Mot de passe" required="required">
+                            <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="password" placeholder="Mot de passe" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="valider_se_connecter"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="Se connecter">
+                            <input type="button" onclick="verifie_password()" name="valider_se_connecter"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="Se connecter">
+                            <label style="color:red;font-size:11;text-align: center"></label>
                         </div>
                     </form>
                     <p class="hint-text small"><a href="#" OnClick="window.location='index.php?action=mot_de_passe_oubliee'">Mot de passe oublié?</a></p>
@@ -367,6 +369,7 @@
             </div>
         </div>
     </div>
+
 
 
     <div id="myModal2" class="modal fade">
@@ -405,6 +408,7 @@
 
 
     <script src="public/JS/jquery.min.js"></script>
+    <script src="public/js/unrechargeable_page.js"></script> <!-- sans actualiser la page -->
     <script src="public/JS/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
