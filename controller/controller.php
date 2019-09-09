@@ -11,14 +11,14 @@ function verification_user($notification, $mail){
     $query_bdd = new Query_bdd;
     $infos = $query_bdd->se_conneter_user($mail);
     $infos_user = $infos->fetch();
-    if($infos_user["confirmation_mail"]== 1){
+    if($infos_user["confirmation_mail"] == 1){
         $_SESSION["id"] = $infos_user["token_id"];
         $_SESSION["nom"] = $infos_user["nom"];
         $_SESSION["prenom"] = $infos_user["prenom"];
         $_SESSION["mail"] = $mail;
         $id=$infos_user["token_id"];
-        
-        header("location:index.php?action=connecter&id=$id");
+        connecter($id);
+            
     }
     else {
     /***************** simplement pour le test ********************/
@@ -106,7 +106,7 @@ function message($id, $id_exp, $new_chat){
     $info_destinataire = $query_bdd->information_profil($id_exp);
     $info_destinataire_li = $info_destinataire->fetch();
 
-    $verifier_message_nouveau_et_non_lu = verifier_message_nouveau_et_non_lu($id);
+    $verifier_message_nouveau_et_non_lu = verifiemdr_message_nouveau_et_non_lu($id);
     $_SESSION["nbr_nouveau_message"] = $verifier_message_nouveau_et_non_lu[0];
     $_SESSION["nbr_message_non_lu"] = $verifier_message_nouveau_et_non_lu[1];
     $all_messages = $query_bdd->all_messages($id);
@@ -1050,7 +1050,7 @@ function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page,
             $profil = $query_bdd->information_profil($id);
             $profil_li = $profil->fetch();
             $select_page = $query_bdd->select_page($id, $nom_page);
-            $select_page_li = $select_page->fetch();
+            $select_page_li = $select_page->fetchmd();
             $select_mes_page = $query_bdd->select_mes_page($id);
             require("view/infogen_page.php");
 
@@ -1274,19 +1274,25 @@ function new_post_page($nom_page, $id_t, $id, $texte, $experience, $competence, 
 function activer_compte($lien) {
     $bdd = new Query_bdd;
     $infos = $bdd->recuperer_id_date($lien);
-    $date_exp = $info["date_expiration"];
-    $id_user = $info["id_user"];
-    echo $date_exp;
+    $date_exp = $infos["date_expiration"];
+    $id_user = $infos["id_user"];
 
 
-    if ((date("Y-m-d", time()) >= $date_exp) or ($info["actif"] == 1 )){
+    if ((date("Y-m-d", time()) >= $date_exp) or ($infos["actif"] == 1)){
         header("location:index.php");
     } else {
 
-        $mail = $bdd->activer_compte($id_user, $lien);
 
+        $mail = $bdd->activer_compte($id_user, $lien);
+        $infos = $bdd->se_conneter_user($mail);
+        $infos_user = $infos->fetch();
         
-        $notification = "Veuillez confirmer votre adresse mail";
-        verification_user($notification , $mail);
+        $_SESSION["id"] = $id_user;
+        $_SESSION["nom"] = $infos_user["nom"];
+        $_SESSION["prenom"] = $infos_user["prenom"];
+        $_SESSION["mail"] = $mail;
+        $id=$infos_user["id"];
+    
+        connecter($id);
     }
 }

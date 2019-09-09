@@ -508,14 +508,11 @@ class Query_bdd extends Connect_bdd{
 
     public function activer_compte($id, $lien){
         $bdd = $this->dbconnect();
-        
         $query = $bdd->prepare("UPDATE ACTIVATION_COMPTE SET actif=1 WHERE lien LIKE ?");
         $exec = $query->execute(array($lien));
-        
         $query = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail= 1 WHERE token_id LIKE ?");
         $query->execute(array($id));
-
-        $query = $bdd->query("SELECT mail FROM PERSONNE WHERE token_id = $id_user");
+        $query = $bdd->query("SELECT mail FROM PERSONNE WHERE token_id LIKE '$id'");
         $info = $query->fetch();
         $mail = $info["mail"];
         return $mail;

@@ -3,7 +3,7 @@ require("controller/controller.php");
 
 session_start();
 try{
-    
+
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
 
@@ -525,7 +525,7 @@ try{
             $nom_page = htmlspecialchars($_GET["nom_page"]);
             if($id == $_SESSION["id"]){
                 page($id, $nom_page);
-            } 
+            }
         }
 
         elseif($action == 'visite_page' and isset($_GET["id"]) and isset($_GET["nom_page"])){
@@ -566,12 +566,14 @@ try{
                 suivre_page($id, $id_page, $nom_page);
             }
         }
-
-        elseif ($action == "activer" and isset($_GET['lien'])) {
+        elseif ($action == "activer" and isset($_GET["lien"])){
             activer_compte($_GET["lien"]);
         }
 
-        else require("view/topnav.php");
+        else{
+          header("location:index.php");
+        }
+        
 
     //require('view/footer.php');
     }
