@@ -1,6 +1,5 @@
 <?php
 require("model/Model.php");
-
 $salt1 = "@$!@$*";
 $salt2 = "%%@=@!";
 function page_1(){
@@ -162,7 +161,37 @@ function connecter($id){
     $publication = $query_bdd->requete_publication($id);
     $publication_page = $query_bdd->requete_publication_page($id);
 
-    
+    $tab_pub_personne = array();
+    $i = 0;
+    while($publication_personne = $publication->fetch()){
+      $tab_pub_personne[$i] = $publication_personne;
+      $i++;
+    }
+    $nbr_pub_personne = count($tab_pub_personne);
+
+    $tab_pub_page = array();
+    $i = 0;
+    while($publication_page_ligne = $publication_page->fetch()){
+      $tab_pub_page[$i] = $publication_page_ligne;
+      $i++;
+    }
+    $nbr_pub_page = count($tab_pub_page);
+
+    if($nbr_pub_personne > $nbr_pub_page){
+
+      for($i=0; $i<$nbr_pub_personne; $i++){
+        for($j=0; $i<$nbr_pub_page; $i++){
+
+        }
+      }
+
+    }
+    elseif ($nbr_pub_personne < $nbr_pub_page) {
+      // code...
+    }
+    else{
+
+    }
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);

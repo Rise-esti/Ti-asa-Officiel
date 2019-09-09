@@ -9,7 +9,6 @@ class Query_bdd extends Connect_bdd{
         $all_usernames_mail = $bdd->query("SELECT username, mail FROM PERSONNE");
         return $all_usernames_mail;
     }
-
     public function verifier_message_nouveau_et_non_lu($id){
         $bdd = $this->dbconnect();
         $verifier_nouveau_message = $bdd->prepare("SELECT COUNT(mes) nbr_mess FROM CHAT WHERE vu='0' and cliques_messages='0' and id_destinataire = ? ");
@@ -319,14 +318,14 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_publication($id){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
+        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , p.date_publication date_pub ,DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
         $publication->execute(array());
         return $publication;
     }
 
     public function requete_publication_page($id){
       $bdd = $this->dbconnect();
-      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
+      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, pub.date_publication date_pub, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
       $publication_page->execute(array());
       return $publication_page;
     }
