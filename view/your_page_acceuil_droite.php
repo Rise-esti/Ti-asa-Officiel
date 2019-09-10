@@ -1,7 +1,7 @@
 <div class="col-lg-3">
 	<aside class="sidebar static">
 		<div class="widget">
-			
+
 		<?php
 			require("view/your_page.php");
 		?>
@@ -21,11 +21,11 @@
 					<span>avec ti-asa</span>
 					<a data-ripple="" title="" href="#">Commencer</a>
 				</div>
-			</div>											
+			</div>
 		</div>
 		<div class="widget friend-list stick-widget">
 			<h4 class="widget-title">Profils intéressants</h4>
-			
+
 			<ul id="people-list" class="friendz-list">
 			<?php
 				while($autres_profil = $afficher_autre_profil->fetch()){

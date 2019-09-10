@@ -56,13 +56,13 @@
 		</div>
 		<nav id="menu" class="res-menu">
 			<ul>
-				
+
 				<li><span>Accueil</span>
 					<ul>
 						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="">Actualités</a></li>
 					</ul>
 				</li>
-				
+
 				<li><span>Profil</span>
 					<ul>
 						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="">Afficher mon profil</a></li>
@@ -75,16 +75,11 @@
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
 						<?php
-							$tab_list_page = array();
-							$i = 0;
-							while($mes_page = $select_mes_page->fetch()){
+							for($i=0; $i<$nbr_page; $i++){
 						?>
-						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page['nom_page']?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page['nom_page']?>" title="" class="drop"><?= $tab_list_page[$i]['nom_page'] ?></a></li>
 						<?php
-                            $tab_list_page[$i] = $mes_page;
-                            $i++;
 						}
-                        $nbr_page = count($tab_list_page);
 						?>
 					</ul>
 				</li>
@@ -120,17 +115,19 @@
 					<a href="#" title="" class=" high">Page</a>
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
-						<?php
-							$tab_list_page = array();
-							$i = 0;
-							while($mes_page = $select_mes_page->fetch()){
+            <?php
+            $i = 0;
+            $tab_list_page = array();
+            while($mes_page = $select_mes_page->fetch()){
+              $tab_list_page[$i] = $mes_page;
+              $i++;
+            }
+            $nbr_page = count($tab_list_page);
+							for($i=0; $i<$nbr_page; $i++){
 						?>
-						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$mes_page["nom_page"]?>" title="" class="drop"><?= $mes_page["nom_page"] ?></a></li>
+						<li><a href="index.php?action=page&amp;id=<?=$id?>&amp;nom_page=<?=$tab_list_page[$i]["nom_page"]?>" title="" class="drop"><?= $tab_list_page[$i]['nom_page'] ?></a></li>
 						<?php
-                            $tab_list_page[$i] = $mes_page;
-                            $i++;
 						}
-                        $nbr_page = count($tab_list_page);
 						?>
 					</ul>
 				</li>

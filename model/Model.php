@@ -86,8 +86,16 @@ class Query_bdd extends Connect_bdd{
         $select_id = $bdd->query("SELECT id FROM PERSONNE WHERE username = '$username'");
         $select_id_li = $select_id->fetch();
         $id = $select_id_li["id"];
-        $hash_id = hash(sha512, Query_bdd::$salt1 . $id . Query_bdd::$salt2);
+        $hash_id = hash("sha512", Query_bdd::$salt1 . $id . Query_bdd::$salt2);
         $insertion_token = $bdd->query("UPDATE PERSONNE SET token_id = '$hash_id' WHERE id = '$id'");
+
+
+        $link = hash("md5", Query_bdd::$salt1 . $username . Query_bdd::$salt2 . date("d-m-Y_H:i:s", time()));
+        $expiration_date = date("Y-m-d", time() + 72 * 3600);
+        $actif = 0; 
+        $insert_link = $bdd->prepare("INSERT INTO ACTIVATION_COMPTE (id_user, actif, lien, date_expiration) VALUES (?, ?, ?, ?)");        
+        $insert_link->execute(array($hash_id, $actif, $link, $expiration_date));
+        
         return $insertion_inscrire;
     }
 
@@ -320,8 +328,15 @@ class Query_bdd extends Connect_bdd{
     public function requete_publication($id){
         $bdd = $this->dbconnect();
         $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
-        $publication->execute(array($id));
+        $publication->execute(array());
         return $publication;
+    }
+
+    public function requete_publication_page($id){
+      $bdd = $this->dbconnect();
+      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
+      $publication_page->execute(array());
+      return $publication_page;
     }
 
     public function requete_last_publication($id_publication){
@@ -462,8 +477,10 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_my_publication_page($id, $nom_page){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_publication DESC ");
-        $publication->execute(array($id, $nom_page));
+        //$publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = ? and per.nom_page = ? ORDER BY p.id_page_publication DESC ");
+        //$publication->execute(array($id, $nom_page));
+        $publication = $bdd->prepare("SELECT p.*, per.nom_page nom, per.pdp_page pdp, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PAGE_PUBLICATION p INNER JOIN PAGE_PAGE per ON per.token_id_page = p.id_token_page where p.valable = '1' and per.id = 'b52e5d67f5ed9b4244a2fc081d33474fd0bda1d19709e7b9c7c87833d8aeac9d6afa7422a39bf01e34b0db3981b7d2eed4228dbc387186ff08f6f57c243e3c76' and per.nom_page = 'aaa' ORDER BY p.id_page_publication DESC ");
+        $publication->execute(array());
         return $publication;
     }
 
@@ -480,4 +497,34 @@ class Query_bdd extends Connect_bdd{
         return $publication;
     }
 
+    public function recuperer_lien($mail){
+        $bdd = $this->dbconnect();
+        $recup = $bdd->query("SELECT token_id FROM PERSONNE WHERE mail LIKE '$mail'");
+        $info = $recup->fetch();
+        $temp_id = $info["token_id"];
+        $recup = $bdd->query("SELECT lien FROM ACTIVATION_COMPTE WHERE id_user LIKE '$temp_id'");
+        $info = $recup->fetch();
+        $lien = $info["lien"];
+        return $lien;
+    }
+
+    public function recuperer_id_date($lien){
+        $bdd = $this->dbconnect();
+
+        $query2 = $bdd->query("SELECT id_user, date_expiration, actif FROM ACTIVATION_COMPTE WHERE lien LIKE '$lien'");
+        $info = $query2->fetch();
+        return $info;
+    }
+
+    public function activer_compte($id, $lien){
+        $bdd = $this->dbconnect();
+        $query = $bdd->prepare("UPDATE ACTIVATION_COMPTE SET actif=1 WHERE lien LIKE ?");
+        $exec = $query->execute(array($lien));
+        $query = $bdd->prepare("UPDATE PERSONNE SET confirmation_mail= 1 WHERE token_id LIKE ?");
+        $query->execute(array($id));
+        $query = $bdd->query("SELECT mail FROM PERSONNE WHERE token_id LIKE '$id'");
+        $info = $query->fetch();
+        $mail = $info["mail"];
+        return $mail;
+    }
 }

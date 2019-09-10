@@ -11,17 +11,28 @@ function verification_user($notification, $mail){
     $query_bdd = new Query_bdd;
     $infos = $query_bdd->se_conneter_user($mail);
     $infos_user = $infos->fetch();
-    if($infos_user["confirmation_mail"]== 1){
+    if($infos_user["confirmation_mail"] == 1){
         $_SESSION["id"] = $infos_user["token_id"];
         $_SESSION["nom"] = $infos_user["nom"];
         $_SESSION["prenom"] = $infos_user["prenom"];
         $_SESSION["mail"] = $mail;
         $id=$infos_user["token_id"];
-        header("location:index.php?action=connecter&id=$id");
+        connecter($id);
+            
     }
     else {
+    /***************** simplement pour le test ********************/
+        $lien = envoyer_mail($mail);
+        session_start();
+        $_SESSION["lien"] = $lien;
         require("view/confirmation_mail.php");
     }
+}
+
+function envoyer_mail($mail){
+    $bdd = new Query_bdd;
+    $lien=$bdd->recuperer_lien($mail);
+    return $lien;
 }
 
 function demande_confirmation_mail($notification, $mail){
@@ -95,7 +106,7 @@ function message($id, $id_exp, $new_chat){
     $info_destinataire = $query_bdd->information_profil($id_exp);
     $info_destinataire_li = $info_destinataire->fetch();
 
-    $verifier_message_nouveau_et_non_lu = verifier_message_nouveau_et_non_lu($id);
+    $verifier_message_nouveau_et_non_lu = verifiemdr_message_nouveau_et_non_lu($id);
     $_SESSION["nbr_nouveau_message"] = $verifier_message_nouveau_et_non_lu[0];
     $_SESSION["nbr_message_non_lu"] = $verifier_message_nouveau_et_non_lu[1];
     $all_messages = $query_bdd->all_messages($id);
@@ -126,7 +137,6 @@ function se_connecter($mail, $password){
     $passwd_hash = $info_user_li["mot_de_passe"];
     if($info_user === false or $mail_user == ""){
         return 587; // CODE MAIL INCORRECTE ; NORM @ti-asa
-
     }
     else{
         if($info_user_li["confirmation_mail"] == 1){
@@ -139,8 +149,6 @@ function se_connecter($mail, $password){
                 $_SESSION["mail"] = $mail_user;
                 $id = $_SESSION["id"];
                 return true;
-
-
             }
             else{
                 return 8; // Mot de passe incorrecte
@@ -148,7 +156,7 @@ function se_connecter($mail, $password){
         }
         else{
             $notification = "Veuillez confirmer votre adresse mail";
-            return "http://localhost/index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail";
+            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
         }
     }
 }
@@ -160,6 +168,9 @@ function connecter($id){
     $profil_li = $profil->fetch();
 
     $publication = $query_bdd->requete_publication($id);
+    $publication_page = $query_bdd->requete_publication_page($id);
+
+    
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
@@ -194,9 +205,13 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
     $username = "$nom.$prenom";
     $query_bdd = new Query_bdd;
     $all_username_mail = $query_bdd->usernames_mail();
+    $name_already_utile = "false";
+    $mail_already_utile = "false";
+
     while($user_name_mail_existe = $all_username_mail->fetch()){
         $name_existe = $user_name_mail_existe['username'];
         $mail_existe = $user_name_mail_existe['mail'];
+        //*
         if($name_existe == $username){
             $name_already_utile = "true";
             break;
@@ -204,7 +219,7 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
         else{
             $name_already_utile = "false";
         }
-
+        //*/
         if($mail_existe == $mail){
             $mail_already_utile = "true";
             break;
@@ -219,15 +234,16 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
             if(preg_match("#^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$#",$mail)){
                 if(strlen($password)>=8){
                     if($password == $confirmation_password){
-                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);
+                        $passwd_hash = hash("sha512",$salt1 . $password . $salt2);                        //echo $link . "<br>" . $expiration_date . "<br>";
                         $insertion_inscrire = $query_bdd->inscrire($username, $nom, $prenom, $mail, $passwd_hash);
                         if($insertion_inscrire === false){
                             throw new Exception("Probléme d'insertion dans la bdd");
                         }
                         else{
 
-
+                            
                             exec("python3 controller/mail.py $mail verifier_compte ");
+
 
                             header("location:index.php?action=demande_confirmation_mail&notification&mail=$mail");
                         }
@@ -1037,7 +1053,7 @@ function mettre_jour_page($id, $id_page, $nom_page, $mail_page, $telephone_page,
             $profil = $query_bdd->information_profil($id);
             $profil_li = $profil->fetch();
             $select_page = $query_bdd->select_page($id, $nom_page);
-            $select_page_li = $select_page->fetch();
+            $select_page_li = $select_page->fetchmd();
             $select_mes_page = $query_bdd->select_mes_page($id);
             require("view/infogen_page.php");
 
@@ -1140,12 +1156,6 @@ function page($id, $nom_page){
     $select_page_li = $select_page->fetch();
     $id_page = $select_page_li["id_page"];
     $publication = $query_bdd->requete_my_publication_page($id, $nom_page);
-
-    while($publication_li = $publication->fetch()){
-      echo $publication_li["nom"];
-      echo "<br>";
-    }
-
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     require("view/page.php");
 }
@@ -1256,4 +1266,30 @@ function new_post_page($nom_page, $id_t, $id, $texte, $experience, $competence, 
         header("location:index.php?action=page&id=$id&nom_page=$nom_page");
     }
 
+}
+
+function activer_compte($lien) {
+    $bdd = new Query_bdd;
+    $infos = $bdd->recuperer_id_date($lien);
+    $date_exp = $infos["date_expiration"];
+    $id_user = $infos["id_user"];
+
+
+    if ((date("Y-m-d", time()) >= $date_exp) or ($infos["actif"] == 1)){
+        header("location:index.php");
+    } else {
+
+
+        $mail = $bdd->activer_compte($id_user, $lien);
+        $infos = $bdd->se_conneter_user($mail);
+        $infos_user = $infos->fetch();
+        
+        $_SESSION["id"] = $id_user;
+        $_SESSION["nom"] = $infos_user["nom"];
+        $_SESSION["prenom"] = $infos_user["prenom"];
+        $_SESSION["mail"] = $mail;
+        $id=$infos_user["id"];
+    
+        connecter($id);
+    }
 }

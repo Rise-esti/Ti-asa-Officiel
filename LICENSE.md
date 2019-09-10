@@ -1,7 +1,6 @@
-Copyright (c) August 2019
-All rights reserved.
+Droits d'auteur (c) août 2019
+Tous les droits sont réservés.
 
-Redistribution , copy and use binary forms for only personnal , are permitted.
-Redistributionand copy must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+La redistribution, la copie et l'utilisation sont uniquement autorisées.
+La redistribution et la copie doivent reproduire la notice de copyright ci-dessus, cette liste de conditions et la clause de non-responsabilité suivante dans la documentation et / ou dans les autres éléments fournis avec la distribution.
 
-THIS WEBSITE IS PROVIDED AND CONTRIBUTORS ``AS IN AND ANY EXPRESS OR IMPLIED WARRATIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OR MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED, IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMOLARY, OR CONSEQUENTIAL MALFUCTIONS (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF POSSIBILITY OF SUCH DAMAGE.
