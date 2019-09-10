@@ -50,7 +50,7 @@
         <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h1 class="text-uppercase"><strong> Bienvenu sur ti-asa</strong></h1>
+                    <h1 class="text-uppercase"><strong> Bienvenue sur ti-asa</strong></h1>
                     <hr>
                 </div>
             </div>
