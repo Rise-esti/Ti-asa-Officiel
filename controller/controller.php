@@ -137,7 +137,6 @@ function se_connecter($mail, $password){
     $passwd_hash = $info_user_li["mot_de_passe"];
     if($info_user === false or $mail_user == ""){
         return 587; // CODE MAIL INCORRECTE ; NORM @ti-asa
-
     }
     else{
         if($info_user_li["confirmation_mail"] == 1){
@@ -150,8 +149,6 @@ function se_connecter($mail, $password){
                 $_SESSION["mail"] = $mail_user;
                 $id = $_SESSION["id"];
                 return true;
-
-
             }
             else{
                 return 8; // Mot de passe incorrecte
@@ -208,9 +205,13 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
     $username = "$nom.$prenom";
     $query_bdd = new Query_bdd;
     $all_username_mail = $query_bdd->usernames_mail();
+    $name_already_utile = "false";
+    $mail_already_utile = "false";
+
     while($user_name_mail_existe = $all_username_mail->fetch()){
         $name_existe = $user_name_mail_existe['username'];
         $mail_existe = $user_name_mail_existe['mail'];
+        //*
         if($name_existe == $username){
             $name_already_utile = "true";
             break;
@@ -218,7 +219,7 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
         else{
             $name_already_utile = "false";
         }
-
+        //*/
         if($mail_existe == $mail){
             $mail_already_utile = "true";
             break;

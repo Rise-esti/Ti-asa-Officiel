@@ -382,13 +382,13 @@
                 <div class="modal-body">
                     <form  action="index.php?action=inscription" method="post">
                         <div class="form-group">
-                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom" required="required">
+                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom(s)" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom" required="required">
+                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom(s)" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Email" required="required">
+                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Adresse Email" required="required">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="password" placeholder="Mot de passe" required="required">
