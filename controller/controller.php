@@ -18,7 +18,7 @@ function verification_user($notification, $mail){
         $_SESSION["mail"] = $mail;
         $id=$infos_user["token_id"];
         connecter($id);
-            
+
     }
     else {
     /***************** simplement pour le test ********************/
@@ -155,8 +155,8 @@ function se_connecter($mail, $password){
             }
         }
         else{
-            $notification = "Veuillez confirmer votre adresse mail";
-            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
+            //$notification = "Veuillez confirmer votre adresse mail";
+            return "index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail";
         }
     }
 }
@@ -170,7 +170,7 @@ function connecter($id){
     $publication = $query_bdd->requete_publication($id);
     $publication_page = $query_bdd->requete_publication_page($id);
 
-    
+
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
@@ -241,7 +241,7 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
                         }
                         else{
 
-                            
+
                             exec("python3 controller/mail.py $mail verifier_compte ");
 
 
@@ -1283,13 +1283,13 @@ function activer_compte($lien) {
         $mail = $bdd->activer_compte($id_user, $lien);
         $infos = $bdd->se_conneter_user($mail);
         $infos_user = $infos->fetch();
-        
+
         $_SESSION["id"] = $id_user;
         $_SESSION["nom"] = $infos_user["nom"];
         $_SESSION["prenom"] = $infos_user["prenom"];
         $_SESSION["mail"] = $mail;
         $id=$infos_user["id"];
-    
+
         connecter($id);
     }
 }
