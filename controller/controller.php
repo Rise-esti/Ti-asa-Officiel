@@ -159,7 +159,7 @@ function se_connecter($mail, $password){
         }
         else{
             $notification = "Veuillez confirmer votre adresse mail";
-            return "http://localhost/index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail";
+            header("location:index.php?action=demande_confirmation_mail&notification=$notification&mail=$mail");
         }
     }
 }
