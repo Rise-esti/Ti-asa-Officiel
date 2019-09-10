@@ -39,7 +39,7 @@
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 15.2px !important">Télécharger</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 15.2px !important">Team</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 15.2px !important">  Contact</a></li>
-                    <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="view/blog.php" style="font-size: 15.2px !important">  Blog</a></li>
+                    <li class="nav-item" role="presentation" OnClick="window.location='view/blog.php'" ><a class="nav-link js-scroll-trigger" href="#" style="font-size: 15.2px !important">  Blog</a></li>
                     <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
                 </ul>
             </div>
