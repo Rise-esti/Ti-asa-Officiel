@@ -65,7 +65,6 @@ try{
         }
 
 
-
         elseif(($action == "connecter" and isset($_GET["id"]))){
             $id = htmlspecialchars($_GET["id"]);
             if (isset($_SESSION["id"])){

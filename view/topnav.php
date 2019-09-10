@@ -351,7 +351,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="connecter" action="index.php?action=se_connecter"  method="post">
+                    <form id="connecter">
                         <div class="form-group">
                             <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="email" placeholder="Email" required="required">
 
@@ -380,7 +380,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form  action="index.php?action=inscription" method="post">
+                    <form  action="index.php?action=inscription">
                         <div class="form-group">
                             <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom" required="required">
                         </div>
@@ -397,7 +397,7 @@
                             <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="confirmation_password" placeholder="Confirmer le mot de passe" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
+                            <input type="button"  onclick="inscription()" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
                         </div>
                         <script type="text/javascript" src="public/js/verification_form1.js"></script>
                     </form>
