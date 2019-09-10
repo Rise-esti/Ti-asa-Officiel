@@ -383,10 +383,10 @@
                 <div class="modal-body">
                     <form  action="index.php?action=inscription">
                         <div class="form-group">
-                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom(s)" required="required">
+                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom(s)" required="required">
+                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom(s)" required="required">
                         </div>
                         <div class="form-group">
                             <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Adresse Email" required="required">
@@ -398,7 +398,7 @@
                             <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="confirmation_password" placeholder="Confirmer le mot de passe" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="button"  onclick="inscription()" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
+                            <input type="submit"  onclick="inscription()" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
                         </div>
                         <script type="text/javascript" src="public/js/verification_form1.js"></script>
                     </form>
