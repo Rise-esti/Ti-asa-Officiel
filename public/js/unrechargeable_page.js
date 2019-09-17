@@ -23,6 +23,7 @@ function verifie_password(){
           );
           function feed_back(reponse){
 
+
             if (reponse == 1){
                 // Connection reussi
                 window.location.reload();
@@ -42,6 +43,7 @@ function verifie_password(){
               window.location = reponse ;
             }
 
+
           }
     }
 
@@ -58,10 +60,9 @@ function verifie_password(){
       notif.html('Champ(s) obligatoire à remplir');
   }
 
+}
 
 
-
-
-
-
+function inscription(){
+      let nom = $("")
 }

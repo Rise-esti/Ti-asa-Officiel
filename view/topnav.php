@@ -39,6 +39,7 @@
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#download" style="font-size: 15.2px !important">Télécharger</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 15.2px !important">Team</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 15.2px !important">  Contact</a></li>
+                    <li class="nav-item" role="presentation" OnClick="window.location='https://rise-esti.github.io'" ><a class="nav-link js-scroll-trigger" href="#" style="font-size: 15.2px !important">  Blog</a></li>
                     <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
                 </ul>
             </div>
@@ -50,7 +51,7 @@
         <div class="container my-auto">
             <div class="row">
                 <div class="col-lg-10 mx-auto">
-                    <h1 class="text-uppercase"><strong> Bienvenu sur ti-asa</strong></h1>
+                    <h1 class="text-uppercase"><strong> Bienvenue sur ti-asa</strong></h1>
                     <hr>
                 </div>
             </div>
@@ -351,7 +352,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form id="connecter" action="index.php?action=se_connecter"  method="post">
+                    <form id="connecter">
                         <div class="form-group">
                             <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" id="email" placeholder="Email" required="required">
 
@@ -380,15 +381,15 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form  action="index.php?action=inscription" method="post">
+                    <form  action="index.php?action=inscription">
                         <div class="form-group">
                             <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom" required="required">
+                            <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="prenom" placeholder="Prénom(s)" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Email" required="required">
+                            <input type="email" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="mail" placeholder="Adresse Email" required="required">
                         </div>
                         <div class="form-group">
                             <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="password" placeholder="Mot de passe" required="required">
@@ -397,7 +398,7 @@
                             <input type="password" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="confirmation_password" placeholder="Confirmer le mot de passe" required="required">
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
+                            <input type="submit"  onclick="inscription()" name="valider_inscription"  style="border-radius: 25px !important;" class="btn btn-primary btn-block btn-lg" value="S'inscrire">
                         </div>
                         <script type="text/javascript" src="public/js/verification_form1.js"></script>
                     </form>
