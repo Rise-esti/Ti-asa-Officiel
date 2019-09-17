@@ -1,5 +1,6 @@
 <?php
 require("model/Model.php");
+
 $salt1 = "@$!@$*";
 $salt2 = "%%@=@!";
 function page_1(){
@@ -17,7 +18,7 @@ function verification_user($notification, $mail){
         $_SESSION["mail"] = $mail;
         $id=$infos_user["token_id"];
         connecter($id);
-            
+
     }
     else {
     /***************** simplement pour le test ********************/
@@ -178,7 +179,6 @@ function connecter($id){
       $tab_pub_personne[$i] = $publication_personne;
       $i++;
     }
-    $nbr_pub_personne = count($tab_pub_personne);
 
     $tab_pub_page = array();
     $i = 0;
@@ -186,22 +186,18 @@ function connecter($id){
       $tab_pub_page[$i] = $publication_page_ligne;
       $i++;
     }
-    $nbr_pub_page = count($tab_pub_page);
 
-    if($nbr_pub_personne > $nbr_pub_page){
-
-      for($i=0; $i<$nbr_pub_personne; $i++){
-        for($j=0; $i<$nbr_pub_page; $i++){
-
+    $publication_li = array();
+    $publication_li = array_merge($tab_pub_personne, $tab_pub_page);
+    $nbr_ligne = count($publication_li);
+    for($i=0;$i<$nbr_ligne-1;$i++){
+      for($j=$i+1;$j<$nbr_ligne;$j++){
+        if($publication_li[$i]["date_pub"]<$publication_li[$j]["date_pub"]){
+          $pub_pers = $publication_li[$i];
+          $publication_li[$i] = $publication_li[$j];
+          $publication_li[$j] = $pub_pers;
         }
       }
-
-    }
-    elseif ($nbr_pub_personne < $nbr_pub_page) {
-      // code...
-    }
-    else{
-
     }
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
@@ -214,6 +210,11 @@ function connecter($id){
         $i++;
     }
     $nbr_all_page = count($all_page);
+
+    /*for($i=0; $i<$nbr_ligne; $i++){
+      echo $publication_li[$i]["date_publication"];
+      echo "<br>";
+    }*/
     require("view/acceuil.php");
 }
 
@@ -269,7 +270,7 @@ function inscription($nom, $prenom, $mail, $password, $confirmation_password){
                         }
                         else{
 
-                            
+
                             exec("python3 controller/mail.py $mail verifier_compte ");
 
 
@@ -1311,13 +1312,13 @@ function activer_compte($lien) {
         $mail = $bdd->activer_compte($id_user, $lien);
         $infos = $bdd->se_conneter_user($mail);
         $infos_user = $infos->fetch();
-        
+
         $_SESSION["id"] = $id_user;
         $_SESSION["nom"] = $infos_user["nom"];
         $_SESSION["prenom"] = $infos_user["prenom"];
         $_SESSION["mail"] = $mail;
         $id=$infos_user["id"];
-    
+
         connecter($id);
     }
 }

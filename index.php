@@ -1,6 +1,5 @@
 <?php
 require("controller/controller.php");
-
 session_start();
 try{
     if(isset($_GET["action"])){
@@ -574,7 +573,7 @@ try{
         else{
           header("location:index.php");
         }
-        
+
 
     //require('view/footer.php');
     }
