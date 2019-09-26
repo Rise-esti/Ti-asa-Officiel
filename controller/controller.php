@@ -170,7 +170,6 @@ function connecter($id){
     $publication = $query_bdd->requete_publication($id);
     $publication_page = $query_bdd->requete_publication_page($id);
 
-<<<<<<< HEAD
     $tab_pub_personne = array();
     $i = 0;
     while($publication_personne = $publication->fetch()){
@@ -197,9 +196,7 @@ function connecter($id){
         }
       }
     }
-=======
 
->>>>>>> 3edca1257259ce8ae717e456bdde7d6c8fb83d26
 
     $afficher_autre_profil = $query_bdd->afficher_autre_profil($id);
     $select_mes_page = $query_bdd->select_mes_page($id);
