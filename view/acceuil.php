@@ -480,6 +480,7 @@ function french_it($mois){
 <script src="public/js/main.min.js"></script>
 <?php
 	require("view/js.php");
+	require("footer.php");
 ?>
 
 <script>
