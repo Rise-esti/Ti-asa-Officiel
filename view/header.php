@@ -34,6 +34,7 @@
 </script>
 <body>
 <!--<div class="se-pre-con"></div>-->
+
 <div class="theme-layout">
 
 	<!--responsive header----------------------------------------------------------------------------------------------------------->
@@ -89,8 +90,8 @@
 	</div><!-- responsive header--------------------------------------------------------------------------------------------- -->
 
 	<div class="topbar stick">
-		<div class="logo">
-			<i class="fa fa-rss" style="display:inline"></i><p class="por" style="display:inline">ti-asa</p>
+		<div class="logo" style="margin-top:0% !important;">
+			<i class="fa fa-rss" style="display:inline; "></i><p class="por" style="display:inline">ti-asa</p>
 		</div>
 
 		<div class="top-area">
@@ -99,7 +100,6 @@
 					<a href="#" title="" class=" high">Accueil</a>
 					<ul>
 						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop">Actualités</a></li>
-
 					</ul>
 				</li>
 				<li>
@@ -147,7 +147,7 @@
 
 				<li>
 					<a href="#" title="Notification" data-ripple="">
-						<i class="ti-bell"></i><span style="color:#610f91; font-weight:bold;">4</span>
+						<i class="ti-bell"></i><span style="color:#fff; font-weight:bold;">4</span>
 					</a>
 					<div class="dropdowns">
 						<span>4 nouvelles notifications</span>
@@ -269,7 +269,7 @@
 					$prenom = $profil_li["prenom"];
 				?>
 				<li>
-					<a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #610f91; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
+					<a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #fff; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
 				</li>
 			</ul>
 			<div class="user-img">
@@ -286,11 +286,11 @@
 				<img style="border-radius: 50%;width: 36px;height: 36px; " src="<?= $chemin_pdp ?>" alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
-					<a href="#" title="" style="font-weight:bold;"><span class="status f-online"></span><?= $profil_li["prenom"] ?></a>
+					<a href="#" title="" style="font-weight:bold; color: #fff;"><span class="status f-online"></span><?= $profil_li["prenom"] ?></a>
 					<a href="#" Onclick="window.location='index.php?action=information_generale&amp;id=<?= $id ?>'"><i class="ti-user prof" ></i> <span class="propa">Voir le profil</span></a>
 					<a href="#" Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"><i class="ti-pencil-alt prof"></i><span class="propa">Modifier le profil </span></a>
 
-					<a href="#" ><i class="ti-settings prof"></i><span class="propa"> Paramètres de compte </span></a>
+					<a href="#" ><i class="ti-settings prof"></i><span class="propa"> Paramètres </span></a>
 					<a href="#" Onclick="window.location='index.php?action=deconnecter&amp;id=<?= $id ?>'"><i  class="ti-power-off prof"></i><span class="propa"> Déconnexion</span></a>
 				</div>
 			</div>

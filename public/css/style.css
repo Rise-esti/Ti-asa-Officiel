@@ -606,7 +606,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
+    background-image: linear-gradient(to right, #e94b27, #1da1f2);
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -1994,7 +1994,7 @@ span.status::after {
 }
 
 span.status.f-online {
-    background: #7FBA00;
+    background: #2ebc4f;
 }
 
 
@@ -2271,7 +2271,7 @@ a.underline:hover:before,
 }
 
 .user-setting {
-    background: #fff none repeat scroll 0 0;
+    background-image: linear-gradient(to bottom, #1da1f2, #f05f40) !important;
     border-radius: 0 0 3px 3px;
     position: absolute;
     left: -100px;
@@ -2281,7 +2281,7 @@ a.underline:hover:before,
     opacity: 0;
     visibility: hidden;
     line-height: initial;
-    border: 1px solid #e1e8ed;
+    border: 1px solid #1da1f2;
 }
 
 .user-setting.active {
@@ -2295,7 +2295,7 @@ a.underline:hover:before,
     padding: 10px 15px;
     text-transform: capitalize;
     width: 100%;
-    background: #fafafa;
+    background-color: #1da1f2 !important;
     position: relative;
 }
 
@@ -2312,7 +2312,7 @@ a.underline:hover:before,
 }
 
 .user-setting > a:hover {
-    background: #f1f1f1;
+    background: #2a80b6 !important;
 }
 
 
@@ -4658,7 +4658,7 @@ canvas {
 }
 
 .top-area > ul.main-menu > li a {
-    color: #575b5f;
+    color: #fff;
     font-size: 14px;
     font-weight: 700;
     text-transform: capitalize;
@@ -4667,6 +4667,7 @@ canvas {
 
 .top-area > ul.main-menu > li::after {
     content: "";
+    color:#fff;
     font-family: fontawesome;
     font-size: 13px;
     position: absolute;
@@ -10061,22 +10062,22 @@ aside.sidebar.full-style {
 }
 
 .por{
-    font-size: 40px;
-    color: #610f91;
+    font-size: 30px;
+    color: #fff;
     font-family: 'Poppins' !important;
     font-weight:bold;
 }
 
 .fa-rss{
-    font-size: 40px;
-    color: #610f91;
+    font-size: 30px;
+    color: #fff;
     font-weight:bold;
     margin-left: -17% !important;
     margin-top: 10% !important;
 }
 
 .ti-search, .ti-home, .ti-comment, .ti-bell{
-    color:#610f91;
+    color:#fff;
     font-weight: bold !important;
 }
 
@@ -10085,16 +10086,17 @@ aside.sidebar.full-style {
 }
 
 .prof{
-    color:#610f91 !important;
+    color:#fff !important;
     font-weight: bold;
 }
 
 .propa{
-   font-size: 15px;
-   color: #610f91 !important;
+   font-size: 13px;
+   color: #fff !important;
+   font-weight:bold;
 }
 .propa:hover{
-    color:#610f91 !important;
+    color:#fff !important;
 }
 
 .short{
