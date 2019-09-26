@@ -332,8 +332,8 @@
 
 					for (i=0;i<message[0].length;i++){
 						if (ids.indexOf(message[0][i]['id_expediteur']) > -1 ){
-							$('#'   +  message[0][i]['id_expediteur'] + ' #mes_far'  ).html(message[0][i]['mes']);
-							$('#msg-cont').prepend($('#' + message[0][i]['id_expediteur'] ));
+							$('#'   +  message message[0][i]['mes']);
+							$('#msg-cont').pre ;
 
 						}
 						else{

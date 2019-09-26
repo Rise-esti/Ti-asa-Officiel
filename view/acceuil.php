@@ -96,30 +96,34 @@ function french_it($mois){
 														</div>
 
 														<div id="publication" style="display:none;">
-															<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>
+															<!--<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>-->
+															<div id="f" class="form-group">
+																<input type="text" name="mission"  />
+																<label class="control-label" for="input" id ="pub" style="color: #1da1f2 !important;">Mission</label><i class="mtrl-select"></i>
+															</div>
 															<div id="f" class="form-group">
 																<input type="text" name="formation"  />
-																<label class="control-label" for="input">Formation</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input"  style="color: #1da1f2 !important;">Formation</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="experience"  placeholder=""/>
-																<label class="control-label" for="input">Expérience</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Expérience</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="competence"  />
-																<label class="control-label" for="input">Compétence</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Compétence</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="personnalite"   />
-																<label class="control-label" for="input">Personnalité</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Personnalité</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="langue"  />
-																<label class="control-label" for="input">Langue</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Langue</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<fieldset style="padding-top:0.01em !important;padding-bottom:1em !important;padding-left:0.25em !important;">
-																	<legend style="font-size:15px !important;">  Date limite </legend>
+																	<legend style="font-size:13px !important; color: #1da1f2 !important;">  Date limite </legend>
 																	<div class="form-group half" style="margin-left:1px !important;">
 																		<select style="color:#088dcd" name='jour'>
 																			<option value="">Jour</option>
@@ -154,7 +158,7 @@ function french_it($mois){
 															</div>
 															<div class="form-group">
 																<input type="text" name="lieu"    />
-																<label class="control-label" for="input">Lieu</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Lieu</label><i class="mtrl-select"></i>
 															</div>
 														</div>
 													</form>
