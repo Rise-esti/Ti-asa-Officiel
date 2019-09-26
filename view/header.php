@@ -97,13 +97,13 @@
 		<div class="top-area">
 			<ul class="main-menu">
 				<li>
-					<a href="#" title="" class=" high">Accueil</a>
+					<a href="#" title="" class=" high"><i class="fa fa-home"></i> Accueil</a>
 					<ul>
 						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop">Actualités</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#" title="" class=" high" >Profil</a>
+					<a href="#" title="" class=" high" ><i class="fa fa-user"></i> Profil</a>
 					<ul>
 						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher mon profil</a></li>
 						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier mon profil</a></li>
@@ -112,7 +112,7 @@
 				</li>
 
 				<li>
-					<a href="#" title="" class=" high">Page</a>
+					<a href="#" title="" class=" high"><i class="fa fa-flag"></i> Page</a>
 					<ul>
 						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
             <?php

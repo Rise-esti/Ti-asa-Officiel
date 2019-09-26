@@ -84,13 +84,7 @@ blockquote,
 .job-detail > ul li i,
 .company-intro > a
 {
-	color: #610f91;	
-}
-svg{
-stroke: #fff;
-}
-path.icon{
-	fill: #fff;
+	color: #f05f40;	
 }
 
 
@@ -147,7 +141,7 @@ button.submit-checkout,
 a.addnewforum,
 .apply-bttons > a
 {
-	background: #610f91 ;
+	background: #f05f40 ;
 	
 }
 
@@ -168,16 +162,16 @@ a.addnewforum,
 a.btn2:hover,
 .single-btn > li > a.active
 {
-	border-color: #610f91;	
+	border-color: #f05f40;	
 }
 
 #nprogress .spinner-icon{
-	border-left-color: #610f91;
+	border-left-color: #f05f40;
 }
 #nprogress .spinner-icon
 {
-	border-top-color: #610f91;		
+	border-top-color: #f05f40;		
 }
 .timeline-info > ul li a:after{
-	border-bottom-color: #610f91;
+	border-bottom-color: #f05f40;
 }

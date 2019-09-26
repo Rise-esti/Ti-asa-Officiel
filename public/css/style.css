@@ -1197,7 +1197,7 @@ header.sticky {
 
 .sidebar .widget ul.naves li i {
     display: inline-block;
-    font-size: 14px !important;
+    font-size: 13px !important;
     vertical-align: baseline;
 }
 .gauche{
@@ -3467,7 +3467,7 @@ a.add-butn {
 }
 
 .nav.nav-tabs.likes-btn > li a {
-    background: #eeeeee none repeat scroll 0 0;
+    background: #f05f40 none repeat scroll 0 0;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -3490,7 +3490,7 @@ a.add-butn {
 }
 
 .page-likes .tab-content .tab-pane > span i {
-    color: green;
+    color: #2ebc4f;
     font-size: 15px;
     margin-right: 6px;
 }
@@ -3517,7 +3517,7 @@ a.add-butn {
 }
 
 .page-likes .tab-content .tab-pane > a {
-    color: green;
+    color: #2ebc4f;
     float: left;
     font-size: 13px;
     text-align: center;

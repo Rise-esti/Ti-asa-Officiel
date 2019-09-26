@@ -82,7 +82,7 @@ function french_it($mois){
 															<ul>
 
 																<li>
-																	<i class="fa fa-image" style="color:#610f91;"></i>
+																	<i class="fa fa-image" style="color:#2ebc4f;"></i>
 																	<label class="fileContainer">
 																		<input type="file" name="image">
 																	</label>
@@ -90,7 +90,7 @@ function french_it($mois){
 
 
 																<li>
-																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px;">Publier</button>
+																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px; background-image:linear-gradient(to right , #2ebc4f, #2ebc4f) !important;">Publier</button>
 																</li>
 															</ul>
 														</div>
