@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>Ti-asa</title>
+    <title>Ti-asa</title>
     <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
 
     <link rel="stylesheet" href="public/css/main.min.css">
@@ -99,14 +99,14 @@
 				<li>
 					<a href="#" title="" class=" high"><i class="fa fa-home"></i> Accueil</a>
 					<ul>
-						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop">Actualités</a></li>
+						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-home"></i> Actualités</a></li>
 					</ul>
 				</li>
 				<li>
 					<a href="#" title="" class=" high" ><i class="fa fa-user"></i> Profil</a>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher mon profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier mon profil</a></li>
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-user"></i> Afficher mon profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-pencil"></i> Modifier mon profil</a></li>
 
 					</ul>
 				</li>
@@ -114,7 +114,7 @@
 				<li>
 					<a href="#" title="" class=" high"><i class="fa fa-flag"></i> Page</a>
 					<ul>
-						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
+						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop crepa" style="background-color:#f05f40; color:#fff;"><i class="fa fa-flag"></i> Créer une page</a></li>
             <?php
             $i = 0;
             $tab_list_page = array();
@@ -139,7 +139,7 @@
 					<div class="searched">
 						<form method="post" class="form-search" >
 							<input type="text" id="zavatra_recherchena" placeholder="Rechercher...">
-							<button onclick="alefa()" data-ripple ><i  class="ti-search"></i></button>
+							<button onclick="alefa()" data-ripple ><i  style="color:#f05f40 !important;" class="ti-search"></i></button>
 						</form>
 					</div>
 

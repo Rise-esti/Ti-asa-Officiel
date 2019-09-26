@@ -1201,7 +1201,7 @@ header.sticky {
     vertical-align: baseline;
 }
 .gauche{
-    font-size:14px !important;
+    font-size:13px !important;
 }
 
 .activity-meta {
@@ -4692,8 +4692,14 @@ canvas {
 }
 
 .top-area > ul.main-menu > li > ul li a:hover {
-    background: #f5f5f5 none repeat scroll 0 0;
+    background: #eeeeee none repeat scroll 0 0 !important;
     padding-left: 17px;
+    color: #5f5f5f !important;
+}
+
+.crepa:hover{
+    background-color: #ca3513 !important;
+    color:#fff !important;
 }
 
 
@@ -10058,7 +10064,7 @@ aside.sidebar.full-style {
 }
 
 .high{
-    font-size: 15px !important;
+    font-size: 14px !important;
 }
 
 .por{
@@ -10102,4 +10108,3 @@ aside.sidebar.full-style {
 .short{
     font-size:16px !important;
 }
-
