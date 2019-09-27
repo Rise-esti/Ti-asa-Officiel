@@ -63,7 +63,7 @@
 											<label class="control-label" for="textarea">Description</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="valider_creer_page" class="mtr-btn" style="background-color: #2ebc4f !important;"><span><i class="fa fa-flag"></i>Créer la page</span></button>
+												<button type="submit" name="valider_creer_page" class="mtr-btn" style="background-color: #2ebc4f !important;"><span><i class="fa fa-flag"></i> Créer la page</span></button>
 											</div>
 										</form>
 									</div>
