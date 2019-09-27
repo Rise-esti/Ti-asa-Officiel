@@ -815,7 +815,7 @@ header.sticky {
 }
 
 .timeline-info .admin-name > h5 {
-    color: #610f91;
+    color: #666;
     display: inline-block;
     font-size: 24px;
     font-weight: 500;
