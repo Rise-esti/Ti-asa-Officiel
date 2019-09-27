@@ -1316,6 +1316,7 @@ textarea {
 form button {
     border: medium none;
     color: #fff;
+    background-color: #2ebc4f;
     font-size: 13px;
     font-weight: 600;
     padding: 3px 10px;
