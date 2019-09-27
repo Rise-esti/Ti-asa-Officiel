@@ -32,7 +32,7 @@
 										?>
 										<form method="post" class="formcomp">
 											<div class="form-group">	
-												<i class="fa fa-heart forc" style="display: inline"> <h6 style="display: inline"><?= $tab[$i]["centre_d_interet"] ?></h6> </i>
+												<i class="fa fa-heart forc" style="display: inline; color:#1da1f2 !important;"> <h6 style="display: inline; color:#1da1f2;"><?= $tab[$i]["centre_d_interet"] ?></h6> </i>
 												<i class="mtrl-select"></i>
 												<?php
 													$description = $tab[$i]["description_interet"];
@@ -43,8 +43,8 @@
 													}
 												?>
 												<div class="submit-btns">
-													<button class="supp" type="button" style="background-color:#ff4b5a;  " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_centre_interet&id=<?= $id ?>&id_centre_interet=<?= $id_centre_interet ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													<button  class="mod" Onclick="window.location='index.php?action=modifier_centre_interet_existe&amp;id=<?= $id ?>&amp;id_centre_interet=<?= $id_centre_interet ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+													<button class="supp" type="button" style="background-color:#ff4b5a;  " onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette expérience ?');if (x){window.location='index.php?action=supprimer_centre_interet&id=<?= $id ?>&id_centre_interet=<?= $id_centre_interet ?>'};"class="mtr-btn"><span><i class="fa fa-remove"></i> Supprimer</span></button>
+													<button  class="mod" Onclick="window.location='index.php?action=modifier_centre_interet_existe&amp;id=<?= $id ?>&amp;id_centre_interet=<?= $id_centre_interet ?>'"   type="button" class="mtr-btn" style="background-color:#2ebc4f;"><span><i class="fa fa-pencil"></i> Modifier</span></button>
 												</div>
 											</div>
 										</form>
