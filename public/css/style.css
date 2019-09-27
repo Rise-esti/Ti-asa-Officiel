@@ -10115,3 +10115,16 @@ aside.sidebar.full-style {
     color: #f05f40 !important;
     font-style: normal;
 }
+
+
+
+
+.form-group input:focus ~ .control-label{
+    color: #1da1f2 !important;
+}
+.form-group input:valid ~ .control-label{
+    color: #1da1f2 !important;
+}
+.form-group textarea:valid ~ .control-label{
+    color: #1da1f2 !important;
+}
