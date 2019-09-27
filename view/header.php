@@ -2,23 +2,23 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <title>Ti-asa</title>
-    <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
+	<meta charset="UTF-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Ti-asa</title>
+	<link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
 
-    <link rel="stylesheet" href="public/css/main.min.css">
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="public/css/color.css">
-    <link rel="stylesheet" href="public/css/responsive.css">
-    <link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="public/css/main.min.css">
+	<link rel="stylesheet" href="public/css/style.css">
+	<link rel="stylesheet" href="public/css/color.css">
+	<link rel="stylesheet" href="public/css/responsive.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
 
 
-    <!--resp font & color footer--> <link rel="stylesheet" href="public/assets/css/style.css">
-    <script src="public/JS/jquery.min.js"><script>
+	<!--resp font & color footer--> <link rel="stylesheet" href="public/assets/css/style.css">
+	<script src="public/JS/jquery.min.js"></script>
 
 
 </head>

@@ -151,7 +151,7 @@
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5"><i class="fa fa-video-camera fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>
                         <h3 class="mb-3" style="font-size:22px !important;">Passez vos interview en ligne</h3>
-                        <p class="text-muted mb-0">Un Entretien directement via le Site Web pour ne pas perdre du temps ou pour accelerer l'embauche.</p>
+                        <p class="text-muted mb-0">Un entretien directement via le Site Web pour ne pas perdre du temps ou pour accelerer l'embauche.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center">

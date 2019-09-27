@@ -161,14 +161,21 @@ function french_it($mois){
 															var cont = document.getElementById('cnt');
 															var i = 0;
 															x.addEventListener('focus',  function show_pub(){
+														
+																setTimeout(anim_pub(), 5000);
+																	});
+
+															function anim_pub(){
 																if (i < 1){
 																	dist = document.getElementById('publication');
 																	dist.style.display = 'block';
 																	}
 																i = i + 1 ;
-																	}
-
-															)
+															
+															}
+															
+															
+																
 
 															x.addEventListener('blur', function hide_pub(event){
 																dist = document.getElementById('publication');
