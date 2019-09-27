@@ -10110,3 +10110,8 @@ aside.sidebar.full-style {
 .short{
     font-size:16px !important;
 }
+
+.__cf_email__{
+    color: #f05f40 !important;
+    font-style: normal;
+}
