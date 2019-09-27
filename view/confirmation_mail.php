@@ -65,7 +65,7 @@
 						Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
 						<?php
 						$lien_activation = $_SESSION["lien"];
-						echo '<br>Voici le lien pour activer votre compte: <br><a href="http://localhost/Ti-asa-Officiel/index.php?action=activer&lien=' . $lien_activation . '" target="_blank">http://localhost/tia_asa-php-officiel/index.php?action=activer?lien=' . $lien_activation . '</a>';
+						echo '<br>Voici le lien pour activer votre compte: <br><a href="index.php?action=activer&lien=' . $lien_activation . '" target="_blank">http://localhost/tia_asa-php-officiel/index.php?action=activer?lien=' . $lien_activation . '</a>';
 						$_SESSION = array();
 						session_destroy();
 						?>
