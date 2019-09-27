@@ -19,7 +19,7 @@
 						créer une page pour mieux récruter.
 					</p>
 					<span>avec ti-asa</span>
-					<a data-ripple="" title="" href="#" style="border-radius: 50px;">Commencer</a>
+					<a href="index.php?action=creer_page&amp;id=<?=$id?>" data-ripple="" title="" href="#" style="border-radius: 50px;">Commencer</a>
 				</div>
 			</div>
 		</div>
