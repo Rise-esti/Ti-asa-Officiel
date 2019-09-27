@@ -40,7 +40,7 @@
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#team" style="font-size: 15.2px !important">Team</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link js-scroll-trigger" href="#contact" style="font-size: 15.2px !important">  Contact</a></li>
                     <li class="nav-item" role="presentation" OnClick="window.location='https://rise-esti.github.io'" ><a class="nav-link js-scroll-trigger" href="#" style="font-size: 15.2px !important">  Blog</a></li>
-                    <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1"><i class="fa fa-pencil"></i> S'inscrire</a>
+                    <a href="#myModal2" data-toggle="modal" class="btn btn-primary dropdown-toggle get-started-btn mt-1 mb-1" style=" background-image: linear-gradient(to right, #f05f40, #f05f40 ) !important;"><i class="fa fa-pencil"></i> S'inscrire</a>
                 </ul>
             </div>
         </div>
@@ -65,7 +65,7 @@
     </header>
 
 
-    <section id="about" class="bg-primary" style=" background-image: linear-gradient(to bottom, #f05f40, #ee5f3f ) !important;">
+    <section id="about" class="bg-primary" style=" background-image: linear-gradient(to right, #f05f40, #1da1f2 ) !important;">
         <div class="container">
             <div class="row">
                 <div class="col offset-lg-8 mx-auto text-center">
@@ -318,7 +318,7 @@
 
 
 
-    <a href="#connecter" class="nav-link js-scroll-trigger"> <i class="fa fa-sign-in" style="background-color: #f05f40; font-size:25px ;color: #fff; padding:18px; border-radius: 50px; padding-left: 24px; padding-top: 19px;  top: 15%; margin-left: 94%; text-align: center !important; box-shadow: 0px 2px 25px 0 #f05f40; transition-duration: 0.5s;"></i> </a>
+    <a href="#connecter" class="nav-link js-scroll-trigger conn"> <i class="fa fa-sign-in" style="background-color:#1da1f2; font-size:25px ;color: #fff; padding:18px; border-radius: 50px; padding-left: 24px; padding-top: 19px;  top: 15%; margin-left: 94%; text-align: center !important; box-shadow: 0px 2px 10px 0 #777; transition-duration: 0.5s;"></i> </a>
 
 
     <footer class="layout-dark" style="background-color:#212529 !important; padding-bottom: 3% !important; padding-top: 4% !important;" >

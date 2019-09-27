@@ -37,7 +37,7 @@ function verifie_password(){
             else if (reponse == 8){
               password.css('border-color', 'red');
               notif.css({'border-color': 'red', 'text-align': 'center', 'margin-top':'5%'});
-              notif.html('Votre Mot de passe est incorrecte');
+              notif.html('Votre Mot de passe est incorrect');
             }
             else{
               window.location = reponse ;

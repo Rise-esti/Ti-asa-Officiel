@@ -606,7 +606,7 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
+    background-image: linear-gradient(to right, #e94b27, #1da1f2);
     display: block;
     height: 60px;
     padding: 0 48px;
@@ -1118,7 +1118,8 @@ header.sticky {
     width: 100%;
     margin-bottom: 30px;
     background: #fdfdfd;
-    border: 1px solid #ede9e9;
+    /*border: 1px solid #ede9e9;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     border-radius: 3px;
 }
 
@@ -1197,11 +1198,11 @@ header.sticky {
 
 .sidebar .widget ul.naves li i {
     display: inline-block;
-    font-size: 14px !important;
+    font-size: 13px !important;
     vertical-align: baseline;
 }
 .gauche{
-    font-size:14px !important;
+    font-size:13px !important;
 }
 
 .activity-meta {
@@ -1248,7 +1249,8 @@ header.sticky {
 
 .central-meta {
     background: #fdfdfd none repeat scroll 0 0;
-    border: 1px solid #ede9e9;
+    /*border: 1px solid #ede9e9;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     border-radius: 3px;
     display: inline-block;
     width: 100%;
@@ -1994,7 +1996,7 @@ span.status::after {
 }
 
 span.status.f-online {
-    background: #7FBA00;
+    background: #2ebc4f;
 }
 
 
@@ -2271,7 +2273,7 @@ a.underline:hover:before,
 }
 
 .user-setting {
-    background: #fff none repeat scroll 0 0;
+    background-image: linear-gradient(to bottom, #1da1f2, #f05f40) !important;
     border-radius: 0 0 3px 3px;
     position: absolute;
     left: -100px;
@@ -2281,7 +2283,7 @@ a.underline:hover:before,
     opacity: 0;
     visibility: hidden;
     line-height: initial;
-    border: 1px solid #e1e8ed;
+    border: 1px solid #1da1f2;
 }
 
 .user-setting.active {
@@ -2295,7 +2297,7 @@ a.underline:hover:before,
     padding: 10px 15px;
     text-transform: capitalize;
     width: 100%;
-    background: #fafafa;
+    background-color: #1da1f2 !important;
     position: relative;
 }
 
@@ -2312,7 +2314,7 @@ a.underline:hover:before,
 }
 
 .user-setting > a:hover {
-    background: #f1f1f1;
+    background: #2a80b6 !important;
 }
 
 
@@ -3467,7 +3469,7 @@ a.add-butn {
 }
 
 .nav.nav-tabs.likes-btn > li a {
-    background: #eeeeee none repeat scroll 0 0;
+    background: #f05f40 none repeat scroll 0 0;
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.5px;
@@ -3490,7 +3492,7 @@ a.add-butn {
 }
 
 .page-likes .tab-content .tab-pane > span i {
-    color: green;
+    color: #2ebc4f;
     font-size: 15px;
     margin-right: 6px;
 }
@@ -3517,7 +3519,7 @@ a.add-butn {
 }
 
 .page-likes .tab-content .tab-pane > a {
-    color: green;
+    color: #2ebc4f;
     float: left;
     font-size: 13px;
     text-align: center;
@@ -4658,7 +4660,7 @@ canvas {
 }
 
 .top-area > ul.main-menu > li a {
-    color: #575b5f;
+    color: #fff;
     font-size: 14px;
     font-weight: 700;
     text-transform: capitalize;
@@ -4667,6 +4669,7 @@ canvas {
 
 .top-area > ul.main-menu > li::after {
     content: "";
+    color:#fff;
     font-family: fontawesome;
     font-size: 13px;
     position: absolute;
@@ -4691,8 +4694,14 @@ canvas {
 }
 
 .top-area > ul.main-menu > li > ul li a:hover {
-    background: #f5f5f5 none repeat scroll 0 0;
+    background: #eeeeee none repeat scroll 0 0 !important;
     padding-left: 17px;
+    color: #5f5f5f !important;
+}
+
+.crepa:hover{
+    background-color: #ca3513 !important;
+    color:#fff !important;
 }
 
 
@@ -10057,26 +10066,26 @@ aside.sidebar.full-style {
 }
 
 .high{
-    font-size: 15px !important;
+    font-size: 14px !important;
 }
 
 .por{
-    font-size: 40px;
-    color: #610f91;
+    font-size: 30px;
+    color: #fff;
     font-family: 'Poppins' !important;
     font-weight:bold;
 }
 
 .fa-rss{
-    font-size: 40px;
-    color: #610f91;
+    font-size: 30px;
+    color: #fff;
     font-weight:bold;
     margin-left: -17% !important;
     margin-top: 10% !important;
 }
 
 .ti-search, .ti-home, .ti-comment, .ti-bell{
-    color:#610f91;
+    color:#fff;
     font-weight: bold !important;
 }
 
@@ -10085,19 +10094,24 @@ aside.sidebar.full-style {
 }
 
 .prof{
-    color:#610f91 !important;
+    color:#fff !important;
     font-weight: bold;
 }
 
 .propa{
-   font-size: 15px;
-   color: #610f91 !important;
+   font-size: 13px;
+   color: #fff !important;
+   font-weight:bold;
 }
 .propa:hover{
-    color:#610f91 !important;
+    color:#fff !important;
 }
 
 .short{
     font-size:16px !important;
 }
 
+.__cf_email__{
+    color: #f05f40 !important;
+    font-style: normal;
+}

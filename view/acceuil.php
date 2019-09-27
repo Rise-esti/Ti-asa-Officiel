@@ -81,7 +81,7 @@ function french_it($mois){
 															<ul>
 
 																<li>
-																	<i class="fa fa-image" style="color:#610f91;"></i>
+																	<i class="fa fa-image" style="color:#2ebc4f;"></i>
 																	<label class="fileContainer">
 																		<input type="file" name="image">
 																	</label>
@@ -89,36 +89,40 @@ function french_it($mois){
 
 
 																<li>
-																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px;">Publier</button>
+																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px; background-image:linear-gradient(to right , #2ebc4f, #2ebc4f) !important;">Publier</button>
 																</li>
 															</ul>
 														</div>
 
 														<div id="publication" style="display:none;">
-															<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>
+															<!--<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>-->
+															<div id="f" class="form-group">
+																<input type="text" name="mission"  />
+																<label class="control-label" for="input" id ="pub" style="color: #1da1f2 !important;">Mission</label><i class="mtrl-select"></i>
+															</div>
 															<div id="f" class="form-group">
 																<input type="text" name="formation"  />
-																<label class="control-label" for="input">Formation</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input"  style="color: #1da1f2 !important;">Formation</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="experience"  placeholder=""/>
-																<label class="control-label" for="input">Expérience</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Expérience</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="competence"  />
-																<label class="control-label" for="input">Compétence</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Compétence</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="personnalite"   />
-																<label class="control-label" for="input">Personnalité</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Personnalité</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<input type="text" name="langue"  />
-																<label class="control-label" for="input">Langue</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Langue</label><i class="mtrl-select"></i>
 															</div>
 															<div class="form-group">
 																<fieldset style="padding-top:0.01em !important;padding-bottom:1em !important;padding-left:0.25em !important;">
-																	<legend style="font-size:15px !important;">  Date limite </legend>
+																	<legend style="font-size:13px !important; color: #1da1f2 !important;">  Date limite </legend>
 																	<div class="form-group half" style="margin-left:1px !important;">
 																		<select style="color:#088dcd" name='jour'>
 																			<option value="">Jour</option>
@@ -153,7 +157,7 @@ function french_it($mois){
 															</div>
 															<div class="form-group">
 																<input type="text" name="lieu"    />
-																<label class="control-label" for="input">Lieu</label><i class="mtrl-select"></i>
+																<label class="control-label" for="input" style="color: #1da1f2 !important;">Lieu</label><i class="mtrl-select"></i>
 															</div>
 														</div>
 													</form>
@@ -420,9 +424,15 @@ function french_it($mois){
 															if(!empty($publication_li[$p]["nom_image"])){
 																$image_publie = $publication_li[$p]["nom_image"];
 																$chemin_image_publie = "public/images/picture/post/$image_publie";
+<<<<<<< HEAD
 										            if(!empty($publication_li[$p]["token_id_page"])){
 										                $chemin_image_publie = "public/images/picture/post_page/$image_publie";
 										            }
+=======
+															if(!empty($publication_li["id_page"])){
+															$chemin_image_publie = "public/images/picture/post_page/$image_publie";
+															}
+>>>>>>> fface862de2e56136f720684cc7c1edaee1a987e
 
 														?>
 																<img src="<?= $chemin_image_publie ?>" alt="">
@@ -467,6 +477,7 @@ function french_it($mois){
 <script src="public/js/main.min.js"></script>
 <?php
 	require("view/js.php");
+	require("footer.php");
 ?>
 
 </body>

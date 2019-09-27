@@ -9,9 +9,9 @@
 		</div><!-- page like widget -->
 		<div class="widget">
 			<div class="banner medium-opacity bluesh">
-				<div class="bg-image" style="background-image: url(public/images/resources/baner-widgetbg.jpg)"></div>
+				<!--<div class="bg-image" style="background-image: url(public/images/resources/baner-widgetbg.jpg)"></div>-->
 				<div class="baner-top">
-					<span><img alt="" src="public/images/book-icon.png"></span>
+					<!--<span><img alt="" src="public/images/book-icon.png"></span>-->
 					<i class="fa fa-ellipsis-h"></i>
 				</div>
 				<div class="banermeta">
@@ -19,7 +19,7 @@
 						créer une page pour mieux récruter.
 					</p>
 					<span>avec ti-asa</span>
-					<a data-ripple="" title="" href="#">Commencer</a>
+					<a data-ripple="" title="" href="#" style="border-radius: 50px;">Commencer</a>
 				</div>
 			</div>
 		</div>

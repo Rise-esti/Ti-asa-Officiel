@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-	<title>Ti-asa</title>
+    <title>Ti-asa</title>
     <link rel="icon" href="public/images/fav.png" type="image/png" sizes="16x16">
 
     <link rel="stylesheet" href="public/css/main.min.css">
@@ -35,6 +35,7 @@
 </script>
 <body>
 <!--<div class="se-pre-con"></div>-->
+
 <div class="theme-layout">
 
 	<!--responsive header----------------------------------------------------------------------------------------------------------->
@@ -90,32 +91,31 @@
 	</div><!-- responsive header--------------------------------------------------------------------------------------------- -->
 
 	<div class="topbar stick">
-		<div class="logo">
-			<i class="fa fa-rss" style="display:inline"></i><p class="por" style="display:inline">ti-asa</p>
+		<div class="logo" style="margin-top:0% !important;">
+			<i class="fa fa-rss" style="display:inline; "></i><p class="por" style="display:inline">ti-asa</p>
 		</div>
 
 		<div class="top-area">
 			<ul class="main-menu">
 				<li>
-					<a href="#" title="" class=" high">Accueil</a>
+					<a href="#" title="" class=" high"><i class="fa fa-home"></i> Accueil</a>
 					<ul>
-						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop">Actualités</a></li>
-
+						<li><a href="index.php?action=connecter&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-home"></i> Actualités</a></li>
 					</ul>
 				</li>
 				<li>
-					<a href="#" title="" class=" high" >Profil</a>
+					<a href="#" title="" class=" high" ><i class="fa fa-user"></i> Profil</a>
 					<ul>
-						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop">Afficher mon profil</a></li>
-						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop">Modifier mon profil</a></li>
+						<li><a href="index.php?action=information_generale&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-user"></i> Afficher mon profil</a></li>
+						<li><a href="index.php?action=modifier_profil&amp;id=<?= $id ?>" title="" class="drop"> <i class="fa fa-pencil"></i> Modifier mon profil</a></li>
 
 					</ul>
 				</li>
 
 				<li>
-					<a href="#" title="" class=" high">Page</a>
+					<a href="#" title="" class=" high"><i class="fa fa-flag"></i> Page</a>
 					<ul>
-						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop">Créer une page</a></li>
+						<li><a href="index.php?action=creer_page&amp;id=<?=$id?>" title="" class="drop crepa" style="background-color:#f05f40; color:#fff;"><i class="fa fa-flag"></i> Créer une page</a></li>
             <?php
             $i = 0;
             $tab_list_page = array();
@@ -140,7 +140,7 @@
 					<div class="searched">
 						<form method="post" class="form-search" >
 							<input type="text" id="zavatra_recherchena" placeholder="Rechercher...">
-							<button onclick="alefa()" data-ripple ><i  class="ti-search"></i></button>
+							<button onclick="alefa()" data-ripple ><i  style="color:#f05f40 !important;" class="ti-search"></i></button>
 						</form>
 					</div>
 
@@ -148,7 +148,7 @@
 
 				<li>
 					<a href="#" title="Notification" data-ripple="">
-						<i class="ti-bell"></i><span style="color:#610f91; font-weight:bold;">4</span>
+						<i class="ti-bell"></i><span style="color:#fff; font-weight:bold;">4</span>
 					</a>
 					<div class="dropdowns">
 						<span>4 nouvelles notifications</span>
@@ -270,7 +270,7 @@
 					$prenom = $profil_li["prenom"];
 				?>
 				<li>
-					<a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #610f91; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
+					<a href="#" title="<?php echo "$nom $prenom" ?>" data-ripple="" style="color: #fff; font-weight:bold; "><?= $profil_li["prenom"] ?></a>
 				</li>
 			</ul>
 			<div class="user-img">
@@ -287,11 +287,11 @@
 				<img style="border-radius: 50%;width: 36px;height: 36px; " src="<?= $chemin_pdp ?>" alt="">
 				<span class="status f-online"></span>
 				<div class="user-setting">
-					<a href="#" title="" style="font-weight:bold;"><span class="status f-online"></span><?= $profil_li["prenom"] ?></a>
+					<a href="#" title="" style="font-weight:bold; color: #fff;"><span class="status f-online"></span><?= $profil_li["prenom"] ?></a>
 					<a href="#" Onclick="window.location='index.php?action=information_generale&amp;id=<?= $id ?>'"><i class="ti-user prof" ></i> <span class="propa">Voir le profil</span></a>
 					<a href="#" Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"><i class="ti-pencil-alt prof"></i><span class="propa">Modifier le profil </span></a>
 
-					<a href="#" ><i class="ti-settings prof"></i><span class="propa"> Paramètres de compte </span></a>
+					<a href="#" ><i class="ti-settings prof"></i><span class="propa"> Paramètres </span></a>
 					<a href="#" Onclick="window.location='index.php?action=deconnecter&amp;id=<?= $id ?>'"><i  class="ti-power-off prof"></i><span class="propa"> Déconnexion</span></a>
 				</div>
 			</div>
@@ -333,8 +333,8 @@
 
 					for (i=0;i<message[0].length;i++){
 						if (ids.indexOf(message[0][i]['id_expediteur']) > -1 ){
-							$('#'   +  message[0][i]['id_expediteur'] + ' #mes_far'  ).html(message[0][i]['mes']);
-							$('#msg-cont').prepend($('#' + message[0][i]['id_expediteur'] ));
+							$('#'   +  message message[0][i]['mes']);
+							$('#msg-cont').pre ;
 
 						}
 						else{

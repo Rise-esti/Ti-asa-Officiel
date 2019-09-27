@@ -1,6 +1,5 @@
 <?php
 require_once("Connect_bdd.php");
-
 class Query_bdd extends Connect_bdd{
     static $salt1 = "@$!@$*";
     static $salt2 = "%%@=@!";
@@ -91,10 +90,10 @@ class Query_bdd extends Connect_bdd{
 
         $link = hash("md5", Query_bdd::$salt1 . $username . Query_bdd::$salt2 . date("d-m-Y_H:i:s", time()));
         $expiration_date = date("Y-m-d", time() + 72 * 3600);
-        $actif = 0; 
-        $insert_link = $bdd->prepare("INSERT INTO ACTIVATION_COMPTE (id_user, actif, lien, date_expiration) VALUES (?, ?, ?, ?)");        
+        $actif = 0;
+        $insert_link = $bdd->prepare("INSERT INTO ACTIVATION_COMPTE (id_user, actif, lien, date_expiration) VALUES (?, ?, ?, ?)");
         $insert_link->execute(array($hash_id, $actif, $link, $expiration_date));
-        
+
         return $insertion_inscrire;
     }
 
@@ -326,14 +325,14 @@ class Query_bdd extends Connect_bdd{
 
     public function requete_publication($id){
         $bdd = $this->dbconnect();
-        $publication = $bdd->prepare("SELECT p.*, per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , p.date_publication date_pub ,DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
+        $publication = $bdd->prepare("SELECT p.*, p.id_publication id_publication,  per.nom nom, per.prenom prenom, per.photo_de_profil pdp, per.username username, DAY(p.date_publication) as jour, MONTH(p.date_publication) as mois , p.date_publication date_pub ,DATE_FORMAT(p.date_publication, '%Y à %Hh%imin') as date_publication from PUBLICATION p INNER JOIN PERSONNE per ON per.token_id = p.id  ORDER BY id_publication DESC ");
         $publication->execute(array());
         return $publication;
     }
 
     public function requete_publication_page($id){
       $bdd = $this->dbconnect();
-      $publication_page = $bdd->prepare("SELECT pub.*, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page , DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, pub.date_publication date_pub, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
+      $publication_page = $bdd->prepare("SELECT pub.*, pub.id_page_publication id_publication, pag.nom_page nom, pag.pdp_page pdp, pag.id, pag.token_id_page token_id_page, DAY(pub.date_publication) as jour, MONTH(pub.date_publication) as mois, pub.date_publication date_pub, DATE_FORMAT(pub.date_publication, '%Y à %Hh%imin') as date_publication FROM PAGE_PUBLICATION pub INNER JOIN PAGE_PAGE pag ON pub.id_token_page = pag.token_id_page WHERE pub.valable ='1' ");
       $publication_page->execute(array());
       return $publication_page;
     }

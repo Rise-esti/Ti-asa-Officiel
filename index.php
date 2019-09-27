@@ -1,10 +1,12 @@
 <?php
+
 require("controller/controller.php");
+
 session_start();
 try{
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
-
+    
         if(isset($_SESSION["id"])){
             $id = $_SESSION["id"];
             $verifier_message_nouveau_et_non_lu = verifier_message_nouveau_et_non_lu($id);

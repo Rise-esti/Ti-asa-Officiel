@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Techniques AJAX - XMLHttpRequest</title>
+<script src="main.js"></script>
+<script src="jquery.min.js"></script>
+
+<script type="text/javascript">
+
+function request(callback) {
+    var xhr = getXMLHttpRequest();
+     
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+            callback(xhr.responseXML);
+        }
+    };
+     
+    xhr.open("GET", "file.xml", true);
+    xhr.send(null);
+}
+
+function jqueryAjax(){
+$.ajax({
+  type: 'GET',
+  url: 'hello.php',
+  data: {variable1: 'ANARAKO', variable2:"FANAMPINANARAKO"},
+  success: function(msg){
+    alert('success : ' + msg);
+  },
+  error: function(){
+    alert('erreur');
+  }
+});
+
+}
+ 
+function readData(oData) {
+    var nodes = oData.getElementsByTagName("soft");
+    var ol = document.createElement("ol"), li, cn;
+     
+    for (var i=0, c=nodes.length; i<c; i++) {
+        li = document.createElement("li");
+        cn = document.createTextNode(nodes[i].getAttribute("name"));
+         
+        li.appendChild(cn);
+        ol.appendChild(li);
+    }
+     
+    document.getElementById("output").appendChild(ol);
+}
+</script>
+</head>
+<body>
+<p>
+    <button onclick="request(readData);">Afficher le fichier XML</button>
+    <div id="output"></div>
+    <button type="submit" onclick="jqueryAjax()"> Lancer </button>
+</p>
+</body>
+</html>

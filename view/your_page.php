@@ -5,13 +5,13 @@
                         <a title="" href="#"><img alt="" src="public/images/resources/esti.png"></a>
                     </figure>
                     <div class="page-meta" style="display:inline !important;">
-                        <a class="underline propa" title="" href="#" >ESTI Antanimena</a>
+                        <a class="underline" title="" href="#" style="color: #1da1f2 !important;">ESTI Antanimena</a>
                     </div>
                 
                     <div class="page-likes">
                         <ul class="nav nav-tabs likes-btn">
-                            <li class="nav-item"><a data-toggle="tab" href="#link1" class="active " style="background-color:#610f91 !important;">Interessés</a></li>
-                                <li class="nav-item"><a data-toggle="tab" href="#link2" class="propa">vues</a></li>
+                            <li class="nav-item"><a data-toggle="tab" href="#link1" class="active " style="background-color:#1da1f2 !important;"> <b>Interessés </b></a></li>
+                                <li class="nav-item"><a data-toggle="tab" href="#link2" class="propa" style="background-color: #eeeeee !important; color:#f05f40 !important;"> <b>vues</b></a></li>
                         </ul>
                         <!-- Tab panes -->
                         <div class="tab-content">

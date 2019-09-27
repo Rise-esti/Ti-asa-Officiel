@@ -21,7 +21,7 @@
 					</figure>
 					<div class="friendz-meta">
 						<a href="#" Onclick = "window.location='index.php?action=visite_page&amp;id=<?=$id?>&amp;nom_page=<?=$all_page[$i]["nom_page"]?>'" ><?= $all_page[$i]["nom_page"] ?></a>
-						<i><a href="#" class="__cf_email__" ><?= $all_page[$i]["mail_page"] ?></a></i>
+						<i><a href="#" class="__cf_email__" style="color:#f05f40 !important;" ><?= $all_page[$i]["mail_page"] ?></a></i>
 					</div>
 				</li>
 			<?php
