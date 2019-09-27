@@ -195,7 +195,7 @@
 											<label class="control-label" for="textarea"> Biographie</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="valider_modify_profil" class="mtr-btn"><span>Mettre à jour</span></button>
+												<button type="submit" name="valider_modify_profil" class="mtr-btn" style="background-color:#2ebc4f !important;"><span>Mettre à jour</span></button>
 											</div>
 										</form>
 									</div>
