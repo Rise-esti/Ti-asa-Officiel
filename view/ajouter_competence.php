@@ -39,7 +39,7 @@
 											  <label class="control-label" for="input">Niveau</label><i class="mtrl-select"></i>
 											</div>
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_competence" class="mtr-btn"><span>Ajouter</span></button>
+												<button type="submit" name="ajouter_competence" class="mtr-btn"  style="background-color:#2ebc4f;" ><span>Ajouter</span></button>
                                             				</div>
                                             
 										</form>
