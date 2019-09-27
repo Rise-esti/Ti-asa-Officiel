@@ -23,7 +23,7 @@
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<div class="editing-info">
-										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les formations</h5>  <i OnClick="window.location='index.php?action=ajouter_nouvelle_formation&amp;id=<?= $id ?>'"  style="color: #610f91 !important; font-size: 50px !important; display: inline !important;margin-left:25%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>
+										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les formations</h5>  <i OnClick="window.location='index.php?action=ajouter_nouvelle_formation&amp;id=<?= $id ?>'"  style="color: #1da1f2 !important; font-size: 50px !important; display: inline !important;margin-left:50%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>
 
 										<form method="post" class="formcomp" id="cacher" action="index.php?action=mettre_jour_formation&amp;id=<?= $id ?>&amp;id_formation=<?= $id_formation ?>">
 											<div class="form-group">	
