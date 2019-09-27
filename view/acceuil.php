@@ -199,21 +199,21 @@ function french_it($mois){
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
 											for($p=0; $p<$nbr_ligne; $p++){
-                        if(!empty($publication_li[$p]["token_id_page"])){
-                              $nom = $publication_li[$p]["nom"];
-                              if(!empty($publication_li[$p]["pdp"])){
-                                  $pdp = $publication_li[$p]["pdp"];
-																	$chemin_pdp = "public/images/picture/pdp_page/$pdp";
-                              }
-                              else{
-                                  $chemin_pdp = "public/images/av.png";
-                              }
+											if(!empty($publication_li[$p]["token_id_page"])){
+											$nom = $publication_li[$p]["nom"];
+											if(!empty($publication_li[$p]["pdp"])){
+											$pdp = $publication_li[$p]["pdp"];
+											$chemin_pdp = "public/images/picture/pdp_page/$pdp";
+											}
+											else{
+												$chemin_pdp = "public/images/av.png";
+											}
 
-                        }
-                        else{
-                            $nom = $publication_li[$p]["nom"];
-                            $prenom = $publication_li[$p]["prenom"];
-                            $username = $publication_li[$p]["username"];
+											}
+											else{
+											$nom = $publication_li[$p]["nom"];
+											$prenom = $publication_li[$p]["prenom"];
+											$username = $publication_li[$p]["username"];
 														if(isset($publication_li[$p]["pdp"])){
 																$pdp = $publication_li[$p]["pdp"];
 																$chemin_pdp = "public/images/picture/pdp/$pdp";
