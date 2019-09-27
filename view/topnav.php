@@ -381,7 +381,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                 </div>
                 <div class="modal-body">
-                    <form  action="index.php?action=inscription">
+                    <form  action="index.php?action=inscription" method="post">
                         <div class="form-group">
                             <input type="text" class="form-control" style="border-right: none !important; border-left: none !important; border-top:none !important; font-family: Poppins !important; font-size: 15px !important;" name="nom" placeholder="Nom" required="required">
                         </div>
