@@ -68,7 +68,7 @@
 														<ul>
 															
 															<li>
-																<i class="fa fa-image"></i>
+																<i class="fa fa-image" style="color:#2ebc4f;"></i>
 																<label class="fileContainer">
 																	<input type="file" name="image">
 																</label>
@@ -76,7 +76,7 @@
 															
 													
 															<li>
-																<button type="submit" name="new_post">Publier</button>
+																<button type="submit" name="new_post" style="background-color:#2ebc4f !important; border-radius:50px;">Publier</button>
 															</li>
 														</ul>
 													</div>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<title>Code de confirmation</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +39,7 @@
 		<div class="container-contact100">
 			<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>
 				<div class="wrap-contact100" style="display: block">
-					<form class="contact100-form validate-form" action="index.php?action=confirmation_mail&amp;mail=<?= $mail?>" method="POST">
+					<form class="contact100-form validate-form" action="index.php?action=confirmation_mail&amp;mail=<?=$mail?>" method="POST">
 						<span class="contact100-form-title">
 							Code de confirmation
 						</span>
@@ -66,7 +65,7 @@
 						Code non réçu ? <span class="contact100-more-highlight" style="font-weight: bold !important; cursor: pointer"> Cliquez ici</span>
 						<?php
 						$lien_activation = $_SESSION["lien"];
-						echo '<br>Voici le lien pour activer votre compte: <br><a href="http://localhost/Ti-asa-Officiel/index.php?action=activer&lien=' . $lien_activation . '" target="_blank">http://localhost/tia_asa-php-officiel/index.php?action=activer?lien=' . $lien_activation . '</a>';
+						echo '<br>Voici le lien pour activer votre compte: <br><a href="index.php?action=activer&lien=' . $lien_activation . '" target="_blank">http://localhost/tia_asa-php-officiel/index.php?action=activer?lien=' . $lien_activation . '</a>';
 						$_SESSION = array();
 						session_destroy();
 						?>

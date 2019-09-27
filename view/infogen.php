@@ -43,27 +43,27 @@
 
 										<form method="post" class="formcomp">
 											<div class="form-group">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important" > <i class="fa fa-smile-o inf"></i> Biographie:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important" > <i class="fa fa-smile-o inf"></i> <u>Biographie:</u></h6>
 												<p class="para" style="display: inline"><?= $profil_li["biographie"] ?> </p>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important;"> <i class="fa fa-user inf"></i> Nom d'utilisateur:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important; font-size:15px !important;"> <i class="fa fa-user inf"></i> <u>Nom d'utilisateur:</u></h6>
 												<h6 style="display: inline"><?= $profil_li["username"] ?></h6>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-adn inf"></i> Nom:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important; font-size:15px !important"> <i class="fa fa-user inf"></i> <u>Nom:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["nom"] ?></h6>
 									
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-adn inf"></i> Prénoms:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important; font-size:15px !important"> <i class="fa fa-user inf"></i> <u>Prénoms:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["prenom"] ?></h6>
 										
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important; font-size:15px !important">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-calendar inf"></i> Date de naissance:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important"> <i class="fa fa-calendar inf"></i> <u>Date de naissance:</u></h6> 
 												<h6 style="display: inline">
 												<?php
 													$jour = $profil_li["jour"];
@@ -77,32 +77,32 @@
 										
 											</div>
 											<div class="form-group" style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-globe inf"></i> Adresse:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important; font-size:15px !important"> <i class="fa fa-globe inf"></i> <u>Adresse:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["adresse"] ?></h6>
 										
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important; font-size:15px !important"> <i class="fa fa-map-marker inf"></i> Ville:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important; font-size:15px !important"> <i class="fa fa-map-marker inf"></i> <u>Ville:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["ville"] ?></h6>
 										
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-envelope-o inf"></i> Email:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important"> <i class="fa fa-envelope-o inf"></i> <u>Email:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["mail"] ?></h6>
 								
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-phone inf"></i> Téléphone:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important"> <i class="fa fa-phone inf"></i> <u>Téléphone:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["numero"] ?></h6>
 									
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-briefcase inf"></i> Poste:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important"> <i class="fa fa-briefcase inf"></i> <u>Poste:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["poste"] ?></h6>
 											
 											</div>
 											<div class="form-group"  style="margin-top: 2% !important;">	
-												<h6 class="forv" style="display: inline; color:#222 !important;font-size:15px !important"> <i class="fa fa-building inf"></i> Entreprise/Ecole:</h6> 
+												<h6 class="forv" style="display: inline; color:#1da1f2 !important;font-size:15px !important"> <i class="fa fa-building inf"></i> <u>Entreprise/Ecole:</u></h6> 
 												<h6 style="display: inline"><?= $profil_li["entreprise"] ?></h6>
 										
 											</div>
@@ -110,7 +110,7 @@
 											<?php
 												if(!isset($select_profil_li["username"])){
 											?>
-												<button  Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"  type="button" class="mtr-btn" ><span>Modifier</span></button>
+												<button  Onclick="window.location='index.php?action=modifier_profil&amp;id=<?= $id ?>'"  type="button" class="mtr-btn" style="background-color:#2ebc4f !important;"><span> <i class="fa fa-pencil"></i> Modifier</span></button>
 											<?php
 												}
 											?>
