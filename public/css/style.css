@@ -1118,7 +1118,8 @@ header.sticky {
     width: 100%;
     margin-bottom: 30px;
     background: #fdfdfd;
-    border: 1px solid #ede9e9;
+    /*border: 1px solid #ede9e9;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     border-radius: 3px;
 }
 
@@ -1248,7 +1249,8 @@ header.sticky {
 
 .central-meta {
     background: #fdfdfd none repeat scroll 0 0;
-    border: 1px solid #ede9e9;
+    /*border: 1px solid #ede9e9;*/
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
     border-radius: 3px;
     display: inline-block;
     width: 100%;
