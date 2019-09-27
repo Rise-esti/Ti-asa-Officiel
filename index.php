@@ -24,8 +24,10 @@ try{
         }
 
         if($action == "confirmation_mail" and isset($_POST["confirm_mail"]) and isset($_GET["mail"])){
+          echo "aa";
             $mot_confirmation = htmlspecialchars($_POST["mot_confirmation"]);
             $mail = htmlspecialchars($_GET["mail"]);
+
             mot_confirmation_mail($mot_confirmation, $mail);
         }
 
