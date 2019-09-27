@@ -216,7 +216,7 @@ function connecter($id){
       echo $publication_li[$i]["date_publication"];
       echo "<br>";
     }*/
-    require("view/acceuil.php");
+    include("view/acceuil.php");
 }
 
 function afficher_journal($id){

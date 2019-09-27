@@ -25,10 +25,6 @@ function french_it($mois){
 	$months = array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
 	return $months[$mois-1];
 }
-
-?>
-<!--<div class="se-pre-con"></div>-->
-<?php
 	require("view/header.php")
 ?>
 <!-- topbar -->
@@ -424,15 +420,15 @@ function french_it($mois){
 															if(!empty($publication_li[$p]["nom_image"])){
 																$image_publie = $publication_li[$p]["nom_image"];
 																$chemin_image_publie = "public/images/picture/post/$image_publie";
-<<<<<<< HEAD
+
 										            if(!empty($publication_li[$p]["token_id_page"])){
 										                $chemin_image_publie = "public/images/picture/post_page/$image_publie";
 										            }
-=======
+
 															if(!empty($publication_li["id_page"])){
 															$chemin_image_publie = "public/images/picture/post_page/$image_publie";
 															}
->>>>>>> fface862de2e56136f720684cc7c1edaee1a987e
+
 
 														?>
 																<img src="<?= $chemin_image_publie ?>" alt="">

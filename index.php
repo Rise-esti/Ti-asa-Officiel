@@ -6,7 +6,7 @@ session_start();
 try{
     if(isset($_GET["action"])){
         $action = htmlspecialchars($_GET["action"]);
-    
+
         if(isset($_SESSION["id"])){
             $id = $_SESSION["id"];
             $verifier_message_nouveau_et_non_lu = verifier_message_nouveau_et_non_lu($id);
@@ -70,7 +70,8 @@ try{
             if (isset($_SESSION["id"])){
                 if($id == $_SESSION["id"]){
                     connecter($id);
-                } else {
+                }
+                else {
                     connecter($_SESSION["id"]);
                 }
             } else {
