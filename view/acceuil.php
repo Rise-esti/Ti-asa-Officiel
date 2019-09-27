@@ -73,23 +73,22 @@ function french_it($mois){
 													<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
 														<textarea id="pub" rows="2" name="texte" placeholder="Publier un Offre d'emploi ou autres"></textarea>
 
+														
 														<div class="attachments">
 															<ul>
-
 																<li>
 																	<i class="fa fa-image" style="color:#2ebc4f;"></i>
 																	<label class="fileContainer">
 																		<input type="file" name="image">
 																	</label>
 																</li>
-
-
 																<li>
 																	<button type="submit" name="new_post" style="padding:10px; border-radius:20px; background-image:linear-gradient(to right , #2ebc4f, #2ebc4f) !important;">Publier</button>
 																</li>
 															</ul>
 														</div>
 
+														
 														<div id="publication" style="display:none;">
 															<!--<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>-->
 															<div id="f" class="form-group">
