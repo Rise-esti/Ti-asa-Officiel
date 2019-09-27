@@ -45,7 +45,7 @@
 											
 											<a class="forgot-pwd underline" title="" href="#">Mot de passe oublié?</a>
 											<div class="submit-btns">
-												<button type="button" class="mtr-btn"><span>Annuler</span></button>
+												<button type="button" class="mtr-btn" ><span>Annuler</span></button>
 												<button type="submit" class="mtr-btn" name="mettre_a_jour_mdp"><span>Mettre à jour</span></button>
 											</div>
 										</form>
