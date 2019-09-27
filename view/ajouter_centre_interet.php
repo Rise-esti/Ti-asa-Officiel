@@ -37,7 +37,7 @@
                                             				</div>
                                             
 											<div class="submit-btns">
-												<button type="submit" name="ajouter_centre_interet" class="mtr-btn"><span>Ajouter</span></button>
+												<button type="submit" name="ajouter_centre_interet" class="mtr-btn" style="background-color:#2ebc4f;"><span>Ajouter</span></button>
                                             				</div>
                                             
 										</form>
