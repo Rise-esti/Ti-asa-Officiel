@@ -199,7 +199,6 @@ function french_it($mois){
 
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
-											echo $nbr_ligne;
 											for($p=0; $p<$nbr_ligne; $p++){
                         if(!empty($publication_li[$p]["token_id_page"])){
                               $nom = $publication_li[$p]["nom"];
