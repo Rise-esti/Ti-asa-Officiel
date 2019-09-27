@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_SESSION["id"]) and isset($_SESSION["nom"]) and isset($_SESSION["prenom"]) and isset($_SESSION["mail"])){
 $username = $_SESSION["username"];
 $nom = $_SESSION["nom"];
@@ -183,7 +182,6 @@ function french_it($mois){
 
 															cnt.addEventListener('click', function hides_pub(event){
 																dist = document.getElementById('publication');
-																console.log(event.target.localName);
 																if (event.target.localName == 'div'){
 																	dist.style.display = 'none';
 																	i = 0;
@@ -201,48 +199,42 @@ function french_it($mois){
 
 										<!-- Publication acceuil iciiiiiiiiiiiiiiii -->
 										<?php
-											while($publication_li = $publication->fetch()){
-                                                if(!empty($publication_li["id_page"]) ){
-                                                    for($i=0; $i<$nbr_all_page; $i++){
-                                                        if($publication_li["id_page"] == $all_page[$i]["id_page"]){
-                                                            $nom = $all_page[$i]["nom_page"];
-                                                            $prenom = "";
-                                                            if(!empty($all_page[$i]["pdp_page"])){
-                                                                $pdp = $all_page[$i]["pdp_page"];
-																$chemin_pdp = "public/images/picture/pdp_page/$pdp";
-                                                            }
-                                                            else{
-                                                                $chemin_pdp = "public/images/av.png";
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                                else{
-                                                    $nom = $publication_li["nom"];
-                                                    $prenom = $publication_li["prenom"];
-                                                    $username = $publication_li["username"];
-                                                }
-										?>
+											echo $nbr_ligne;
+											for($p=0; $p<$nbr_ligne; $p++){
+                        if(!empty($publication_li[$p]["token_id_page"])){
+                              $nom = $publication_li[$p]["nom"];
+                              if(!empty($publication_li[$p]["pdp"])){
+                                  $pdp = $publication_li[$p]["pdp"];
+																	$chemin_pdp = "public/images/picture/pdp_page/$pdp";
+                              }
+                              else{
+                                  $chemin_pdp = "public/images/av.png";
+                              }
+
+                        }
+                        else{
+                            $nom = $publication_li[$p]["nom"];
+                            $prenom = $publication_li[$p]["prenom"];
+                            $username = $publication_li[$p]["username"];
+														if(isset($publication_li[$p]["pdp"])){
+																$pdp = $publication_li[$p]["pdp"];
+																$chemin_pdp = "public/images/picture/pdp/$pdp";
+														}
+														else{
+																$chemin_pdp = "public/images/av.png";
+														}
+                        }
+												?>
 
 										<div class="central-meta item">
 											<div class="user-post">
 												<div class="friend-info">
 													<figure>
 														<?php
-															if(empty($publication_li["id_page"]) ){
-                                  if(isset($publication_li["pdp"])){
-                                      $pdp = $publication_li["pdp"];
-                                      $chemin_pdp = "public/images/picture/pdp/$pdp";
-                                  }
-                                  else{
-                                      $chemin_pdp = "public/images/av.png";
-                                  }
-                                }
-
-															$jour_lim = $publication_li['jour'];
-															$mois_lim = french_it($publication_li['mois']);
-															$reste_lim = $publication_li['date_publication'];
-															$id_pub = $publication_li['id_publication'];
+															$jour_lim = $publication_li[$p]['jour'];
+															$mois_lim = french_it($publication_li[$p]['mois']);
+															$reste_lim = $publication_li[$p]['date_publication'];
+															$id_pub = $publication_li[$p]['id_publication'];
 														?>
 
 														<img style="width:50px; height:47px;" src="<?= $chemin_pdp ?>" alt="">
@@ -250,7 +242,7 @@ function french_it($mois){
 													<div class="friend-name">
 
 														<?php
-															if(empty($publication_li["id_page"]) ){
+															if(empty($publication_li[$p]["token_id_page"]) ){
 														?>
 														<ins><a href="index.php?action=affichage_profil&amp;username=<?= $username ?>" title=""><?php echo "$nom $prenom"; ?></a></ins>
 														<?php
@@ -266,9 +258,9 @@ function french_it($mois){
 													<div class="post-meta">
 														<div id="<?= $id_pub ?>" class="description">
 															<?php
-																if(!empty($publication_li["texte"])){
+																if(!empty($publication_li[$p]["texte"])){
 																	$vir = "\n";
-																	$text_tab = enleve_le_point_virgule($publication_li["texte"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["texte"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -278,14 +270,14 @@ function french_it($mois){
 															<?php
 																	}
 																}
-																if(!empty($publication_li["mission"])){
+																if(!empty($publication_li[$p]["mission"])){
 															?>
 
 															<h6 style="display: inline; color: #610f91">Missions:</h6>
 															<p class="para" style="display: inline">
 																<?php
 																	$vir = ';';
-																	$text_tab = enleve_le_point_virgule($publication_li["mission"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["mission"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -297,15 +289,14 @@ function french_it($mois){
 																?>
 															</p>
 															<?php
-																if(!empty($publication_li["formation"])){
+																if(!empty($publication_li[$p]["formation"])){
 															?>
 															<i class="mtrl-select"></i>
 
 															<h6 style="display: inline; color: #610f91;">Formations:</h6>
 															<p class="para" style="display: inline; color: #333">
 																<?php
-
-																	$text_tab = enleve_le_point_virgule($publication_li["formation"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["formation"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -315,7 +306,7 @@ function french_it($mois){
 																<?php
 																	}
 																}
-																if(!empty($publication_li["experience"])){
+																if(!empty($publication_li[$p]["experience"])){
 																?>
 															</p>
 
@@ -325,7 +316,7 @@ function french_it($mois){
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
-																	$text_tab = enleve_le_point_virgule($publication_li["experience"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["experience"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -335,7 +326,7 @@ function french_it($mois){
 																<?php
 																	}
 																}
-																if(!empty($publication_li["competence"])){
+																if(!empty($publication_li[$p]["competence"])){
 																?>
 															</p>
 															<i class="mtrl-select"></i>
@@ -344,7 +335,7 @@ function french_it($mois){
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir=";";
-																	$text_tab = enleve_le_point_virgule($publication_li["competence"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["competence"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -354,7 +345,7 @@ function french_it($mois){
 																<?php
 																	}
 																}
-																if(!empty($publication_li["langue"])){
+																if(!empty($publication_li[$p]["langue"])){
 																?>
 															</p>
 
@@ -364,7 +355,7 @@ function french_it($mois){
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
-																	$text_tab = enleve_le_point_virgule($publication_li["langue"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["langue"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -375,7 +366,7 @@ function french_it($mois){
 																	}
 																}
 
-																	if(!empty($publication_li["personnalite"])){
+																	if(!empty($publication_li[$p]["personnalite"])){
 																?>
 															</p>
 															<i class="mtrl-select"></i>
@@ -384,7 +375,7 @@ function french_it($mois){
 															<p class="para" style="display: inline; color: #333">
 																<?php
 																	$vir = ";";
-																	$text_tab = enleve_le_point_virgule($publication_li["personnalite"], $vir);
+																	$text_tab = enleve_le_point_virgule($publication_li[$p]["personnalite"], $vir);
 																	$nbr = count($text_tab);
 																	for($i=0; $i<$nbr; $i++){
 																		$texte = $text_tab[$i];
@@ -400,7 +391,7 @@ function french_it($mois){
 
 
 																<?php
-																if(!empty($publication_li["date_limite"]) and $publication_li["date_limite"] != " "){
+																if(!empty($publication_li[$p]["date_limite"]) and $publication_li[$p]["date_limite"] != " "){
 																?>
 															</p>
 
@@ -408,30 +399,30 @@ function french_it($mois){
 
 															<h6 style="display: inline; color: #610f91">Date limite :</h6>
 															<p class="para" style="display: inline; color: #333">
-																<li style="margin-left:50px;"><?= $publication_li["date_limite"] ?> </li>
+																<li style="margin-left:50px;"><?= $publication_li[$p]["date_limite"] ?> </li>
 
 															<?php
 																}
-																if(!empty($publication_li["lieu"])){
+																if(!empty($publication_li[$p]["lieu"])){
 															?>
 															</p>
 															<i class="mtrl-select"></i>
 
 															<h6 style="display: inline; color: #610f91">Lieu :</h6>
 															<p class="para" style="display: inline; color: #333">
-																<li style="margin-left:50px;"><?= $publication_li["lieu"] ?> </li>
+																<li style="margin-left:50px;"><?= $publication_li[$p]["lieu"] ?> </li>
 
 																<?php
 																	}
 																?>
 														</div>
 														<?php
-															if(!empty($publication_li["nom_image"])){
-																$image_publie = $publication_li["nom_image"];
+															if(!empty($publication_li[$p]["nom_image"])){
+																$image_publie = $publication_li[$p]["nom_image"];
 																$chemin_image_publie = "public/images/picture/post/$image_publie";
-                                                                if(!empty($publication_li["id_page"])){
-                                                                    $chemin_image_publie = "public/images/picture/post_page/$image_publie";
-                                                                }
+										            if(!empty($publication_li[$p]["token_id_page"])){
+										                $chemin_image_publie = "public/images/picture/post_page/$image_publie";
+										            }
 
 														?>
 																<img src="<?= $chemin_image_publie ?>" alt="">
@@ -477,71 +468,6 @@ function french_it($mois){
 <?php
 	require("view/js.php");
 ?>
-
-<script>
-/*
-function french_it(mois){
-	mois_tab = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
-	return mois_tab[mois-1];
-}
-
-
-setInterval('nouveau_actu()', 2000);
-
-function nouveau_actu(){
-		id_dernier_pub = $('.description').attr('id');
-
-		$.post(
-					'controller/load_actu.php',
-				{
-					id_pub: id_dernier_pub
-				},
-
-				actu_recu,  // nom fonction retour
-
-			);
-			function actu_recu(text){
-				tab = new Array(JSON.parse(text));
-				// console.log(tab[0][0]);
-				}
-}
-				/*
-				if (tab[0].length > 0){
-					for (i=0;i<tab[0].length;i++){
-						// new_pub = $('.post-meta').clone();
-						new_pub = "<div class='central-meta item'>" + "<div class='user-post'>;" + "<div class='friend-info'>" + "<figure>"
-
-						if (tab[0][i]['id_page'] === ''){
-							if (tab[0][i]['pdp']){
-
-									chemin_pdp = "public/images/picture/pdp/" + tab[0][i]['id_page'];
-							}
-							else{
-									chemin_pdp = "public/images/av.png";
-							}
-						}
-						else{
-
-						}
-
-						new_pub = new_pub + "<img src=" + chemin_pdp  + "alt=''>" + "</figure>" + "<div class='friend-name'>"
-
-
-					tab[0][i]['prenom']
-					}
-				}
-
-				console.log(tab[0].length);
-				// new_pub = $('.description').clone();
-
-				// new_pub.attr('id', '')
-				 //$('.newpst-input').after('')
-				 */
-
-
-
-</script>
-
 
 </body>
 

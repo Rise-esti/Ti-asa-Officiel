@@ -18,6 +18,7 @@
 
 
     <!--resp font & color footer--> <link rel="stylesheet" href="public/assets/css/style.css">
+    <script src="public/JS/jquery.min.js"><script>
 
 
 </head>
@@ -26,7 +27,7 @@
 		$('.nbr_lu').load("model/cocher_cliques_message.php");
 	}
 
-	setInterval('afficher_nbr_nouveau_message()', 1000);
+	setInterval('afficher_nbr_nouveau_message()', 2000);
 	function afficher_nbr_nouveau_message(){
 		$('.nbr_lu').load("model/afficher_nbr_nouveau_message.php");
 	}
@@ -307,7 +308,7 @@
 
 
 	<script>
-		setInterval('load_message_farany()', 2000);
+		setInterval('load_message_farany()', 5000);
 		function load_message_farany(){
 			$.post(
 				'controller/message_farany.php',
