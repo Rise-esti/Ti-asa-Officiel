@@ -1,0 +1,8 @@
+.maqflottante
+		{
+		   float: right !important;
+       width: 10%;
+       height: 10%;
+       clear: both;
+       z-index: 2 !important;
+		}

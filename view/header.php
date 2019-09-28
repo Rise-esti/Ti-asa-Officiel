@@ -15,6 +15,7 @@
 	<link rel="stylesheet" href="public/css/color.css">
 	<link rel="stylesheet" href="public/css/responsive.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="public/css/maq.css">
 
 
 	<!--resp font & color footer--> <link rel="stylesheet" href="public/assets/css/style.css">
@@ -34,6 +35,7 @@
 
 </script>
 <body>
+	
 <!--<div class="se-pre-con"></div>-->
 
 <div class="theme-layout">

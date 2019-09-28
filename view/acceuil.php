@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_SESSION["id"]) and isset($_SESSION["nom"]) and isset($_SESSION["prenom"]) and isset($_SESSION["mail"])){
 $username = $_SESSION["username"];
@@ -73,7 +74,7 @@ function french_it($mois){
 													<form method="post" action="index.php?action=post&amp;id=<?= $id ?>" enctype="multipart/form-data">
 														<textarea id="pub" rows="2" name="texte" placeholder="Publier un Offre d'emploi ou autres"></textarea>
 
-														
+
 														<div class="attachments">
 															<ul>
 																<li>
@@ -88,7 +89,7 @@ function french_it($mois){
 															</ul>
 														</div>
 
-														
+
 														<div id="publication" style="display:none;">
 															<!--<textarea id="pub" rows="2" name="mission" placeholder="Mission"></textarea>-->
 															<div id="f" class="form-group">
@@ -161,7 +162,7 @@ function french_it($mois){
 															var cont = document.getElementById('cnt');
 															var i = 0;
 															x.addEventListener('focus',  function show_pub(){
-														
+
 																setTimeout(anim_pub(), 5000);
 																	});
 
@@ -171,11 +172,11 @@ function french_it($mois){
 																	dist.style.display = 'block';
 																	}
 																i = i + 1 ;
-															
+
 															}
-															
-															
-																
+
+
+
 
 															x.addEventListener('blur', function hide_pub(event){
 																dist = document.getElementById('publication');
@@ -468,7 +469,13 @@ function french_it($mois){
 				</div>
 			</div>
 		</div>
+	<!--	<img src="public/images/logo.png" class="maqflottante" alt="Image flottante" /> -->
+
 	</section>
+
+
+
+
 
 
 
