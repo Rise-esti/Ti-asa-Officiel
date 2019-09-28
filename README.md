@@ -1,4 +1,6 @@
-#                        BIENVENU sur  Ti-asa | RISE
+#                        BIENVENU sur  Ti-asa 
+
+## **RISE**  *Plus de retour en Arrière*
 
 
 <img align="center" src="https://github.com/Rise-esti/Ti-asa-Officiel/blob/master/public/images/tiasa.png">
@@ -26,11 +28,8 @@ Tout d'abord, RISE est un groupe d'étudiant L1 à l'ESTI constitué de 5 membre
   
   #### FRONT OFFICE
   
-  | LANGUGAGE | FRAMEWORK | 
-  ____________|____________
-  |HTML       |           |
-  ____________|____________
-  |CSS        | BootStrap |
-  ____________|___________|
-  |JAVASCRIPT | JQUERY    |
-  ____________|___________|
+  LANGUGAGE | FRAMEWORK 
+  ----------|----------
+  HTML|
+  CSS | BootStrap
+  JAVASCRIPT | JQUERY
