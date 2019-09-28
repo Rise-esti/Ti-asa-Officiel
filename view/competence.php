@@ -33,7 +33,7 @@
 										?>
 										<form method="post" class="formcomp">
 											<div class="form-group">	
-												<i class="fa fa-building forc" style="display: inline"> <h6 style="display: inline"><?= $tab[$i]["competence"] ?></h6> </i>
+												<i class="fa fa-building forc" style="display: inline; color:#1da1f2 !important;"> <h6 style="display: inline; color:#1da1f2;"><?= $tab[$i]["competence"] ?></h6> </i>
 												<div class="form-radio"><br>
 													<div class="radio" >
 													        <label >
@@ -52,8 +52,8 @@
 													<i class="mtrl-select"></i>
 												</div>
 												<div class="submit-btns">
-													<button class="supp" type="button" style="background-color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span>Supprimer</span></button>
-													<button  class="mod" Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" ><span>Modifier</span></button>
+													<button class="supp" type="button" style="background-color:#ff4b5a" onclick="x = confirm('Etes-vous sûr de vouloir supprimer cette compétence ?');if (x){window.location='index.php?action=supprimer_competence&id=<?= $id ?>&id_competence=<?= $id_competence ?>'};"class="mtr-btn"><span><i class="fa fa-remove"></i> Supprimer</span></button>
+													<button  class="mod" Onclick="window.location='index.php?action=modifier_competence_existant&amp;id=<?= $id ?>&amp;id_competence=<?= $id_competence ?>'"   type="button" class="mtr-btn" style="background-color:#2ebc4f;"><span><i class="fa fa-pencil"></i> Modifier</span></button>
 												</div>
 											</div>
 											

@@ -21,7 +21,8 @@
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<div class="editing-info">
-										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les expériences</h5> <i OnClick="window.location='index.php?action=ajouter_experience&amp;id=<?=$id?>'"  style="color: #088dcd !important; font-size: 50px !important; display: inline !important;margin-left:60%!important;cursor:pointer !important;" class="fa fa-plus addeo"> </i>
+										<h5 class="f-title"><i class="ti-info-alt"></i> Editer les expériences</h5> 
+										<i OnClick="window.location='index.php?action=ajouter_experience&amp;id=<?=$id?>'"  style="color: #1da1f2 !important; font-size: 50px !important; display: inline !important;margin-left:50% !important; ;cursor:pointer !important;" class="fa fa-plus addeo"> </i>	
 
 										<form method="post" class="formcomp" action="index.php?action=mettre_jour_experience&amp;id=<?= $id ?>&amp;id_experience=<?= $id_experience ?>">
 											<div class="form-group">	
