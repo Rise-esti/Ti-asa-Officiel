@@ -28,8 +28,17 @@ Tout d'abord, RISE est un groupe d'étudiant L1 à l'ESTI constitué de 5 membre
   
   #### FRONT OFFICE
   
-  LANGUGAGE | FRAMEWORK 
-  ----------|----------
+  LANGAGE | FRAMEWORK 
+  --------|----------
   HTML|
   CSS | Bootstrap
   JAVASCRIPT | JQUERY
+  
+  
+  #### BACK OFFICE
+  
+  LANGAGE|
+  -------|
+  PHP|
+  PYTHON |
+  SQL | 
