@@ -1,4 +1,9 @@
-#                        BIENVENU sur  Ti-asa 
+#                        BIENVENUE sur  Ti-asa 
+
+> INTRODUCTION 
+
+<img align="center" src="https://github.com/Rise-esti/Ti-asa-Officiel/blob/master/data/intro.gif">
+
 
 > **RISE**  *Plus de retour en Arrière*
 
@@ -33,7 +38,7 @@ Vous pouvez télécharger le dépôt librement...
   --------|----------
   HTML|
   CSS | Bootstrap
-  JAVASCRIPT | JQUERY
+  JAVASCRIPT | JQuery
   
   
   #### BACK OFFICE
