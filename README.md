@@ -38,7 +38,7 @@ Vous pouvez télécharger le dépôt librement...
   --------|----------
   HTML|
   CSS | Bootstrap
-  JAVASCRIPT | JQUERY
+  JAVASCRIPT | JQuery
   
   
   #### BACK OFFICE
