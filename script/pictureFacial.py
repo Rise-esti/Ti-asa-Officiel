@@ -11,7 +11,7 @@ import sys
 
 def detect(path):
     img = cv2.imread(path)
-    cascade = cv2.CascadeClassifier("./haarcascade_frontalface_alt.xml")
+    cascade = cv2.CascadeClassifier("./res/haarcascade_frontalface_alt.xml")
     rects = cascade.detectMultiScale(img, 1.3, 4,
                                      cv2.CASCADE_SCALE_IMAGE, (20, 20))
     for (x, y, w, h) in rects:
