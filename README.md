@@ -36,7 +36,7 @@ Vous pouvez télécharger le dépôt librement...
   
   LANGAGE | FRAMEWORK 
   --------|----------
-  HTML|
+  HTML| Markup language
   CSS | Bootstrap
   JAVASCRIPT | JQuery
   
