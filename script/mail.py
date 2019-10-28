@@ -48,7 +48,7 @@ def send_mail(mail, sub):
 
         server = smtplib.SMTP('smtp.gmail.com:587')
         server.starttls()
-        server.login("gaetan.jonathan.bakary@esti.mg", "__@ti-asa__!")
+        server.login("gaetan.jonathan.bakary@esti.mg", "*******")
         server.sendmail('gaetan.jonathan.bakary@esti.mg', mail, msg.as_string())
         server.quit()
 
@@ -60,7 +60,7 @@ def send_mail(mail, sub):
         connect.close()
 
 
-connect = mysql.connector.connect(host='localhost', user='rise', password='__@ti-asa__!', database='tia_asa')
+connect = mysql.connector.connect(host='localhost', user='*******', password='*********', database='tia_asa')
 cursor = connect.cursor(buffered=True)
 
 send_mail(sys.argv[1], sys.argv[2])
